@@ -1,0 +1,168 @@
+
+ls
+
+ls * 
+
+ls *e
+
+ls folder/*e
+
+ls e*
+
+ls ?b
+
+ls *b
+
+
+ls [aeiou]*
+
+ls [!aeiou]*
+
+ls [a-c][b-d][[1-4] = first character [a-c] , should be in range a to c
+                      Second character[b-d] , should be in range b to d
+                      Third character [1-4] , should be in range 1 to 4
+
+ls -ld  = Display directory info as long listing format
+
+ls -lh  = Display listing of files in human readable format
+
+ls -a   = Display all hidden files and folders
+
+ls -l   = Display listing in long listing form
+
+touch = used to create only empty files
+
+touch f1
+
+touch f1 f2 f3 f4 
+
+=========================================================
+
+cat => 1) Used to create a file with contents 
+       
+       2) To See contents of a file
+
+       3) Used to concate contents of files
+
+       
+  1) Ex :  cat > hello.txt  => write contents and save file with ctrl+d  
+
+  2) cat hello.txt
+
+
+
+  Redirection > used to write data into file.
+
+  Redirection operator ( > )  == overwrite previous contents of the file               
+                       ( >> ) == Append the contents in the file without overwriting
+
+
+=================================================================
+
+
+cat f1.txt f2.txt f3.txt > f4.txt 
+
+concatenated contents of f1.txt,f2.txt, f3.txt will be written in f4.txt
+
+cat -b filename = It displays line numbers with content
+
+===================================================================
+
+
+cp used to copy contents of one file to another file
+
+cp SourceFile DetinationFile
+
+.  Current Directory
+.. Previous Directory
+~  Home Directory
+
+======================================================
+
+  1) If current folder is new and new is the subfolder of Myfolder
+     
+    a) To Copy file from new folder to Myfolder
+                       cp Hello.txt ../
+  
+    b) To copy file from Myfolder to new folder
+
+                       cp ../Hello.txt .
+
+    c) To copy file from new to Desktop
+                       cp Hello.txt ~/Desktop/
+
+    d) To copy file from new to Home folder
+                       cp Hello.txt ~
+
+   Topic: Ashutosh Gadgil's Personal Meeting Room
+Start Time : Oct 20, 2020 09:36 AM
+
+Meeting Recording:
+https://us02web.zoom.us/rec/share/Fq_AF5YH_TQYPCEs28vI7aNlA8b9uwRZXqRTAATQPCcIB6eWjpWcJxKi4EeEiMUL.uH9rbK0zGlvr_TXX
+
+Access Passcode: 7qr1Gd=n
+
+
+Mv = Move or Rename 
+  
+1)  MV file1.txt hello.txt = > rename a file from file1.txt to hello.txt
+
+2)  mv sourcePath destinationPath
+
+
+rm = Remove 
+
+
+1) rm filename = Direct delete
+
+2) rm new/file.txt  = Delete file in new folder
+
+3) rm -i file.txt = To delete a file with confirmation message
+
+4) rm b* = delete all files starting with letter b
+
+5) rm *.txt = delete all text files
+
+6) rm -r dirname = delete directory recursively
+
+7) rm -r -i dirname = recursively delete with confirmation
+
+8) rm dirname/*.* = delete all file in the directory
+
+9) rmdir dirname = Delete directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
