@@ -131,10 +131,208 @@ rm = Remove
 
 9) rmdir dirname = Delete directory
 
+Hidden files using cat
+
+ cat > .filename
+
+ mkdir .foldername
+
+Mathematical commands
+
+bc = Best calculator 
+
+man = manual help 
+
+==================================================================
+
+grep = Global Regular Expression Print = Filters content in a file
+
+grep word filename 
+
+option with grep command : 
+ 
+  -i = ignores the case of the word to be searched
+
+  -v = excludes the mached words and displays only unmatched words
+
+  -n = displays the line numbers along with text searched
+
+  -c = displays the total count of lines in which matching text found
+   
+  -A1 = Display line after matched word
+
+  -B1 = Display line before matched word
+
+  -C1 = Displays one line before and after word
+
+
+  C = option , 1 = line number
+
+ 
+Regular expression = [a-z], [a-z]*, [a-z][1-9]
+               [] = represents charcter
+
+ 
+grep a[a-d]b file.txt  =>    aab, abb, acb, adb
+
+====================================================================
+
+echo = used to display content on the screen or transfer content in the file
+
+Redirection >  >>  (output redirection)
+
+            < (Input redirection)
+
+
+cat file1 > file2
+
+=====================================================================================================
+     
+Setting the Permissions for user, group and others
+
+
+-rwxrwxrwx 
+
+
+     				-            rwx        rw-       r--
+
+                                File         user       group     others     
+
+
+                                -            ashutosh   ashutosh                   hello.txt
+
+
+               r = Read permission       
+               W = Write Permisiion
+               x = Execute Permision
 
 
 
+               users    
 
+
+               group
+
+
+               others
+
+
+To check all groups in the system
+
+    cat /etc/group
+
+
+To check all user related info
+
+    cat /etc/passwd
+
+
+users  = display all users who logged into system
+
+
+groups  = Display the group name
+
+
+================================================================================
+  
+
+less filename = display contents of a file one page at a time 
+
+less filename
+
+/word : word to be searched in file
+
+
+
+head finame = display first 10 lines by default from the file
+
+head -3 filename  : display first 3 lines
+
+tail filename  = display last 10 lines by default
+
+tail -4 filename : display last 4 lines
+
+
+===========================================================
+
+
+Pipe  : | 
+      : Sends the output of command as an input to other command
+
+       command1 | command2
+  
+       cat names.txt | grep Sachin 
+  
+
+===========================================================
+
+sort  : Arranges the contents of a file alphabetically or numerically
+
+
+      -n  =  for numeric
+      -k  =  for fieldwise sorting
+      -r  =  for reverse sorting
+      -u  =  To display rows without repeating the same rows
+      -o  =  To create a output file
+      -m  =  To merge sorted files
+
+ sort -o filename file1 file2
+
+ sort -m file1 file2
+
+===============================================================
+
+
+cut : Select a specific column of a file
+
+    -d = delimiter (space,comma,hyphen...)
+    -b = byte
+    -c = group of character 
+
+=============================================================
+
+groupmod : display naames of users available in system
+
+groups   : will display currently loggedin users group
+
+users    : display all users who currently logged in
+
+cat /etc/group : display info about groups
+
+cat /etc/passwd : display info about all users 
+
+=============================================================
+
+chmod = Used to change permission for user,group and others
+
+umask = shows a default value which describes the permission for user, group and others
+
+
+                       user(ashutosh) / Group (ashutosh)  =   r w - (Original Permission)  ----> Read / Write
+                                                              r - - (Modified Permission)
+
+chmod option filename
+
+               user == >  u
+               group== >  g
+               others= >  o
+
+               Add permission ===>   +
+               Delete permission=>   -
+
+               read   ===========>   r
+               write  ===========>   w
+               execute===========>   x
+
+   chmod u-w Player
+
+
+Creation of user
+
+
+history : shows all commands you type in terminal
+
+clear   
 
 
 
