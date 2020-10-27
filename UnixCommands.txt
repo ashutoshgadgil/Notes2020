@@ -328,6 +328,101 @@ chmod option filename
 
 
 Creation of user
+                     sudo adduser username
+
+
+Adding user to usergroup
+
+                     sudo usermod -a -G Groupname username
+
+                     Groupname = The group in which user is added
+                     username  = user to be added in the group        
+
+Deleting user from group
+
+                     sudo deluser Username Groupname
+
+Deleting Account for user
+
+                     sudo userdel -r username
+
+
+===================================================================
+
+
+find : Search all files and directories and subdirectories
+
+ find dirname -name filename
+
+
+ 1) find ./dir -name *.txt   : search all text files in folder with its subfolder
+
+ 2) find ./dir -name sample.txt : search sample.txt 
+
+ 3) find ./dir -empty  : search for all emty files and directories
+
+ 4) find ./dir -perm 664 : search all files with permission value 664
+
+====================================================================
+
+
+File Compression
+            (GNU zip)
+
+            gzip = Compress the file
+
+            gunzip = Decompress file
+
+
+            Compressed file extension = .gz
+
+=================================================
+
+           gzip file1 file2
+================================================
+
+Directory compression
+             
+            tar   
+                    -c  = create
+                    -v  = display output / verbose
+                    -f  = destination
+                    -z  = compressed with gzip
+                    -x  = Extraction
+                    -t  = Test
+                    -j  = compressed with bzip2
+
+========================================================================
+
+
+Archiving  & Compression of multiple files
+
+Archiving :
+
+           Group items in bundle 
+
+           tar :  To arhive files
+
+    
+Compression Techniques:
+           
+           1) gzip    (.gz)
+           
+           2) bzip2   (.bz2)
+           
+           3) zip     (.zip)
+
+========================================================================
+
+
+Editor 
+
+
+      1) gedit
+      2) nano
+      3) vi
+
+
 
 
 history : shows all commands you type in terminal
