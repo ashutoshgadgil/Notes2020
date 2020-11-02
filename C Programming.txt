@@ -1,0 +1,155 @@
+
+
+  1 ) IDE (Integrated Development Environment)
+  
+  2 ) Compiler (Translator)  -----> TC (Turbo c) , Mingw, gcc
+
+
+=======================================================================================================
+
+  Program Structure of C Language
+
+
+
+  1) Inclusion section                   
+							#include<stdio.h>
+
+  2) Definition section
+							#define MAX 5
+
+  3) Global declaration section
+							int val=500;
+					
+  4) function prototype / function declaration
+			
+							void add();
+ 
+ 5) main function definition
+							void main() {    add(); //function calling  }
+
+ 
+ 6) function definition
+							void add() { }
+
+========================================================================================================
+
+  Create Program in Dev C++ IDE
+  Save program                        extension name ( .c )
+
+  Addition.c :   program file / source program / source file / source code
+
+             :   includes english like code ( c programming code )
+=======================================================================================================
+
+
+   Comment :  non executable part of a program
+
+   Type of comments : 1) Single line comment  - To hide a single line from program
+
+				// instruction will not be execute
+                            
+ 
+
+		      2) Multiline comment - To hide multiple lines from program
+
+                               /*  instruction1
+                                   instruction2
+                                   instruction3
+
+                               */
+
+              Note : - Comments can not be enclosed in other comment    /* /* */ */  invalid
+
+   Use of comment - Makes a program more readable
+
+=========================================================================================================
+
+    
+   Statement :   which may end with ; (semicolon)
+             :     int x;
+
+====================================================================
+
+   Execution : To run the program
+
+   1) Pre proccessing :
+                        Preprocessor statements (starts with # ) are executed 
+                        #include < stdio.h > ,  semicolon not required
+
+                        header file : extension (.h) , predefined program
+
+   2) Compilation : 
+                      Compiler checks program for syntactical errors like semicolon not found
+
+                     Source program (.c) ---------> compiler ---------> Object code (.obj) in binary form
+               
+                     Add.c --------> Compiler-----------------> Add.obj
+
+   3) Linking :
+                printf();  ------ > stdio.h
+                function call (call the function ) -------------------Exceution control--------------------> function definition (Code for function)
+
+
+   4) Execution :
+                   instruction fetched, instruction decoded, operand fetch, instruction execution
+
+
+
+===========================================================================================================
+
+
+ Error : programming mistake
+
+         Type of error : 1) syntax 
+					associated with synctical rules ( ; missing ) 
+                         2) Linker     
+                                        st.h ( header file does not exists )
+
+                         3) Run time
+                               
+					divide by zero
+                         4) Logical
+				        (4+2)*2 = 12
+                                         4+2*2  = 8
+============================================================================================================
+
+
+  Type of statements 
+  
+  1) Pre processing  :
+                      starts with # , Dont write semicolon ( ; )
+
+  2) Declarative     : 
+                      int num;
+
+  3) Executable      :
+                  a) Input / output statements :  printf(); ,  scanf();
+                  b) Asignment statements      :  = (Assignment Operator) , age = 20;
+                  c) Conditional statements    : if...else  , if(condition) 
+                  d) Looping statements        : while, do while, for
+                  e) Function calling          : add(); , printf();
+                  f) Special statements        : break;  , continue;  , exit; , return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+
+
+
+
+
+ 
+   
