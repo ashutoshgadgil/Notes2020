@@ -130,6 +130,169 @@
                   e) Function calling          : add(); , printf();
                   f) Special statements        : break;  , continue;  , exit; , return;
 
+=============================================================================================================
+
+ Keywords : Reserved words
+
+            int,void,float,char, do, while, if
+
+ variables :  named memory location
+              changes its value in the program
+              int a=30;
+		
+
+ identifiers :
+              a variable defines the purpose of variable
+              int age=30;
+
+
+ 
+               numeric variable : int a;
+               constants        : #define PI 3.14
+
+               String variable  : char *str;
+               String constant  : char *str="Hello";
+
+
+  Rules to define identifiers :
+  
+  1) starts with alphabet (year) / alphanumeric ( year2020 )
+  2) _ (underscore)
+  3) space between variablename not permitted  , firstName (valid), first name (invalid)
+  4) variable length depends on compiler.
+  5) should not make variable as a keyword name
+  6) variable name should not start with numeric
+
+=========================================================================================
+
+ Charateristics of of Good Program
+
+ 1) Correctness 
+ 2) Clarity
+ 3) Documentation (use of comments)
+ 4) Indentation 
+ 5) Robust
+
+=========================================================================================
+
+  main() function :
+                   starting point of program from where execution of program happens.
+                   Compiler calls main function
+
+
+
+  Data type :
+               represents type of data a variable can hold
+
+               1) Primitive data type     : predefined
+                                                      int, float ,char, double (simple data type)
+
+
+
+               2) Non primitive data type : User defined / Structured data type
+                                                      Array , Structure, Union
+
+
+  int x=10;
+
+  char c='D';           // character is represented in single quote '
+
+  float f=1.32;         // Fractional values
+
+  double d=3.1234
+
+
+  Data type          Size                 signed Range         unsigned 
+  
+  char  -----------  1 byte               -128 to 127         0 to 255             2 ^ 8 = > 256
+
+  int   -----------  2 / 4 bytes          -32768 to 32767     0 to 65535           2 ^ 16 => 65536
+
+  float -----------  4 bytes                                                       2 ^ 32 => 4294967296
+
+  double ----------  8 bytes                                                       2 ^ 64 => 
+
+
+  ===================================================================================================
+
+   
+   Format String :  is written with %character in " "
+
+   "%d"  ===== integer
+   "%f"  ===== float
+   "%lf" ===== double
+   "%c"  ===== character
+                  
+
+  Syntax :
+
+  
+    printf("Hello");
+
+
+    printf("format string",variablename);
+
+================================================
+
+  Add two numbers
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
