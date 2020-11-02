@@ -1,0 +1,144 @@
+/*
+	Author      : Ashutosh
+	Description : Program to demonstrate c program structure
+
+*/
+
+#include<stdio.h>  // Preprocessor statement
+#include<conio.h>
+#define MAX 10     // Defines MAX as a constant
+
+int x=30;          // Global variable
+
+void sum();        // function Prototype
+
+int main()         // main function definition
+{
+	printf("Hello World");
+	sum();         // function calling
+	
+	getch();
+	return 0;
+}
+
+void sum()         // function Definition
+{
+	
+}
+
+==================================================================================
+
+/*
+	Author      : Ashutosh
+	Description : Program to demonstrate c program structure
+
+*/
+
+#include<stdio.h>  // Preprocessor statement
+#include<conio.h>
+
+int main()         // main function definition
+{
+	//printf("Hello World");
+	printf("Hello India");
+	//printf("Hello C");
+	printf("Welcome to World of c");
+	//printf("done");
+	
+	getch();
+	return 0;
+}
+
+================================================================================
+
+#include<stdio.h>  // Preprocessor statement
+#include<conio.h>
+
+
+int main()         // main function definition
+{
+	int x   =30;   // x is integer variable
+    char c  ='D';  // c is character variable
+    float f =1.21; // f is float
+    double d=3.14; // d is double
+		
+	printf("Hello");
+	printf("\n");    // \n is escape sequence character , to give new line
+    
+	printf("%d\n",x);
+    printf("%c\n",c);
+    printf("%f\n",f);
+    printf("%lf\n",d);
+
+	//getch();
+	return 0;
+}
+
+==============================================================================
+
+#include<stdio.h>  // Preprocessor statement
+#include<conio.h>
+
+
+int main()         // main function definition
+{
+	int x = 30;   // x is integer variable
+   	int y = 40;
+   	int z;
+   	
+   	z=x+y;     // Expression
+   	
+   	printf("x = %d\n",x);     
+   	printf("y = %d\n",y);
+   	printf("Sum = %d\n",z);
+   	
+   	printf("\nx = %d , y = %d, x*y = %d\n",x,y,(x*y));
+   	
+   	printf("Sum of %d and %d is %d ",x,y,(x+y));
+   	
+   	printf("Division of %d and %d is %d ",y,x,(y/x));
+   	
+   	
+   	
+   	 
+   	return 0;
+}
+
+===========================================================================================
+
+#include<stdio.h>  // Preprocessor statement
+#include<conio.h>
+
+
+int main()         // main function definition
+{
+	float x = 30;   // x is integer variable
+   	float y = 20;
+   
+    //float z;
+    
+    //z=x/y;
+    
+    printf("Division is : %f\n",(x/y));
+    
+    //Q.2
+    
+    float pi,radius,area;
+    pi=3.14; 
+    radius=4.1;
+    area=pi*radius*radius;
+    printf("Area of circle : %f\n",area);
+    
+    float length=100,breadth=20;
+   	float rect_area;
+   	
+   	rect_area=length*breadth;
+   	printf("\nArea of Rectangle : %f",rect_area);
+   	
+	printf("\nSachin 34");
+	    
+	printf("\nArea : %f",pi*radius*radius);
+     
+	return 0;
+}
+
