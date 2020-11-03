@@ -1,0 +1,58 @@
+1) Create a folder in home directory and create 5 files out of which two files are docs and 3 files are text files. 
+  a) find the current path of home.
+  b) change path from home to that folder.
+ c) list only doc files.
+ d) list all files
+ e) Go to home directory
+
+2) Make a folder MyFolder on Desktop and Do following operations :
+  a) Create two Folders folder1 and folder2 inside MyFolder.
+  b) Create 2 files as A.txt and B.txt in folder1 using touch command 
+  c) Write some contents in A.txt and B.txt using cat command.
+  d) Again Write contents in A.txt without overwriting previous contents.
+  e) Write some contents in B.txt on overwriting its previous contents.
+  f) Create two files as C.txt and D.txt in folder2 inside MyFolder.
+  g) copy A.txt  from folder1 to folder2 with same name as A.txt.
+  h) copy the file A.txt from folder2 into home folder.
+  i) List all files in folder2 and folder1.
+  j) copy file D.txt from folder2 into folder1 with different name as E.txt.
+ 
+3) Create a file where Product details in following manner :
+        Use cat to create a file named as product.txt
+        Laptop 30000
+        Mouse 250
+        Keyboard 300
+        PAN-Drive 300
+       
+      Search Products by name and by price.
+
+4) a)  create two users user1 and user2 .
+       b) Add user user1 to user2 group.
+       c) Create a file file.txt in user2 Desktop.
+       d) Remove write permission from the group of user2.
+       e) Access file.txt from user1 Account. 
+
+5) Create a folder in home directory and change its permission to 444.
+
+6)  Do the following :
+       a)  Search a word "Hello" in a file.
+       b)  Find all files and its sub directories in the home folder.
+            Find only files.
+       c)  Replace Hi with Hello in a file.
+       d)  Create a file in user1 and remove read permission for a file and access
+             this file from other user.
+       e)  Create a file with permission 554.
+        f)  Copy a file contents into the file opened in nano editor.
+
+7) Display the day of the week as "Mon" using cut command with date.
+
+8) Create an array of 5 names and display all names.
+
+9) Write a shell script where user enters a number .
+       if the number is even then print "Even number"
+       if the number is odd then print "Odd number"
+
+10) Write a shell script to enter marks of 5 subjects of a student and calculate 
+        Percentage of marks where Total marks = 500
+
+11) Write a cronjob which saves the current date in a file at home folder at 6 pm .
