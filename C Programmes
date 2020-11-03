@@ -337,10 +337,278 @@ int main()
 	return 0;
 }
  
+=============================================================================
+
+13
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int number;
+	
+	int number1=500;  // compile time initialization
+	
+	printf("Enter any number : ");
+	scanf("%d",&number);        // run time initialization
+	
+	printf("You entered number : %d\n",number);
+	printf("number1 : %d",number1);
+	
+	return 0;
+}
+
+=================================================================================
+
+14
+
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int number1,number2,res;
+	
+	printf("Enter first number : ");
+	scanf("%d",&number1);        // run time initialization
+	
+	printf("Enter second number : ");
+	scanf("%d",&number2);        // run time initialization
+	
+	res=number1+number2;
+	
+	printf("Sum of %d and %d is %d",number1,number2,res);
+	
+	return 0;
+}
+
+===========================================================================================
+
+15
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int number1,number2,res;
+	
+	printf("Enter two numbers : ");
+	scanf("%d%d",&number1,&number2);        // run time initialization
+	
+	res=number1+number2;
+	
+	printf("Sum of %d and %d is %d",number1,number2,res);
+	
+	return 0;
+}
+
+======================================================================================
+
+16
+
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int number;
+	char alpha;
+	float pi;
+	
+	printf("Enter number : ");
+	scanf("%d",&number);
+	
+	fflush(stdin);
+	printf("Enter alphabet : ");
+	scanf("%c",&alpha);
+	fflush(stdin);
+	
+	printf("Enter pi : ");
+	scanf("%f",&pi);
+	
+	printf("Number : %d\t Alphabet : %c\tpi : %f\n",number,alpha,pi);
+	return 0;
+}
+
+====================================================================
+
+17
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int a=11,b=2;
+	
+	float c;
+	
+	c=a/(float)b;   // 11 /2.0  Type casting
+	
+	printf("%f\n",c);
+	
+	float f=5.12;
+	int d=f;
+	printf("%d\n",d);
+	
+	
+	char alpha='B';
+	char aa='a';
+	
+	printf("%d\n",alpha);
+	printf("%d\n",aa);
+	
+	int temp=alpha;
+	printf("%d",temp);
+	
+	return 0;
+}
+=============================================================
+
+18
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	/*
+    int n1=15;
+    int n2=2;
+    
+    printf("Remainder : %d\n",(n1%n2));
+    
+    int num=1234;
+    
+    printf("Last digit : %d\n",num%10);  // returning last digit of number
+    
+    printf("%f",(float)num/1000);   // removing the last digit of number
+    */
+    //==================================================================
+    
+    int x =20;
+    
+    printf("\n\nPost increment operator\n");
+    printf("x = %d\n",x);  // 20
+    
+    printf("x = %d\n",x++); //20
+    
+    printf("x = %d\n",x);   //21
+    
+    int y=30;
+    printf("\n\nPre increment operator\n");
+    printf("y = %d\n",y);  // 20
+    
+    printf("y = %d\n",++y); //20
+    
+    printf("y = %d\n",y);   //21
+    
+    int z=40;
+    
+    z++;  // z=40
+    z++;  // z=41
+    z++;  // z=42
+    printf("%d",z++);  // z=43   
+    
+    printf("%d",z);    // z=44  
+    
+    ++z;  // z=45
+    ++z;  // z=46
+    ++z;  // z=47
+    printf("%d",++z);  // z=48   
+    
+    printf("%d",z);    // z=48  
+    
+    
+    
+	return 0;
+}
+===================================================================
+
+19
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int a,b;
+	
+	a=10;
+	b=(a++)+(++a);
+	printf("a = %d  b = %d",a,b);   //12 22   
+	
+	return 0;
+}
+
+============================================================================
+
+20
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int x=10;
+	
+	x+=12;  // x=x+12 > x = 10 + 12
+	
+	printf("x = %d",x);
+	
+	x-=12;  // x=x-12 > 22 - 12
+	
+	printf("\nx = %d",x);
+	
+	
+	return 0;
+}
+
+===================================================================================
+
+21
 
 
 
+#include<stdio.h>
+#include<conio.h>
 
+int main()
+{
+	int x=10;
+	int y=20;
+	
+	// Relational operators
+	printf("%d\n",(x<y));
+	printf("%d\n",(x>y));
+	printf("%d\n",(x<=y));
+	printf("%d\n",(x>=y));
+	printf("%d\n",(x==y));
+	printf("%d",(x!=y));
+	
+	// Logical operators
+	
+	printf("\n\n%d",((x>y)&&(x<20)));
+	printf("\n\n%d",((x>y)||(x<20)));
+	printf("\n\n%d",((x>y)&&(x<20)||(y>40)));
+	printf("\n\n%d",(!(x>y)));
+	
+	// Bitwise operators
+	printf("\n\n%d",((x>y)&(x<20)));
+	printf("\n\n%d",((x>y)|(x<20)));
+	
+	
+	
+	
+
+	// Difference between && and & 
+		
+	printf("\n\n%d",((5>20)&&(++x<20)));
+	printf("\t%d",x);  // x = 11
+	
+	x=10;
+	
+	printf("\n\n%d",((5>20)&(++x<20)));	
+	printf("\t%d",x);  // x =
+	
+	return 0;
+}
 
 
 
