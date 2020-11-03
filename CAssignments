@@ -1,0 +1,21 @@
+1)  C Programming History
+
+2) Write a c program to find as follows :
+     a) a=30 ,b =20 find a/b,   where a and b are float
+     b) Program to find the area of circle and rectangle.
+     c) Program to print your name with your age.
+
+3) Write a program to calculate the following :
+      a= 3.5
+      b=2.5
+    1)  a2+b2+2ab   
+    3)  a2 /b2  
+    
+4) Write a program to define an integer ,character ,float and double values and print all values along with its size.
+
+5) Create a program to take 2 values from user and print addition, multiplication ,subtraction and division.
+
+6) Take two numbers from user and compare values and print results as false or true.
+
+7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
+
