@@ -27,7 +27,7 @@
 
 11) Write a function which takes a character in small case and returns the same character in capital case.
 
-12) Write a program to display the result acoording to following:
+12) Write a program to display the result acoording to following using only if:
      
        marks < 40        Fail
        40 <= marks <65   Second Division
