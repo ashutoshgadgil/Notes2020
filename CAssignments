@@ -19,3 +19,6 @@
 
 7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
 
+8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
+
+9) Write a program to define a function which takes a number from user and print the number.
