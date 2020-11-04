@@ -24,3 +24,5 @@
 9) Write a program to define a function which takes a number from user and print the number.
 
 10) Write a program to take a number from user and pass this number to the function named as Square() which returns the square of the number and print square value in main.
+
+11) Write a function which takes a character in small case and returns the same character in capital case.
