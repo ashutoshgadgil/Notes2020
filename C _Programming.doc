@@ -295,15 +295,158 @@
 
                      Post increment : a++ => a=a+1
 
+=============================================================
+
+function:
+          grouping of statements 
+          block of code where you write the logic
+          step by step process to solve a problem
+          
+        1) function has the body  { }
+        2) function has name           main()
+        3) function has return type    void , int
+        4) function has parameters     add(3,4)
+        5) function can be called       add();
+
+
+ Note : C follows Top Down approach
+
+  returnType : int,void,char,float,double
+
+  functionName : Add,Sum,Div,Sub
+
+  Parameter List : int a, float b, char c
+
+  arguments : values passed to function
+
+   
+  Syntax of function definition:
+    
+  returnType functionName(Parameter List)
+  {
+      // Body of function
+  }
+
+ 
+  syntax of function Declaration / Prototype
+
+ 	 returnType functionName(Parameter List);
+
+
+  Syntax of function calling :
+
+         functionName(Parameter List);
+
+  
+ Steps to create function in C Program :
+
+ 1) Function Prototype / Declaration
+ 2) function Definition
+ 3) Function call
+
+
+=========================================================================
+ Type of functions :
+
+ 1) Predefined functions / Library function
+      
+            Ex : printf(), scanf() ,getch().........
+
+
+ 2) User defined functions
+
+            Ex : sum(), getDetails()
+
+========================================================================
+
+  Recursion :
+              A function calls itself.
+
+             A() calls A()
+
+ =====================================================================
+
+ Decision Control statements :
+                            condition is given 
+ 
+ 1) if 
+		
+           Syntax :
+ 
+           case -1   execute single statement, { } not required
+
+                    if(condition)
+			statement;
+
+	   Case-2   execute multiple statements, { } is must
+
+		    if(condition)
+                    {
+			statement-1;
+			statement-2;
+              
+		    }
+
+ 2) if....else
+
+	   Syntax :
+
+
+		if(condition)
+			statement-1;
+		else
+			statement-2;
+
+             
+                
+		if(condition)
+		{
+			statement-1;
+			statement-2;
+		}
+		else
+		{
+			statement-3;
+			statement-4;
+		}
 
 
 
+ 3) if....else if....else ladder
+
+         syntax :
+                
+               if(condition-1)
+			statement-1;
+	       else if(condition-2)
+			statement-2;
+	       else if(condition-3)
+			statement-3;
+	       else
+			statement-4;
 
 
 
+ 4) Nested if statement
 
+         syntax :
 
-
+               if(condition-1)                  // outer if
+	       {
+			statements;
+			if(condition-2)         // inner if
+			{
+				ststement-1;
+			}
+			else
+			{
+				statement-2;
+			}
+        	}
+		else
+		{
+			statement-3;
+		}
 
 
 
