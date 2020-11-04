@@ -617,6 +617,292 @@ int main()
 	return 0;
 }
 
+=====================================================================================
+
+22
+#include<stdio.h>
+#include<conio.h>
+
+
+void show(); // Does not return any value (void) ; Does not accept any parameter ()
+
+void display(int x); // Does not return any values ; Accepts one parameter value as integer (int x)
+                     // x is a parameter
+int callme(void); // returning integer value to the function ;does not accept any parameter
+
+float calculate(int a,float b); // returning float value to function; Accepts 2 parameter, 
+                                // First parameter is integer, Second parameter is float
+
+int main()
+{
+	show();    // Calling of show function
+	
+	display(300);
+	
+	 printf("%d",callme());
+	//printf("\nValue : %d",value);
+	
+	float f = calculate(20,3.14);
+	printf("\nResult : %f",f);
+	
+	return 0;
+}
+
+// Function Definition Starts here
+
+void show()   // function Definition of show function
+{
+	printf("Welcome to my show function\n");		
+}
+
+void display(int x) // display function definition
+{
+	printf("You passed value : %d\n",x);	
+}
+
+int callme(void)   
+{
+	return 500;	
+}
+
+float calculate(int a,float b)
+{
+	return a+b;
+}
+
+==========================================================================
+
+23
+
+#include<stdio.h>
+#include<conio.h>
+
+void A()
+{
+	B();
+	printf("In function A\n");	
+}
+
+void B()
+{
+	printf("In function B\n");
+	C();
+	printf("In function B\n");
+}
+
+void C()
+{
+	printf("In function C\n");
+}
+
+int main()
+{
+	printf("Before calling A\n");
+	A();
+	printf("\nEnd of main");
+	return 0;
+}
+
+===================================================================
+
+24
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+// Example of Recursive function
+
+void A(int x)
+{	
+	if(x--==0)
+		exit(0);
+ 	printf("Hello\n");
+	A(x);
+}
+
+int main()
+{
+	A(2);
+	return 0;
+}
+
+====================================================
+
+25
+
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int num=25;
+	
+	// if with single statement
+	
+	if(num<20)      // false - 0  ( 25 < 20 )
+		printf("%d is less than 20",num);
+
+    // if with multiple statements
+    if(num<20)     // true -1  (25 > 20)
+    {
+    	printf("%d is greater than 20",num);
+		printf("\n%d is odd number",num);	
+	}
+	
+	//  ======  if ...... else
+	
+	int choice=1;
+	
+	if(choice!=1)
+	{
+		printf("You selected choice 1\n");
+		printf("Welcome to if...");
+	}
+	else
+	{
+		printf("You are in else block");
+	}
+	
+	//==========Use of && using if
+	
+	printf("\n");
+	int n1,n2;
+	
+	n1=100;
+	n2=60;
+	
+	if((n1>80) && (n2<50))
+	{
+		printf("Product : %d",(n1*n2));
+	}
+	else
+	{
+		printf("Division : %f",(n1/(float)n2));
+	}
+	
+	// compare a character
+	printf("\n");
+	
+	char status;
+	
+	printf("Enter your status : (y/n) \n");
+	scanf("%c",&status);
+	
+	if(status=='Y' || status=='y')
+	{
+		printf("Are you confirm ?");
+	}
+	else
+	{
+		printf("Please try again!");
+	}
+	
+	//======================================
+	printf("\n");
+	
+	if(0)            // 0 for false and 1 for true
+		printf("true");
+	else
+		printf("false");
+	
+	return 0;
+}
+
+===============================================================================
+
+26
+
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int num=25;
+	
+	if(num<0)
+		printf("Number is negative");
+	else if(num==10)
+		printf("Number is 10");
+	else if(num>0)
+		printf("Number is positive");
+	else
+		printf("Number is invalid");
+	
+	
+	return 0;
+}
+
+============================================================
+
+27
+
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int age=20;
+	
+	if(age>=18)
+	{
+		printf("Welcome to C Programming\n");
+		if((age>20)&&(age<25))
+			printf("You can take Exam XYZ");
+		else
+			printf("You are elegible for Basic certification in C");
+	}
+	else
+	{
+		printf("You are not elegible for exam");
+	}
+	
+	return 0;
+}
+
+================================================================
+
+28
+
+#include<stdio.h>
+#include<conio.h>
+
+
+void myfunction(int n);   // Prototype Declaration
+
+int main()
+{
+	printf("Welcome\n"
+	"Hello\n"
+	"Hi\n");
+	int num;
+	printf("Enter any number : ");
+	scanf("%d",&num);
+	myfunction(num);      // Function Calling
+	return 0;
+}
+
+void myfunction(int n)     // Function Definition
+{
+		if((n>0)&&(n<=20))
+			printf("%d is in range 0 to 20",n);
+		else if((n>20)&&(n<=40))
+			printf("%d is in range 20 to 40",n);
+		else if((n>40)&&(n<=60))
+			printf("%d is in range 40 to 60",n);
+		else if((n>60)&&(n<=80))
+			printf("%d is in range 60 to 80",n);
+		else if((n>80)&&(n<=100))
+			printf("%d is in range 80 to 100",n);
+		else
+			printf("%d is Out of range",n);
+}
+
+======================================================================================
+
+29
+
+
 
 
 
