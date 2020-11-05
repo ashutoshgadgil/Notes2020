@@ -33,6 +33,7 @@
        40 <= marks <65   Second Division
        65 <= marks < 75  First Division
        75 <= marks       Distinction
+
        
 13) Write a program to find the largest of two numbers given by user.
        
@@ -60,7 +61,12 @@
            Enter your Percentage : 67 
            Percenge : 67 % , Your Grade is : A 
            
-    
+ 16) Display the following Pattern :
+     *
+     **
+     ***
+     ****
+     *****
              
     
        
