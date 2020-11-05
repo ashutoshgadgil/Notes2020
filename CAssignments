@@ -36,6 +36,33 @@
        
 13) Write a program to find the largest of two numbers given by user.
        
+14) Write a program using switch....case , create a function which takes two values as parameters 
+
+    +   ======>  Do Addition of two nos.
+    -   ======>  Subtraction
+    /   ======>  Division
+    *   ======>  Multiplication
+    
+    Output :
+             Enter two nos : 2 3
+             Press + to ADD, - to Subtract, / to divide, * to Multiply : +
+             Sum of 2 and 3 is : 5
+             
+15) Write a program to do the following using switch...case
+
+    Read percentage of a student inside a function and check if the percentage lies in the following range and print the Grade accodingle :
+    Percentage            Grade
+    80<per<=100           A+
+    60<per<=80            A
+    per<60                Fail
+    
+    Output :
+           Enter your Percentage : 67 
+           Percenge : 67 % , Your Grade is : A 
+           
+    
+             
+    
        
 
 
