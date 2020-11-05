@@ -450,13 +450,119 @@ function:
 
 
 
+======================================================================
+
+Swich.....Case
 
 
+  Syntax :
+
+	    Expression can be integer or character
+
+            switch(expression)
+	    {
+		case value1:
+				statement-1;
+				break;
+		case value2:
+				statement-2;
+				break;
+		case value3:
+				statement-3;
+				break;
+		default:
+				statement-4;
+	    }
+
+=======================================================================
+
+Ternary operator / Conditional operator -----    ?:
+
+   Syntax :
+            condition ? value1 : value2; 
+
+=======================================================================
+
+Loop :
+        iterative way of executing the statements
+
+	Type of Loops : 
+         
+        1) for
+		1) header 2) body
+
+                1) header contains 3 parts :  initialization , condition , statement (increment/decrement)
 
 
+		Syntax :
+                        for(initialization ; condition ; statement )         // Header
+			{                                                    // Body
+				statements;
+			}
+
+          int x=10;  // initialization
+
+          x<50       // condition
+
+          x++        // increment statement
+
+==========================================================================
+         
+ Inner for loop
+		
+		Syntax :
+  			for(i=0;i<5;i++)         // Outer for
+			{
+				for(j=0;j<5;j++)  // inner for
+				{
+
+				}
+			}
+		
+        2) while
+		
+		Syntax :
+
+			initialization;
+
+			while(condition)
+			{
+
+				Statements;
+			   Increment / Decrement;
+			}
+
+			
+        3) do....while        
+
+		Syntax :
+                  
+                       initialization;
+		       do
+		       {
+				statements;
+				increment / decrement;	       
+		       }while(condition);
+
+==================================================================================
+
+break : used to break or exit from Loop
+
+       
+continue : To skip the specific iteration in a loop
+
+=================================================================================
+
+Types of variable :
 
 
+                  1) Local variable : Sope limited to a block or function
 
+
+                  2) Global variable : Scope is througout the program
+
+
+                  3) Static variable : Its value is updated in the programs
 
 
 
