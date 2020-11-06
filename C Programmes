@@ -1344,8 +1344,391 @@ int main()
 }
 
 
+==================================================================================
+
+43
+#include<stdio.h>
+
+int getSno()
+{
+		 int x=10;   // sno is a static variable
+		x++;
+		return x;
+}
+
+int main()
+{
+
+	printf("%d\n",getSno());	// 1
+	printf("%d\n",getSno());    // 2
+	printf("%d\n",getSno());    // 3
+	printf("%d\n",getSno());
+}
+
+=======================================================================================
+
+44
+#include<stdio.h>
+
+int main()
+{
+	int ages[5];
+	
+	ages[0]=20;
+	ages[1]=22;
+	ages[2]=24;
+	ages[3]=30;
+	ages[4]=25;
+	
+	printf("Age of Student no %d is : %d\n",1,ages[0]);
+	printf("Age of Student no %d is : %d\n",2,ages[1]);
+	printf("Age of Student no %d is : %d\n",3,ages[2]);
+	printf("Age of Student no %d is : %d\n",4,ages[3]);
+	printf("Age of Student no %d is : %d\n",5,ages[4]);
+	
+}
+=================================================================================
+
+45
+#include<stdio.h>
+
+int main()
+{
+	// Declaration & initialization of array in a single line
+	int ages[5]={10,20,30,40,50};  // One dimensional array example , [] - subscript , [][] - Multidimesional
+	// First way to declare & initialize
+	
+	
+	int numbers[]={1,2,3,4,5,6};
+	// Second way to declare & initialize
+	
+	
+	int sno[2];  // Declaration
+	
+	sno[0]=1;    // Initialization
+	sno[1]=2;
+	
+	
+	printf("Address of %d is : %u\n",ages[0],&ages[0]);
+	printf("Address of %d is : %u\n",ages[1],&ages[1]);
+	printf("Address of %d is : %u\n",ages[2],&ages[2]);
+	printf("Address of %d is : %u\n",ages[3],&ages[3]);
+	printf("Address of %d is : %u\n",ages[4],&ages[4]);
+	
+	printf("\n");
+	printf("\n");
+	char marks[5]={'A','B','C','D','E'};
+	
+	printf("Address of %c is : %u\n",marks[0],&marks[0]);
+	printf("Address of %c is : %u\n",marks[1],&marks[1]);
+	printf("Address of %c is : %u\n",marks[2],&marks[2]);
+	printf("Address of %c is : %u\n",marks[3],&marks[3]);
+	printf("Address of %c is : %u\n",marks[4],&marks[4]);
+
+}
+
+========================================================================
+
+46
+
+#include<stdio.h>
+
+int main()
+{
+	int numbers[5]={10,30,20};
+	
+	int i;
+	for(i=0;i<5;i++)  // Accessing of Array elements using for loop
+	{
+		printf("%d ",numbers[i]);  
+	}
+}
+=========================================================================
+
+47
+
+#include<stdio.h>
+#define SIZE 4   // Defining Size of array 
+
+int main()
+{
+	int numbers[SIZE];  // size=4, int numbers[4];
+	int i;
+
+	
+    
+    // Reading array elements
+	for(i=0;i<SIZE;i++)
+	{
+		printf("Enter number : ");
+		scanf("%d",&numbers[i]);      // To read values for array       
+	}
+     // numbers[0] = 20 ,numbers[1] = 30 ,numbers[2] = 40 ,numbers[3] = 60 	
+	//  20 30 40 60
+	
+	printf("Array elements are : ");
+	// Printing array elements
+	for(i=0;i<SIZE;i++)
+	{
+		printf("\t%d",numbers[i]);   // To print array values
+	}
+}
+====================================================================================
+
+48
+
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	float marks[SIZE];  // size=4, int numbers[4];
+
+	int i;
+	
+	for(i=0;i<SIZE;i++)
+	{
+		printf("Enter Marks %d : ",(i+1));
+		scanf("%f",&marks[i]);
+	}
+	
+	float sum=0.0;
+	for(i=0;i<SIZE;i++)
+	{
+		sum=sum+marks[i];
+	}
+	
+	float avg;
+	
+	avg=sum/SIZE;
+	
+	printf("Average : %f",avg);
+}
+
+====================================================================
+
+49
+
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	int num[]={1,2,3,4,5};
+	
+	int i;
+	// Printing array elements in reverse order
+	for(i=SIZE-1;i>=0;i--)
+	{
+		printf("%d\t",num[i]);	
+	}	
+}
+
+=======================================================================
+
+50
+
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	// Declaration of 2 D Array
+	int matrix[2][2]; // 2 Dimensional array ,first [] shows the no of rows, Second [] shows
+	                  // no of columns
+	
+	matrix[0][0]=10;  // first element [0][0] represents first row ,first column
+	matrix[0][1]=20;  // second element [0][1] represents first row ,second column
+	matrix[1][0]=30;  // third element [1][0] represents second row ,first column
+	matrix[1][1]=40;  // forth element [1][1] represents second row ,second column
+	
+	int i,j;
+	for(i=0;i<2;i++)        // Row 
+	{
+		for(j=0;j<2;j++)    // Column
+		{
+			printf("%d ",matrix[i][j]);
+		}
+		printf("\n");
+	}
+	
+}
+
+==================================================================================
+
+51
+
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	// Declaration of 2 D Array and Initialization
+	int matrix[2][2]={{1,2},{3,4}};
+	
+	int i,j;
+	for(i=0;i<2;i++)        // Row 
+	{
+		for(j=0;j<2;j++)    // Column
+		{
+			printf("%d ",matrix[i][j]);
+		}
+		printf("\n");
+	}
+	
+}
+
+===========================================================================
+
+52
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	int num[]={1,2,3,4,5};
+	int i;
+	for(i=0;i<5;i++)
+	{
+		printf("%d ",num[i]);
+	}
+	
+	printf("\n");
+	num[2]=10;  // Updating 3rd value of array from 3 to 10
+	for(i=0;i<5;i++)
+	{
+		printf("%d ",num[i]);
+	}
+		
+}
+
+========================================================================
+
+53
+#include<stdio.h>
+#define SIZE 5   // Defining Size of array 
+
+int main()
+{
+	char name1[]="Sachin";
+	
+	printf("%s",name1);
+	
+	printf("\n");	
+	char name2[10]="Manish";
+	
+	printf("%s",name2);
+	
+	printf("\n");	
+	char name3[]={'S','a','u','r','a','b','h','\0'};
+	
+	printf("%s",name3);
+	
+	printf("\n");	
+	char name4[]={'S','a','t','i','s','h','\0'};
+	
+	printf("%s",name4);
+		
+}
+
+==================================================================
+
+54
+#include<stdio.h>
+#include<string.h>
 
 
+int main()
+{
+	char name[30];
+		
+	printf("Enter your name : ");
+	//scanf("%s",name);
+	gets(name);  // reads the complete line of string
+	//printf("Your name : %s",name);
+	
+	puts(name); // Print the string value
+	
+	int len = strlen(name); // strlen() finds the length of string (no of characters)
+	
+	printf("Length of string : %d",len);
+}
+
+===============================================================================
+
+55
+
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+	char str1[30]="Welcome to C";
+	char str2[30];
+	
+	puts(str1);
+	
+	// strcpy(destination,source)
+	
+	strcpy(str2,str1);  // strcpy() copies a string from str1 to str2
+	
+	puts(str2);    // puts() prints the value of string
+}
+
+========================================================================
+
+56
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+	char str1[30]="Welcome";
+	char str2[30]="Welcome";
+	char str3[30]="Hi";
+	
+	int val = strcmp(str1,str2); // strcmp() function compares twon strings , if strings are equal
+	                             // this function returns 0 otherwise returns non zero value
+	                             // strcmp returns integer value
+	printf("value : %d",val);
+	
+	if(val==0)
+		printf("\nStrings are equal");
+	else
+		printf("\nStrings are not equal");
+		
+	
+}
+
+======================================================================================
+
+57
+
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+	char str1[30]="Hello";
+	char str2[30]="World";
+	
+	// strcat(destination,source)
+	
+	printf("String before concatenation :\n");
+	puts(str1);
+	printf("\n");
+	puts(str2);
+	
+	strcat(str1,str2);	// concatenates two strings 
+	
+	printf("\n\nString after concatenation :\n");
+	puts(str1);
+	printf("\n");
+	puts(str2);
+}
 
 
 
