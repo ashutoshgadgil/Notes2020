@@ -565,8 +565,103 @@ Types of variable :
                   3) Static variable : Its value is updated in the programs
 
 
+===================================================================================
+
+Array : 
+       Structured variable,
+       grouping of similar datatype elements
+     
+       int age1;
+       int age2;
+       int age3;
+       ....
+       ....
+       int age100;
 
 
+       syntax :
+               
+		datatype arrayName[SizeOfArray];    // Declaration of Array
+
+                int ages[5];    // Declares array of ages of 5 studnts
+
+                Array has the index value , starts from 0 
+ 
+       Initialization of Array :
+                         
+                           
+               Syntax :    arrayName[index]=value;
+
+               ages[0]=20;   // Assign age of first student
+	       ages[1]=30;
+ 	       ages[2]=25;
+	       ages[3]=22;
+	       ages[4]=28;
+
+       Lower Bound : 0   , first element of array   
+       Upper Bound : 4   , Size-1 , last element of array
+
+    
+      Accessing of Array element :
+      
+      
+		ages[2] ====> Accessing of 3rd Student age
+
+
+               printf("%d",ages[2]);   // 25
+
+
+    Type of Array
+    1) One Dimensional : Single Dimension           []
+
+    2) Multidimensional : Multiple dimensions       [][] ---- 2d Array
+
+
+   Disadvantage of Array:
+			Wastage of memory
+
+========================================================================================
+	String : 
+		collection of characters
+                ends with  \0 (called as NULL character)
+            
+                abc\0
+
+        Declaration of String:
+                  
+                 Syntax :  
+			char s[5];   // String of 5 characters
+
+        Initialization of string :
+
+	                char str[]="Hello";			// 1st way
+
+                        char str[10]="Hello";    		// 2nd way
+
+			char str[]={'H','E','L','L','O','\0'};  // 3rd way		         
+
+     			char str[6]={'H','E','L','L','O','\0'}; // 4th way
+
+	How to display a string value ?
+                        
+                        %s to display string value
+
+ =====================================================================================
+
+ String Functions :
+				Header file : string.h
+
+                   strlen()  : 
+				Used to find string length (no of characters in a string)
+
+                   strcpy()  : 
+				Used to copy a string into an array
+
+                   strcmp()  : 
+				Compare two strings
+
+	           strcat()  : 
+				Concatenates two strings
 
 
 
