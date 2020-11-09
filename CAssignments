@@ -111,6 +111,7 @@
       Input : num[]={1,2,3,4,5}
       Output: num[]={2,4,6,8,10}
       
+  32) Accept first name and lastname from user and print fullname.
   
   
   
