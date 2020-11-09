@@ -1730,7 +1730,300 @@ int main()
 	puts(str2);
 }
 
+==============================================================================
 
+58
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+	int x=50;
+	int y=80;
+	int *p1;  
+	
+	p1=&x;
+	printf("Value of x : %d\n",x);
+	printf("Value of x : %d\n",*p1);	
+	
+	printf("Address of x : %d\n",&x);
+	printf("Address of x : %d\n",p1);
+	printf("Address of p1 : %d",&p1);
+	
+	p1=&y;
+	printf("\n\nValue of y : %d\n",y);
+	printf("Value of y : %d\n",*p1);	
+	
+	printf("Address of y : %d\n",&y);
+	printf("Address of y : %d\n",p1);
+	printf("Address of p1 : %d",&p1);
+	
+	char ch='G';
+	char *p3=&ch;     // declaration of character pointer with initialization
+	printf("\nValue of p3 : %c",*p3);
+	
+	char ch1='H';
+	p3=&ch1;
+	printf("\nValue of p3 : %c",*p3);
+}
+
+==================================================================================
+
+59
+
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+	int *p1,i;
+	char *p2,c;
+	double *p3,d;
+	
+	p1=&i;
+	p2=&c;
+	p3=&d;
+	
+	printf("Size of i : %d\n",sizeof(i));
+	printf("Size of c : %d\n",sizeof(c));
+	printf("Size of d : %d\n\n",sizeof(d));
+	
+	printf("Size of p1 : %d\n",sizeof(p1));
+	printf("Size of p2 : %d\n",sizeof(p2));
+	printf("Size of p3 : %d\n",sizeof(p3));
+}
+
+=========================================================================
+
+60
+
+#include<stdio.h>
+
+int main()
+{
+	int *p1,i=100;
+
+	p1=&i;
+	
+	printf("Value of i  : %d\n",i);
+	
+	*p1=500;     // Modification in i using p1
+	
+   	printf("Value of i  : %d\n",i);
+
+}
+
+==========================================================================
+
+61
+
+#include<stdio.h>
+
+int main()
+{
+	int numbers[]={10,20,30,40,50};
+	
+	printf("%d\n",&numbers[0]);
+
+	printf("%d\n",numbers);    // Displaying address of first element
+
+
+	// numbers+1 means &numbers[1] : returns addresss of second element of array
+	printf("%d\n",numbers+1);
+
+	printf("%d\n",&numbers[1]);
+	
+
+	// *(numbers+1) means numbers[1] : returns value at the 2nd index
+	printf("%d\n",*(numbers+1));
+	
+	printf("%d\n",numbers[1]);
+	
+	printf("\n");
+	int i;
+	for(i=0;i<5;i++)
+	{
+		printf("%d\t",*(numbers+i));  // printf("%d\t",numbers[i]);
+	}
+	
+	printf("\n");
+	for(i=0;i<5;i++)
+	{
+		printf("%d\t",(numbers+i));  // printf("%d\t",numbers[i]);
+	}
+}
+
+==================================================================================
+
+62
+
+#include<stdio.h>
+
+int main()
+{
+	int numbers[5],sum=0;
+	
+	printf("Enter 5 numbers : ");
+	
+	int i;
+	
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",numbers+i);
+	}
+
+	printf("Array elements are : ");
+	for(i=0;i<5;i++)
+	{
+		printf("\t%d",*(numbers+i));
+		sum=sum+(*(numbers+i));
+	}	
+	
+	printf("\nSum of all elements in array : %d",sum);
+}
+
+===========================================================================
+
+63
+
+#include<stdio.h>
+
+int main()
+{
+	int numbers[]={1,2,3,4,5};
+	
+	int *p1=numbers+2;  // p1 pointing to the 3rd element of array,
+	                    // numbers+2 returns address of 3rd element
+	
+	printf("%d",*p1);   
+	
+	// Pointer Arithmatic
+	
+	printf("%d",*(p1+1));  // returns value of 4th index
+	
+	printf("%d\n",*(p1-1)); // returns value of 2nd index
+	
+	int i;
+	
+	p1=numbers+2;
+	
+	for(i=0;i<5;i++)
+	{
+		printf("%d ",*(p1+i));   // Accessing of array elements using pointer variable p1
+	}
+	
+	printf("\nSize of Array : %d",sizeof(numbers));
+}
+=================================================================
+
+64
+#include<stdio.h>
+
+int main()
+{
+	int numbers[]={11,44,32,43,52};
+	
+	int *p=numbers;
+	int i;
+	for(i=0;i<5;i++)
+	{
+		//printf("%d\t",(*(p+i))*2);
+		printf("%d\t",(p[i]*2));
+		
+	}
+	
+   	printf("\n");
+   	
+	printf("%d ",*p);  //11
+	
+	p++;
+	
+	printf("%d ",*p);   //44
+
+	p++;
+	
+	printf("%d ",*p);   //32
+
+	p++;
+	
+	printf("%d ",*p);    //43
+	
+	p++;
+	
+	printf("%d ",*p);     //52
+	
+}
+
+=========================================================================
+
+65
+
+#include<stdio.h>
+
+int main()
+{
+	char city[]="New Delhi , Bombay";
+	
+	char *p=city;
+	
+
+	while(*p!='\0')       // \0 means Null character
+	{
+		printf("%c ",*p);
+		p++;    // p = p + 1
+	}
+	
+}
+
+=========================================================================
+
+66
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char city[40];
+	printf("Enter a City :");
+	gets(city);
+	
+	char *p=city;
+	int count=0;
+
+	while(*p!='\0')       // \0 means Null character
+	{
+		printf("%c",*p);
+		count++;
+		p++;    // p = p + 1
+	}
+	
+	printf("\n%d",count);
+	
+	printf("\nLength of city : %d",strlen(city));
+	
+}
+
+============================================================================
+
+67
+#include<stdio.h>
+
+int main()
+{
+	char *city="New Delhi";   // Pointer to character array
+	
+	printf("%s",city);
+	
+	while(*city!='\0')
+	{
+		printf("%c",*city);
+		city++;	
+	}	
+}
+
+=========================================================================
 
 
 
