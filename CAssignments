@@ -115,7 +115,10 @@
   
   33) Write a program to take a city name from user and print the city name in reverse order using character pointer.
   
-  
+  34) Input a string from user and print only vowels of the string.
+      Input : Pune
+      Output : ue
+   
   
   
   
