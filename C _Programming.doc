@@ -663,13 +663,45 @@ Array :
 	           strcat()  : 
 				Concatenates two strings
 
+======================================================================================
+
+Pointer :
+    
+	variable which holds address of a memory location / address of another variable.
+
+        * (derefering operator)
+
+       Syntax :
+                   datatype *pointervariable;
+
+                   int*   p1;          // p1 is pointer variable of type integer ( Integer pointer)
+		   char  *p2;         // p2 is character pointer
+                   float *p3         // p3 is float pointer
 
 
 
+		    variable declaration :   int x;    // x is a variable
 
 
+		    int x=50;       // printf("%d",x);   // 50
 
+		    int *p1;
 
+ 		    p1 = &x;        // &x means address of x,  p1 will hold address of x.
+
+ Pointers & Array
+
+        Pointer to Array :
+                            int num[]={1,2,3,4,5};
+                            int *p1;
+
+			     p1=num;    // Pointer to array       
+
+ character pointer pointing to character array
+                             
+                            char city[]="Delhi";
+
+                            char *p=city;              
 
 
 
