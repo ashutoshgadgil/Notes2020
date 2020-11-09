@@ -107,7 +107,7 @@
       Enter marks : 55 66 44 77 88
       Average :  ?
       
-  31) Create an array of 5 integer values and print the double of every value of an array:
+  31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
       Input : num[]={1,2,3,4,5}
       Output: num[]={2,4,6,8,10}
       
