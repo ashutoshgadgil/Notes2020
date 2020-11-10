@@ -2025,6 +2025,234 @@ int main()
 
 =========================================================================
 
+68
 
+#include<stdio.h>
+
+void myfunction(int v)        // Accepting a value as address in a variable
+{
+	printf(" Value of v : %d\n",v);   // will print value of v	
+	printf("Address of v : %d\n",&v); 
+}
+
+void show(int *w)     //  w=p  , Accepting an address in a pointer variable
+{
+	printf("\n\n Value of x : %d\n",*w);   // will print value of v	 
+}
+
+int main()
+{
+	int x=20;
+	int *p;
+	
+	p=&x;
+	
+	printf("Address of x : %d\n",&x); 
+	
+	myfunction(p);    // Passing of pointer variable to a function
+	
+	show(p);
+}
+=====================================================================================
+
+69
+
+#include<stdio.h>
+
+void show(int *s,int *t)     //  w=p  , Accepting an address in a pointer variable
+{
+	printf("Sum : %d\n",*s+*t);   // will print value of v	 
+}
+
+int main()
+{
+	int x=20;
+	int y=30;
+	
+	int *p1;
+	p1=&x;
+	
+	int *p2;
+	p2=&y;
+		
+	show(p1,p2);
+}
+===========================================================================
+
+70
+
+#include<stdio.h>
+
+void show(int s,int t)             // s=x, t=y;
+{
+ 	printf("\n%d %d",s,t);
+}
+
+void display(int *s,int *t)     // s = &x, t = &y
+{
+ 	printf("\n%d %d",*s,*t);
+}
+
+
+int main()
+{
+	int x=20;
+	int y=30;
+	
+	show(x,y);             // call by value
+
+	display(&x,&y);        // Call by address
+}
+
+========================================================================
+
+71
+
+#include<stdio.h>
+
+void show(int s)             // s=x, t=y;
+{
+ 	s++;
+}
+
+void display(int *s)     // s = &x, t = &y
+{
+	(*s)++;
+}
+
+int main()
+{
+	int x=20;
+	
+	printf("Value of x before calling show() : %d\n",x);
+	show(x);
+	printf("Value of x after calling show() : %d\n",x);
+	
+	printf("\n");
+	
+	printf("Value of x before calling display() : %d\n",x);
+	display(&x);
+	printf("Value of x after calling display() : %d\n",x);
+	display(&x);
+	printf("Value of x after calling display() : %d\n",x);
+}
+
+===================================================================================
+
+72
+
+#include<stdio.h>
+
+
+int* show()   // function returning pointer to integer
+{
+	int *p;    // p is integer pointer
+	int x=50;  // x is variable
+	p=&x;      // p holds address of x
+	return p;  // returning p   , (address of x)
+}
+
+int main()
+{
+	int *s;
+		
+	s=show();    // s=p=&x
+	printf("%d",*s);
+	
+	
+}
+
+===========================================================================
+
+73
+
+#include<stdio.h>
+#include<string.h>
+
+char* getName(char *n)        // getName() returning a string value, char *n=name;
+{
+
+	char msg[]="Welcome ";
+	strcat(msg,n);
+	return msg;
+}
+
+int main()
+{
+	char name[30];
+	printf("Enter name : ");
+	gets(name);
+	char *p=getName(name);   
+	printf("%s",p);
+}
+
+==============================================================================
+
+74
+
+#include<stdio.h>
+// Passing an array to the function
+// Finding average of array elements
+void getAverage(int *p,int size)
+{
+	int i;
+	float avg,sum=0.0;
+	int temp=0;
+	
+	for(i=0;i<size;i++)
+	{
+		printf("%d ",*(p+i));
+		if(p[i]%2==0)
+		{
+			sum=sum+p[i];
+			temp++;
+		}
+	}
+	avg=sum/temp;
+	printf("\nAverage of array elements : %f",avg);
+}
+
+int main()
+{
+	int size;
+	printf("Enter size : ");
+	scanf("%d",&size);
+	
+	int numbers[size];
+	int i;
+	
+	for(i=0;i<size;i++)
+	{
+		printf("Enter no %d : ",(i+1));
+		scanf("%d",&numbers[i]);
+	}
+	
+	getAverage(numbers,size);   // Paasing of array numbers to the function
+}
+
+==================================================================================
+
+75
+
+#include<stdio.h>
+// function returning array
+
+int* getnum()
+{
+	int n[]={1,2,3,4,5};
+	return n;
+}
+
+int main()
+{
+	int *p=getnum();
+	int i;
+	for(i=0;i<5;i++)
+	{
+		printf("%d ",p[i]);
+	}
+}
+
+==================================================================================
 
 
