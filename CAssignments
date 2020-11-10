@@ -126,3 +126,5 @@
   
   37) Create a program to find average of array elements where array is passed to the function.
   
+  38) Create an array of characters dynamically using malloc function.
+  
