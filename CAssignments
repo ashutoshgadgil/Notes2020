@@ -121,4 +121,6 @@
    
   35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
       perform addition operation on x and y. 
+      
+  36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
   
