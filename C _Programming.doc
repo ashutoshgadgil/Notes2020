@@ -806,23 +806,115 @@ Pointer :
 
 
                              calloc() ====> Contiguous Allocation 
+					n=5 // n= no of elements
+
+				 	calloc(noofelements,sizeof(datatype));
+
                              
-			     realloc()
+			     realloc() ====> Reallocation function
+					     resises the memory allocated for array previously using malloc / calloc function
+
+						n1=4;
+						n2=8;                                              
+
+						ptr= malloc(n1*sizeof(datatype));
+
+						ptr= realloc(ptr,n2*sizeof(datatype));
+										
                              
 			     free() ===> Deallocate memory which is created dynamically
+					
+					 free(p);
 
                                  
+Dangling pointer :
+                  int *p;
+
+		  *p=10;
+		  printf("%d",*p);
 
 
+        // Dangling pointer which does not have any address assigned to it
+	          // It points to unknown location
+	
+	// First way to avoid dangling situation
+	// Assign address of a location to the pointer variable p
+	      
+           int x=4;
+	   
+	   p=&x;
+	
+	
+	// Second way to avoid dangling situation
+	// Allocate dynamic memory to pointer variable using malloc() function
+
+        	p=(int*) malloc(sizeof(int));
+
+===============================================================================================
 
 
+Structure :
+             Grouping of different type of data.
+             To maintain multiple records 
+             keyword :  struct  ( To define the structure)
+             Using struct , you can define the data type of your choice
+
+             Syntax :
+                        struct structureName
+			{
+				structure members;      // Declared in structure body
+			};
 
 
+            Structure Variable : 
+                                 
+			Syntax :
+                                struct stuctureName variablename;
+
+                       Note : Every structure variable will have its own structure member.
+	
+	     
+Accessing of structure member :
+                     
+             Member operator     . (full stop)
+	     
+	     Syntax :
+ 			
+
+			variableName.structureMember;
+
+   
+   Keyword : typedef    (type definition) 
+             used to create alias / alternate name for data type
+
+           Definition of structure using typedef keyword:
+
+           typedef struct structureName
+	   {
+
+	   }aliasName;
+
+           int main()
+	   {
+		aliasname variable;
+	   }
 
 
+Nested Structure :
+		Structure inside a structure
+
+		struct Address
+		{
+		}
+		struct Student
+		{
+			struct Address a; 
+		}
 
 
+Array of Structure : 
 
+                 
 
                             
 
