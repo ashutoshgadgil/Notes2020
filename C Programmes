@@ -2255,4 +2255,505 @@ int main()
 
 ==================================================================================
 
+76
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+int main()
+{
+	int n;     // n represents no of elements of array
+	
+	printf("Enter no of elements of array : ");
+	scanf("%d",&n);
+	
+	int *p = (int*) malloc(n*sizeof(int));  // Creating array dynamically
+	
+	int i;
+	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element %d :",i+1);
+		scanf("%d",&p[i]);   // Reading of array elements 
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",p[i]);   // Reading of array elements 
+	}
+	
+	free(p);  // Deallocate memory
+}
+
+==================================================================================
+
+77
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+
+int main()
+{
+	int n;
+	printf("Enter no of elements of array :");
+	scanf("%d",&n);
+	
+	fflush(stdin);
+	char *p=(char*) malloc(n*sizeof(char ));
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("Enter characters  %d :",i+1);
+		scanf("%c",&p[i]);
+		fflush(stdin);
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%c ",p[i]);
+	}
+	
+}
+
+=========================================================================
+
+78
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+
+int main()
+{
+	int n;
+	printf("Enter no of elements of array :");
+	scanf("%d",&n);
+	
+	fflush(stdin);
+	char *p=(char*) malloc(n*sizeof(char ));
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("Enter characters  %d :",i+1);
+		scanf("%c",&p[i]);
+		fflush(stdin);
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%c ",p[i]);
+	}
+	
+}
+
+=================================================================
+
+79
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+int main()
+{
+	int n;     // n represents no of elements of array
+	
+	printf("Enter no of elements of array : ");
+	scanf("%d",&n);
+	
+	int *p = (int*) calloc(n,sizeof(int));  // Creating array dynamically
+	
+	int i;
+	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element %d :",i+1);
+		scanf("%d",&p[i]);   // Reading of array elements 
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",p[i]);   // Reading of array elements 
+	}
+	
+	free(p);  // Deallocate memory
+}
+
+==================================================================================
+
+80
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+int main()
+{
+	int n;     // n represents no of elements of array
+	
+	printf("Enter no of elements of array : ");
+	scanf("%d",&n);
+	
+	int *p = (int*) calloc(n,sizeof(int));  // Creating array dynamically
+	
+	int i;
+
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",p[i]);   // Reading of array elements 
+	}
+	
+	free(p);  // Deallocate memory
+	
+	//==============================================
+	
+	printf("\n");
+	printf("Enter no of elements of array : ");
+	scanf("%d",&n);
+	
+	int *p1 = (int*) malloc(n*sizeof(int));  // Creating array dynamically
+	
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",p1[i]);   // Reading of array elements 
+	}
+	
+	free(p1);  // Deallocate memory
+	
+}
+
+==================================================================================
+
+81
+
+#include<stdio.h>
+#include<stdlib.h>
+
+// Dynamic memory allocation using malloc function
+int main()
+{
+	int n1,n2;     // n represents no of elements of array
+	
+	printf("Enter no of elements of array : ");
+	scanf("%d",&n1);
+	
+	int *p = (int*) malloc(n1*sizeof(int));  // Creating array dynamically
+	
+	int i;
+
+	for(i=0;i<n1;i++)
+	{
+		printf("%x ",&p[i]);   // Printing address of array elements 
+	}
+	
+	printf("\nEnter no of elements of array : ");
+	scanf("%d",&n2);
+	
+	p=realloc(p,n2*sizeof(int));
+	
+	for(i=0;i<n2;i++)
+	{
+		printf("%x ",&p[i]);   // Printing address of array elements 
+	}
+	
+	free(p);  // Deallocate memory
+	
+}
+
+==================================================================================
+
+82
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *p;    // Dangling pointer which does not have any address assigned to it
+	          // It points to unknown location
+	
+	// First way to avoid dangling situation
+	// Assign address of a location to the pointer variable p
+	int x=4;
+	p=&x;
+	
+	
+	// Second way to avoid dangling situation
+	// Allocate dynamic memory to pointer variable using malloc() function
+	//p=(int*) malloc(sizeof(int));  // Allocating dynamic memory for pointed location for p (*p)
+	
+	*p=100;
+   	printf("%d",*p);	
+}
+
+=======================================================================================
+
+83
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Employee          // Structure name : Employee
+{                       
+	int employee_id;      // Structure members
+	char name[20],Address[30];
+	int contactno;
+	
+};
+
+int main()
+{
+	struct Employee e1,e2,e3,e4,e5;     // e1,e2,e3 are stucture variables
+	
+	e1.employee_id=101;   // Accessing employee_id for e1 and assigning value 101 to employee_id 
+	e2.employee_id=102;
+	e3.employee_id=103;
+	e4.employee_id=104;
+	e5.employee_id=105;
+	
+	e1.contactno=6365326;
+	e2.contactno=6121226;
+	e3.contactno=4365326;
+	e4.contactno=8365326;
+	e5.contactno=2165326;
+	
+	strcpy(e1.name,"Vijay");
+	strcpy(e2.name,"Ajay");
+	strcpy(e3.name,"Suresh");
+	strcpy(e4.name,"Amit");
+	strcpy(e5.name,"Ravi");
+	
+	strcpy(e1.Address,"Pune");
+	strcpy(e2.Address,"Delhi");
+	strcpy(e3.Address,"Bengaluru");
+	strcpy(e4.Address,"Mumbai");
+	strcpy(e5.Address,"Chennai");
+	
+	printf("\nEmp Id of Employee 1 : %d\n Name : %s \n City : %s \nContact no : %d ",e1.employee_id,e1.name,e1.Address,e1.contactno);
+	printf("\n\nEmp Id of Employee 2 : %d\n Name : %s \n City : %s \nContact no : %d ",e2.employee_id,e2.name,e2.Address,e2.contactno);
+	printf("\n\nEmp Id of Employee 3 : %d\n Name : %s \n City : %s \nContact no : %d ",e3.employee_id,e3.name,e3.Address,e3.contactno);
+	printf("\n\nEmp Id of Employee 4 : %d\n Name : %s \n City : %s \nContact no : %d ",e4.employee_id,e4.name,e4.Address,e4.contactno);
+	printf("\n\nEmp Id of Employee 5 : %d\n Name : %s \n City : %s \nContact no : %d ",e5.employee_id,e5.name,e5.Address,e5.contactno);
+}
+
+==========================================================================================================================
+
+84
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Person 
+{                       
+	char name[20];
+	int age;	
+}person;
+
+int main()
+{
+	person p1,p2,p3;
+	
+	strcpy(p1.name,"John");
+	strcpy(p2.name,"Mary");
+	strcpy(p3.name,"Steve");
+	
+	p1.age=30;
+	p2.age=20;
+	p3.age=35;
+	
+	printf("Name : %s\tAge : %d\n",p1.name,p1.age);
+	printf("Name : %s\tAge : %d\n",p2.name,p2.age);
+	printf("Name : %s\tAge : %d\n",p3.name,p3.age);
+}
+
+==========================================================================
+
+85
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Person 
+{                       
+	char name[20];
+	int age;	
+}person;
+
+int main()
+{
+	person p1,p2,p3;
+	char nm[30];
+	
+	printf("Enter name of first employee : ");
+	gets(nm);
+	strcpy(p1.name,nm);
+	
+	printf("Enter name of second employee : ");
+	gets(nm);
+	strcpy(p2.name,nm);
+	
+	printf("Enter name of third employee : ");
+	gets(nm);
+	strcpy(p3.name,nm);
+
+	printf("Enter age of first employee :");
+	scanf("%d",&p1.age);
+	
+	printf("Enter age of second employee :");
+	scanf("%d",&p2.age);
+	
+	printf("Enter age of third employee :");
+	scanf("%d",&p3.age);
+	
+	printf("\n\n");
+	printf("Employee 1 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p1.name,p1.age);
+	
+	printf("Employee 2 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p2.name,p2.age);
+	
+	printf("Employee 3 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p3.name,p3.age);
+}
+
+=======================================================================
+
+86
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Person 
+{                       
+	char name[20];
+	int age;	
+}person;
+
+int main()
+{
+	person p1,p2,p3;
+	char nm[30];
+	
+	printf("Enter Details of employee 1 : \n");
+	printf("Enter name of employee : ");
+	gets(nm);
+	strcpy(p1.name,nm);
+
+	printf("Enter age of employee :");
+	scanf("%d",&p1.age);
+	
+	fflush(stdin);
+	printf("Enter Details of employee 2 : \n");	
+	printf("Enter name of employee : ");
+	gets(nm);
+	strcpy(p2.name,nm);
+
+	printf("Enter age of employee :");
+	scanf("%d",&p2.age);	
+	
+	fflush(stdin);
+	printf("Enter Details of employee 3 : \n");	
+	printf("Enter name of employee : ");
+	gets(nm);
+	strcpy(p3.name,nm);
+	
+	printf("Enter age of employee :");
+	scanf("%d",&p3.age);
+	
+	printf("\n\n");
+	printf("Employee 1 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p1.name,p1.age);
+	
+	printf("Employee 2 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p2.name,p2.age);
+	
+	printf("Employee 3 Details ==> \n");
+	printf("Name : %s , Age : %d\n",p3.name,p3.age);
+}
+
+=====================================================================
+
+87
+
+#include<stdio.h>
+#include<string.h>
+
+struct Address
+{
+	int flatno;
+	char city[20];
+};
+
+typedef struct Person 
+{    	                   
+	char name[20];
+	int age;
+	struct Address ad;    // Address is nested structure
+		
+}person;
+
+int main()
+{
+	person p1,p2,p3;
+	
+	strcpy(p1.name,"Sachin");
+	p1.age=25;
+	p1.ad.flatno=10;             // outerstructurevariable.innerstucturevariable.innermember;
+	strcpy(p1.ad.city,"Pune");
+		
+	printf("Name : %s\n",p1.name);
+	printf("Age : %d\n",p1.age);
+	printf("Address : \n");
+	printf("Flat No : %d ",p1.ad.flatno);
+	printf("City : %s\n",p1.ad.city);
+}
+
+=============================================================================
+
+88
+
+#include<stdio.h>
+#include<string.h>
+
+
+typedef struct Person 
+{    	                   
+	char name[20];
+	int age;
+	
+}person;
+
+int main()
+{
+	int emp_total;
+	printf("Enter total no of employees : ");
+	scanf("%d",&emp_total);
+	
+	fflush(stdin);
+	person p[emp_total];   // Array of structure , p[0], p[1] ,p[2] if emp_total=3
+	char nm[20];
+	
+	int i;
+	for(i=0;i<emp_total;i++)
+	{
+		printf("Person %d Details :\n",i+1);
+		printf("Name : ");
+		gets(nm);
+		strcpy(p[i].name,nm);
+		
+		printf("Age : ");
+		scanf("%d",&p[i].age);
+		fflush(stdin);
+	}
+	
+	for(i=0;i<emp_total;i++)
+	{
+		printf("Name : %s\tAge : %d\n",p[i].name,p[i].age);
+	}	
+	
+}
+
+=========================================================================================
 
