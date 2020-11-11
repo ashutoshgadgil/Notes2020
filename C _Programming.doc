@@ -704,6 +704,114 @@ Pointer :
                             char *p=city;              
 
 
+ Passing a pointer to a function
+
+                            void showdata(int *p1);   // Function which accepts one argument as a pointer
+
+
+			    void showdata(int *p1)    // Function definition   p1=p;
+			    {
+
+                            }
+
+			    main() { 
+ 				
+					int *p;
+					showdata(p);         
+ 				    }
+
+ Passing an address of a variable to a function
+
+                            void show(int *p)
+			    {
+				
+			    }
+
+                            int a;
+                            
+			    show(&a);  // Passing address of variable a to the function
+
+   Function calling can be done in two ways :
+   
+   1) Call by value
+   			add(a,b);
+
+
+			void add(int x,int y)
+			{
+
+			}
+
+   2) Call by address
+			add(&a,&b);
+
+
+			void add(int *x,int *y)
+			{
+
+			}
+
+  Difference between Call by value and call by address :
+  
+  1) Call by value , value of a variable is copied into the parameter
+     Call by address, Address of a variable is paased as a parameter 
+
+  2) Call by value does not change the original data passed to function
+     call by address, Original data passed to function is modified
+
+  3) Call by value, values are passed to the function without  &
+     Call by address, Address is passed to the function with  &
+
+
+  Returning pointer value to the function :
+
+  					   int* getSquare()
+					   {
+						int *p;
+						return p;
+					   }
+
+
+
+               				   main()
+					   {
+
+						int *p1=getSquare();
+					   }
+
+
+  
+ Dynamic Memory allocation:    increase / decrease the size of array at run time
+                               allocate memory at run time
+
+
+				int numbers[10];
+
+                   stdlib.h 
+                             malloc() ==> memory allocation 
+
+                             return type : void*
+
+				Syntax :
+                                         
+
+					ptr = (castType*) malloc(size); //    ptr = (void*) malloc(size);
+
+					int *p = (int*) malloc(n*sizeof(int));
+
+					int *p = (int*) malloc(5*sizeof(int));  // 5*4bytes = 20 bytes
+
+					char *p= (char*) malloc(10*sizeof(char));  // 10*1byte= 10 bytes
+
+
+
+                             calloc() ====> Contiguous Allocation 
+                             
+			     realloc()
+                             
+			     free() ===> Deallocate memory which is created dynamically
+
+                                 
 
 
 
@@ -716,11 +824,7 @@ Pointer :
 
 
 
-
-
-
-
-               
+                            
 
 
 
