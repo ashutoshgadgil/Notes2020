@@ -128,6 +128,17 @@
   
   38) Create an array of characters dynamically using malloc function.
   
+  39) Create a program to enter your name and age from keyboard and print name and age. 
+
+  40) write a program to copy a string into another. 
+
+  41) Create a program to input a string from user and find its length. 
+
+  42) Enter username and password and if username is Ajay and password is 1234 then print a message Welcome Ajay. 
+
+  43) Input pricipal amount = 20000, rate of interest = 7.5 and no of years= 2  ,find simple interest using formula as 
+
+       SI = p*r*t / 100 
   44) Create a structure Student which includes two fields rollno, name . 
       Take input from user to assign values to structure members and store details of structure data into a file student.txt
       Maintain record for 5 students
