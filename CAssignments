@@ -142,4 +142,13 @@
   44) Create a structure Student which includes two fields rollno, name . 
       Take input from user to assign values to structure members and store details of structure data into a file student.txt
       Maintain record for 5 students
+      
+  45) Create a Program to manage the bank account details for 5 customers in the structure and do the following operations :
+      a) Create a menu where following choices should be made :
+          1 - Show all Records of 5 customers in the Bank ( Bank Accno, CustomerName, TypeOfAccount, Balance)
+          2 - Deposit amount in the available balance of a customer & show updated balance.
+          3 - Withdraw amount from the balance & show updated balance
+          4 - Exit
+  
+  
   
