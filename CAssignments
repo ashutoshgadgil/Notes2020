@@ -128,3 +128,7 @@
   
   38) Create an array of characters dynamically using malloc function.
   
+  44) Create a structure Student which includes two fields rollno, name . 
+      Take input from user to assign values to structure members and store details of structure data into a file student.txt
+      Maintain record for 5 students
+  
