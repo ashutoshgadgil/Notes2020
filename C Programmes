@@ -2757,3 +2757,417 @@ int main()
 
 =========================================================================================
 
+89
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct Person 
+{    	                   
+	char name[20];
+	int age;
+	
+}person;
+
+person p[3];   // Array of structure , p[0], p[1] ,p[2] , Size of array = 3
+
+void getDetails()      // Read data from user
+{
+	char nm[20];
+	
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("Person %d Details :\n",i+1);
+		printf("Name : ");
+		gets(nm);
+		strcpy(p[i].name,nm);
+		
+		printf("Age : ");
+		scanf("%d",&p[i].age);
+		fflush(stdin);
+	}
+}
+
+void showDetails()    // Write data to the console window
+{
+	int i;	
+	for(i=0;i<3;i++)
+	{
+		printf("Name : %s\tAge : %d\n",p[i].name,p[i].age);
+	}	
+}
+
+int main()
+{
+	getDetails();
+	showDetails();
+}
+
+================================================================================
+
+90
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct Person 
+{    	                   
+	char name[20];
+	int age;
+	
+}person;
+
+void getDetails(person *p)      // Read data from user, p is a structure pointer 
+{                               // p = &emp ,   p is pointing to the array of structure
+	char nm[20];
+	
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("Person %d Details :\n",i+1);
+		printf("Name : ");
+		gets(nm);
+		strcpy(p[i].name,nm);
+		
+		printf("Age : ");
+		scanf("%d",&p[i].age);
+		fflush(stdin);
+	}
+}
+
+void showDetails(person *p)    // Write data to the console window
+{
+	int i;	
+	for(i=0;i<3;i++)
+	{
+		printf("Name : %s\tAge : %d\n",p[i].name,p[i].age);
+	}	
+}
+
+int main()
+{
+	person emp[3];   // Array of structure , p[0], p[1] ,p[2] , Size of array = 3
+	
+	getDetails(emp);  // Passing the array of structure as a structure variable
+	showDetails(emp);
+}
+
+===================================================================================
+
+91
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct Person 
+{    	                   
+	char name[20];
+	int age;
+	
+}person;
+
+int main()
+{
+	person *sp;     // Structure pointer
+	person p;
+	
+	//sp = &p;
+	
+	sp=(person*)malloc(sizeof(person));
+	
+	// Case - I  ======> Accessing structure members using structure pointer
+	// sp is structure pointer
+	
+	strcpy(sp->name,"Saurabh");   // Access structure members through structure pointer using -> operator (Referential operator)
+	
+	sp->age=30;                  
+	
+	printf("Name : %s\n",sp->name);
+	printf("Age : %d\n",sp->age);
+	
+	free(sp);
+	
+	// case - II     =======  Accessing structure members using structure variable
+	
+	person s;    // s is structure variable
+	
+	strcpy(s.name,"Ajay");
+	s.age=30;
+	printf("Name : %s\n",s.name);
+	printf("Age : %d\n",s.age);
+	
+
+}
+
+=========================================================================
+
+92
+
+#include<stdio.h>
+#include<string.h>
+
+typedef union Person     // Union Definition
+{    	                   
+	char name[20];    // 20 bytes 
+	int age;          
+	
+}person;
+
+typedef struct Employee  // Structure Definition
+{    	                   
+	char name[20];       // 20 bytes
+	int age;             // 4 bytes
+	
+}emp;
+
+int main()
+{
+	person p;  // union variable
+	
+	emp e;  // Structure variable
+	
+	printf("Size of Union : %d\n",sizeof(p));
+	
+	printf("Size of Structure : %d\n",sizeof(e));
+	
+	// Assigning values to union members
+	strcpy(p.name,"Abc");
+	p.age=20;
+	
+	
+	printf("Name : %s , Age : %d",p.name,p.age);
+	
+	printf("\n");
+	// Assigning values to structure members
+	e.age=20;
+	strcpy(e.name,"Abc");
+	
+	printf("Name : %s , Age : %d",e.name,e.age);
+}
+
+====================================================================
+
+93
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program.txt","a");   // fopen() creates a file program.txt
+	
+	int num;
+	char name[20];
+	
+	printf("Enter a number : ");
+	scanf("%d",&num);
+	
+	fflush(stdin);
+	printf("Enter your name : ");
+	gets(name);
+	
+	fprintf(fp,"%d\t%s\n",num,name);  
+	//fprintf(fp,"%s\n",name);
+	
+	printf("Data written to file successfully....");
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+===============================================================================
+
+94
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program.txt","a");   // fopen() creates a file program.txt
+	
+	int num;
+	char name[20];
+	
+	int nor;
+	printf("Enter Total records : ");
+	scanf("%d",&nor);
+	
+	int i;
+	for(i=0;i<nor;i++)
+	{
+		printf("Enter a number : ");
+		scanf("%d",&num);
+	
+		fflush(stdin);
+		printf("Enter your name : ");
+		gets(name);
+		
+		fflush(stdin);
+		
+		fprintf(fp,"%d\t%s\n",num,name);  
+	}
+		
+	printf("Data written to file successfully....");
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+============================================================================
+
+95
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program.txt","r");   // fopen() opens an existing file program.txt in reading mode
+	
+	if(fp==NULL)
+	{
+		printf("File does not exist");
+		exit(0);
+	}
+
+	char buff[100];
+	
+	while(fscanf(fp,"%s",buff)!=EOF)
+	{
+		printf("%s ",buff);
+	}
+		
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+===========================================================================
+
+96
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program1.txt","w");   // fopen() opens an existing file program.txt in reading mode
+	
+	char ch;
+	printf("Enter a character : ");
+	scanf("%c",&ch);
+	
+	fputc(ch,fp);
+	printf("Character saved into file");
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+=============================================================================
+
+97
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program2.txt","w");   // fopen() opens an existing file program.txt in reading mode
+	
+	char ch;
+	
+	char *p="Welcome to my file";
+	
+	while(*p!='\0')
+	{
+		ch=*p;
+		fputc(ch,fp);    // printing character by character into file program2.txt
+		p++;
+	}
+	
+	
+	printf("Character saved into file");
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+===========================================================================
+
+98
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program2.txt","r+");   // fopen() opens an existing file program.txt in reading mode
+		
+	char ch;
+	
+	while((ch=fgetc(fp))!=EOF)
+	{
+		printf("%c",ch);
+	}
+
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+============================================================================
+
+99
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program3.txt","w+");   // fopen() opens an existing file program.txt in reading mode
+		
+	fputs("Hello ,Welcome to File Handling",fp);
+	
+	printf("File written successfully");
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+===============================================================================
+
+100
+
+#include<stdio.h>
+#include<string.h>
+
+// Reading a text file using fgets()
+
+int main()
+{
+	FILE *fp;       // fp is file pointer
+	
+	fp=fopen("D:\\program3.txt","r");   // fopen() opens an existing file program.txt in reading mode
+
+	char buff[100];
+	
+	fgets(buff,100,fp);
+	
+	printf("%s",buff);
+	
+	fclose(fp);    //  fclose() closes a file which is previously opened
+}
+
+================================================================================
