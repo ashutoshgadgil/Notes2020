@@ -913,10 +913,165 @@ Nested Structure :
 
 
 Array of Structure : 
+			StructureName var[size];
+
+
+
+
+Passing structure to the function :
+
+                    
+
+                        void show(struct Employee emp)
+			{
+		
+			}
 
                  
-
+			struct Employee e1;  // e1 is structure variable
+			
+			show(e1);     // Passing a structure variable to the function
                             
+
+
+Structure pointer & Accessing the members of structure using structure pointer
+
+
+
+	typedef struct Employee
+	{
+		int a;
+	}emp;
+
+	int main()
+	{
+		emp *p;
+		emp e1;
+		
+		p=&e1;
+
+		p->a = 105;
+		
+	}
+		
+Union :
+       grouping of different data type elements
+
+       keyword : union
+
+       Advantage of union : It takes less memory to store data as compared to structure
+       Disadvantage :   At a time only one type of data can be stored
+
+       Syntax :
+
+		typedef union unionname
+		{
+			union members
+		}alias;
+
+		int main()
+		{
+			aliasname var;
+		}
+
+====================================================================================
+
+File Handling
+
+	     Is a process of managing files / of doing operations in the file like read data from file, write data to the file
+
+	     File : Permanent way of storing data in the system
+
+            1) create a file
+            2) Reading a file
+	    3) Writing into file
+
+           Structure :    FILE 
+           File pointer :  To perform operations on file
+
+           
+	Step-1 ) Create a file pointer
+                 FILE *fp;    // fp is file pointer
+        Step-2) Open a file on the hard disk
+		fopen()
+	Step-3)  Do the operations on the file like writing or reading
+
+        Note : Every file has some ending characters (EOF = End Of File)
+
+        
+       Type of file : 
+		     1) Text File : plain text / human readable form (Simple text file)
+
+		     2) Binary File : Not in human readable form (image file)
+
+        Mode of operation :
+		     
+		     1) Read mode  :    r 
+		     2) Write mode :    w
+		     3) append     :    a
+                     4) Read & write :  r+ , w+
+
+        Predefined functions of File defined in stdio.h
+
+	1) fopen()    : To open a file in any mode
+			
+			fp=fopen("filename","mode");
+
+
+	2) fclose()   : To close the file
+
+	3) fprintf()  : To write data into file
+
+                        fprintf(filepointer,"formatstring",variablename);
+
+
+	4) fscanf()   : To read data from file
+        5) fputc()    : To write single character into file
+        6) fgetc()    : To read single character from file
+	7) fputs()    : To write a line of characters into file
+        8) fgets()    : To read a string from a file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
