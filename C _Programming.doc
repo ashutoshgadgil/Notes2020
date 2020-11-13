@@ -1032,6 +1032,20 @@ File Handling
         8) fgets()    : To read a string from a file
 
 
+  ========================================================================
+
+Function Pointer :
+                  Pointer to a function
+		
+		  void show(int x)
+		  {
+			printf("x = %d",x);
+		  }
+	
+		  void (*fp)(int) = &show;  // function pointer fp
+
+		  (*fp)(10);              //  Calling of Function through function pointer
+
 
 
 
