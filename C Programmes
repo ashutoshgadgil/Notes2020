@@ -3171,3 +3171,71 @@ int main()
 }
 
 ================================================================================
+
+101
+
+#include<stdio.h>
+
+void show(int x)
+{
+	printf("Value of x is : %d",x);
+}
+
+void add(int a,int b)
+{
+	printf("Sum : %d",(a+b));
+}
+
+int main()
+{
+	void (*fp)(int) = &show;  // fp is a function pointer
+	
+	(*fp)(20);      // Calling of function using function pointer fp
+
+	printf("\n");
+	
+	void (*fp1)(int,int) = &add;
+	
+	(*fp1)(1,2);
+}
+
+==========================================================================
+
+
+104
+
+#include<stdio.h>
+
+// Array of Pointers
+
+int main()
+{
+	int *p[3];   // Array of 3 Pointers of integer type
+	int x[]={2,4,6,8,10};
+	int y[]={1,2,3,4};
+    int z[]={1,3,5};
+    
+    int size[3];
+	
+	size[0]= sizeof(x)/4;
+	size[1]= sizeof(y)/4;
+	size[2]= sizeof(z)/4;
+
+	p[0]=x;    // pointer 1
+	p[1]=y;    // pointer 2
+	p[2]=z;    // pointer 3
+	
+	int i,j;
+	
+	for(i=0;i<3;i++)   // i will represent the pointer 
+	{
+		printf("\nArray %d : \n",i+1);
+		for(j=0;j<size[i];j++)            // j represents array index for every pointer
+		{
+			printf("%d ",*(p[i]+j));	// Accessing of values of array through pointer	
+		}
+	}
+	
+}
+
+=================================================================================================
