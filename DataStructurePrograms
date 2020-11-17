@@ -1,0 +1,565 @@
+1.
+
+#include<stdio.h>
+
+struct Student
+{
+	int rollno;
+	char name[20];	
+};
+
+int main()
+{
+	struct Student s1;
+	
+	s1.rollno=101;
+	strcpy(s1.name,"Saurabh");
+	
+	printf("Roll no : %d , Name : %s",s1.rollno,s1.name);	
+}
+==============================================================
+
+2.
+
+#include<stdio.h>
+
+struct Student
+{
+	int rollno;
+	char name[20];	
+};
+
+int main()
+{
+	struct Student *s1,s;
+	s1=&s;
+	s1->rollno=101;
+	strcpy(s1->name,"Saurabh");
+	
+	printf("Roll no : %d , Name : %s",s1->rollno,s1->name);	
+}
+
+===============================================================
+
+3.
+
+#include<stdio.h>
+
+struct Employee
+{
+	int eid;
+	char name[20];
+	char city[20];	
+};
+
+int main()
+{
+	struct Employee e[3];
+	char nm[20];
+	char cy[20];
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("Enter Id : ");
+		scanf("%d",&e[i].eid);
+		
+		fflush(stdin);	
+		printf("Enter name :");
+		gets(nm);
+		strcpy(e[i].name,nm);
+		
+		fflush(stdin);
+		printf("Enter City :");
+		gets(cy);
+		strcpy(e[i].city,cy);
+		fflush(stdin);
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		printf("Id : %d , Name : %s , City : %s\n",e[i].eid,e[i].name,e[i].city);
+	}
+	
+}
+========================================================================
+
+4.
+
+#include<stdio.h>
+
+int main()
+{
+	float num[]={1.2,1.3,1.4};
+	float *p=num;
+	
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("%.2f\t",*(p+i));
+	}
+	
+}
+=========================================================================
+
+5.
+
+#include<stdio.h>
+
+int main()
+{
+	int *p;
+	
+	p=(int*)malloc(sizeof(int));
+	
+	*p=400;
+	
+	printf("value : %d",*p);
+	
+	free(p);
+}
+
+==========================================================================
+
+6.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+		char x;
+		int y;
+}sample;
+
+
+int main()
+{
+	int p;
+	sample *sp;
+	sample s;
+	
+	sp=&s;
+	//sp=(sample*)malloc(sizeof(sample));  // create memory dynamically for structure
+	
+	if(sp==NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	sp->x='D';
+	sp->y=300;
+	
+	printf("x = %c , y = %d",sp->x,sp->y);	
+	
+		
+}
+=====================================================================================
+
+7. 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+		char x;
+		int y;
+}sample;
+
+void fun(sample *p);
+
+int main()
+{
+	sample *sp;
+	
+	sp=(sample*)malloc(sizeof(sample));
+	
+	if(sp==NULL)
+	{
+		printf("Memory not available");
+		exit(0);
+	}
+	
+	fun(sp);   // Passing structure pointer to function
+	
+	printf("x = %c , y = %d",sp->x,sp->y);
+	
+	free(sp);
+			
+}
+
+void fun(sample *p)     // sample *p = sp;
+{
+	p->x='G';
+	p->y=200;
+}
+
+====================================================================
+
+8.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+		char x;
+		int y;
+}sample;
+
+sample* fun();
+
+int main()
+{
+	sample *sp;
+		
+	sp=fun();   // sp = p;
+	
+	printf("x = %c , y = %d",sp->x,sp->y);
+	
+	free(sp);
+			
+}
+
+sample* fun()     // sample *p = sp;
+{
+	sample *p;
+	
+	p=(sample*)malloc(sizeof(sample));
+	
+	if(p==NULL)
+	{
+		printf("memory not available");
+		exit(0);
+	}
+	
+	p->x='G';
+	p->y=300;
+	
+	return p;
+}
+
+==================================================================
+
+9.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct st
+{
+		char x;
+		int y;
+}sample;
+
+void fun(sample *sp);
+
+int main()
+{
+	sample s;
+			
+    s.x='D';
+    s.y=400;
+    
+    printf("Before calling function values of x and y are : ");
+    printf("x = %c , y = %d\n",s.x,s.y);
+    fun(&s);   // Passing Address of structure variable to the function
+    printf("After calling function values of x and y are : ");
+    printf("x = %c , y = %d\n",s.x,s.y);
+}
+
+void fun(sample *sp)
+{
+	sp->x='H';
+	sp->y=500;
+}
+
+==============================================================================
+
+10.
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+typedef struct st
+{
+	int top;
+	int elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(sp->top == -1)
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	push(&s1,10);
+	push(&s1,20);
+	push(&s1,30);
+	
+	printf("Stack elements are : ");
+	printf("%d %d %d",s1.elements[0],s1.elements[1],s1.elements[2]);
+	
+	printf("\n");
+	push(&s1,40);
+	printf("Stack elements are : ");
+	printf("%d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3]);
+	
+	printf("\n");
+	push(&s1,50);
+	printf("Stack elements are : ");
+	printf("%d %d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3],s1.elements[4]);
+
+	printf("\n");
+	push(&s1,60);
+	printf("Stack elements are : ");
+	printf("%d %d %d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3],s1.elements[4],s1.elements[5]);
+
+	int ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	printf("\n");	
+	printf("Stack elements are : ");
+	printf("%d %d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3],s1.elements[4]);
+
+	push(&s1,60);
+	
+	printf("\n");	
+	printf("Stack elements are : ");
+	printf("%d %d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3],s1.elements[4]);
+
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	printf("\n");	
+	printf("Stack elements are : ");
+	printf("%d %d %d %d %d",s1.elements[0],s1.elements[1],s1.elements[2],s1.elements[3],s1.elements[4]);
+	
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+	
+	ele=pop(&s1); // Delete operation
+	printf("\nPopped element is : %d",ele);
+}
+
+==================================================================================================
+
+11.
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+typedef struct st
+{
+	int top;
+	int elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(sp->top == -1)
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+
+void display(stack *sp)
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%d ",sp->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	push(&s1,10);
+	push(&s1,20);
+	push(&s1,30);
+	push(&s1,40);
+		
+	display(&s1);
+	
+	printf("\n");
+	pop(&s1);
+	//pop(&s1);
+	display(&s1);
+
+	printf("\n%d",s1.elements[3]);
+}
+
+
+===================================================================
+
+12.
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+typedef struct st
+{
+	int top;
+	int elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,int item)
+{
+		if(is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int is_full(stack *sp)   // returning 1 if stack is full otherwise returns 0
+{
+	if(sp->top == SIZE-1)      // Stack overflow condition
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(stack *sp)   // returning 1 if stack is empty otherwise returns 0
+{
+	if(sp->top == -1)          // Stack underflow condition
+		return 1;
+	else
+		return 0;	
+}
+
+void display(stack *sp)
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%d ",sp->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	push(&s1,10);
+	push(&s1,20);
+	push(&s1,30);
+	push(&s1,40);
+	push(&s1,50);
+	//push(&s1,60);
+	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));
+	display(&s1);
+
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);	
+}
+
+
+=================================================================
