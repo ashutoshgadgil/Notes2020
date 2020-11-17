@@ -2,4 +2,4 @@ Q.1 Create a structure Student ( rollno, name), Create a structure variable and 
 Q.2 Create a structure pointer which can access the members of the structure Student and print member values.
 Q.3 Create an array of structure which is used to store 3 employee records.
 Q.4 Create a float pointer which points to the float array and access all elements of array using float pointer
-Q.5 Create an integer pointer for which memroy is allocated dynamically.
+Q.5 Create an integer pointer for which memory is allocated dynamically.
