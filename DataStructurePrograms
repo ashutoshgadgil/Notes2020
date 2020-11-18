@@ -563,3 +563,591 @@ int main()
 
 
 =================================================================
+
+13
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of static allocation of stack in memory
+
+typedef struct st
+{
+	int top;
+	int elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)       // sp = &s1
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,int item)
+{
+		if(is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int is_full(stack *sp)   // returning 1 if stack is full otherwise returns 0
+{
+	if(sp->top == SIZE-1)      // Stack overflow condition
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(stack *sp)   // returning 1 if stack is empty otherwise returns 0
+{
+	if(sp->top == -1)          // Stack underflow condition
+		return 1;
+	else
+		return 0;	
+}
+
+void display(stack *sp)
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%d ",sp->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	push(&s1,10);
+	push(&s1,20);
+	push(&s1,30);
+	push(&s1,40);
+	push(&s1,50);
+	//push(&s1,60);
+	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));
+	display(&s1);
+
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);
+	
+	printf("\nPopped element is : %d\n",pop(&s1));	
+	display(&s1);	
+}
+
+==============================================================================
+
+14
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of static allocation of stack in memory
+
+typedef struct st
+{
+	int top;
+	int elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)      // sp = s1  
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,int item)
+{
+		if(is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int is_full(stack *sp)   // returning 1 if stack is full otherwise returns 0
+{
+	if(sp->top == SIZE-1)      // Stack overflow condition
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(stack *sp)   // returning 1 if stack is empty otherwise returns 0
+{
+	if(sp->top == -1)          // Stack underflow condition
+		return 1;
+	else
+		return 0;	
+}
+
+void display(stack *sp)    // sp = s1
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%d ",sp->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack *s1;
+	
+	s1=(stack*)malloc(sizeof(stack));  // Dynamic allocation of stack pointer
+	
+	if(s1 == NULL)
+	{
+		printf("Memory available");
+		exit(0);	
+	}
+	
+	initialize(s1);
+	push(s1,10);
+	push(s1,20);
+	push(s1,30);
+	push(s1,40);
+	push(s1,50);
+	//push(&s1,60);
+	
+	display(s1);
+	
+	printf("\nPopped element is : %d\n",pop(s1));
+	display(s1);
+
+	printf("\nPopped element is : %d\n",pop(s1));	
+	display(s1);
+	
+
+	printf("\nPopped element is : %d\n",pop(s1));	
+	display(s1);
+	
+	printf("\nPopped element is : %d\n",pop(s1));	
+	display(s1);
+	
+	printf("\nPopped element is : %d\n",pop(s1));	
+	display(s1);
+	
+	printf("\nPopped element is : %d\n",pop(s1));	
+	display(s1);	
+}
+
+
+=========================================================================
+
+15
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of static allocation of stack in memory
+
+typedef struct st
+{
+	int top;
+	char elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)       // sp = &s1
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,char item)
+{
+		if(is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int is_full(stack *sp)   // returning 1 if stack is full otherwise returns 0
+{
+	if(sp->top == SIZE-1)      // Stack overflow condition
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(stack *sp)   // returning 1 if stack is empty otherwise returns 0
+{
+	if(sp->top == -1)          // Stack underflow condition
+		return 1;
+	else
+		return 0;	
+}
+
+void display(stack *sp)
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%c ",sp->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack *s1;
+	
+	s1=(stack*)malloc(sizeof(stack));
+	
+	char *str;
+	
+	initialize(s1);
+    
+	//printf("Enter a string : ");
+	//gets(str);
+	
+	
+	char ch;
+	printf("Enter character : ");
+	scanf("%c",&ch);
+	fflush(stdin);
+	while((ch!='n'))
+	{
+		  	fflush(stdin);
+		    push(s1,ch);
+			printf("Enter character : ");
+        	scanf("%c",&ch); 
+	}
+	
+	
+	int i=0;
+	
+	//while(*str!='\0')
+	//{
+		push(s1,'H');  // pushing character one by one on the stack
+		push(s1,'e');
+		push(s1,'l');
+		push(s1,'l');
+		push(s1,'o');
+	
+	/*	
+		for(i=s1->top;i!=-1;i--)
+		printf("%c",s1->elements[i]);
+	*/	
+		printf("\n");
+		char x;
+		while(!(is_empty(s1)))
+		{
+			x=pop(s1);
+			printf("%c",x);
+		}
+	//	str++;
+	//	i++;
+	//}
+
+	//printf("%c",s1.elements[0]);	
+//	display(&s1);
+			
+}
+
+============================================================================
+
+16
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of Stack to revrse a string
+typedef struct st
+{
+	int top;
+	char elements[SIZE];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)       // sp = &s1
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,char item)
+{
+		if(is_full(sp))	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+// Delete an element from the stack / POP operation
+
+int pop(stack *sp)
+{
+	int x;
+	if(is_empty(sp))
+		printf("\nStack underflow");
+	else
+		x=sp->elements[sp->top--];
+	return x;	
+}
+
+int is_full(stack *sp)   // returning 1 if stack is full otherwise returns 0
+{
+	if(sp->top == SIZE-1)      // Stack overflow condition
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(stack *sp)   // returning 1 if stack is empty otherwise returns 0
+{
+	if(sp->top == -1)          // Stack underflow condition
+		return 1;
+	else
+		return 0;	
+}
+
+void display(stack *sp)
+{
+	int i;
+	
+	/*for(i=sp->top;i!=-1;i--)
+	{
+		printf("%c ",sp->elements[i]);	
+	}*/
+	
+	for(i=0;i<=sp->top;i++)
+	{
+		printf("%c ",sp->elements[i]);
+	}	
+}
+
+int main()
+{
+	stack *s1;
+	
+	s1=(stack*)malloc(sizeof(stack));
+	
+	initialize(s1);
+
+ /*	
+	push(s1,'A');
+	push(s1,'B');
+	push(s1,'C');
+*/
+	
+	char str[10];
+	int size;
+	printf("Enter no of characters of a string :");
+	scanf("%d",&size);
+	
+    printf("Enter a string : ");
+	
+	int i;
+	for(i=0;i<size;i++)
+		scanf("%c",&str[i]);  // abc\0 
+	
+	i=0;
+	while(str[i]!='\0')
+	{
+		push(s1,str[i]);
+		i++;	
+	}
+		
+	printf("Original stack : ");
+	display(s1);
+	
+	printf("\n");
+	
+	printf("Stack in reverse order : ");
+	char ch;
+	while(!is_empty(s1))	
+	{
+		ch=pop(s1);
+		printf("%c",ch);
+	}
+}
+
+
+===================================================================
+
+17
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+
+// Example of Stack to revrse a string
+typedef struct que
+{
+	int front;
+	int rear;
+	int elements[SIZE];	
+}Queue;
+
+void initialize(Queue *qp)
+{
+	qp->front=-1;
+	qp->rear=-1;	
+}
+
+void add(Queue *qp,int item)
+{
+	if(is_full(qp))
+		printf("Queue Overflow");
+	else
+	{	
+		if(qp->front == -1)
+			qp->front=0;
+		qp->elements[++qp->rear]=item;	
+	}
+	
+}
+
+int rem(Queue *qp)
+{
+	int x;
+	if(is_empty())
+		printf("Queue Underflow");
+	else
+	{
+		if(qp->front>qp->rear)
+			qp->front=qp->rear=-1;
+			x=qp->elements[qp->front++];
+	}
+	
+	return x;	
+}
+
+void display(Queue *qp)
+{
+	
+		int i;
+		for(i=qp->front;i<=qp->rear;i++)
+		{
+			printf("%d ",qp->elements[i]);	
+		}	
+	
+}
+
+int is_full(Queue *qp)
+{
+	if(qp->rear == SIZE-1)
+		return 1;
+	else
+		return 0;
+}
+
+int is_empty(Queue *qp)
+{
+	if(qp->front == -1)
+		return 1;
+	else
+		return 0;	
+}
+
+int main()
+{
+	Queue *qp;
+	qp=(Queue*)malloc(sizeof(Queue));
+	
+	initialize(qp);
+	
+	add(qp,10);
+	add(qp,20);
+	add(qp,30);
+	add(qp,40);
+	add(qp,50);
+	add(qp,60);
+	
+	display(qp);
+	
+	printf("\n");
+	rem(qp);
+	display(qp);
+
+
+	printf("\n");
+	rem(qp);
+	display(qp);
+	
+	printf("\n");
+	rem(qp);
+	display(qp);	
+	
+	printf("\n");
+	rem(qp);
+	display(qp);
+	
+	printf("\n");
+	rem(qp);
+	display(qp);
+	
+	printf("\n");
+	rem(qp);
+	display(qp);
+}
+
+==========================================================================
