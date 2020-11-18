@@ -3,3 +3,5 @@ Q.2 Create a structure pointer which can access the members of the structure Stu
 Q.3 Create an array of structure which is used to store 3 employee records.
 Q.4 Create a float pointer which points to the float array and access all elements of array using float pointer
 Q.5 Create an integer pointer for which memory is allocated dynamically.
+Q.6 Create a stack of 5 characters and display all elements.
+Q.7 Create a stack of 5 names of employees and delete the last name and display it.
