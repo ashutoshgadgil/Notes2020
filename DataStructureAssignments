@@ -4,4 +4,8 @@ Q.3 Create an array of structure which is used to store 3 employee records.
 Q.4 Create a float pointer which points to the float array and access all elements of array using float pointer
 Q.5 Create an integer pointer for which memory is allocated dynamically.
 Q.6 Create a stack of 5 characters and display all elements.
-Q.7 Create a stack of 5 names of employees and delete the last name and display it.
+Q.7 Create a stack of 5 names of employees and delete the last name and display it. 
+Q.8 Create two stacks A and B . A contains 3 alphabets and B contains 3 numbers. Display Both stacks.
+Q.9 Create a queue which contains 5 double values and print all values.
+Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
+Q.11 Create a stack which contains ASCII values for alphabets and print Alphabets.
