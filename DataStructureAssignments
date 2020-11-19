@@ -11,3 +11,4 @@ Q.10 Create a queue which contains 5 numbers and print the square value of every
 Q.11 Create a stack which contains ASCII values for alphabets and print Alphabets.
 Q.12 Take 10 numbers from user, Make two stacks as Even & Odd, Even stack contains even numbers , Odd stack contains odd numbers.
 Q.13 Make a program to copy elements of one stack to another.
+Q.14 Read 5 numbers from user and store it in a stack.
