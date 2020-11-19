@@ -1151,3 +1151,298 @@ int main()
 }
 
 ==========================================================================
+
+18
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+
+typedef struct st
+{
+	int top;
+	char name[10][10];	
+}stack;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack *sp)
+{
+	sp->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void push(stack *sp,char *name)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			strcpy(sp->name[++sp->top],name);
+}
+
+// Delete an element from the stack / POP operation
+
+char* pop(stack *sp)
+{
+	char* x;
+	if(sp->top == -1)
+		printf("\nStack underflow");
+	else
+		x=sp->name[sp->top--];
+	return x;	
+}
+
+
+void display(stack *sp)
+{
+	int i;
+	
+	for(i=sp->top;i!=-1;i--)
+	{
+		printf("%s\n",*(sp->name+i));	
+	}	
+}
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	push(&s1,"Ajay");
+	push(&s1,"Amit");
+	push(&s1,"Rohit");
+	
+	display(&s1);
+	
+	printf("\n");
+	char*p=pop(&s1);
+	printf("Deleted name is : %s\n",p);
+	display(&s1);
+}
+
+=============================================================================
+
+19
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 26
+#include "mystack.h"
+
+int main()
+{
+	stack s1;
+	
+	initialize(&s1);
+	
+	int i;
+	
+	for(i=65;i<=90;i++)
+	{
+		push(&s1,i);
+	}
+	
+	display(&s1);
+}
+
+==============================================================================
+
+20
+
+#include<stdio.h>
+
+// Creation of a node & display the node value
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+
+int main()
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=500;
+	np->next=NULL;
+	
+	printf("value : %d",np->data);
+	
+	free(np);	// Deallocating dynamic memory for node pointer
+}
+
+===============================================================================
+
+21
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+int main()
+{
+	
+	node *p;	
+	
+	p=createNode(20);   // p = np
+	
+	printf("data : %d",p->data);
+	printf("\nnext : %d",p->next);
+	
+	free(p);	// Deallocating dynamic memory for node pointer
+}
+
+==================================================================================
+
+22
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+int main()
+{	
+	node *p,*head,*tail,*ptr;	
+	
+	head=createNode(60);    // creation of first node
+	tail=head;
+	ptr=head;
+	printf("%d ",ptr->data);  // ptr is priniting data value
+	
+	p=createNode(75);       // creation of second node
+	
+	tail->next=p;     // Attaching next node to previuous node   
+    tail=tail->next;
+    //ptr=tail;
+	ptr=ptr->next;
+	printf("%d ",ptr->data);
+ 	
+    p=createNode(150);      // creation of third node
+    
+	tail->next=p;      // Attaching next node to previuous node   
+	tail=tail->next;
+	//ptr=tail;
+	ptr=ptr->next;
+	printf("%d ",ptr->data);
+	
+}
+
+============================================================================
+
+23
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+int main()
+{	
+	node *p,*head,*tail,*ptr;	
+	
+	head=createNode(60);    // creation of first node
+	tail=head;
+	p=createNode(75);       // creation of second node
+	
+	tail->next=p;     // Attaching next node to previuous node   
+    tail=tail->next;
+   
+    p=createNode(150);      // creation of third node
+    
+	tail->next=p;      // Attaching next node to previuous node   
+	tail=tail->next;
+	
+	ptr=head;
+	
+	// accessing of node value using while loop
+	while(ptr!=NULL)
+	{
+		printf("%d\t",ptr->data);
+		ptr=ptr->next;
+	}
+
+}
+
+
+
+
