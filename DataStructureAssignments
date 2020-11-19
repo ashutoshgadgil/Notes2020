@@ -12,3 +12,4 @@ Q.11 Create a stack which contains ASCII values for alphabets and print Alphabet
 Q.12 Take 10 numbers from user, Make two stacks as Even & Odd, Even stack contains even numbers , Odd stack contains odd numbers.
 Q.13 Make a program to copy elements of one stack to another.
 Q.14 Read 5 numbers from user and store it in a stack.
+Q.15 Create a Link list of 5 nodes which stores information as a character.
