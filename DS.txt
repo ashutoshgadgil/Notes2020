@@ -1,0 +1,204 @@
+
+
+  Data structure :
+                  An arrangement of data in memory.
+
+  type of Data structure :
+                 1) Linear data structure / Sequential 
+                                          		Array, Stack,  Queue, Linked List
+
+		 2) Non Linear data structure
+						        Tree , graph
+
+  Data structure we can perform operations on data
+
+  
+ 1)  Allocating space dynamically for stucture
+
+ 2)  Passing of the pointer of a dynamically allocated structure to a function
+
+ 3)  Returning pointer of dynamically allocated space
+
+ 4)  Passing address of a structure to a function
+
+
+ Stack : 
+         pile of Items and it follows Last in First out data structure ( LIFO )
+
+         Two operations : Push  : To add element on the stack
+                          POP   : To remove element from the stack
+
+        Components of stack ;
+                                container of items (Array)
+                                Top pointer  which points to top most element in the stack
+       
+	Any modification can be done on top only
+
+  
+  Stack implementation using Array
+
+                                  Size of stack 
+
+  Declaration of stack using structure
+
+
+  struct st
+  {
+	int top;
+	int element[5];
+  }stack;
+
+  
+  functions on the stack :
+
+  1) Initialization of stack
+  2) Push operation
+  3) Pop opeartion
+  4) is_full check 
+  5) is_empty check 
+
+  
+  Static allocation of stack in memory
+
+                              1) create a structure variable 
+			      2) Pass the address of structure variable without using malloc function
+
+  
+  Dynamic allocation of stack in memory
+
+
+                              1) create a structure pointer variable 
+			      2) Pass the structure pointer variable on allocating memory using malloc function
+
+ 
+  Applications of Stack :
+ 	                      1) Reversing a string 
+ 			      2) during function call
+                              3) Conversion of polish notation
+
+
+   Polish Notation :
+
+                    1) Infix
+				operator between operands 
+                                
+				a+b
+
+		    2) Prefix   (Polish notation)
+				operator is before operands
+				 +ab
+
+
+		    3) Postfix  (Reverse Polish notation)
+				operator is after operands
+				ab+
+
+			
+		Ex :
+		    a=2, b=3, c=4
+
+                    a+b*c (infix) =>  a+*bc  => +a*bc (Prefix)   => +2(12) => 14
+
+				  =>  a+bc*  => abc*+ (Postfix)  => 2+(12) => 14
+
+                    (a+b)*c (infix) =>  +ab*c  => *+abc (Prefix)
+				    => ab+*c =>  ab+c* (Postfix)
+
+   =======================================================================================================
+
+
+   Queue :
+        Sequence of elements
+
+	data structure follows First In First Out (FIFO) property
+
+	Queue has 3 components : 1) Array of elements : contains the elements in a queue 
+				 2) Front pointer     : represents the first element of the queue
+				 3) Rear pointer      : represents the last element of the queue
+         
+        operation :   
+			1) Enque operation : To add an element in the queeue , Addition is performed on the rear end of queue
+			2) Deque operation : To delete an element from the queue , Deletion is performed at front end of the queue.
+
+
+        
+   Declaration of the Queue :
+
+         
+                typedef struct Qe
+		{
+			int front;
+			int rear;
+			int elements[5];
+		}Queue;
+
+
+
+   functions :
+
+   1) initialization
+   2) Addition
+   3) Deletion
+   4) is_full
+   5) is_empty
+
+
+==============================================================================
+
+
+   Creating header file :
+
+                          filename.h   ===== contains definition / prototype
+
+   Include header file in program
+ 
+		          #include "filename.h"
+
+  Difference between Standard header file & user header file
+
+		Standard header file =====>  stdio.h
+		#include<stdio.h>
+
+		user header file
+		#include "filename.h"
+
+==============================================================================
+
+
+    Linked List :  
+		  Collection of nodes
+
+                  Node :  (Self Referntial Structure) 
+                          consists of two parts : 1) Data  2) Link / pointer to next           
+		
+                  data is stored in non contiguous manner
+
+
+		  Linked list has two pointers : 1) Head : points to the first node
+
+						 2) Tail : points to the last node
+
+
+
+    Operations on Linked List 
+                   
+                  1) Insert node at tail
+                  2) Insert a node at Head
+                  3) Insert a node between any two nodes of Linked List
+
+
+    Traversing the list : To access all elements of the list
+
+
+
+
+
+
+
+
+
+	
+
+ 
+
+  
