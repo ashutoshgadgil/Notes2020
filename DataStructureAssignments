@@ -14,3 +14,4 @@ Q.13 Make a program to copy elements of one stack to another.
 Q.14 Read 5 numbers from user and store it in a stack.
 Q.15 Create a Link list of 5 nodes which stores information as a character.
 Q.16 Write a program to count the number of nodes in the link list.
+Q.17 Create a Link list of 3 nodes containing 3 double values and print the average of 3 numbers.
