@@ -1443,6 +1443,369 @@ int main()
 
 }
 
+====================================================================
 
+24
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	double data;
+	struct nd *next;
+}node;
+// Creating a node in the linked list
+
+typedef struct li
+{
+	node *head,*tail;	
+}List;
+
+
+void initialize(List *lp)
+{
+	lp->head=NULL;
+	lp->tail=NULL;	
+}
+
+node* createNode(double no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+
+void insertAtTail(List *lp,double x)         // lp = lp, x =100
+{
+	node *np;
+	
+	np=createNode(x);     // Creating a node
+	if(lp->head == NULL)
+		lp->head=np;
+	else
+		lp->tail->next =np;
+	lp->tail= np;
+	
+}
+
+List* createList(int size)
+{
+	List *lp;
+	lp=(List*)malloc(sizeof(List));
+		initialize(lp);
+	int i;
+	double x;
+	for(i=0;i<size;i++)
+	{
+		printf("Enter Item : ");
+		scanf("%lf",&x);
+		insertAtTail(lp,x);
+	}
+	return lp;
+}
+
+void traverse(List *lp)
+{
+	node *p;
+	p=lp->head;
+	int c=0;
+	double sum=0.0,avg;
+	printf("List is : ");
+	
+	while(p!=NULL)
+	{
+		printf("%.2lf ",p->data);
+		sum=sum+(p->data);
+		p=p->next;
+		c++;	
+	}	
+	avg=sum/c;
+	printf("\nAverage : %.2lf",avg);
+}
+
+int getNodeCount(List *lp)
+{
+	node *p;
+	
+	int count=0;
+	
+	for(p=lp->head;p!=NULL;p=p->next)
+	{
+		++count;	
+	}	
+	return count;
+}
+
+int main()
+{	
+	List *lp;
+	int x;
+	
+	lp=createList(5);
+	traverse(lp);
+	
+	
+}
+
+====================================================================
+
+25
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+// Creating a node in the linked list
+
+typedef struct li
+{
+	node *head,*tail;	
+}List;
+
+
+void initialize(List *lp)
+{
+	lp->head=NULL;
+	lp->tail=NULL;	
+}
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+
+void insertAtTail(List *lp,int x)         // lp = lp, x =100
+{
+	node *np;
+	
+	np=createNode(x);     // Creating a node
+	if(lp->head == NULL)
+		lp->head=np;
+	else
+		lp->tail->next =np;
+	lp->tail= np;
+	
+}
+
+List* createList(int size)
+{
+	List *lp;
+	lp=(List*)malloc(sizeof(List));
+		initialize(lp);
+	int i;
+	int x;
+	for(i=0;i<size;i++)
+	{
+		printf("Enter Item : ");
+		scanf("%d",&x);
+		insertAtTail(lp,x);
+	}
+	return lp;
+}
+
+void traverse(List *lp)
+{
+	node *p;
+	p=lp->head;
+	printf("List is : ");
+	while(p!=NULL)
+	{
+		printf("%d ",p->data);
+		p=p->next;	
+	}	
+}
+
+int getNodeCount(List *lp)
+{
+	node *p;
+	
+	int count=0;
+	
+	for(p=lp->head;p!=NULL;p=p->next)
+	{
+		++count;	
+	}	
+	return count;
+}
+
+int main()
+{	
+	List *lp;
+	int x;
+	
+	lp=createList(5);
+	traverse(lp);
+	
+	int count=getNodeCount(lp);
+	
+	printf("\nTotal nodes : %d",count);	
+
+}
+
+=============================================================
+
+26
+
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+// Creating a node in the linked list
+
+typedef struct li
+{
+	node *head,*tail;	
+}List;
+
+// Initialization of Head and Tail pointer to NULL
+void initialize(List *lp)
+{
+	lp->head=NULL;
+	lp->tail=NULL;	
+}
+
+// Creating a node of Linked list
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+// Inserting a node at the end of list
+void insertAtTail(List *lp,int x)         // lp = lp, x =100
+{
+	node *np;
+	
+	np=createNode(x);     // Creating a node
+	if(lp->head == NULL)
+		lp->head=np;
+	else
+		lp->tail->next =np;
+	lp->tail= np;
+	
+}
+
+
+void insertAtHead(List *lp,int x)         // lp = lp, x =100
+{
+	node *np;
+	
+	np=createNode(x);     // Creating a node
+	if(lp->head == NULL)
+		lp->tail=np;
+	else
+		np->next=lp->head;
+	lp->head= np;
+	
+}
+// Creating a list of specified size
+List* createList()   // Creating a list of a specific size
+{
+	List *lp;
+	int i,x,size;
+	
+	lp=(List*)malloc(sizeof(List));
+	initialize(lp);
+		
+	printf("Enter no of elements : ");
+	scanf("%d",&size);
+	
+	for(i=0;i<size;i++)
+	{
+		printf("Enter Item : ");
+		scanf("%d",&x);
+		insertAtTail(lp,x);
+	}
+	return lp;
+}
+
+// To display list elements
+void traverse(List *lp)
+{
+	node *p;
+	p=lp->head;
+	printf("List is : ");
+	while(p!=NULL)
+	{
+		printf("%d ",p->data);
+		p=p->next;	
+	}	
+}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include "mylinklist.h"
+
+int main()
+{	
+	List *lp;         // lp is List pointer 
+	
+	// Step-1 : Link list Creation
+	lp=createList();  // lp will point to the created list
+	
+	// Step-2 : Displaying the List
+	traverse(lp);  
+	
+	printf("\n");
+	
+	int item;
+	printf("\nEnter node to add at head :");
+	scanf("%d",&item);
+	
+	insertAtHead(lp,item);   
+	//insertAtHead(lp,400);   
+	traverse(lp); 
+}
+
+====================================================================
 
 
