@@ -1808,4 +1808,187 @@ int main()
 
 ====================================================================
 
+27
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;                // Data part
+	struct nd *next;         // Pointer to next node
+	struct nd *prev;         // Pointer to previous node
+}node;
+// Creating a node in the linked list
+
+int main()
+{	
+	 node *head;
+	 node *one=NULL;
+	 node *two=NULL;
+	 node *three=NULL;
+	
+	one=(node*)malloc(sizeof(node));    // data / next for node one
+	two=(node*)malloc(sizeof(node));     // data / next for node two
+	three=(node*)malloc(sizeof(node));   // data / next for node three
+	
+	one->data=10;
+	two->data=20;
+	three->data=30;
+	
+	one->next=two;
+	one->prev=NULL;
+	
+	two->next=three;
+	two->prev=one;
+	
+	three->next=NULL;
+	three->prev=two;
+	
+	head=one;
+	
+	node *p;
+	p=head;
+
+	printf("Accessing in forward direction : ");
+	/*
+	printf("%d ",p->data);
+	p=p->next;
+	
+	printf("%d ",p->data);
+	p=p->next;
+	
+	printf("%d ",p->data);
+	p=p->next;
+	*/
+	
+	while(p!=NULL)
+	{
+		printf("%d ",p->data);
+		p=p->next;
+	}
+	printf("\nAccessing in backward direction : ");
+	
+	/*
+	p=three;
+	printf("%d ",p->data);
+	p=p->prev;
+	
+	printf("%d ",p->data);
+	p=p->prev;
+	
+	printf("%d ",p->data);
+	p=p->prev;
+	*/
+	p=three;
+	
+	while(p!=NULL)
+	{
+		printf("%d ",p->data);
+		p=p->prev;
+	}
+}
+
+===========================================================================
+
+28
+
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of Stack to revrse a string
+typedef struct st1
+{
+	int top;
+	char elements[SIZE];	
+}stack1;
+
+typedef struct st2
+{
+	int top;
+	char elements[SIZE];	
+}stack2;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack1 *sp1,stack2 *sp2)       // sp = &s1
+{
+	sp1->top=-1;
+	sp2->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void pushToStack1(stack1 *sp,char item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+
+void pushToStack2(stack2 *sp,char item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+// Delete an element from the stack / POP operation
+
+void copyToStack(stack1 *s1,stack2 *s2)
+{
+	int i;
+	
+	for(i=0;i<=s1->top;i++)
+	{
+		printf("%c ",s1->elements[i]);
+		pushToStack2(s2,s1->elements[i]);	
+	}	
+}
+
+void displayCopiedStack(stack2 *s)
+{
+	int i;
+	for(i=0;i<=s->top;i++)
+	{
+		printf("%c ",s->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack1 *s1;
+	stack2 *s2;
+	
+	s1=(stack1*)malloc(sizeof(stack1));
+	s2=(stack2*)malloc(sizeof(stack2));
+	
+	initialize(s1,s2);
+		
+	printf("==========================================\n");
+	printf("Stack : 1 \n==============================\n");
+	
+	pushToStack1(s1,'A');
+	pushToStack1(s1,'B');
+	pushToStack1(s1,'C');
+	pushToStack1(s1,'D');
+		
+	copyToStack(s1,s2);
+	
+	printf("\n========================================\n");
+	printf("Stack : 2 \n==============================\n");
+	displayCopiedStack(s2);
+}
+
+
+===============================================================================================
+
+29
+
+
+
 
