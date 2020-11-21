@@ -1989,6 +1989,67 @@ int main()
 
 29
 
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+// Creating a node in the linked list
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+int main()
+{	
+	 node *head;
+	 node *one=NULL;
+	 node *two=NULL;
+	 node *three=NULL;
+	
+	one=(node*)malloc(sizeof(node));    // data / next for node one
+	two=(node*)malloc(sizeof(node));     // data / next for node two
+	three=(node*)malloc(sizeof(node));   // data / next for node three
+	
+	one->data=10;
+	two->data=20;
+	three->data=30;
+	
+	one->next=two;
+	two->next=three;
+	three->next=one;
+	
+	head=one;
+	
+	node *p;
+	p=head;
+	printf("%d ",p->data);
+		p=p->next;
+	while(p!=head)
+	{
+		printf("%d ",p->data);
+		p=p->next;
+	}
+}
+
 
 
 
