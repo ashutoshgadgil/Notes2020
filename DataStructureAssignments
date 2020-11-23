@@ -20,3 +20,4 @@ Q.19 Create a Link list of 3 nodes and delete the head node.
 Q.20 Create a list of 3 city names and Enter a city to be searched in the list .If city name exists in list then Display City Found.
 Q.21 Create an array of 5 integer values and search an element in the array using Linear Search.
 Q.22 Create an array of string and search a perticular string using Linear Search.
+Q.23 Sort an array of 5 numbers using Insertion sort
