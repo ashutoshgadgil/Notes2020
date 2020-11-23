@@ -2050,6 +2050,111 @@ int main()
 	}
 }
 
+=========================================================================
 
+30
+
+#include<stdio.h>   
+void main ()  
+{  
+    int a[10] = {10, 23, 40, 1, 2, 0, 14, 13, 50, 9};  
+    int item, i,flag;  
+    printf("\nEnter Item which is to be searched\n");  
+    scanf("%d",&item);  
+    for (i = 0; i< 10; i++)  
+    {  
+        if(a[i] == item)   
+        {  
+            flag = i+1;  
+            break;  
+        }   
+        else   
+        flag = 0;  
+    }   
+    if(flag != 0)  
+    {  
+        printf("\nItem %d found at location %d\n",item,flag);  
+    }  
+    else  
+    {  
+        printf("\nItem not found\n");   
+    }  
+}   
+
+==================================================================
+
+31 
+
+#include<stdio.h>  
+int binarySearch(int[], int, int, int);  
+void main ()  
+{  
+    int arr[10] = {16, 19, 20, 23, 45};  
+    int item, location=-1;   
+    printf("Enter the item which you want to search ");  
+    scanf("%d",&item);  
+    location = binarySearch(arr, 0, 4, item);   // location=2  , beg =0 ,end =4 , item=19
+    if(location != -1)   
+    {  
+        printf("Item found at location %d",location);  
+    }  
+    else  
+    {  
+        printf("Item not found");  
+    }  
+}   
+int binarySearch(int a[], int beg, int end, int item)  // beg=0, end=4 , item=19 
+{                                                      // beg=0, end=1, item =19
+                                                       // beg=1, end=1, item=19
+    int mid;  
+    if(end >= beg)   
+    {     
+        mid = (beg + end)/2;  // mid=2, mid=0, mid=1
+        if(a[mid] == item)    //
+        {  
+            return mid+1;     // mid=2
+        }  
+        else if(a[mid] < item)   
+        {  
+            return binarySearch(a,mid+1,end,item);  //   binarySearch(a,1,1,19);, loc = 2 returned
+        }  
+        else   
+        {  
+            return binarySearch(a,beg,mid-1,item);  //  binarySearch(a,0,1,19);
+        }  
+      
+    }  
+    return -1;   
+}  
+
+======================================================================
+
+32
+
+#include<stdio.h>  
+// Bubble Sort
+
+void main ()  
+{  
+    int i, j,temp;   
+    int a[10] = { 10, 9, 7, 101, 23, 44, 12, 78, 34, 23};   
+    for(i = 0; i<10; i++)  
+    {  
+        for(j = i+1; j<10; j++)  
+        {  
+            if(a[j] > a[i])  
+            {  
+                temp = a[i];  
+                a[i] = a[j];  
+                a[j] = temp;   
+            }   
+        }   
+    }   
+    printf("Printing Sorted Element List ...\n");  
+    for(i = 0; i<10; i++)  
+    {  
+        printf("%d\n",a[i]);  
+    }  
+}  
 
 
