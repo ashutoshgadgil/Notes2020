@@ -190,8 +190,52 @@
     Traversing the list : To access all elements of the list
 
 
+    Type of Linked List :
+			1) Singly 
+				Unidirctional ==> traverse elements in a single direction
+			2) doubly
+				Bidirectional ==> traverse elements in both direction
+			3) Circular
+				In circular manner List is created , Tail will point to head but not points to NULL
+
+=====================================================================================
+
+Searching
+
+         To find an element in a data structure like an array.
+
+ Type of Searching :
+                    1) Linear / sequential searching
+
+                    2) Binary Search
+
+          Binary search is more efficient than Linear search
+
+Sorting 
+        
+	To arrange elements in ascending or descending order
+
+	1) Bubble Sort 
+	2) Insertion sort
 
 
+====================================================================================
+
+Non Linear Data Structure
+
+			 
+                         1) Tree 
+			 2) Graph
+
+ Traversal
+
+                  1) Inorder         (Left -> Root -> Right)
+
+
+                  2) Preorder
+
+                 
+                  3) Postorder
 
 
 
