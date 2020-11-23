@@ -18,4 +18,5 @@ Q.17 Create a Link list of 3 nodes containing 3 double values and print the aver
 Q.18 Create a Link list of 5 nodes and print it in reverse order.
 Q.19 Create a Link list of 3 nodes and delete the head node.
 Q.20 Create a list of 3 city names and Enter a city to be searched in the list .If city name exists in list then Display City Found.
+Q.21 Create an array of 5 integer values and search an element in the array using Linear Search.
 
