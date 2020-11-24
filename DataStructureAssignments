@@ -24,3 +24,4 @@ Q.23 Sort an array of 5 numbers using Insertion sort.
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
 Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Left node of root shows value as "Red" and right node shows value as Green. 
      and print all node values in using preorder traversal.
+Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
