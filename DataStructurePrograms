@@ -2157,4 +2157,263 @@ void main ()
     }  
 }  
 
+========================================================================
+
+33
+
+#include<stdio.h>
+
+typedef struct tr
+{
+	int data;
+	struct tr *left;
+	struct tr *right;
+}tree;
+
+tree* createnode(int value)
+{
+	tree *n;
+	n=(tree*)malloc(sizeof(tree));
+
+	n->data=value;
+	n->left=NULL;
+	n->right=NULL;
+	
+	return n;
+}
+
+int main()
+{
+	tree *root,*n1,*n2;
+	
+	root=createnode(100);
+	
+	n1=createnode(200);
+	
+	n2=createnode(300);
+	
+	root->left=n1;
+	root->right=n2;
+	
+	root->left->left=createnode(400);
+	root->left->right=createnode(500);
+	
+	printf("\t%d\n",root->data);
+	printf("%d\t",root->left->data);
+	printf("\t%d",root->right->data);
+	printf("\t%d",root->left->left->data);
+	printf("\t%d",root->left->right->data);
+}
+
+===============================================================
+
+34
+
+// Tree traversal in C
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+  int item;
+  struct node* left;
+  struct node* right;
+};
+
+// Inorder traversal
+void inorderTraversal(struct node* root) {
+  if (root == NULL) return;
+  inorderTraversal(root->left);
+  printf("%d ->", root->item);
+  inorderTraversal(root->right);
+}
+
+// preorderTraversal traversal
+void preorderTraversal(struct node* root) {
+  if (root == NULL) return;
+  printf("%d ", root->item);
+  preorderTraversal(root->left);
+  preorderTraversal(root->right);
+}
+
+// postorderTraversal traversal
+void postorderTraversal(struct node* root) {
+  if (root == NULL) return;
+  postorderTraversal(root->left);
+  postorderTraversal(root->right);
+  printf("%d ", root->item);
+}
+
+// Create a new Node
+struct node* createNode(value) {
+  struct node* newNode = malloc(sizeof(struct node));
+  newNode->item = value;
+  newNode->left = NULL;
+  newNode->right = NULL;
+
+  return newNode;
+}
+
+// Insert on the left of the node
+struct node* insertLeft(struct node* root, int value) {
+  root->left = createNode(value);
+  return root->left;
+}
+
+// Insert on the right of the node
+struct node* insertRight(struct node* root, int value) {
+  root->right = createNode(value);
+  return root->right;
+}
+
+int main() {
+  struct node* root = createNode(1);     // value 1 is assigned to root node
+  insertLeft(root, 12);
+  insertRight(root, 9);
+
+  insertLeft(root->left, 5);
+  insertRight(root->left, 6);
+/*
+  printf("Inorder traversal \n");
+  inorderTraversal(root);
+*/
+  printf("\nPreorder traversal \n");
+  preorderTraversal(root);
+/*
+  printf("\nPostorder traversal \n");
+  postorderTraversal(root);
+  */
+}
+
+===================================================================
+
+35
+
+#include<stdio.h>
+#include<stdlib.h>
+// Creation of a node ON DEFINING A FUNCTION TO CREATE A NODE
+
+typedef struct nd            // Definition of the node 
+{                            // members are data
+	int data;
+	struct nd *next;
+}node;
+// Creating a node in the linked list
+
+typedef struct li
+{
+	node *head,*tail;	
+}List;
+
+
+void initialize(List *lp)
+{
+	lp->head=NULL;
+	lp->tail=NULL;	
+}
+
+node* createNode(int no)
+{
+	node *np;
+	
+	np=(node*)malloc(sizeof(node));  // allocating dynamic memory to the node pointer
+	
+	if(np == NULL)
+	{
+		printf("Memory not available");
+		exit(0);	
+	}
+	
+	np->data=no;
+	np->next=NULL;
+	
+	return np;
+}
+
+
+void insertAtTail(List *lp,int x)         // lp = lp, x =100
+{
+	node *np;
+	
+	np=createNode(x);     // Creating a node
+	if(lp->head == NULL)
+		lp->head=np;
+	else
+		lp->tail->next =np;
+	lp->tail= np;
+	
+}
+
+List* createList(int size)
+{
+	List *lp;
+	lp=(List*)malloc(sizeof(List));
+		initialize(lp);
+	int i;
+	int x;
+	for(i=0;i<size;i++)
+	{
+		printf("Enter Item : ");
+		scanf("%d",&x);
+		insertAtTail(lp,x);
+	}
+	return lp;
+}
+
+void traverse(List *lp)
+{
+	node *p;
+	int c=0;
+	p=lp->head;
+	printf("List is : ");
+	while(p!=NULL)
+	{
+		printf("%d ",p->data);
+		p=p->next;
+		c++;
+	}	
+	
+	int arr[c];
+	p=lp->head;
+	int i=c-1;
+	while(p!=NULL)
+	{
+		arr[i]=p->data;
+		p=p->next;
+		i--;
+	}
+	
+	printf("\nLinked List in reverse order : ");
+	for(i=0;i<c;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+			
+}
+
+node* search(List *lp,int x)
+{
+	node *p;
+	
+	p=lp->head;
+	while(p!=NULL)
+	{
+		if(x == p->data)
+			return p;
+		p=p->next;	
+	}	
+}
+
+int main()
+{	
+	List *lp;
+	int x;
+	
+	lp=createList(5);
+	traverse(lp);
+}
+
+=============================================================
+
+
 
