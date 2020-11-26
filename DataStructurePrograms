@@ -2882,5 +2882,72 @@ int main(){
   return 0;
 }
 
+=======================================================================
 
+41
+
+#include<stdio.h>  
+// Bubble Sort
+
+int binarySearch(int a[], int beg, int end, int item)  // beg=0, end=4 , item=19 
+{                                                      // beg=0, end=1, item =19
+       
+	                                               // beg=1, end=1, item=19
+    int mid;  
+    if(end >= beg)   
+    {     
+        mid = (beg + end)/2;  // mid=2, mid=0, mid=1
+        if(a[mid] == item)    //
+        {  
+            return mid+1;     // mid=2
+        }  
+        else if(a[mid] > item)   
+        {  
+            return binarySearch(a,mid+1,end,item);  //   binarySearch(a,1,1,19);, loc = 2 returned
+        }  
+        else   
+        {  
+            return binarySearch(a,beg,mid-1,item);  //  binarySearch(a,0,1,19);
+        }  
+      
+    }  
+    return -1;   
+} 
+
+void main ()  
+{  
+    int i, j,temp;   
+    int a[10] = { 10, 9, 7, 101, 23};   
+    for(i = 0; i<5; i++)  
+    {  
+        for(j = i+1; j<5; j++)  
+        {  
+            if(a[j] > a[i])  
+            {  
+                temp = a[i];  
+                a[i] = a[j];  
+                a[j] = temp;   
+            }   
+        }   
+    }   
+    printf("Printing Sorted Element List ...\n");  
+    for(i = 0; i<5; i++)  
+    {  
+        printf("%d\n",a[i]);  
+    }  
+    
+     int item, location=-1;   
+    printf("Enter the item which you want to search ");  
+    scanf("%d",&item);  
+    location = binarySearch(a, 0, 4, item);   // location=2  , beg =0 ,end =4 , item=19
+   
+    if(location != -1)   
+    {  
+        printf("\nItem found at location %d",location);  
+    }  
+    else  
+    {  
+        printf("\nItem not found");  
+    }  
+}  
 
