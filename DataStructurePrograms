@@ -2775,6 +2775,112 @@ int main(){
 
 40 
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef struct Node{
+  int data;
+  struct Node *next;
+}Node;
+
+typedef struct {
+  struct Node *head;
+  struct Node *tail;
+  int nodeCount;
+}LinkedList;
+
+// to initialize the linkedlist object
+// Input parameter: listp is the pointer to linkedlist object
+// Precondition: LinkedList object pointed by listptr must be existing.
+// Return Value: Nothing
+void initList(LinkedList *lstPtr){
+  lstPtr->head = NULL;
+  lstPtr->tail = NULL;
+  lstPtr->nodeCount = 0;
+}
+
+
+
+// To add a new node at the end of the LinkedList
+// Input parameters: pointer to struct LinkedList, an integer data that will
+//                   be the content  of the new node.
+// Precondition: The linkedList object must be existing.
+// Return Value: Nothing
+void insertAtTail(LinkedList *listPtr, int data){
+  Node *newNodePtr = (Node*)malloc(sizeof(Node));
+  if (newNodePtr == NULL){
+    printf("Unable to allocate new node\n");
+    return;
+  }
+  newNodePtr->data = data;
+  newNodePtr->next = NULL;
+
+
+  if (listPtr->head == NULL){
+    // this is the case when the list is empty
+    listPtr->head = newNodePtr;
+    listPtr->tail = newNodePtr;
+  }
+  else{
+    // this is the case when the list is not empty
+    listPtr->tail->next = newNodePtr;
+    listPtr->tail = newNodePtr;
+  }
+  listPtr->nodeCount++;
+}
+
+void printList(LinkedList *lstPtr){
+ 
+  Node *current = lstPtr->head;
+  while(current != NULL){
+    printf("%d ", current->data);
+    current = current->next;
+  }
+
+}
+
+
+void reverse(LinkedList *lstPtr){
+  // declaring 3 Node pointers for doing the reversal
+  Node *p, *q, *r;
+  // p is current node, q is just previous to p and r is just immediate next to p
+  q = NULL;
+  p = lstPtr->head;
+  r = p->next;
+  while(1){
+    // reverse the link
+    p->next = q;
+    if (p == lstPtr->tail)
+      break;
+    // shift the pointers towards right
+    q = p;
+    p = r;
+    r = r->next;
+  }
+  lstPtr->tail = lstPtr->head;
+  lstPtr->head = p;
+}
+
+int main(){
+  LinkedList list;
+  initList(&list);
+  
+  insertAtTail(&list, 20);
+  insertAtTail(&list, 30);
+  insertAtTail(&list, 50);
+  insertAtTail(&list, 60);
+  insertAtTail(&list, 80);
+  
+  printList(&list);
+
+            reverse(&list);
+
+  printf("\n");
+  printList(&list);
+
+  return 0;
+}
 
 
 
