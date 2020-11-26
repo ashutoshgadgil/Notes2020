@@ -27,4 +27,4 @@ Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Le
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
 Q.27 Write a program to crate an adjacency matrix(3 by 3) using graph , where create edges (0,1),(1,2),(1,1), Store the student age information.
 Q.28 Create a Binary Serch Tree with 10 nodes where node value is character and Traverse the tree in postorder.
-
+Q.29 Create an unsorted array of 5 elements and sort the array in descending order using bubble sort and search an element in array using Binary Search.
