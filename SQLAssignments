@@ -1,0 +1,5 @@
+Q.1 Create a table Result which stores the records of 5 students where the fields as 
+    rollno, name, percentage
+Q.2 Add a column in the Result table named as Grade
+Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
+Q.4 Rename the table Result with StudentScore.
