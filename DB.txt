@@ -1,0 +1,78 @@
+
+
+  SQL Commands
+
+  DDL command
+
+  1) Create : used to create a table
+      
+     create table tablename(columnname datatype(size));
+
+     numeric ------> number
+     character-----> varchar
+     alphanumeric--> varchar2
+
+  2) Describe table
+   
+     desc : used to describe the table info
+
+     desc tablename;
+
+  3) insert into table : used to insert a record in a table
+
+     insert into tablename values(colname datatype(size));
+
+     insert into tablename(colname1,colname2) values(101,'Rahul');
+
+  Data Types :
+      
+  NUMBER
+              NUMBER(PRECISION,SCALE);        // PRECISION : no of digits in a number, scale : no of digits after decimal point
+              NUMBER                     
+
+  CHAR      : char(5) ====> 5 bytes fixed
+                     n =  abc     
+              
+
+  VARCHAR   : deprecated data type
+
+  VARCHAR2  : varchar2(4) 
+                     n =  ab ==> 2 bytes will be allocated
+
+  DATE
+
+  
+  DDL :
+
+      1) create : used to create a table and a view or a prodedure
+      
+      2) Alter : change the structure of table
+               change the name of the table
+
+
+               Syntax :
+
+                      ALTER TABLE tablename Action;     //  Action shows the adding thecolumn or removing column or modify column
+
+
+                      a) Add one or more columns in a table
+                      b) Modify the column definition
+                      c) Drop column
+                      d) Rename column
+                      e) Rename table
+
+     creating a table with virtual column
+
+		create table ta(n1 number,n2 number,n3 as (n1+n2));    // n3 is virtual column
+
+     Dropping a table
+                     To delete table from database
+
+                     drop table tablename;
+                     Structure of table will be deleted from database
+
+     Truncate a table
+
+                     To delete all data from table
+		     Structure of table will not be deleted
+			 
