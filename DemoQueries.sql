@@ -132,6 +132,8 @@ create table emp1(name varchar2(20),age number);
     insert into product1 values(103,'USB');
     insert into product1 values(104,'DVD');
     insert into product1 values(101,'Mobile');
+    insert into product1 values(101,'ROM',3000);
+    insert into product1 values(102,'Keyboard',3000);
     
     select * from product1;
     
@@ -191,7 +193,58 @@ create table emp1(name varchar2(20),age number);
     
     select pid as Product_ID, pname as Product_Name from product1; /* Column Alias name : Product_Id, Product_Name */
     
-    select s.pid,s.price from product1 s;     /* Table alias name : s */
+    select x.pid,x.price from product1 x;     /* Table alias name : s */
+   
+   ====================================================================
+   
+    select x.pid as Product_ID,x.price as Product_Name from product1 x;     /* Table alias name : s */
     
+    select pid,price from product1;     
+ 
+    select product1.pid from product1;
     
+    ====================================================================
     
+    select * from product1;
+    
+    select price from product1 where pname='Keyboard' AND pid=101 ; /* showing price where pname is keyboard and pid is 101 */
+    
+    select price from product1 where pname='RAM' OR pid=101 ;     /* showing price where pname is RAM or pid is 101 */
+    
+    select * from product1 where pid=101 AND pname='Keyboard' OR pname='Mobile';  /* showing all columns where pid is 101 and pname is keyboard or pname is Mobile */
+    
+    select * from product1 where pid >= 102 AND pid < 106;  /* showing all columns where pid is between 102 and 106 */
+    
+    select * from product1 where pid BETWEEN 102 AND 106;  /* showing all columns where pid is between 102 and 106 */
+   
+    select * from product1 where price IS NULL;  /* showing all columns where price is NULL */
+    
+    select * from product1 where price IS NOT NULL;  /* showing all columns where price is NULL */
+    
+    select * from product1 where price IS NOT NULL and pid = 101; /* showing all columns where price is NOT NULL and pid is 101*/  
+ 
+    select * from product1 where pname LIKE 'M%';   /* All columns where pname starts with M */
+    
+    select * from product1 where pname LIKE '%M';   /* All columns where pname ends with M */
+    
+    select * from product1 where pname LIKE 'R_M';  /* All columns where pname starts with R and ends with M */
+    
+    select * from product1 where pname LIKE 'M___e';  /* All columns where pname starts with M and ends with e */
+    
+    select * from product1 where pname LIKE 'M%e';  /* All columns where pname starts with M and ends with e */
+    
+    select * from product1 where pname LIKE 'o%';  /* All columns where pname starts with M and ends with e */
+
+    ========================================================================================
+    
+    select * from product1 ORDER BY pname ASC;  /* Sort records in ascending order */
+    
+    select * from product1 ORDER BY pname DESC; /* Sort records in descending order */
+     
+    select * from product1 ORDER BY pid ASC; 
+     
+    select * from product1 ORDER BY pid DESC; 
+    
+    select * from product1 ORDER BY pid desc,pname desc;  /* Sorting by pid first then by name*/
+   
+    select * from product1 ORDER BY pname,pid;     /* Sorting by pname first then by pid*/
