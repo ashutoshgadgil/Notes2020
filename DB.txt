@@ -169,9 +169,53 @@
 				  select aliasname.columnname from tablename tablealiasname;
 
 		        	  select s.pid from product1 s;     /* Table alias name : s */
+
+===================================================================================================
+
     
+     CRUD operations: 
+		      Create : create a table
+                      Read   : Select records
+                      Update : Update record
+                      Delete : Delete record
+
+==================================================================================================
+
+ OPERATORS
+
+     AND
+     OR
+     NOT
+     IN
+     BETWEEN
+     IS NULL
+     IS NOT NULL
+     LIKE
+     
+==================================================================================================
 
 
+  ORDER BY
+
+	  Used to sort or arrange records in ascending or descending order. 
+          by name, by id 
+
+	  Syntax :
+
+		  select columnname from tablename order by columnname;
+
+ ================================================================================================
+ 
+   Predefined Aggregate functions of sql
+   
+   1) sum
+   2) avg
+   3) min
+   4) max
+   5) count  
+   6) upper
+   7) lower
+   8) sqrt      
 
 
 
