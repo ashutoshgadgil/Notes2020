@@ -248,3 +248,26 @@ create table emp1(name varchar2(20),age number);
     select * from product1 ORDER BY pid desc,pname desc;  /* Sorting by pid first then by name*/
    
     select * from product1 ORDER BY pname,pid;     /* Sorting by pname first then by pid*/
+    
+    update product1 set price=4000 where price is null;
+    
+    ==================================================
+    select sum(price) AS Total_Amt from product1;  /* sum of values of a column using sum() */
+   
+    select sum(price) AS Total_Amt from product1 where price > 2000; 
+    
+    select avg(price) AS Total_Amt from product1;     /* shows average of price */
+    
+    select count(pname) AS Total_Records from product1;  /* shows count of records */
+   
+    select count(pname) AS Total_Records from product1 where price >2000;
+    
+    select min(price) AS Total_Records from product1;
+    
+    select max(price) AS Total_Records from product1;
+    
+    select upper(pname) AS Total_Records from product1;
+    
+    select lower(pname) AS Total_Records from product1;
+    
+    select sqrt(5) from dual;
