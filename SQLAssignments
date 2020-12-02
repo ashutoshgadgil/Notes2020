@@ -3,3 +3,12 @@ Q.1 Create a table Result which stores the records of 5 students where the field
 Q.2 Add a column in the Result table named as Grade
 Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
 Q.4 Rename the table Result with StudentScore.
+Q.5 Create two tables A and B where A has 3 columns and B has 2 columns , Copy last two columns from table A to Table B.
+Q.6 Create a table which stores the information about a product . Fields are pid,pname,pqty,pcost. 
+     a) Display records in ascending order of quantity.  
+     b) Display records in descending order of product cost.
+     c) Display record for the product where the cost is highest.
+     d) Display the pid and pname of those products where the pcost is same.
+Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
+Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
+Q.9 Update the highest salary of the employee in above question to the minimum of all.
