@@ -271,3 +271,91 @@ create table emp1(name varchar2(20),age number);
     select lower(pname) AS Total_Records from product1;
     
     select sqrt(5) from dual;
+    
+    ====================================================
+    
+    select * from product1;
+    
+    create table customer(cid number,cname varchar2(20),city varchar2(20),age number);
+    
+    insert all
+         into customer(cid,cname,city,age) values(1,'Ajay','Pune',22)
+         into customer(cid,cname,city,age) values(2,'Vijay','Mumbai',23)
+         into customer(cid,cname,city,age) values(3,'Sanjay','Delhi',22)
+         into customer(cid,cname,city,age) values(4,'Rohit','Chennai',24)
+         into customer(cid,cname,city,age) values(5,'Akshay','Pune',25)
+         into customer(cid,cname,city,age) values(6,'Amit','Pune',26)
+         into customer(cid,cname,city,age) values(7,'Gaurav','Delhi',22)
+    select * from dual;    
+    
+    select * from customer;
+    
+    select city,count(city) AS "Total Cusomers" from customer group by city order by city desc;   /* grouping records by city and count records*/
+    
+    select age,count(age) AS "Total Cusomers" from customer group by age having count(age)<3;   /* grouping records by city and count records */
+   
+    select * from customer order by city;   /* grouping records by city and count records*/
+    
+    select age,count(age) AS "Total Cusomers" from customer group by age having min(age)<25;   /* grouping records by city and count records */
+    
+    select age,count(age) AS "Total Cusomers" from customer group by age having max(age)>24;   /* grouping records by city and count records */
+    
+    =======================================================================================
+    
+    create table tabl1(sno number NOT NULL, name varchar2(10));
+    
+    insert into tabl1 values(1,'abc');
+    insert into tabl1 values('','abc');
+    insert into tabl1 values(2,'def');
+    insert into tabl1 values(3,'');
+    
+    select * from tabl1;
+    
+    delete from tabl1 where sno=3;
+    alter table tabl1 modify name varchar2(20) NOT NULL;
+   
+    desc tabl1;
+    
+    alter table tabl1 drop column name;
+    alter table tabl1 ADD name varchar2(20);
+    
+   
+    ===========================================================================
+    
+    /* Check constraint */
+    
+    create table tabl2(name varchar2(20),age number,check (age >=18));
+    
+    insert into tabl2 values('abc',22);
+    
+    insert into tabl2 values('abc',15);
+    
+    select * from tabl2;
+    
+  ========================================================================
+  
+    create table tabl3(name varchar2(20),age number check (age >=18));
+
+    alter table tabl3 add per number check (per > 60);
+    
+    desc tabl3;
+    
+    insert into tabl3 values('Amit',22,75);
+    
+    insert into tabl3 values('Amit',24,55);
+    
+    insert into tabl3 values('Amit',24,65,1);
+     
+    select * from tabl3;
+    
+    alter table tabl3 add contact number(12);
+    
+    alter table tabl3 ADD CONSTRAINT ck_con Check(contact>0);   /* To add constraint using CONSTRAINT keyword */
+    
+    delete from tabl3;
+    
+    alter table tabl3 DROP CONSTRAINT ck_con;      /* To remove constraint using constraint name */
+                                                /* ck_con : constraint name */
+    select length('Ashutosh') As "Name Length " from dual;
+    
+    
