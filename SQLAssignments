@@ -31,3 +31,7 @@ Q.13 Make a table which stores the email id and password where password should n
 Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
 Q.15 Create a table person which stores the ID,name,email where define ID as primary key.Create another table Birthday which stores date of birth and ID.
      Join both tables and create Foreign key in Birthday.
+Q.16 Create a table where records of an employee is maintained . 
+     Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
+     Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
+     Join Both tables and Display output
