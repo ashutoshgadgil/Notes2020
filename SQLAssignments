@@ -27,3 +27,4 @@ Q.12 Create a table ItemSales : Itemname, Sales, city
       RAM             4
       Hard Disk       3
       Mouse           1
+Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
