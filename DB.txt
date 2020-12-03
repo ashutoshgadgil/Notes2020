@@ -218,11 +218,29 @@
    8) sqrt      
 
 
+=================================================================================================
+
+   Group By
+		select col,aggrfun(col) from tablename group by col;
+             
+
+   having 
+		Use having with group by 
+                 select age,count(age) AS "Total Cusomers" from customer group by age having count(age)>2;   /* grouping records by city and count records */
+   
+  ===============================================================================================
+
+  Constarints:
+                                   
+              Restrictions applied on the table
 
 
-
-                        
-
+              1) NOT NULL    : Column can not be null
+              2) Check       : Apply checks on the column 
+              3) Default     : Default value for any column
+              4) Unique      : applied on single / multiple columns . No same value for the column
+              5) Primary Key : uniquely identify the record from a table
+              6) Foreign Key : Primary key of a table exists as a primary key of other table
 
 
 
