@@ -358,4 +358,99 @@ create table emp1(name varchar2(20),age number);
                                                 /* ck_con : constraint name */
     select length('Ashutosh') As "Name Length " from dual;
     
+    =========================================================
+    
+    create table tabl4(id number,name varchar2(20),city varchar2(20) default 'Pune');
+    insert into tabl4 values(101,'Rahul','Delhi');
+    select * from tabl4;
+    
+    insert into tabl4(id,name) values(102,'Saurav');
+    insert into tabl4(id,name,city) values(102,'Saurav','');
+    
+    alter table tabl4 Modify name varchar2(20) DEFAULT '------';
+    
+    insert into tabl4(id,city) values(104,'Goa');
+    
+    create table tabl5(id number default 500,name varchar2(20),city varchar2(20) default 'Pune');
+    
+    ======================================================================
+    
+    create table tabl6(id number unique,name varchar2(20),city varchar2(20));
+    insert into tabl6(id,name,city) values(101,'Saurav','abc');
+    insert into tabl6(id,name,city) values(102,'Saurav','abc');
+    insert into tabl6(id,name,city) values(103,'Saurav','xyz');
+    insert into tabl6(id,name,city) values(104,'Saurav','');
+    
+    select * from tabl6;
+    
+    update tabl6 set city='Delhi' where id=102;
+    
+    alter table tabl6 add unique(city);
+    
+    =======================================================================
+    
+    create table tabl7(id number,name varchar2(20),primary key(id));
+    insert into tabl7(id,name) values(101,'Saurav');
+    insert into tabl7(id,name) values(102,'Gaurav');
+    insert into tabl7(id,name) values(null,'Saurav');  /* primary key can not be null */
+                                                       /* value of a column for primary key can not be same */
+    select * from tabl7;
+    =======================================================================
+    
+    create table tabl8(id number primary key,name varchar2(20));
+    
+    =======================================================================
+    
+    create table tabl9(id number,name varchar2(20),CONSTRAINT pk_id primary key(id));
+    
+    ========================================================================
+    
+    alter table tabl9 DROP CONSTRAINT pk_id;
+
+   ===========================================
+   
+    alter table tabl8 DROP primary key;
+    
+    ==============================================
+    
+    create table tabl10(id number,firstname varchar2(20),lastname varchar2(20));
+  
+    insert into tabl10 values(101,'Ajay','Sharma');
+    insert into tabl10 values(101,'Vikas','Gupta');
+    insert into tabl10 values(102,'Gaurav','Sharma');
+    
+    delete from tabl10 where id=102;
+    select * from tabl10;
+    
+    select firstname,lastname from tabl10 where id = 101 and lastname = 'Sharma';
+    drop table tabl10;
+    
+    ========================================================================================================================
+    /* Making ID+lastname as a primary key */
+    
+    create table tabl10(id number,firstname varchar2(20),lastname varchar2(20),CONSTRAINT pk_person PRIMARY KEY(id,lastname));
+ 
+    ========================================================================================================================
+    
+    create table Empl(eid number,ename varchar2(20),primary key(eid));
+    create table Address(city varchar2(20),id number CONSTRAINT fk_eid REFERENCES Empl(eid));
+   
+    insert into Empl values(101,'Amit');
+    insert into Empl values(102,'Suresh');
+    insert into Empl values(103,'Sunny');
+    insert into Empl values(104,'Bunny');
+    
+    select * from Empl;
+    
+    insert into Address values('Mumbai',101);
+    insert into Address values('Delhi',102);
+    insert into Address values('Jaipur',103);
+    insert into Address values('Pune',104);
+    
+    select * from Address;
+    
+    select e.eid,e.ename,a.city from Empl e,Address a where e.eid=a.id;
+    
+    
+    
     
