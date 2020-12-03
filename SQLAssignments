@@ -20,4 +20,10 @@ Q.11 Write a query to perform following operations on the table :
       d) find average population
       e) Display name of state population wise in descending order
       f) Display name of state population wise in ascending order
-
+Q.12 Create a table ItemSales : Itemname, Sales, city  
+     Display the following output (Create a query which displays the Total sales citywise)
+      Item           Sales
+      ----           -----
+      RAM             4
+      Hard Disk       3
+      Mouse           1
