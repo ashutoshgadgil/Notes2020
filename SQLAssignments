@@ -12,3 +12,4 @@ Q.6 Create a table which stores the information about a product . Fields are pid
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
+Q.10 create a table employee: eid, age, dept, salary. Show name of dept with lowest salary using group by
