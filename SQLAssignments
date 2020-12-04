@@ -50,4 +50,6 @@ Q.17  Create a table Students ---- Rollno( Primary Key ),
   c) Input the details of 5 students for a differnt college
   d)  Group all the students based on collegeName
 
+Q.18 Create a table which stores PersonName(Not Null),Mobile(Unique),Address.  Create two views v1 and v2 on the table. v1 is read only but v2 is updatable.
+      v1 shows personName and Mobile while v2 shows PersonName and Address.
 
