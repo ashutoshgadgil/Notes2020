@@ -35,3 +35,19 @@ Q.16 Create a table where records of an employee is maintained .
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
      Join Both tables and Display output
+Q.17  Create a table Students ---- Rollno( Primary Key ), 
+                                   Name (NOT NULL)
+  
+      Create a table College ----- CollegeId ( Primary Key ),
+                                   EnrollId (Foreign Key ), 
+                                   College Name,
+                                   AdmissionDate,
+                                   ContactNo
+
+  a) Join these tables and show the output as
+                                            RollNo  , Name , College Name , Admission Date , Contact No 
+  b) Remove Primary Key constraint from college
+  c) Input the details of 5 students for a differnt college
+  d)  Group all the students based on collegeName
+
+
