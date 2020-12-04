@@ -215,7 +215,8 @@
    5) count  
    6) upper
    7) lower
-   8) sqrt      
+   8) sqrt 
+   9) length     
 
 
 =================================================================================================
@@ -242,7 +243,67 @@
               5) Primary Key : uniquely identify the record from a table
               6) Foreign Key : Primary key of a table exists as a primary key of other table
 
+  ================================================================================================
 
+  Joins :
+           Table : A
+           Table : B
+
+          Type of joins : 1) inner Join
+ 					 select Tab1.col1,Tab2.col1 from Tab1 INNER JOIN Tab2 ON Tab1.col=Tab2.col;   /* Syntax */
+                                         
+ 					 select Empl.eid,Address.city from Empl INNER JOIN Address ON Empl.eid=Address.id;   /* Inner Join */
+                 
+                          2) Left join
+					 select Tab1.col1,Tab2.col1 from Tab1 LEFT JOIN Tab2 ON Tab1.col=Tab2.col;   /* Syntax */
+ 		
+					 select Empl.eid,Address.city from Empl LEFT JOIN Address ON Empl.eid=Address.id;   /* Left Join */
+     
+                                      
+                          3) Right join
+					 select Tab1.col1,Tab2.col1 from Tab1 RIGHT JOIN Tab2 ON Tab1.col=Tab2.col;   /* Syntax */
+
+					 select Empl.eid,Address.city from Empl RIGHT JOIN Address ON Empl.eid=Address.id;   /* Right Join */
+  
+                          4) Full join  
+  	  				 select Tab1.col1,Tab2.col1 from Tab1 FULL JOIN Tab2 ON Tab1.col=Tab2.col;   /* Syntax */	
+  			
+					 select Empl.eid,Address.city from Empl Full JOIN Address ON Empl.eid=Address.id;   /* Full Outer Join */
+
+====================================================================================================
+
+   UNION :
+		
+	  Operator used to combine two or more select queries.
+
+          select * from tab1 union select * from tab2; 
+    
+====================================================================================================
+
+  index :
+              used to make searching very fast / speedup query
+              on the table you can create index
+
+             syntax :
+                      create index indexname on tablename(col1,col2);
+
+             
+		      Unique index : can be created on the field which does not have duplicate values
+
+====================================================================================================
+
+   views :
+             virtual table allows you to view some records of a table.
+
+
+             syntax :
+                         create or replace view v_emp AS select eno,ename,city from empsal with read only; /* create view v_emp */
+
+   			  create or replace view v_emp1 AS select ename,city from empsal where city='Pune';
+	
+  			   create or replace view v_emp2 AS select ename || '(' || city || ')'  "Name (City)" from empsal;  // creating view with one column named as
+                                                                                                                            // Name(City)
+  
 
 
 
