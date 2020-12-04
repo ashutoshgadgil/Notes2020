@@ -439,18 +439,81 @@ create table emp1(name varchar2(20),age number);
     insert into Empl values(102,'Suresh');
     insert into Empl values(103,'Sunny');
     insert into Empl values(104,'Bunny');
+    insert into Empl values(105,'Bunny');
     
     select * from Empl;
     
     insert into Address values('Mumbai',101);
+    insert into Address values('Hyderabad',101);
     insert into Address values('Delhi',102);
     insert into Address values('Jaipur',103);
     insert into Address values('Pune',104);
+  
+    delete from Address where id=104;  
+    delete from Empl where eid=103; 
     
     select * from Address;
     
     select e.eid,e.ename,a.city from Empl e,Address a where e.eid=a.id;
     
+    ==========================================================================================
+    
+    create table Empl(eid number,ename varchar2(20),primary key(eid));
+    create table Address(city varchar2(20),id number CONSTRAINT fk_eid REFERENCES Empl(eid));
+    alter table Address Drop CONSTRAINT fk_eid;
+    
+    insert into Empl values(101,'Amit');
+    insert into Empl values(102,'Suresh');
+    insert into Empl values(103,'Sunny');
+    insert into Empl values(104,'Bunny');
+    insert into Empl values(105,'Bunny');
+    insert into Empl values(107,'Sachin');
+    insert into Empl values(108,'Vishal');
+    
+    select * from Empl;
+    
+    insert into Address values('Mumbai',101);
+    insert into Address values('Hyderabad',101);
+    insert into Address values('Delhi',102);
+    insert into Address values('Jaipur',103);
+    insert into Address values('Pune',104);
+    insert into Address values('Delhi',106);
+  
+    delete from Address where id=104;  
+    delete from Empl where eid=103; 
+    
+    select * from Address;
+  
+    select Empl.eid,Address.city from Empl INNER JOIN Address ON Empl.eid=Address.id;   /* Inner Join */
+    
+    select Empl.eid,Address.city from Empl LEFT JOIN Address ON Empl.eid=Address.id;   /* Left Join */
+     
+    select Empl.eid,Address.city from Empl RIGHT JOIN Address ON Empl.eid=Address.id;   /* Right Join */
+    
+    select Empl.eid,Address.city from Empl Full JOIN Address ON Empl.eid=Address.id;   /* Full Outer Join */
+    
+    =========================================================================
+    
+    create table fruits1(name varchar2(20));
+    create table fruits2(name varchar2(20));
+    
+    insert into fruits1 values('banana');
+     insert into fruits1 values('apple');
+      insert into fruits1 values('orange');
+       insert into fruits1 values('strawberry');
+        insert into fruits1 values('Mango');
     
     
+    insert into fruits2 values('Mango');
+     insert into fruits2 values('Chiku');
+      insert into fruits2 values('Mosambi');
+       insert into fruits2 values('Grapes');
+        insert into fruits2 values('Mango');
     
+     delete from fruits1;
+     select * from fruits1;
+     select * from fruits2;
+     
+     select * from fruits2 union select * from fruits1;   /* union will remove redundancy from the records */
+     
+     select * from fruits2 union all select * from fruits1;   /* union will remove redundancy from the records */
