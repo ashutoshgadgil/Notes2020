@@ -516,4 +516,89 @@ create table emp1(name varchar2(20),age number);
      
      select * from fruits2 union select * from fruits1;   /* union will remove redundancy from the records */
      
-     select * from fruits2 union all select * from fruits1;   /* union will remove redundancy from the records */
+     select * from fruits2 union all select * from fruits1;   /* show all records  */
+     
+     =====================================================
+     
+     create table tb1(name varchar2(20),city varchar2(20));
+     create table tb2(name varchar2(20),city varchar2(20),age number);
+     
+     insert into tb1 values('abc','Pune');
+     insert into tb1 values('abc','Mumbai');
+     insert into tb1 values('abc','Pune');
+     
+     insert into tb2 values('abc','Pune',22);
+     insert into tb2 values('abc','Pune',23);
+     insert into tb2 values('abc','Pune',24);
+     
+     select name,city from tb1 union select name,city from tb2;
+     
+     
+     =====================================================
+     
+     select pid,pname from product1;  /* Running query without creating index on table product1  0.047 secs */
+     
+     create index idx_pid on product1(pid,pname);  /* created index on table product1 for pid column*/
+     
+     select * from product1;   /* Running query with creating index on table product1  0.01 sec*/
+     
+     drop index idx_pid;       /* Dropping index*/
+     
+     create table dummy(sno number);
+     
+     insert into dummy values(101);
+     insert into dummy values(102);
+     delete from dummy;
+     select * from dummy;
+     
+     create unique index idx_dm on dummy(sno);  /* Creating unique index on table */
+     
+     ====================================================================
+     
+     create table empsal(eno number primary key,ename varchar2(20),salary  number,city varchar2(20));
+     
+     insert into empsal values(101,'Sumit',10000,'Delhi');
+     insert into empsal values(102,'Ajay',12000,'Mumbai');
+     insert into empsal values(103,'Sanjay',14000,'Bengaluru');
+     insert into empsal values(104,'Sunil',25000,'Pune');
+     insert into empsal values(105,'amit',34000,'Delhi');
+     insert into empsal values(106,'Vikas',24000,'Pune');
+       
+     drop table empsal;  
+     select * from empsal;
+     
+     create or replace view v_emp AS select eno,ename,city from empsal with read only; /* create view v_emp */
+
+     create or replace view v_emp1 AS select ename,city from empsal where city='Pune';
+
+     create or replace view v_emp2 AS select ename || '(' || city || ')'  "Name (City)" from empsal;
+     
+     select * from v_emp;  
+     select city from v_emp;  
+    
+     select * from v_emp1;  
+     select * from v_emp2;   
+     
+     drop view v_emp2;  
+    
+     desc v_emp;    
+     
+     delete from v_emp;
+     
+     insert into v_emp values(107,'Rohit','NOIDA');
+     
+     ===============================================================
+     
+     create table laptop(pid number,price number);
+     delete from laptop;
+     
+     insert into laptop values(1031,28000);
+     
+     select * from laptop;
+     
+     create or replace view v_laptop as select pid,price from laptop where pid=1031 with check option;
+     
+     select * from v_laptop;
+     
+     insert into v_laptop values(1031,30000);
+     
