@@ -298,12 +298,81 @@
 
              syntax :
                          create or replace view v_emp AS select eno,ename,city from empsal with read only; /* create view v_emp */
+                                                                                                           /* with read only making view as read only
 
    			  create or replace view v_emp1 AS select ename,city from empsal where city='Pune';
 	
   			   create or replace view v_emp2 AS select ename || '(' || city || ')'  "Name (City)" from empsal;  // creating view with one column named as
                                                                                                                             // Name(City)
   
+
+========================================================================================================
+
+
+ PL/SQL ==> Procedural language extention for SQL.
+            Block stuctured language
+            create an apllication
+            create functions, procedure
+            Apply exception
+            cursor
+            triggers
+
+ 
+
+ Syntax :
+
+             PL / SQL Block structure
+
+
+                DECLARE (OPTIONAL) : write declaration statements
+
+                BEGIN  (MANDATORY) : Programming logic, At least one statement should be in this section
+
+                EXCEPTION (OPTIONAL) : Handle exception
+ 
+                END;    (MANDATORY)  : To end the block
+
+
+
+        Type of Blocks in PL/SQL : 1) Anonymous Block : unnamed block
+							
+                                   2) Named Block     : block defined with a given name (function , procedure)
+
+
+
+
+  Architecture of PL/SQL :
+                          
+                           there are 3 components : 1) PL/SQL block
+                                                    2) PL/SQL Engine
+                                                    3) Database server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
