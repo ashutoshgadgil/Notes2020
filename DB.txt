@@ -348,15 +348,50 @@
                                                     3) Database server
 
 
+  Decision making statements :
+                          
+     1) If 
+                      Syntax :
+                                    If condition
+                                    then
+                                               statement1;
+                                    end if;
 
 
+      2) If THEN ELSE 
+                      Syntax :
+                                    If condition
+                                    then
+                                               statement1;
+                                    ELSE
+                                               statement2;
+				    end if;
+       2) If THEN ELSIF 
+                      Syntax :
+                                    If condition1
+                                    then
+                                               statement1;
+                                    ELSIF condition2
+                                               statement2;
+				    ELSE
+ 						statement3;
+				    end if;
 
+     CASE Statement:
+                      case expression
+                            when condition1 then statement1;
+                            when condition2 then statement2;
+                            else statement3;
+                      end case;
+ 
 
+    Iterative statements / Loops :
 
+                             1) Basic Loop / Exit
 
-
-
-
+                             2) While 
+ 
+                             3) For Loop
 
 
 
