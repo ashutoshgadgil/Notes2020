@@ -681,3 +681,239 @@ create table emp1(name varchar2(20),age number);
         
         dbms_output.put_line('Remainder is : '||MOD(15,4));
     END;
+
+==============================================================================
+
+    DECLARE
+        r real := 4;
+        pi CONSTANT real := 3.14;
+        res real;
+    BEGIN
+       res := pi*r*r;
+       
+       dbms_output.put_line('Area is :' || res);
+    END;
+
+==================================================
+
+DECLARE 
+    v1 number :=10;        -- Global variable and it can be accessed throughout the block
+BEGIN
+    dbms_output.put_line(v1);
+     
+    DECLARE                      /* Nested PL/SQL block */
+        v2 number := 20;    -- Local variable and can be accessed only within the inner block
+    BEGIN
+        dbms_output.put_line(v2);
+        dbms_output.put_line(v1);
+    END;
+     dbms_output.put_line(v1);
+     --   Local variable v2 can not be accessed in outer block   dbms_output.put_line(v2);
+END;
+
+
+===================================================================
+
+DECLARE 
+    v1 number :=10;        -- Global variable and it can be accessed throughout the block
+BEGIN
+    DECLARE                      /* Nested PL/SQL block */
+        v1 number := 20;    -- Local variable and can be accessed only within the inner block
+    BEGIN
+        dbms_output.put_line(v1);
+    END;
+END;
+
+==============================================================
+
+DECLARE 
+    v1 Date := '07-Dec-2020';        -- dd-Mon-yy
+BEGIN
+       dbms_output.put_line(v1);
+END;
+
+===============================================================
+
+DECLARE 
+        v1 number;
+        v2 number;
+BEGIN
+       v1 := 30;
+       v2 := 20;
+       
+       IF (v1<v2) then    -- IF BLOCK
+              dbms_output.put_line(v1 || ' is less than '|| v2);
+       END IF;
+END;
+
+==============================================================
+
+DECLARE 
+        v1 number;
+        v2 number;
+BEGIN
+       v1 := 30;
+       v2 := 40;
+       
+       IF (v1<v2) then    -- IF then else BLOCK
+              dbms_output.put_line(v1 || ' is less than '|| v2);
+       else
+              dbms_output.put_line(v2 || ' is less than '|| v1);
+       END IF;
+END;
+
+==========================================================
+
+DECLARE 
+        v1 number;
+        v2 number;
+BEGIN
+       v1 := 40;
+       v2 := 40;
+       
+       IF (v1<v2) THEN    -- IF then else BLOCK
+              dbms_output.put_line(v1 || ' is less than '|| v2);
+       ELSIF (v2<v1) THEN
+              dbms_output.put_line(v2 || ' is less than '|| v1);
+       ELSE
+              dbms_output.put_line(v2 || ' is equal to '|| v1);
+       END IF;
+END;
+============================================================
+
+
+DECLARE 
+        v1 number;
+        v2 number;
+BEGIN
+       v1 := 40;
+       v2 := 20;
+       
+       IF (v1>v2) THEN    -- OUTER IF
+            DBMS_OUTPUT.PUT_LINE('WELCOME');
+            IF (V1>10) THEN                -- NESTED IF 
+            DBMS_OUTPUT.PUT_LINE('HI');
+            ELSE
+            DBMS_OUTPUT.PUT_LINE('HELLO');
+            END IF;
+       ELSE
+            DBMS_OUTPUT.PUT_LINE('DEFAULT ANSWER');
+       END IF;
+END;
+
+==================================================================
+
+DECLARE 
+        v char(1) :='f';
+BEGIN
+       CASE v
+             when 'B' then dbms_output.put_line('Blue');
+             
+             when 'G' then dbms_output.put_line('Green');
+             
+             when 'R' then dbms_output.put_line('Red');
+       
+             else dbms_output.put_line('Invalid choice');
+       END CASE;
+END;
+
+================================================================
+
+
+DECLARE 
+        v char(5) :='abc';
+BEGIN
+       CASE v
+             when 'abc' then dbms_output.put_line('You name : '||v);
+             
+             when 'def' then dbms_output.put_line('You name : '||v);
+             
+             when 'ghi' then dbms_output.put_line('You name : '||v);
+       
+             else dbms_output.put_line('Invalid name');
+       END CASE;
+END;
+
+============================================================
+
+DECLARE 
+        v number :=10;
+BEGIN
+       CASE v
+             when 10 then dbms_output.put_line('You entered : '||v);
+             
+             when 20 then dbms_output.put_line('You entered : '||v);
+             
+             when 30 then dbms_output.put_line('You entered : '||v);
+       
+             else dbms_output.put_line('Invalid number');
+       END CASE;
+END;
+
+=========================================================================
+
+
+DECLARE 
+        v number :=12;
+BEGIN
+       LOOP                                /* Exit loop */
+            EXIT WHEN v < 10;
+            DBMS_OUTPUT.PUT_LINE('HELLO - ' || v);
+            
+            v := v-1;
+       END LOOP;
+END;
+
+=====================================================================
+
+
+DECLARE 
+        v number :=12;
+BEGIN
+       LOOP     /* Exit loop */ 
+            IF (v = 10) then
+                   exit;
+            END IF;
+              DBMS_OUTPUT.PUT_LINE('HELLO - ' || v);
+            v :=v-1;
+       END LOOP;
+END;
+
+=====================================================================
+
+DECLARE 
+        v number :=0;
+BEGIN
+    WHILE v<=10 LOOP                      /* While loop*/
+        dbms_output.put_line(v);
+        v := v+1; 
+    END LOOP;
+END;
+
+===================================================================
+
+
+DECLARE 
+    
+BEGIN
+     FOR K IN 1..10 LOOP    /* FOR LOOP PRINTING VALUES FROM 1 TO 10*/
+        DBMS_OUTPUT.PUT_LINE(K);
+     END LOOP;
+END;
+=============================================
+
+
+DECLARE  
+BEGIN
+     FOR K IN 1..10 LOOP   /* FOR LOOP PRINTING VALUES IN REVERSE ORDER*/
+            IF K=8 THEN
+                CONTINUE;  -- CONTINUE THE LOOP WITHOUT EXITING ON A SPECIFIC CONDITION
+                --EXIT;    -- TERMINATE LOOP ON A SPECIFIC CONDITION
+        END IF;
+        DBMS_OUTPUT.PUT_LINE(K);
+     END LOOP;
+END;
+
+
+
+
