@@ -602,3 +602,82 @@ create table emp1(name varchar2(20),age number);
      
      insert into v_laptop values(1031,30000);
      
+     =============================================================
+     
+     create table user1(email varchar2(30),password varchar2(20) check(length(password)>8));
+    
+     insert into user1 values('ab@gmail.com','abcdefghi'); 
+    
+     insert into user1 values('ab@gmail.com','abc'); 
+      
+     select * from user1;
+    ==============================================================
+    
+    
+    DECLARE
+    BEGIN
+    null;
+    END;
+    /
+=================================================
+    SET SERVEROUTPUT ON
+   
+    DECLARE
+    BEGIN
+        dbms_output.put_line('Welcome to PLSQL');  /* Statement to display output on the screen */
+    END;
+    /
+
+================================================
+
+    DECLARE
+           name varchar2(20) := 'PLSQL ';  -- string variable name --
+           age number(2) := 10;           -- defining age as number and assigning value 10 to age
+           pi CONSTANT double precision:= 3.14;
+           x number :=1.23;
+           ch CHAR(1) := 'S';  -- Declaration with initialization
+           v1 number(3);    -- Declaration
+           v2 number(3) default 400;  -- Initiazing Default value to v2
+           str varchar2(20) DEFAULT 'A STRING VALUE';  -- Iniatilizing default value to str
+           val varchar2(20) NOT NULL := 'ABC';   -- 
+           v3 number;
+           v4 integer := 300;
+    BEGIN
+  
+        v1 := 500;         -- Initialization
+        dbms_output.put_line(name);  /* Statement to display output on the screen */
+        dbms_output.new_line();
+        dbms_output.put_line(age|| ' ' || pi || x || ch);   --  (Concatenation operator)|| is used to concatenate the values
+        dbms_output.new_line();
+        dbms_output.put_line(v1);        
+        dbms_output.put_line(v2);  
+        dbms_output.new_line();
+        dbms_output.put_line(str || val|| ' , '||v4);  
+    END;
+    
+==============================================================
+
+  
+    DECLARE
+          v1 integer := 50;
+          v2 integer := 200;
+          v3 integer;
+          V4 REAL := 3.14;
+    BEGIN
+         v3 := v1+v2;
+        dbms_output.put_line('Sum is : '||v3);    
+
+        v3 := v1*v2;
+        dbms_output.put_line('Product  is : '||v3);
+        
+        v3 := v1-v2;
+        dbms_output.put_line('Subtraction is : '||v3);
+        
+        v3 := v1/v2;
+        dbms_output.put_line('Division is : '||v3);
+        
+        dbms_output.put_line('Real no is : '||v4);
+        
+        
+        dbms_output.put_line('Remainder is : '||MOD(15,4));
+    END;
