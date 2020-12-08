@@ -64,6 +64,8 @@ Q.25 Create an array of 5 names and print all names in Capital case.
 Q.26 Create an array of 5 names and print all names with length in Capital case.
       "abc" ===>  ABC : 3 
 Q.27 CONVERT A SMALL CASE LETTER TO UPPERCASE AND PRINT IT.
+Q.28 Create a procedure which accepts one parameter as a radius of circle. Declare pi as constant in the procedure and calculate area of circle & print the area in 
+     other PLSQL Block.
       
 
 
