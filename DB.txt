@@ -415,20 +415,51 @@
 
 
                        Initialization :
-                                 arrayvar arrayname;
+                                 arrayvar names;
 
-                                 arrayvar := arrayname('abc','def','ghi');
+                                 arrayvar := names('abc','def','ghi');
 
                       
                        Accessing of Array elements:
  
                                  arrayvar(3)   // access 3rd element of array
+
+  Procedure (Stored Procedure) :
+                                Performs a single or multiple tasks
+                                It can be called
+                                Example of named PLSQL block
+
+                                Consists of 2 parts : Header -> define the name of procedure, parameters
+                                                      Body   -> Declare declaration section, execution, exception section
+
+                               Parameters :
+                                            1) IN  -----> Input
+                                            2) OUT -----> Output
+                                            3) INOUT ---> Input & Output
+
+                Creation of a procedure :
+
+                               Syntax :
+                               
+                               CREATE OR REPLACE PROCEDURE procedure_name (parametersList IN /OUT/ INOUT datatype)
+                               IS
+                                    declarations;
+                               BEGIN
+                                    executable statements;
+                               End;
+              
                       
 
+               Procedure Calling
 
+                              Syntax :
+                              
+                              BEGIN
+                                     PROCEDURE_NAME(arguments);
+                              END;
 
-
-
+               Drop Procedure:
+                              DROP PROCEDURE procedure_name;
 
 
 
