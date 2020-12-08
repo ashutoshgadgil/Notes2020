@@ -1106,23 +1106,67 @@ END;
 
 ==========================================================
 
-CREATE OR REPLACE PROCEDURE demo_pr1(x1 IN integer)  -- Defining a procedure which is taking a parameter of type integer
+CREATE OR REPLACE PROCEDURE demo_pr5(x1 IN real,x2 OUT real)  -- Defining a procedure which is taking a parameter of type integer
 IS
-  n integer :=5;
+     pi constant real:= 3.14;
 BEGIN
-    dbms_output.put_line('Welcome to procedure '||n*x1);
+     x2 := pi * x1 *x1;
 END;
 
+
+DECLARE
+i real;
 /* Defining block to call the procedure */
 BEGIN
-    demo_pr1(100);        -- procedure calling on passing value 100
-    demo_pr1(200);
+    demo_pr5(2.1,i);        -- procedure calling on passing value 100
+    dbms_output.put_line('Area of circle : '||i);
+END;
+
+===========================================================
+
+
+CREATE OR REPLACE PROCEDURE demo_pr6(x1 IN OUT real)  -- Defining a procedure
+IS
+     pi constant real:= 3.14;
+BEGIN
+     x1 := pi * x1 *x1;
 END;
 
 
+DECLARE
+i real;
+/* Defining block to call the procedure */
+BEGIN
+    i:=2.3;
+    demo_pr6(i);        -- procedure calling on passing value 100
+    dbms_output.put_line('Area of circle : '||i);
+END;
+
+=========================================================================
 
 
+create table mytable1(id number,name varchar2(20),city varchar2(20));
 
+select * from mytable1;
+
+CREATE OR REPLACE PROCEDURE InsertRecord(id IN number,name IN varchar2,city In varchar2)  -- Defining a procedure
+IS
+BEGIN
+     insert into mytable1 values(id,name,city);
+END;
+
+DECLARE
+/* Defining block to call the procedure */
+BEGIN
+    InsertRecord(102,'Manish','Delhi');
+    InsertRecord(103,'Vishal','Mumbai');
+    InsertRecord(104,'Vivek','Chennai');
+    InsertRecord(105,'Ravi','Pune');
+    InsertRecord(106,'Gaurav','Pune');
+    InsertRecord(107,'Saloni','Mumbai');
+    
+    dbms_output.put_line('Data Saved successfully...');
+END;
 
 
 
