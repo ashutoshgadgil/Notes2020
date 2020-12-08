@@ -63,6 +63,7 @@ Q.24 PRINT THE FACTORIAL OF A NUMBER USING FOR LOOP.
 Q.25 Create an array of 5 names and print all names in Capital case.
 Q.26 Create an array of 5 names and print all names with length in Capital case.
       "abc" ===>  ABC : 3 
+Q.27 CONVERT A SMALL CASE LETTER TO UPPERCASE AND PRINT IT.
       
 
 
