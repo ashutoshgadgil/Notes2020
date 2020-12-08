@@ -880,6 +880,7 @@ BEGIN
 END;
 
 =====================================================================
+set serveroutput on
 
 DECLARE 
         v number :=0;
@@ -913,6 +914,95 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE(K);
      END LOOP;
 END;
+
+
+
+DECLARE
+     v boolean := TRUE;
+BEGIN
+      
+          DBMS_OUTPUT.PUT_LINE(V);
+    
+
+END;
+
+=============================================
+declare
+l char;
+begin
+  for al  in ascii('A')..ascii('Z') loop
+    l := chr(al);
+    dbms_output.put_line(l);
+  end LOOP;
+end; 
+
+
+===============================================
+-- String functions
+
+declare
+  ch char(1):='a';
+  c char;
+  i integer;
+  
+  s1 varchar2(20) :='hello world';
+  s2 varchar2(20) :='India';
+  s3 varchar2(20) :='INDIA';
+  S4 VARCHAR2(20) :='....HI....';
+  
+begin
+  i := ASCII(ch);               -- returning the ASCII value of a character
+  dbms_output.put_line(i);
+  
+  c := CHR(i);                  -- returning the character equivalent of ASCII value
+  dbms_output.put_line(c);
+  
+  dbms_output.put_line(CONCAT(s1,s2));   --concat will concatenate strings
+  
+  dbms_output.put_line(initcap(s1));  --initcap converts first letter of each word in a string in capital case
+  
+  dbms_output.put_line(UPPER(s2));   -- converts a string to upper case 
+  
+  dbms_output.put_line(LOWER(s3));   -- converts a string to lower case
+  
+  dbms_output.put_line(LTRIM(s4,'.')); -- trims a string to the left
+  
+  dbms_output.put_line(RTRIM(s4,'.')); -- trims a string to the right
+  
+  dbms_output.put_line(TRIM('.' FROM s4)); -- trims a string to the left and right
+  
+  dbms_output.put_line(substr(s1,7,5));    -- finds a substring where 7 is starting index and 5 is no of characters to be printed
+end; 
+
+======================================
+
+declare
+       TYPE numbers IS VARRAY(5) OF integer;
+       nm numbers; 
+begin
+       nm := numbers(1,2,3,4,5);
+       
+       for i in 1..5 loop
+        dbms_output.put_line(nm(i));
+       end loop;
+end; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
