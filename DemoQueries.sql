@@ -1155,6 +1155,15 @@ BEGIN
      insert into mytable1 values(id,name,city);
 END;
 
+CREATE OR REPLACE PROCEDURE shRecord(i IN number)  -- Defining a procedure
+IS
+    id mytable1.id%type;
+BEGIN
+     select id into id from mytable1 where id=i;
+     
+     dbms_output.put_line(id);
+END;
+
 DECLARE
 /* Defining block to call the procedure */
 BEGIN
@@ -1168,9 +1177,40 @@ BEGIN
     dbms_output.put_line('Data Saved successfully...');
 END;
 
+===========================================================
+
+CREATE OR REPLACE PROCEDURE pr1
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('HELLO');
+END;
+
+=======================================================
+
+-- 1st way to call procedure
+EXEC pr1;   ---  To call procedure
+EXECUTE pr1;
 
 
+-- 2nd way to call procedure
 
+begin
+    pr1;       ---  To call procedure
+end;
 
+========================================================
 
+select * from mytable1;
+DESC mytable1;
 
+CREATE OR REPLACE PROCEDURE showRec(no IN number)
+IS
+   i number;
+   n varchar2(20);
+   cy varchar2(20);
+BEGIN
+    select id,name,city into i,n,cy from mytable1 where id=no;
+    dbms_output.put_line('ID : ' || i ||' Name : '||n||' City : '||cy);
+END;
+
+execute showrec(105);
