@@ -394,11 +394,36 @@
                              3) For Loop
 
 
+    Array 
+                Data structure : VARRAY
+                STORE THE FIXED SIZE SEQUENTIAL COLLECTION OF ELEMENTS OF SAME TYPE
+       	      
+                NOTE : In PLSQL array index always starts with 1.
+
+                Creation of VARRAY
+
+                                CREATE OR REPLACE TYPE arrayname IS VARRAY(n) OF elementType;
+                                                        or
+                                TYPE arrayname IS VARRAY(n) OF elementType;
+                           
+                                n = number of elements
+                                elementType = data type of elements
+
+                       Declaration:
+
+                                TYPE names IS VARRAY(3) OF varchar2(10);
 
 
+                       Initialization :
+                                 arrayvar arrayname;
 
+                                 arrayvar := arrayname('abc','def','ghi');
 
-
+                      
+                       Accessing of Array elements:
+ 
+                                 arrayvar(3)   // access 3rd element of array
+                      
 
 
 
