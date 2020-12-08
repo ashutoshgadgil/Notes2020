@@ -69,7 +69,7 @@ Q.28 Create a procedure which accepts one parameter as a radius of circle. Decla
 Q.29 create a procedure which accepts a single parameter as a integer and it is defined as IN OUT .Procedure returns the cube of the number.
 Q.30 Create following procedures :
      Employee : eid (primary key),name (Not NULL), age (NOT NULL)
-     a) Pocedure 1 Creates a table
+     a) Create a table
      b) Pocedure 2 inserts 5 records where age of employee is greater than 18.
      c) Procedure 3 updates a record based on the employee id.
      d) Procedure 4 deletes a record based on employee id.
