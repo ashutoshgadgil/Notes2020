@@ -987,14 +987,137 @@ begin
        end loop;
 end; 
 
+================================================
+
+declare
+      num1 number;
+begin
+     dbms_output.put_line('Enter a number :');
+     num1 := &num1;
+        
+     dbms_output.put_line('Entered number :'||num1);
+end;
+
+=============================================================
 
 
+CREATE OR REPLACE PROCEDURE demo_pr  -- Defining a procedure which is not taking any parameter
+IS
+  n integer :=5;
+BEGIN
+    dbms_output.put_line('Welcome to procedure '||n*n);
+END;
+
+BEGIN
+    demo_pr;        -- calling procedure without passing any parameter
+    demo_pr;
+END;
+
+DROP PROCEDURE demo_pr;
+
+=============================================================
 
 
+CREATE OR REPLACE PROCEDURE demo_pr1(x1 IN integer)  -- Defining a procedure which is taking a parameter of type integer
+IS
+  n integer :=5;
+BEGIN
+    dbms_output.put_line('Welcome to procedure '||n*x1);
+END;
+
+/* Defining block to call the procedure */
+BEGIN
+    demo_pr1(100);        -- procedure calling on passing value 100
+    demo_pr1(200);
+END;
+
+================================================================
 
 
+CREATE OR REPLACE PROCEDURE demo_pr2(x1 IN integer,x2 IN integer)  -- Defining a procedure which is taking 2 parameter of type integer
+IS
+  n integer;
+BEGIN
+    n := x1 * x2;
+    dbms_output.put_line('Product of '||x1 ||' and '||x2||' is : '||n);
+END;
 
+/* Defining block to call the procedure */
+BEGIN
+    demo_pr2(6,8);        -- procedure calling on passing value 100
+END;
 
+============================================================
+
+CREATE OR REPLACE PROCEDURE demo_pr3(x1 IN integer,x2 IN real)  -- Defining a procedure which is taking 2 parameter of type integer
+IS
+  n real;
+BEGIN
+    n := x1 * x2;
+    dbms_output.put_line('Product of '||x1 ||' and '||x2||' is : '||n);
+END;
+
+/* Defining block to call the procedure */
+BEGIN
+    demo_pr3(6,8.2);        -- procedure calling on passing value 100
+END;
+
+=====================================================================
+DECLARE 
+v number(3):= 35;
+BEGIN 
+WHILE v<46 LOOP
+ v:=v+1;
+ IF v=40 THEN
+   continue;
+ END IF;
+dbms_output.put_line(v);
+END LOOP;
+END;
+
+====================================
+
+DECLARE
+TYPE names IS VARRAY(5) OF VARCHAR(20);
+nm names;
+BEGIN
+nm := names('abhishek','abhinav','nimesh','nilesh','yogurt');
+for k in 1..5 loop
+dbms_output.put_line(UPPER(nm(k)) || ':' || length(nm(k)));
+end loop;
+end;
+
+=======================================================================
+
+CREATE OR REPLACE PROCEDURE demo_pr4(x1 IN integer,x2 OUT integer) 
+IS
+BEGIN
+    x2 := x1 * x1;
+END;
+
+/* Defining block to call the procedure */
+
+DECLARE
+i integer;
+BEGIN
+    demo_pr4(6,i);        -- procedure calling on passing value 100
+    dbms_output.put_line('Square is :'||i);
+END;
+
+==========================================================
+
+CREATE OR REPLACE PROCEDURE demo_pr1(x1 IN integer)  -- Defining a procedure which is taking a parameter of type integer
+IS
+  n integer :=5;
+BEGIN
+    dbms_output.put_line('Welcome to procedure '||n*x1);
+END;
+
+/* Defining block to call the procedure */
+BEGIN
+    demo_pr1(100);        -- procedure calling on passing value 100
+    demo_pr1(200);
+END;
 
 
 
