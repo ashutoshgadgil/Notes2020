@@ -76,6 +76,11 @@ Q.30 Create following procedures :
      e) Procedure 5 shows all records.
      f) Procedure 6 shows the record based on employee id.
      g) Procedure 7 arranges all records age wise in ascending order.
+Q.31 Create a function which accepts your name as a parameter and age and returns the following string as an output :
+     Ex:  Input Name :  abcd 
+          Output     :  ABCD 24
+Q.32 Create a function which is applied on the following table : EMPLOYEE (ename , salary)
+     Function will return the avg salary of employees.
 
 
 
