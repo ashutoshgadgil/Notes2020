@@ -82,7 +82,8 @@ Q.31 Create a function which accepts your name as a parameter and age and return
 Q.32 Create a function which is applied on the following table : EMPLOYEE (ename , salary)
      Function will return the avg salary of employees.
 Q.33 Create a procedure to see a record of an employee in Q.30 . Make a record variable in the same procedure . Using the record variable show the name and age.
-
+Q.34 Create a function which accepts one argument as an integer. The function is dividing a number by the argument passed. If the passed number is zero then
+     handle zero divide exception.
 
 
 
