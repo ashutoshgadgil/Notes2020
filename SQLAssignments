@@ -84,6 +84,9 @@ Q.32 Create a function which is applied on the following table : EMPLOYEE (ename
 Q.33 Create a procedure to see a record of an employee in Q.30 . Make a record variable in the same procedure . Using the record variable show the name and age.
 Q.34 Create a function which accepts one argument as an integer. The function is dividing a number by the argument passed. If the passed number is zero then
      handle zero divide exception.
+Q.35 Create a procedure which is inserting a record in a table named as IDCard (name,age,city). IF AGE is less than insertion will not be possible and will generate
+     an exception message "Age is less than 18" otherwise insert record in the table and print as "Data saved successfully".
+     
 
 
 
