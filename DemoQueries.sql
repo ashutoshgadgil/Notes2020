@@ -1342,6 +1342,96 @@ desc mytable1;
 
 execute showrec3(105);
 
+======================================================
+SELECT * FROM MYTABLE1;
+
+DECLARE
+    i mytable1.id%type :=&i;    -- Taking id value at run time
+    n mytable1.name%type;
+BEGIN
+      
+      select name into n from mytable1 where id=i;  -- entered id is matched with the id column of the table
+      dbms_output.put_line('Name : '||n);
+      
+      
+      EXCEPTION
+                WHEN NO_DATA_FOUND THEN        -- Handling system defined exception : NO_DATA_FOUND  
+                        dbms_output.put_line('Employee '||i||' does not exist');
+END;
+
+=============================================================================
+
+DECLARE
+    i mytable1.id%type :=&i;    -- Taking id value at run time
+    n mytable1.name%type;
+    
+    n1 number:=10;
+    n2 number:=5;
+    
+    str number;    
+    
+    c char;
+BEGIN
+      
+      c:=10;
+      select name into n from mytable1 where id <= i;  -- entered id is matched with the id column of the table
+      dbms_output.put_line(n1/n2);
+    
+      dbms_output.put_line('Name : '||n);
+      
+      str:=100;
+      
+      EXCEPTION
+                WHEN NO_DATA_FOUND THEN        -- Handling system defined exception : NO_DATA_FOUND  
+                        dbms_output.put_line('Employee '||i||' does not exist');
+                WHEN TOO_MANY_ROWS THEN        -- Handling system defined exception : TOO_MANY_ROWS  
+                        dbms_output.put_line('Database returning many records');
+                WHEN ZERO_DIVIDE THEN        -- Handling system defined exception : ZERO_DIVIDE  
+                        dbms_output.put_line('Number can not be divided by zero');                
+                WHEN VALUE_ERROR THEN        -- Handling system defined exception : VALUE_ERROR 
+                        dbms_output.put_line('Character can not be assigned to number variable');                
+                 WHEN OTHERS THEN        -- Handling system defined exception : default exception 
+                        dbms_output.put_line('Unknown Exception');                                
+END;
+
+ ======================================================================================
+ 
+ 
+DECLARE
+    i mytable1.id%type :=&i;    -- Taking id value at run time
+    n mytable1.name%type;
+    
+    USER_EXCEPTION EXCEPTION;    -- DECLARE USER DEFINED EXCEPTION
+BEGIN
+      
+      IF i <= 0 THEN
+        RAISE USER_EXCEPTION;       -- Raising / generating exception 
+      ELSE
+            select name into n from mytable1 where id = i;  -- entered id is matched with the id column of the table
+            dbms_output.put_line('Name : '||n);
+      END IF;
+      
+      EXCEPTION
+                WHEN NO_DATA_FOUND THEN        -- Handling system defined exception : NO_DATA_FOUND  
+                        dbms_output.put_line('Employee ID does not exists');                    
+      
+                WHEN USER_EXCEPTION THEN        -- Handling system defined exception : NO_DATA_FOUND  
+                        dbms_output.put_line('Employee ID can not be zero');                    
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
