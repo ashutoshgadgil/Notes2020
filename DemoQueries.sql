@@ -1199,6 +1199,7 @@ begin
 end;
 
 ========================================================
+set serveroutput on;
 
 select * from mytable1;
 DESC mytable1;
@@ -1209,8 +1210,75 @@ IS
    n varchar2(20);
    cy varchar2(20);
 BEGIN
-    select id,name,city into i,n,cy from mytable1 where id=no;
+    select id,name,city into i,n,cy from mytable1 where id=no;    -- copying field values from the table into variables
     dbms_output.put_line('ID : ' || i ||' Name : '||n||' City : '||cy);
 END;
 
 execute showrec(105);
+
+============================================================
+
+CREATE OR REPLACE FUNCTION  addition(a IN number, b IN number) RETURN number -- function definition 
+AS
+c number;
+BEGIN
+c := a+b;
+return c;
+END;
+
+DECLARE
+ result number;
+BEGIN
+    result := addition(15,19);   -- function calling statement on passing two values
+    dbms_output.put_line('Sum is : '||result);
+END;
+
+
+===================================================================
+
+CREATE OR REPLACE FUNCTION  Maximum(a IN number, b IN number) RETURN number -- function definition 
+AS
+c number;
+BEGIN
+    dbms_output.put_line('Calculating....');
+    IF a > b then
+        c :=a;
+    ELSE
+        c :=b;
+    END IF;
+return c;
+END;
+
+DECLARE
+ result number;
+BEGIN
+    result := maximum(15,19);   -- function calling statement on passing two values
+    dbms_output.put_line('Maximum is : '||result);
+END;
+
+==============================================================
+
+select * from mytable1;
+
+CREATE OR REPLACE FUNCTION  countRecords RETURN number -- function definition 
+AS
+cnt number;
+BEGIN
+   SELECT count(*) into cnt from mytable1;      -- counting no of records in table 
+return cnt;
+END;
+
+DECLARE
+ result number;
+BEGIN
+    result := countRecords;   -- function calling statement on passing two values
+    dbms_output.put_line('Total records in table  : '||result);
+END;
+
+
+
+
+
+
+
+
