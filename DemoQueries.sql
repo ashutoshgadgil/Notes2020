@@ -1275,6 +1275,76 @@ BEGIN
     dbms_output.put_line('Total records in table  : '||result);
 END;
 
+=========================================================================
+
+CREATE OR REPLACE PROCEDURE showRec(no IN number)
+IS
+   i number;
+   n varchar2(20);
+   cy varchar2(20);
+BEGIN
+    select id,name,city into i,n,cy from mytable1 where id=no;    -- copying field values from the table into variables
+    dbms_output.put_line('ID : ' || i ||' Name : '||n||' City : '||cy);
+END;
+
+execute showrec(105);
+
+desc mytable1;
+
+select * from mytable1;
+alter table mytable1 MODIFY city varchar2(10);
+execute InsertRecord(111,'ABCD','New Delhi');
+
+execute showrec(111);
+
+=================================================
+
+CREATE OR REPLACE PROCEDURE showRec1(no IN number)
+IS
+   i number;
+   n varchar2(20);
+   cy varchar2(20);
+BEGIN
+    select id,name,city into i,n,cy from mytable1 where id=no;    -- copying field values from the table into variables
+    dbms_output.put_line('ID : ' || i ||' Name : '||n||' City : '||cy);
+END;
+
+desc mytable1;
+
+execute showrec1(101);
+=================================================
+
+
+CREATE OR REPLACE PROCEDURE showRec2(no IN number)
+IS
+   i mytable1.id%type;    -- i number    type : will sync the data type specification from the table
+   n mytable1.name%type;  -- n varchar2(20)
+   cy mytable1.city%type; -- cy varchar2(10)
+BEGIN
+    select id,name,city into i,n,cy from mytable1 where id=no;    -- copying field values from the table into variables
+    dbms_output.put_line('ID : ' || i ||' Name : '||n||' City : '||cy);
+END;
+
+execute showrec2(101);
+
+=======================================================
+/* Table based record */
+
+CREATE OR REPLACE PROCEDURE showRec3(no IN number)
+IS
+   v_rec mytable1%rowtype;      -- rowtype is making a record variable 
+BEGIN
+    select * into v_rec from mytable1 where id=no;    -- copying field values from the table into variables
+    dbms_output.put_line('ID : ' || v_rec.id||'Name : '||v_rec.name||'City '||v_rec.city);
+END;
+
+desc mytable1;
+
+execute showrec3(105);
+
+
+
+
 
 
 
