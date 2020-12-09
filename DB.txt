@@ -146,6 +146,11 @@
                               update tablename set colname=newvalue where condition;
 
 
+      TCL (Transactional control language) :
+
+      1) commit
+      2) rollback
+      3) savepoint
 
 
 ===============================================================================================
@@ -570,6 +575,13 @@
 
                 Raising user defined exception
                                               RAISE exceptionname;
+
+
+  =========================================================================================
+
+
+
+
 
 
 
