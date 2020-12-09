@@ -1420,25 +1420,57 @@ BEGIN
 END;
 
 
+===================================================================================================
 
+create table players(pid number,name varchar2(20));
 
+select * from players;
 
+insert into players values(1,'Ajay');
+insert into players values(2,'Amit');
+insert into players values(3,'vijay');
+insert into players values(4,'Rohit');
 
+truncate table players;
 
+commit;
 
+delete from players where pid=3;
+commit;
+delete from players where pid=2;
 
+alter table players add city varchar2(20);
+alter table players drop column city;
 
+truncate table players;
 
+drop table players;
 
+update players set pid=4 where pid=1; 
+commit;
+rollback;
 
+select * from players;
 
+insert into players values(2,'xyz');
+insert into players values(6,'xyz');
 
+SAVEPOINT SP2;
 
+SAVEPOINT SP1;
 
+ROLLBACK TO SAVEPOINT SP2;
 
+DELETE FROM players where pid=6;
+DELETE FROM players where pid=2;
 
+insert into players values(9,'ABC');
 
+SAVEPOINT SP3;
 
+insert into players values(10,'ABC');
 
+SAVEPOINT SP4;
 
+ROLLBACK TO SAVEPOINT SP3;
 
