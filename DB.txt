@@ -439,7 +439,7 @@
 
                 Creation of a procedure :
 
-                               Syntax :
+                        Syntax :
                                
                                CREATE OR REPLACE PROCEDURE procedure_name (parametersList IN /OUT/ INOUT datatype)
                                IS
@@ -462,6 +462,30 @@
                               DROP PROCEDURE procedure_name;
 
 
+  Function :
+                    Function is a named block which performs a task and must return a value
+
+                    Syntax :
+                        
+                             CREATE OR REPLACE FUNCTION functionname(parameterslist) RETURN datatype
+                             AS
+                             BEGIN
+				functionbody;
+			        return;
+                             END;     
+
+                    FUNCTION Calling
+
+                              Syntax :
+                              
+                              BEGIN
+
+                                     FUNCTION_NAME(arguments);
+                              END;     
+
+
+
+                                
 
 
 
