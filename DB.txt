@@ -484,9 +484,119 @@
                               END;     
 
 
+  Type attribute :
+                    
+                   Use type attribute if you are changing the datatype of a column in the table.All changes made in the table will aumatically be reflected in the
+                   declaration of column varible in PLSQL block.
 
-                                
+                   name varchar2(20);
 
+                   replaces
+
+                   name tablename.columnname%type
+
+                   name mytable1.name%type;     
+
+   RECORD :
+                         DATA STRUCTURE which is a collection of different type of fields .
+
+                        Student (rollno, name, city, marks)
+
+                        101, Amit, Pune, 85.5   ====> Record
+
+
+                        varray & record
+
+                   
+                   rowtype : Attribute
+
+                                       To define a record variable
+                                       
+                                       recordvariable Tablename % rowtype
+
+                                       v_rec mytable1%rowtype;
+
+
+
+                                       v_rec ====> record variable
+                                       mytable1==> table name
+                                       rowtype===> Attribute to define a record
+
+                   NOTE : At a time a single row can be returned with record variable
+
+                        
+                   Type of records :
+                   1) Table based record
+                   2) Cursor based record
+
+
+   Exception Handling :
+                        Exception a run time error which stops the execution of remaining program.
+
+           Type of exceptions :
+
+                         1) System defined exception :  No_DATA_FOUND , TOO_MANY_ROWS
+
+                         2) User defined exception  : Defined by user
+
+                        
+
+            Exception Handling : 
+                                 Mechanism to handle the exception programatically
+
+            
+            
+            Sections of PLSQL : 1) DECLARE
+                                2) BEGIN...END
+                                3) EXCEPTION
+
+             Syntax:
+                       DECLARE
+
+                       BEGIN
+
+				EXCEPTION
+					WHEN exception1 THEN Exception_Handler_statement1;			
+					WHEN exception2 THEN Exception_Handler_statement2;
+					WHEN OTHERS THEN Exception_Handler_statement;
+
+                       END;
+
+
+
+		Syntax User defined exception 
+                    
+                                              exceptionname EXCEPTION;   //declaration of User defined exception
+
+                Raising user defined exception
+                                              RAISE exceptionname;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
 
 
 
