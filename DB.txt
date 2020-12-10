@@ -658,12 +658,73 @@
 
 
 
+==========================================================================================
+
+  
+
+   Triggers :
+ 
+               Stored Program which is automatically executed or fired when some event occurs.
+
+               Triggers can be created on a table for some events like insert record, update record......
+		
+               Timing is associated wirh trigger : after inserting a record, before inserting a record
+                                                   after / before
 
 
+               To apply some restrictions or to provide security on a table you can create a trigger.
 
 
+                Syntax :
+			CREATE OR REPLACE TRIGGER triggername     -- TRIGGER NAME
+                        BEFORE / AFTER                            -- TIMING
+                        INSERT OR UPDATE OR DELETE                -- ACTION
+                        ON tablename                              -- TABLE
+                        DECLARE                                   -- PLSQL BLOCK
+                        BEGIN
+                        END;
+   
+   Type of Triggers :
+                     1) Statement level Trigger
+                                               only once the trigger is executed for the complete statement.
+
+                     2) Row level Trigger
+                                               For every row the trigger is executed
+ =============================================================================================
+
+  Package :
+
+             Package is a collection of objects 
+             Procedure,function,cursor,variable
+             Remove the ambuiguity (duplicacy)
+
+             package1 : pro1
+             package2:  pro1
+
+      Creation of package :
+                             1) package specification : Declarations of objects
+
+                                Syntax :
+                                           CREATE OR REPLACE PACKAGE packagename AS
+                                                procedure1;
+
+                                           END packagename;
 
 
+                             2) package body : Definitions of objects
+				
+				Syntax :
+
+                                           CREATE OR REPLACE PACKAGE BODY packagename AS
+
+                                           END packagename;
+                                                  
+                             3) Calling package objects :
+                                      
+                                BEGIN
+                                       packagename.procedure1;
+                                END;
+==========================================================================================================                  
 
 
 
