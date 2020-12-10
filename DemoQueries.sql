@@ -1562,6 +1562,167 @@ begin
        END LOOP;
 end;
 
+============================================================================
+/* Statement level Trigger */
+
+create table book(bid number,bname varchar2(20),price number);  -- Trigger will run after insert operation on table book
+
+CREATE OR REPLACE TRIGGER trg_book 
+AFTER INSERT ON book
+DECLARE
+BEGIN
+      DBMS_OUTPUT.PUT_LINE('Record is inserted in Book table');
+END;
+
+select * from book;
+
+insert into book values(503,'JAVA',550);
+insert into book values(504,'SQL',350);
+insert into book values(505,'VB'450);
+insert into book values(506,'.NET',650);
+
+update book set bname='HTML' where bid=503;
+
+delete from book where bid=503;
+
+create table book(bid number,bname varchar2(20),price number);
+
+CREATE OR REPLACE TRIGGER trg_del_book      -- Trigger will run after delete operation on table book
+AFTER delete ON book
+DECLARE
+BEGIN
+      DBMS_OUTPUT.PUT_LINE('Record is deleted from Book table');
+END;
+
+
+create table book(bid number,bname varchar2(20),price number);
+
+CREATE OR REPLACE TRIGGER trg_del_Update_book      -- Trigger will run before delete or update operation on table book
+BEFORE DELETE OR UPDATE ON book
+DECLARE
+BEGIN
+      DBMS_OUTPUT.PUT_LINE('Record Modified in table');
+END;
+
+
+
+DROP TRIGGER trg_del_book;  -- Dropping Trigger from table
+DROP TRIGGER trg_book;
+DROP TRIGGER trg_del_update_book;
+
+==============================================================================
+
+/* Row Level Trigger */
+
+select * from book;
+
+CREATE OR REPLACE TRIGGER trg_update_book
+BEFORE INSERT OR UPDATE ON book
+FOR EACH ROW
+WHEN (NEW.BID>0)
+DECLARE
+BEGIN
+       DBMS_OUTPUT.PUT_LINE('Old Price : '|| :OLD.price);
+       DBMS_OUTPUT.PUT_LINE('New Price : '|| :NEW.price);
+END;
+
+UPDATE book set price=price+100;
+
+insert into book values(410,'php',800);
+insert into book values(0,'C',900);
+
+==========================================================================
+
+/* 1.Package Specification */
+ CREATE OR REPLACE PACKAGE PCK1 AS
+    v1 number :=400; 
+    procedure pro1;                     -- Declaration of procedure
+ END PCK1;
+
+
+/* 2.Package Body */
+CREATE OR REPLACE PACKAGE BODY PCK1 AS
+    procedure pro1                      -- Definition of procedure
+    IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Procedure called :'||v1);
+    END;
+END PCK1;
+
+/* 3.Call objects from package */
+BEGIN
+    PCK1.pro1;                           -- Calling of procedure using package name
+END;
+=======================================================================================
+
+CREATE OR REPLACE PACKAGE PCK2 AS
+    v1 number :=400; 
+    procedure pro1;                     -- Declaration of procedure
+ END PCK2;
+
+
+/* 2.Package Body */
+CREATE OR REPLACE PACKAGE BODY PCK2 AS
+    procedure pro1                      -- Definition of procedure
+    IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Procedure from package 2 is called :');
+    END;
+END PCK2;
+
+/* 3.Call objects from package */
+BEGIN
+    PCK2.pro1;                           -- Calling of procedure using package name
+END;
+
+==================================================================================
+SELECT * FROM PRODUCT1;
+
+CREATE OR REPLACE PACKAGE PCK3 AS   
+    procedure pro1;                     -- Declaration of procedure
+    FUNCTION getProductName(pr_id number) RETURN varchar2;   -- Declaration of function
+ END PCK3;
+
+/* 2.Package Body */
+CREATE OR REPLACE PACKAGE BODY PCK3 AS
+    FUNCTION getProductName(pr_id number) RETURN varchar2  -- Definition of function
+    IS
+       prname varchar2(10);
+    BEGIN
+       SELECT pname INTO prname from product1 where pid=pr_id;
+       return prname;
+    END;
+    
+    procedure pro1                      -- Definition of procedure
+    IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Procedure called :');
+    END;
+END PCK3;
+
+/* 3.Call objects from package */
+DECLARE
+  ProductName varchar2(20);
+BEGIN
+    PCK3.pro1;                           -- Calling of procedure using package name
+
+    ProductName := PCK3.getProductName(103);
+    dbms_output.put_line('Product Name : '||ProductName);
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
