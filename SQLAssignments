@@ -86,7 +86,10 @@ Q.34 Create a function which accepts one argument as an integer. The function is
      handle zero divide exception.
 Q.35 Create a procedure which is inserting a record in a table named as IDCard (name,age,city). IF AGE is less than insertion will not be possible and will generate
      an exception message "Age is less than 18" otherwise insert record in the table and print as "Data saved successfully".
-     
+Q.36 Create a table Movie which contains the movie name,release year,rating (1-5). Create a Statement level trigger which is executed after insertion of records.
+     Create a Row level trigger on this table which is executed before updating the movie name when movie rating is greater than 0.
+Q.37 Create a cursor on the Movie table which displays only those records where Movie rating is more than 3.
+Q.38 Create an Associative Array which maintains the population citywise.
 
 
 
