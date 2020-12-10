@@ -1343,6 +1343,26 @@ desc mytable1;
 execute showrec3(105);
 
 ======================================================
+/* Cursor Based Record */
+
+DECLARE
+   -- Cursor Declaration
+   CURSOR cur_mytable1 IS select id,name,city from mytable1;   -- Cursor name : cur_mytable1
+   v_rec cur_mytable1%rowtype;      -- Creating a record variable (v_rec) on the cursor 
+BEGIN
+    -- Open a cursor
+    OPEN cur_mytable1;              
+    LOOP
+    -- Fetch Cursor
+    FETCH cur_mytable1 INTO v_rec;
+        EXIT WHEN cur_mytable1%NOTFOUND;
+        dbms_output.put_line('ID : ' || v_rec.id||'Name : '||v_rec.name||'City '||v_rec.city);  -- accessing fields using record variable
+    END LOOP;
+    -- Close Cursor
+    CLOSE cur_mytable1;
+END;
+
+======================================================
 SELECT * FROM MYTABLE1;
 
 DECLARE
@@ -1473,4 +1493,75 @@ insert into players values(10,'ABC');
 SAVEPOINT SP4;
 
 ROLLBACK TO SAVEPOINT SP3;
+
+=======================================================
+
+select * from product1;
+
+desc product1;
+=======================================================
+SET SERVEROUTPUT ON;
+
+/* Example of Implicit cursor*/
+declare
+  tot_updated_rows number;
+begin
+    update product1 set price=price+100 WHERE PID=222;
+    
+    IF SQL%NOTFOUND THEN                     -- When no rows updated
+          DBMS_OUTPUT.PUT_LINE('NO UPDATION');
+    ELSIF SQL%FOUND THEN
+         tot_updated_rows := SQL%ROWCOUNT;
+          DBMS_OUTPUT.PUT_LINE('TOTAL UPDATED ROWS : '||tot_updated_rows);
+    END IF;
+end;
+
+===============================================================================
+
+/* Example of Explicit cursor*/
+
+declare
+    i product1.pid%type;
+    n product1.pname%type;
+    pr product1.price%type;
+
+    CURSOR cur_product IS select pid,pname,price from product1 order by pid desc;   -- Step-1 : cursor declaration
+begin
+    OPEN cur_product;     -- Step-2 : open cursor
+    
+    LOOP
+    
+    FETCH cur_product INTO i,n,pr;   --Step-3 : Fetch cursor    
+    EXIT WHEN cur_product%notfound;
+    dbms_output.put_line('Product ID : '||i||' Product Name : '||n||' Price : '||pr);
+    
+    END LOOP;
+    CLOSE cur_product;     --Step-4 : Close cursor
+end;
+
+================================================================
+
+declare
+   TYPE marks IS TABLE OF number INDEX BY varchar2(20);
+   marks_list marks;
+   name varchar2(20);
+begin
+        marks_list('Ajay') := 95;
+        marks_list('Vijay') := 85;
+        marks_list('Amit') := 75;
+        marks_list('Rahul') := 65;
+        marks_list('Ravi') := 90;
+        
+        name := marks_list.FIRST;   -- FIRST INDEX OF THE TABLE
+        --DBMS_OUTPUT.PUT_LINE(name);  -- Displaying index value 
+        --DBMS_OUTPUT.PUT_LINE(marks_list(name));  -- Displaying value on that index
+
+       WHILE name IS NOT NULL LOOP
+             DBMS_OUTPUT.PUT_LINE(name|| '======>' ||TO_CHAR(marks_list(name)));
+             name := marks_list.NEXT(name);
+       END LOOP;
+end;
+
+
+
 
