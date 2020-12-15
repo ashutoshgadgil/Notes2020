@@ -225,39 +225,225 @@
                                          Many forms 
 
 
+=========================================================================================================
+
+
+      public static void main(String args[])
+      {
+		
+      }
+
+      public  : main is available to outside the class (JVM can access main function)
+
+      static  : memory saving concept
+ 
+      void    : return type
+ 
+      main    : function name (Entry point of the program)
+  
+      String args[]   : Command line arguments (args[])
+
+   
+   ====================================================================================
+
+   	System.out.println("Welcome to Java");
+
+        int x=20;
+
+
+        System.out.println(x);
+
+        System : Predefined class
+        out : static object of the class PrintStream, defined in System class
+        println() : function to display the data on the screen , Defined in PrintStream class
+
+
+        Ex :
+                class System
+		{
+
+			static PrintStream out;   // member variable
+
+		}
+
+
+    Note : any static data member of a class can be accessed with the help of class name ==>   System.out (PrintStream Object)
+
+               class PrintStream
+	       {
+		        void println(String str)
+			{
+				// will print the string str on the screen
+			}
+               }
+  
+
+               System.out.println("Hello");
+
+
+     ===================================================================================
+
+
+     Stream :
+                 object through which the data is transferred from source to destination
+
+     Type of streams :
+                      1) Standard output stream  ====> System.out
+                      2) Standard Input stream   ====> System.in
+                      3) Standard error stream   ====> System.err
+
+     ===================================================================================
+
+
+    Data types :
+                 Type of data which is stored in variable
+
+                 1) Primitive  (predefined)
+						Integral        : byte , short, int, long
+                                                floating point  : float , double
+                                                character       : char
+                                                boolean         : boolean
+                              
+                 2) Non primitive (User defined)
+                                                Arrays
+                                                String
+                                                objects
+
+    byte  :   1 byte
+    short :   2 bytes
+    int   :   4 bytes
+    long  :   8 bytes
+    
+    float :   4 bytes
+    double:   8 bytes
+
+    char  :   2 bytes
+   
+    boolean : 1 bit
+
+ ======================================================================================
+
+  char : 2 bytes 
+  Unicode character system (Multilingual suuport)
+
+  boolean : true , false
+
+  =====================================================================================
+
+
+   Wrapper Classes :
+                      Convert the primitive data type into non primitive type
+		      Convert the non primitive data type into primitive type
+
+                     
+                      primitive datatype  ------------ Wrapper Classes
+                     -------------------------------------------------
+                         
+                             int                    Integer
+                             byte                   Byte
+                             short                  Short
+                             long                   Long
+                             float                  Float
+                             double                 Double
+                             char                   Character
+                             boolean                Boolean                
+		   
+  Type Conversion :
+                   Convert a data type value into another type of data.
+
+            Note : Narrowing -> larger type is converted into smaller type
+                                 int -> byte
+                              
+                   Widening -> smaller type is converted into larger type               
+                                 byte -> int
+
+            Type of conversion :
+            1)  Implicit (Automatic conversion)
+					
+
+            2)  Explicit (Manual conversion)
+
+ =================================================================================
+
+
+
+   Memebers declaration in the class and Accessing of members from outside the class:
+
+
+   class xyz
+   {
+        members;   // declaration
+   }
+
+
+   class MAIN
+   {
+	public static void main(String args[])
+	{
+		xyz obj=new xyz();  
+
+                obj.member;    // Accessing of member through object
+	}
+   }
+
+
+ ================================================================================
+
+  Type of variables :
+                     1) Local variable 
+                                       variable declared in a method or block , Value will not be accessible outside method.
+
+
+                     2) Instance variable
+				       seperate meory is allocated for each object. 
+    				       declared inside a class and outsie the method of the same class.
+				        can not be accessed in static method
+				       non static
+
+		     3) static variable
+					Single memory is shared among all objects of the class
+				        class variable
+					can be accessed in non static method and staic method
+
+
+ Static method :
+                 static : keyword
+
+
+                 1) can be called with the classname and . operator
+                        
+                        classname.staticMethodName();
+
+                        Student.getCollege();   
+
+===============================================================================================
+
+ Naming Convention :
+
+                    Class :
+                           1) Class name should give the purpose of class
+			   2) Camel case notation
+ 			   3) First letter of the class should be in capital case
+			   4) Class name should not contain any space
+ 
+                    methods :
+                           1) start the method name with small case letter
+                           2) there should be no space between method name  : First Name (invalid)
+                                                                              FirstName  (camel case), First_Name
+
+                    variable :
+			   1) should not start a variable name with numeric.
+                           2) use small case letters
+                           3) abc , ABC both are different.
+ 			   4) Reserved words or data type should not be used as a variable name.
+
+=============================================================================================
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				
 
 
 
