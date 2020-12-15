@@ -1,0 +1,327 @@
+1.
+
+package BasicPrograms;
+
+public class pro1 {
+	public static void main(String[] args) {
+		int x=20;
+		int y=30;
+		
+		System.out.println("Welcome to Java");
+		
+		System.out.println(x+y);   // + is used to add
+
+		System.out.println("Hello "+x);  // + is concatenate two strings
+		
+		System.out.println("Welcome to Java"+x+y);
+
+		System.out.println(x+y+"Welcome to Java");
+		
+		System.out.println(x+""+y);
+		
+		System.out.println("Welcome to Java"+(x+y));
+		
+		System.err.println("Error");
+
+	}
+}
+
+============================================================
+
+2.
+
+package BasicPrograms;
+
+public class pro2 {
+
+	public static void main(String[] args) {
+		byte b=(byte)130;  // -128 to 127 (130)
+		short s=32767;  // -32768 to 32767
+		int i=400000;
+		long l=9945637544L;
+		
+		System.out.println("Byte : "+b);
+		System.out.println("Short : "+s);
+		System.out.println("Integer : "+i);
+		System.out.println("Long : "+l);
+
+		float f=(float)1.2123452525234;
+		System.out.println("Float : "+f);
+		
+		double d=1.21234525252345623;
+		System.out.println("Double : "+d);
+		
+		f=(float)231425.2123452525;
+		System.out.println("Float : "+f);
+		
+		char ch='G';
+		System.out.println("Character : "+ch);
+
+		boolean bl= 1>2;
+		System.out.println("Boolean : "+bl);
+		
+		//Integer in=2;
+		int v1;
+		short v2=120;
+		
+		v1=v2;  // Implicit type casting
+		System.out.println(v1);
+		
+		v2=(short)v1;  // Explicit type casting
+		System.out.println(v2);
+		
+		
+	}
+
+}
+=================================================================
+
+3.
+
+package BasicPrograms;
+
+class myclass1
+{
+	int x;
+	
+	void show()
+	{
+		x=500;
+		System.out.println("X : "+x);
+	}
+}
+
+public class pro3 {
+
+	public static void main(String[] args) {
+		myclass1 s1=new myclass1(); //s1 is object
+		myclass1 s2=new myclass1(); //s2 is object
+		
+		s1.show();    // Accessing of member method show()
+		s2.show();
+		
+		s1.x=20;
+		System.out.println("s1.x : "+s1.x);
+		
+		s2.x=30;
+		System.out.println("s2.x : "+s2.x);
+		
+		System.out.println(s1+" "+s2);
+		
+		
+	}
+}
+===============================================================
+
+4.
+
+package BasicPrograms;
+
+public class pro4 {
+
+	private int x;            // x is instance variable
+	private static int y=30;  // static variable
+	
+	public void display()
+	{
+		int localvar=56;      // local variable
+		
+		System.out.println("Instance variable : "+x);
+		System.out.println("Static variable : "+y);
+		System.out.println("Local variable : "+localvar);
+	}
+	
+	public static void main(String[] args) {
+		pro4 obj=new pro4();   //creation of object , obj
+		obj.x=1000;            // obj.x
+		obj.display();
+		
+		pro4 obj1=new pro4();   //creation of object , obj
+		obj1.x=2000;           // obj1.x
+		obj1.display();
+		
+		System.out.println(obj.x+" "+obj1.x);
+		// System.out.println(localvar); 
+	}
+
+}
+===========================================================
+
+5.
+
+package BasicPrograms;
+
+public class pro5 {
+
+	  static String city;       // static variable
+	  //String city;            // Instance variable
+	  
+	public void getCity()
+	{
+		city="Pune";
+	}
+	
+	public void showCity()
+	{
+		System.out.println("City : "+city);
+	}
+	
+	public static void main(String[] args) {
+		pro5 p1=new pro5();      
+		pro5 p2=new pro5();
+		pro5 p3=new pro5();   // p1,p2,p3 are objects
+		pro5 p4=new pro5();              // p4 is object
+		
+		//p2.getCity();
+		
+		p1.city="Pune";
+		p3.city="Bengaluru";
+		p2.city="Delhi";
+		
+		p1.showCity();
+		p2.showCity();
+		p3.showCity();
+		p4.showCity();
+		
+	}
+
+}
+
+====================================================
+
+6.
+
+package BasicPrograms;
+
+public class pro6 {
+
+	static String city;       // static variable
+	String name;              // Instance variable
+	
+	public static void setCity()
+	{
+		city="Mumbai";
+	}
+	
+	public void setDetails(String n)
+	{
+		name=n;
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("Name : "+name+" City : "+city);
+	}
+	
+	public static void main(String[] args) {
+		pro6 c1=new pro6();
+		pro6 c2=new pro6();
+		pro6 c3=new pro6();
+		pro6 c4=new pro6();
+		pro6 c5=new pro6();
+		
+		setCity();
+		
+		c1.setDetails("Sachin");
+		c2.setDetails("Rohit");
+		c3.setDetails("Virat");
+		c4.setDetails("Ajay");
+		c5.setDetails("Rahul");
+		
+		c1.showDetails();
+		c2.showDetails();
+		c3.showDetails();
+		c4.showDetails();
+		c5.showDetails();
+		
+	}
+}
+
+===================================================
+7.
+
+package BasicPrograms;
+
+class Calculations
+{
+	private double number1,number2,result;
+	
+	public void getResults(double n1,double n2)
+	{
+		number1=n1;
+		number2=n2;
+		
+		getNumbers();
+		
+		result=n1+n2;
+		System.out.println("Addition       : "+result);
+		
+		result=n1-n2;
+		System.out.println("Subtraction    : "+result);
+		
+		result=n1*n2;
+		System.out.println("Multiplication : "+result);
+		
+		result=n1/n2;
+		System.out.println("Division       : "+result);
+		
+		result=n1%n2;
+		System.out.println("Remainder      : "+result);
+		
+		System.out.println(Math.pow(4, 3));
+	}
+	
+	void getNumbers()
+	{
+		
+		System.out.println("Number1 : "+number1+" Number2 : "+number2);
+	}
+}
+
+public class pro7 {
+	public static void main(String[] args) {
+		Calculations c1=new Calculations();
+		
+		c1.getResults(40,5);
+		
+		System.out.println("-------------------------------");
+		c1.getResults(50,2);
+		
+		System.out.println("-------------------------------");
+		c1.getResults(60,5);
+		
+		System.out.println("-------------------------------");
+		c1.getResults(1,-2);
+	}
+}
+
+=========================================================
+
+8.
+
+package BasicPrograms;
+
+class myclass2
+{
+	public static int getSquare(int n)   // Static method
+	{
+		return n*n;
+	}
+	
+	public void message()   // Non static method
+	{
+		System.out.println("Message generated...");
+	}
+}
+
+public class pro8 {
+	public static void main(String[] args) {
+		System.out.println("Square is : "+myclass2.getSquare(20));
+
+		myclass2 obj=new myclass2();
+		
+		obj.message();
+	}
+}
+
+=========================================
