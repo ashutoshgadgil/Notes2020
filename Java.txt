@@ -440,8 +440,32 @@
 =============================================================================================
 
 
+ Access specifiers :
+
+                   Used to provide access permission to the data members of the class.
+
+                   1) private
+				Accessible to the same class method, butt not accessible to othe class / other package
+			
+                   2) protected
+				Accessible only within the class and outside the class but in the same package , Not accessible to other package
+
+                   3) public
+				Accessible to the class of the same package or different package
+
+                   4) Default 
+                                Accessible within the package, Do not specify any access specifiers like private, protected or public at the time of declaration
 
 
+   Note : Methods of the class should be declared in public section,
+          Instance variables should be declared either private or protected
+
+===============================================================================================
+
+
+  this keyword :
+                
+     
 
 				
 
