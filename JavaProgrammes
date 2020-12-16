@@ -595,3 +595,78 @@ public class pro12 {
 
 }
 
+====================================================================================================
+
+14.
+
+package BasicPrograms;
+
+public class pro13 {
+
+	private final int x=10;  //x can not be changed due to final 
+	private final String str="abc";
+	
+	public String getName()
+	{
+		return str;
+	}
+	
+	public void changeIt()
+	{
+		int z=x+200;
+		System.out.println(z);
+		
+		// x=x+1;
+		
+		// str="def";
+	}
+	
+	public void show(final int c)
+	{
+		final int y=c;
+		System.out.println(c);
+	}
+	
+	public static void main(String[] args) {
+		pro13 p=new pro13();
+		p.changeIt();
+        System.out.println(p.x);
+		p.show(20);
+		
+		System.out.println(p.getName());
+	}
+
+}
+
+=====================================================================================
+
+15
+
+package BasicPrograms;
+
+public class pro14 {
+	public static void main(String[] args) {
+		String s1="Hello World";        // String Literal	
+		String s2=new String("Welcome");  // String creation using new 
+	
+		String s3="Welcome";
+		String s4="HELLO";
+		
+		System.out.println(s1.charAt(6));  // Returns character at specified index
+		System.out.println(s1.toUpperCase());  // converts string in upper case
+		System.out.println(s4.toLowerCase());  // converts string in lower case
+		System.out.println(s1.length());   // length of the string
+		System.out.println(s1.startsWith("He"));  // return true or false if the string starts with a specified letter / string
+		System.out.println(s1.endsWith("d"));   // return true or false if the string ends with a specified letter / string
+		System.out.println(s1.substring(0,5));  // returns substring , 0 is inclusive starting index, 5 is exclusive index
+		System.out.println(s1.concat(s3));    // concatenate string values
+		System.out.println(s1);
+		s1="";    // empty string
+		System.out.println(s1.isEmpty());   // returns true if string is empty
+		System.out.println(s2.lastIndexOf("e"));
+		System.out.println(s2.contains("Wel"));
+		System.out.println(s2.replace('W', 'E'));
+		System.out.println(s2.replace("come", "abc"));
+	}
+
+}
