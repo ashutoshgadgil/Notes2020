@@ -325,3 +325,165 @@ public class pro8 {
 }
 
 =========================================
+
+9.
+
+package BasicPrograms;
+
+class myclass3
+{
+	private int x;   // Private member can not be accessed outside the class directly
+	                 // private member can be accessed indirectly through the function of the same class
+	protected int y;
+	public int z;    // public member can be accessed directly from outside the class
+	
+	public void fun()
+	{
+		x=10;
+		y=20;
+		z=30;
+	}
+	
+	public void show()
+	{
+		System.out.println("x : "+x);
+	}
+}
+
+public class pro9 {
+
+	public static void main(String[] args) {
+		myclass3 s1=new myclass3();   // Creation of object s1
+		
+		s1.fun();                     // method calling
+		
+		//System.out.println("s1.x : "+s1.x);
+		System.out.println("s1.y : "+s1.y);     // Accessing of data members / instance variables
+		System.out.println("s1.z : "+s1.z);
+	
+		s1.show();
+	}
+
+}
+
+========================================================================
+
+10
+
+package BasicPrograms;
+
+public class pro10 {
+
+	private String name;
+	private double per;
+	
+	public void getDetails(String name,double per)
+	{
+		this.name=name;
+		this.per=per;
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("Name : "+name);
+		System.out.println("Percentage : "+per);
+	}
+	
+	public static void main(String[] args) {
+		pro10 p=new pro10();
+		
+		p.getDetails("Amit",85.6);
+		p.showDetails();
+	}
+
+}
+
+==========================================================================
+
+11
+
+package BasicPrograms;
+
+public class pro11 {
+
+	int x;
+	float f;
+	double d;
+	char c;
+	String s;
+	public static void main(String[] args) {
+		pro11 p=new pro11();
+		
+		System.out.println("x : "+p.x);
+		System.out.println("f : "+p.f);
+		System.out.println("d : "+p.d);
+		System.out.println("c : "+p.c);
+		System.out.println("s : "+p.s);
+		
+	}
+
+}
+
+=================================================================================
+
+12
+
+package package1;
+
+public class Demo1 {
+	private int x;    // Private Access
+	protected int y;  // Protected Access
+	public int z;     // Public Access
+	int def=2000;     // Default Access
+	
+	public void initialize()
+	{
+		x=100;
+		y=200;
+		z=300;
+	}
+}
+
+
+package package1;
+
+public class DefaultAccess {
+
+	public static void main(String[] args) {
+		Demo1 d=new Demo1();
+		
+		System.out.println(d.def);
+
+	}
+
+}
+
+
+package BasicPrograms;
+
+import package1.Demo1;
+
+public class Demo2 {
+
+	public double z;
+	protected int w=500;
+	public static void main(String[] args) {
+		// package1.Demo1 s1=new package1.Demo1();
+		
+		Demo1 s1=new Demo1();
+		Demo2 s2=new Demo2();
+		
+		s1.initialize();    // x=100,y=200,z=300 , x : private, y :protected, z:public
+		
+		// System.out.println("s1.x : "+s1.x); // Not accessible 
+		// System.out.println("s1.x : "+s1.y);
+		System.out.println("s1.z : "+s1.z);    // Accessible
+		
+		System.out.println("s2.z : "+s2.z);
+		
+		//System.out.println(s1.def);  // def is declared with default access, can not be accessed 
+		                                // in different package
+	}
+
+}
+
