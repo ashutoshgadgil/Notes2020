@@ -487,3 +487,111 @@ public class Demo2 {
 
 }
 
+==============================================================================================================
+
+
+13.
+
+package BasicPrograms;
+
+
+class Employee
+{
+	private int eid;
+	private String name;
+	private double salary;
+	private String company;
+	
+	// Constructor Overloading
+	public Employee()     // Default Constructor
+	{
+		company="HP";
+	}
+	                               // obj =e2
+	public Employee(Employee obj)  // Parameterised constructor copying the company of one object into other object
+	{
+		company=obj.company;       // e4.company = e2.company
+	}
+	
+	void setCompany(String com)
+	{
+		company=com;
+	}
+	
+	void setData(int eid,String name,double salary)
+	{
+		this.eid=eid;
+		this.name=name;
+		this.salary=salary;
+	}
+	
+	void showData(Address obj)        // Accepting the object as a parameter
+	{
+		System.out.println("Eid : "+eid);
+		System.out.println("Name : "+name);
+		System.out.println("Salary : "+salary);
+		System.out.println("Company : "+company);
+		System.out.println("Address : "+obj.officeno+obj.area+obj.city+obj.state);
+		
+		System.out.println("========================================");
+	}
+}
+
+class Address
+{
+	int officeno;
+	String area;
+	String city,state;
+	public Address(int officeno,String area,String city,String state)   // Parameterised constructor
+	{
+		this.officeno=officeno;
+		this.area=area;
+		this.city=city;
+		this.state=state;
+	}
+}
+
+public class pro12 {
+
+	public pro12()    // Default Constructor
+	{
+		System.out.println("===============Employee Details================");
+	}
+	
+	public static void main(String[] args) {
+		
+		pro12 p=new pro12();
+	
+		Employee e1=new Employee();    // Default constructor is called
+		Employee e2=new Employee();
+		Employee e3=new Employee();
+		
+		Address add=new Address(511, ", Yerwada ", ", Pune", ",Maharashtra");  // Parameterised Constructor is called
+
+		Address addSamsung=new Address(401, ", MG Road ", ", Pune", ",Maharashtra");  // Parameterised Constructor is called
+
+		e1.setData(101,"John", 20000);
+		e2.setData(102,"Miller", 40000);
+		e3.setData(103,"Sachin", 50000);
+		
+		
+		e1.showData(add);      // Passing the object to the method
+		e2.showData(add);
+		e3.showData(add);
+		
+		System.out.println("==================Updated Details of Employees=======================");
+		e2.setCompany("Samsung");
+		
+		Employee e4=new Employee(e2);   //Passing Object to the constructor
+		
+		e4.setData(104, "Vijay", 60000);
+		
+		e1.showData(add);
+		e2.showData(addSamsung);
+		e3.showData(add);
+		e4.showData(addSamsung);
+				
+	}
+
+}
+
