@@ -464,13 +464,70 @@
 
 
   this keyword :
-                
+                this refers to the current object.
+                To remove the ambuiguity problem.
+
+==============================================================================================
+
+  Constructor :
+                Special member function used to initialize data members of an object.
+                Same name as the class name
+                called automatically by compiler
+	        does not have any returning value
+                constructors can be overloaded
+                constructors can not be inherited
+		Constructors are called at the time of creation of objects.
+		Constructors should be defined in the public section
+
+  Type of consructors :
+                1) Default
+			   No arguments are passed
+
+                2) Parameterised 
+              		   Arguments are passed
+			                
      
+  ============================================================================================
 
-				
+   Copy the object into another object using Parameterised constructor :
 
 
+        public Employee(Employee obj)  // Parameterised constructor copying the company of one object into other object
+	{
+		company=obj.company;       // e4.company = e2.company
+	}
+		
 
+==============================================================================================
+
+		
+   final : keyword
+                   To define a variable as a constant.
+
+                   method can be final
+   
+                   class can be final
+==============================================================================================
+
+  String :
+           is a final class
+           is a immutable class
+           predefined class in      java.lang
+          
+           Type of Strings :
+                            1) Mutable (Modifiable) :         contents can be modified
+ 
+							StringBuffer , StringBuilder
+
+			    2) Immutable ( Not Modifiable) :  contents can not be modified
+         
+							String
+		
+   String object can be defined in two ways :
+	
+	      1)  String s1="Hello World";        // String Literal
+		
+	      2)  String s2=new String("Welcome");  // String creation using new 
 
 
 
