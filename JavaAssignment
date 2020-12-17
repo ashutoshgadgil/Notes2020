@@ -12,5 +12,9 @@ Q.8 Create a class Employee . Declare name, yearOfExperiance, Salary. Create a m
     If Experiance is more than 1 year & less than 3 years then Give bonus of 1000/- Rs. If Experiance is less than 1 year , no bonus will be given. Display the 
     Updated details of every employee.
 Q.9 Write a program to create a Menu based program where perform the following operations.
+    Product (Class) : pid,pname,Description,cost
     1. Display List of 5 products.
-    2. 
+    2. Display all products in Capital case
+    3. Display the Total cost of All products.
+    4. Dipslay average Cost of All products.
+    5. Display only Product Name and cost.
