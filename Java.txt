@@ -528,6 +528,101 @@
 	      1)  String s1="Hello World";        // String Literal
 		
 	      2)  String s2=new String("Welcome");  // String creation using new 
+===============================================================================================
+
+Control statements :
+
+                       Decision making
+                       Loop statements
+                       Branching statements
+
+  
+ Decision making :
+                       if
+                       if ... else
+                       if ...else if....else
+                       nested if
+
+ operator :   Relational operators       < > <= >= == !=  
+              equal()  
+
+
+  Scanner class : java.util
+				used to read the data from user
+           
+
+
+		 Methods :
+                                next()
+ 				nextInt()
+ 				nextDouble()
+
+  Loop
+           1) for
+	   2) while
+	   3) do while
+	   4) Enhanced for or Foreach loop
+
+ ===============================================================================
+
+  Array :
+          Syntax :
+
+       1) one Dimensional Array
+                                    datatype arrayname = new datatype[SIZE];
+
+				    char alpha[]=new char[5]; // character array
+
+ 				    int num[]=new int[5];     // Integer array
+
+               Array of Objects
+                                    Employee : class
+
+
+				    Employee e[]=new Employee[3];
+
+                Array Initialization :
+                                     num[0]=100;
+
+                                     or
+                                             int num[]={1,2,3,4,5};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
