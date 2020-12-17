@@ -5,3 +5,5 @@ Q.4 Write a program where a class is having a function as display() which declar
     Display () method display the city name which is passed to this method along with the city code.
 Q.5 Write a program to enter a year and check if the year is a leap year or not.
 Q.6 Create a program to check for a number entered by user is Positive , negative or zero.
+Q.7 Write a program to enter the height of a person in cm and weight of a person in kg, Calculate the BMI. If BMI value is less tha 18.5 then show "Underweight",
+     BMI is in range from 18.5 to 24.9 show "Normal Weight" , If range is 25 to 25.9 then show "Overweight" otherwise show "Obesity"
