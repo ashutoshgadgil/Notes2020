@@ -670,3 +670,455 @@ public class pro14 {
 	}
 
 }
+
+=======================================================================================================
+
+16
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+public class pro15 {
+
+	public void selectChoice(String choice)
+	{
+		switch (choice) {
+		case "1":
+			System.out.println("Selected option 1");
+			break;
+		case "2":
+			System.out.println("Selected option 2"); 
+			break;
+		case "3":
+			System.out.println("Selected option 3"); 
+			break;
+			
+		default:
+			System.out.println("Invalid choice");
+			break;
+		}
+	}
+	
+	public void check(int x,int y)     // User defined function, x=num1, y=num2
+	{
+		if(x<y)
+		{
+			System.out.println(x+" is less than "+y);
+			System.out.println("====================== ");
+		}
+		else if(x>y)
+			System.out.println(y+" is less than "+x);
+		else
+			System.out.println(x+" = "+y);
+		
+	}
+	
+	public String getString()     // Method getString returning a string value which is entered by user
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter a string : ");
+		//String str=s.next();
+		String str=s.nextLine();    // nextLine() reads a complete string including spaces
+		//System.out.println("String is : "+str);
+		return str;
+	}
+	
+	public void show(int x)
+	{
+		int y;
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter y : ");
+		y=sc.nextInt();
+		// Nested if
+		if(x==10)   // == equality operator
+		{
+			System.out.println("Welcome ");
+			if(y%2==0)   // % returns a remainder 10 % 2 =>>>>  0 
+			{
+				System.out.println("Even no");
+			}
+			else
+			{
+				System.out.println("Odd no");
+			}
+		}
+		else
+		{
+			System.out.println(x+" is not equal to 10");
+		}
+	}
+	
+	public static void main(String[] args) {
+		pro15 p;    // reference variable
+		p=new pro15();  // Object
+		
+		/*
+		Scanner s= new Scanner(System.in);
+		
+		int num1,num2;
+		System.out.println("Enter first number : ");
+		num1=s.nextInt();    // reading the integer value from user and assigns the value to num1 = 5
+		
+		System.out.println("Enter second number : ");
+		num2=s.nextInt();    // reading the integer value from user and assigns the value to num2 = 6
+		
+		p.check(num1, num2);     // p.check(5,6);
+		
+		p.show(10);
+		
+		p.selectChoice("3");
+	
+	    */
+		System.out.println("String Demo");
+		String st=p.getString();
+		System.out.println("Entered string is : "+st);
+		//s.close();
+	}
+
+}
+
+===================================================================================
+
+17
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+class Product
+{     
+	private int product_ID;       // Identifier (product_ID) identifies the purpose of defining variable 
+	private String product_Name;
+	private double product_cost;
+	private final int manufacture_year;   // blank final variable
+	private static String brand_Name;
+	private Scanner s;
+	
+	public Product()
+	{
+		manufacture_year=2000;
+		brand_Name="Samsung";
+		s=new Scanner(System.in);
+	}
+	
+	public void changeCost()
+	{
+		double increased_value;
+		System.out.println("Enter increased value of product : ");
+		increased_value=s.nextDouble();
+		product_cost=product_cost+increased_value;
+	}
+	
+	
+	public void getDetails()
+	{
+		System.out.println("Enter Product ID :");
+		product_ID=s.nextInt();
+		
+		s.nextLine();                // use it as flushing buffer
+		System.out.println("Enter Product Name :");
+		product_Name=s.nextLine();
+		
+		s.nextLine();
+		System.out.println("Enter Product Cost :");
+		product_cost=s.nextDouble();
+		
+		s.nextLine();
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("Product Id : "+product_ID);
+		System.out.println("Product Name : "+product_Name.toUpperCase());
+		System.out.println("Product Year of Manufacture : "+manufacture_year);
+		System.out.println("Product Brand : "+brand_Name.toUpperCase());
+		System.out.println("Product Cost : "+product_cost);
+	}
+	
+}
+
+public class pro16 {
+
+	public static void main(String[] args) {
+		Product p1=new Product();
+		p1.getDetails();
+		p1.showDetails();
+		
+		System.out.println("Product Details After updation\n====================================");
+		p1.changeCost();
+		p1.showDetails();
+		
+	}
+
+}
+
+==============================================================================
+
+18
+
+package BasicPrograms;
+
+public class pro17 {
+	
+	public void demoFor()
+	{
+		for(int i=0;i<10;i++)
+		{
+			System.out.print(i+" ");
+		}
+	}
+	
+	public void demoWhile()
+	{
+		System.out.println();
+		int i=10;
+		
+		while(i>0)
+		{
+			System.out.print(i+" ");
+			i--;
+		}
+	}
+	
+	public void demoDoWhile()
+	{
+		System.out.println();
+		int i=20;
+		
+		do
+		{
+			System.out.print("Hello\t");
+			i+=10;
+		}while(i<=40);
+	}
+	
+	public void demoForEach()
+	{
+		System.out.println();
+		int numbers[]=new int[3];
+		numbers[0]=10;
+		numbers[1]=20;
+		numbers[2]=30;
+		//numbers[3]=30;
+		
+		for(int x : numbers)    // ForEach loop
+		{
+			System.out.print(x+" , ");
+		}
+		
+		System.out.println();
+		for(int j=0;j<3;j++)    // For loop
+		{
+			System.out.print(numbers[j]+" ");
+		}
+		
+		System.out.println();
+		for(int j=0;j<numbers.length;j++)
+		{
+			System.out.print("Welcome ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		pro17 ob=new pro17();
+		ob.demoFor();
+		ob.demoWhile();
+		ob.demoDoWhile();
+		ob.demoForEach();
+
+	}
+
+}
+
+==========================================================================================
+
+19
+
+package BasicPrograms;
+
+public class pro18 {
+
+	public void avg()
+	{
+		double sum=0.0,avg;
+		int j=0;
+		for(int i=1;i<=10;i++)
+		{
+			sum=sum+i;
+			j++;
+		}
+		avg=sum/j;
+		System.out.println("Average : "+avg);
+	}
+	
+	public void demo()
+	{
+		int x=4;
+		for(int i=x;i<20;i++)
+		{
+			if(i==10)
+				//break;
+				continue;
+			System.out.println(i);
+		}
+		
+		System.out.println("Loop terminated");
+		
+		for(int i=1;i<=5;i++)        // Outer for loop
+		{
+			for(int j=5;j>=i;j--)    // Inner for loop
+			{
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		pro18 p=new pro18();
+		p.demo();
+		p.avg();
+		
+		for(;;)
+		{
+			System.out.println("Hi");
+		}
+	}
+
+}
+
+===========================================================================
+
+20
+
+package BasicPrograms;
+
+public class pro19 {
+
+	public static void main(String[] args) {
+		int x=100;
+		
+		System.out.println(x++);   // 100
+		System.out.println(x);     // 101
+		System.out.println(++x);   // 102
+		
+		// &&, || 
+		x=5;
+		System.out.println("x : "+x);
+		if((10<x)&&(2>++x))
+		{
+			System.out.println(x);
+		}
+		System.out.println(x);
+		
+		x=5;
+		System.out.println("x : "+x);
+		if((10<x)&(2>++x))
+		{
+			System.out.println(x);
+		}
+		System.out.println(x);
+		
+		x=5;
+		int res=x<<2;   // x * 2^2  => 5*4 =20  (Left shift operator)
+		
+		System.out.println(res);
+		
+		x=5;
+		res=x>>2;        // x / 2^2 => 5/4 =1 (Right shift operator)
+		System.out.println(res);
+		
+		if(x!=5)
+		{
+			System.out.println("True");
+		}
+		else
+		{
+			System.out.println("false");
+		}
+		
+		// Difference between == & equals()
+		
+		String s1="abc";
+		String s2="abc";
+		String s3=new String("abc");
+		
+		if(s1==s2)     // == used to compare two reference variables
+			System.out.println("Strings equal");
+		else
+			System.out.println("Strings not equal");
+	
+		if(s1==s3)
+			System.out.println("Strings equal");
+		else
+			System.out.println("Strings not equal");
+	
+		if(s1.equals(s2))  // equals() compares two values of string variable
+			System.out.println("Strings equal");
+		else
+			System.out.println("Strings not equal");
+	
+		if(s1.equals(s3))
+			System.out.println("Strings equal");
+		else
+			System.out.println("Strings not equal");
+		
+		String s4="hello";
+		String s5="Hello";
+		
+		if(s4.equalsIgnoreCase(s5))
+			System.out.println("Strings equal");
+		else
+			System.out.println("Strings not equal");
+	}
+
+}
+
+============================================================================
+
+21
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+class Emp
+{
+	private int age;
+	public void getAge(int a)
+	{
+		age=a;
+	}
+	
+	public void show(int i)
+	{
+		System.out.println("Age of employee : "+i+" is "+age);
+	}
+}
+
+public class pro20 {
+	public static void main(String[] args) {
+	    Emp e[]=new Emp[3]; // Array of objects
+	    Scanner s=new Scanner(System.in);
+	    
+	    int ag;
+	    for(int i=0;i<e.length;i++)
+	    {
+	    	e[i]=new Emp();      // memory allocation for objects
+	    	System.out.println("Enter age of employee : "+(i+1));
+	    	ag=s.nextInt();
+	    	e[i].getAge(ag);
+	    }
+	    
+	    for(int i=0;i<e.length;i++)
+	    {
+	    	e[i].show(i+1);
+	    }
+	}
+
+}
+
+
