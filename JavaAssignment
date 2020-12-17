@@ -18,3 +18,6 @@ Q.9 Write a program to create a Menu based program where perform the following o
     3. Display the Total cost of All products.
     4. Dipslay average Cost of All products.
     5. Display only Product Name and cost.
+Q.10 Create an array of names of 3 students and display names with length.
+Q.11 Make an array of 10 numbers and print the average of only even numbers.
+Q.12 Create an array of 5 double values and use foreach loop to print every value.
