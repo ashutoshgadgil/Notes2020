@@ -449,6 +449,7 @@
 			
                    2) protected
 				Accessible only within the class and outside the class but in the same package , Not accessible to other package
+                                Accessible to other package using inheritance concept
 
                    3) public
 				Accessible to the class of the same package or different package
@@ -586,6 +587,107 @@ Control statements :
 
                                      or
                                              int num[]={1,2,3,4,5};
+
+=====================================================================================
+
+  Method Overloading :
+                      1) example of Compile time polynt data typemorphism
+		      2) Same name method is defined more than once with different no of arguments & diffrent data type.
+
+======================================================================================
+ Inheritance :
+
+                   concept of parent child relationship
+                   Reusability
+
+                   Class derives or inherits other classes is called inheritance
+                   Advantage : Dont have to make efforts to write a method which is already created
+                               Time saving
+                   Classes :  
+                             Base class / Super class / Parent class  : Properties will be used by Derived class
+                             Derived class / Sub class / Child class  : Will use the properties of Base class
+
+                   extends : keyword used to derive a class
+
+      Type of inheritances 
+                          1) Single       : A class inherits a single class only
+                          2) Multilevel   : Class A inherits class B , class B inherits class C, c is grand child, A is grand parent
+                          3) Hierarchical : One class can inherit multiple classes
+
+
+     Note : Multiple inheritance is not supported in Java but it can be achieved using a concept  interface
+
+
+                  Syntax :
+                             class derivedclassname extends Baseclassname
+			     {
+				
+			     }
+======================================================================================
+
+   Constructor calling in Inheritance   
+
+
+                             Base : constructor
+
+                             Derived : constructor
+
+
+  super : keyword
+		1) To call the superclass constructor
+		2) To call the method of the immediate super class
+                3) To call the instance variable of immediate super class
+
+======================================================================================
+
+  
+
+ concrete class :
+                 complete class
+
+ Abstract Class :
+                 incomplete class
+                 partial implementation
+                 will have methods with body and some methods will have no body
+		 Objects of Abstract class can not be created, Reference of abstract class can be created
+                 Abstract class can be inherited
+
+
+      abstract : keyword
+
+                 syntax :
+                         abstract void showArea();
+                Note : Abstract method can not have a body. The method must be declared in abstract class.
+                       Abstract method body must be implemented in the derived class.
+
+
+
+====================================================================================
+
+
+ Interface :
+
+           Interface is a contract between service provider and client.
+           Interface provides full abstraction
+           Interface will have all abstract methods  
+           By default all methods in an interface are public,abstract
+           All member variable in the interface will be public , static and final;    
+     
+     interface : keyword
+
+     1) A class can implement an interface
+     2) A class can extends another class
+     3) An interface can extend another interface
+
+     Ex :
+
+                    intref1 : interface
+                    myclass : class
+
+
+     implements : keyword
+                          To implement an interface in the class
+
 
 
 
