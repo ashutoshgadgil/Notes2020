@@ -1121,4 +1121,461 @@ public class pro20 {
 
 }
 
+========================================================================================================
+
+22
+
+package BasicPrograms;
+
+public class pro21 {
+
+	// method overloading
+	public void show()   // show() method is overloaded
+	{
+		System.out.println("show() method called with no parameter...");
+	}
+	
+	public void show(int a)
+	{
+		System.out.println("show() method called with single parameter..."+a);
+	}
+	
+	public void show(double a)
+	{
+		System.out.println("double value..."+a);
+	}
+	
+	public void show(int a,double b)
+	{
+		System.out.println("show() method called with two parameters..."+a+" , "+b);
+	}
+	
+	public void show(double a,int b)
+	{
+		System.out.println("show() method called with two parameters..."+b+" , "+a);
+	}
+	
+	public void show(long a,int b)
+	{
+		System.out.println("show() method called with two parameters..."+b+" , "+a);
+	}
+	
+	public void show(int a,long b,int c)
+	{
+		System.out.println("show() method called with two parameters..."+b+" , "+a);
+	}
+	
+	public static void main(String[] args) {
+		pro21 p=new pro21();
+		p.show();
+		p.show(20.2);
+		p.show(45);
+		p.show(2, 3.14);
+		p.show(3.14,5);
+		// p.show(10, 20); // Ambiguous call to method , Error
+	}
+}
+
+===================================================================================
+
+23
+
+package BasicPrograms;
+
+// Single inheritance
+
+class Base1
+{
+	public int x;
+	public int function()     // features of parent class
+	{
+		x=500;
+		return x;
+	}
+}
+
+class Derived1 extends Base1
+{
+	public void display()      // feature of child class
+	{
+		System.out.println("Hello");
+	}
+}
+
+public class pro22 {
+
+	public static void main(String[] args) {
+		Derived1 obj=new Derived1();
+
+		System.out.println(obj.function());   // Accessing features of base class
+		obj.x=1000;
+		System.out.println(obj.x);
+		System.out.println(obj.function());
+		obj.display();    // Accessing feature of child class
+	}
+}
+
+=====================================================================
+
+24
+
+package BasicPrograms;
+
+// Multilevel inheritance
+
+class Base2
+{
+	public int x;
+	public int function()     // features of parent class
+	{
+		x=500;
+		return x;
+	}
+}
+
+class Derived2 extends Base2
+{
+	public void display()      // feature of child class
+	{
+		System.out.println("Hello");
+	}
+}
+
+class Derived3 extends Derived2
+{
+	public void show()      // feature of child class
+	{
+		System.out.println("Welcome");
+	}
+}
+
+public class pro23 {
+
+	public static void main(String[] args) {
+		Derived3 obj=new Derived3();
+
+		System.out.println(obj.function());   // Accessing features of base class
+		obj.x=1000;
+		System.out.println(obj.x);
+		System.out.println(obj.function());
+		obj.display();    // Accessing feature of child class
+		obj.show();
+	}
+}
+
+==================================================================
+
+25
+
+package BasicPrograms;
+
+// Multilevel inheritance
+
+class Base3
+{
+	public int x=500;
+	public int function()     // features of parent class
+	{
+		x=500;
+		return x;
+	}
+}
+
+class Derived4 extends Base3
+{
+	public void display()      // feature of child class
+	{
+		System.out.println("Hello");
+	}
+}
+
+class Derived5 extends Base3
+{
+	public int x=300;
+	public void show()      // feature of child class
+	{
+		x=300;
+		System.out.println("Welcome"+x);
+	}
+}
+
+public class pro24 {
+
+	public static void main(String[] args) {
+		Derived4 o1=new Derived4();
+		Derived5 o2=new Derived5();
+
+		System.out.println(o1.function());
+		o1.display();
+		
+		System.out.println(o2.function());
+		o2.show();
+		
+		System.out.println(o2.x);
+	}
+}
+
+======================================================================
+
+26
+package BasicPrograms;
+
+class class1
+{
+	private int x;   // x is not inheritable
+	protected int y;
+	public int z;
+	
+	public void f1()
+	{
+		x=10;
+		y=20;
+		z=30;
+		//System.out.println(x+" "+y+" "+z);
+	}
+}
+
+class class2 extends class1
+{
+	private int s;
+	protected int t;
+	public int u;
+	
+	public void f2()
+	{
+		s=40;
+		t=50;
+		u=60;
+		//System.out.println(s+" "+t+" "+u);
+	}
+}
+
+public class pro25 {
+
+	public static void main(String[] args) {
+		class2 obj=new class2();
+		
+		obj.f1();
+		obj.f2();
+
+		//System.out.println("obj.x : "+obj.x);
+		System.out.println("obj.y : "+obj.y);
+		System.out.println("obj.z : "+obj.z);
+		// System.out.println("obj.s : "+obj.s);
+		System.out.println("obj.t : "+obj.t);
+		System.out.println("obj.u : "+obj.u);
+	}
+
+}
+
+==========================================================================
+
+27
+
+package BasicPrograms;
+
+class Parent1
+{
+	public Parent1(int x,double y) {
+		System.out.println("Base constructor called");
+		System.out.println("Result : "+(x+y));
+	}
+}
+
+class Child1 extends Parent1
+{
+	public Child1()
+	{
+		super(10,1.3);  //  call the base class constructor
+		System.out.println("Hello");
+	}
+}
+
+class Child2 extends Child1
+{
+	public Child2()
+	{
+		super();  //  call the base class constructor
+		System.out.println("Welcome");
+	}
+}
+public class pro26 {
+
+	public static void main(String[] args) {
+		Child2 obj=new Child2();
+	
+	}
+}
+
+======================================================================
+
+28
+
+package BasicPrograms;
+
+class Person 
+{
+	String name;
+	int rollno;
+	
+	int collgeid=400;       
+	
+	public Person(int rollno,String name)
+	{
+		this.name=name;
+		this.rollno=rollno;
+	}
+	
+	public void setCountry()
+	{
+		System.out.println("India");
+	}
+}
+
+class Stud extends Person
+{
+	String city;
+	int collgeid=500;
+	
+	public Stud(String city,int rollno,String name)
+	{
+		super(rollno,name);
+		this.city=city;
+	}
+	public void showPerson()
+	{
+		System.out.println("Roll no : "+rollno);
+		System.out.println("Name : "+name);
+		System.out.println("City : "+city);
+		System.out.println(super.collgeid);   // super class instance variable calling
+	}
+	
+	public void setCountry()          // method overriding
+	{
+		super.setCountry();          // calling super class method
+		System.out.println("USA");
+		
+	}
+}
+
+public class pro27 {
+
+	public static void main(String[] args) {
+		Stud obj=new Stud("Delhi", 110, "Sunil");
+		
+		obj.showPerson();
+		
+		obj.setCountry();
+		
+		System.out.println(obj.collgeid);
+		
+	
+	}
+
+}
+
+========================================================================
+
+29
+
+package BasicPrograms;
+
+abstract class Bank       // Base class
+{
+	protected int br_code;
+	public void showMessage()    // Non Abstract method
+	{
+		br_code=101;
+		System.out.println("Welcome to Bank :");
+	}
+	public abstract double getRateOfInterest();     // Abstract Method
+}
+
+class IDBI extends Bank
+{
+	String bank_name;
+	@Override
+	public double getRateOfInterest() {    // Implementation of Abstract method getRateOfInterest()
+		
+		return 6.5;
+	}
+	public void showBankDetails()
+	{
+		br_code=3045;
+		bank_name="IDBI";
+		
+		System.out.println("Bank Name : "+bank_name);
+		System.out.println("Branch Code : "+br_code);
+		System.out.println("Rate of Interest : "+getRateOfInterest());
+	}
+}
+
+class ICICI extends Bank
+{
+	String bank_name;
+	public double getRateOfInterest()
+	{
+		return 7.5;
+	}
+	
+	public void showBankDetails()
+	{
+		br_code=4055;
+		bank_name="ICICI";
+		
+		System.out.println("Bank Name : "+bank_name);
+		System.out.println("Branch Code : "+br_code);
+		System.out.println("Rate of Interest : "+getRateOfInterest());
+	}
+}
+
+public class pro28 {
+
+	public static void main(String[] args) {
+		IDBI s1=new IDBI();
+		ICICI s2=new ICICI();
+		
+		s1.showMessage();
+		s1.showBankDetails();
+		
+		s2.showBankDetails();
+		
+		Bank ob;
+
+	}
+
+}
+
+=================================================================================
+
+30
+
+package BasicPrograms;
+
+interface myinterface       // Interface Definition
+{
+	public static double PI=3.14;    // member of interface
+	
+	public abstract void display();  // Abstract method
+}
+
+class myImplementation implements myinterface
+{
+	@Override
+	public void display() {
+		System.out.println("Welcome to my method....");
+	}	
+}
+
+public class pro29 {
+
+	public static void main(String[] args) {
+		myImplementation obj=new myImplementation();
+		obj.display();
+
+	}
+
+}
+
+==============================================================================
 
