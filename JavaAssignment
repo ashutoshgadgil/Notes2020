@@ -38,3 +38,12 @@ Q.17 Write a program to find the sum of digits of a number.
 
 Q.18 Write a program to create two objects of a class named as Numbers. In which there is a function getMax(). Assign a value for a number to every object and 
      compare two objects together and print the maximum value
+Q.19 Create an interface named as Calculator and create a method in it as getResult(). 
+     7 class are to be defined which are implementing Calculator interface.
+     Class A will return factorial of a number.    (Vishal)
+     Class B will return square of a number.       (Saloni)
+     Class C will return maximum of two numbers.   (Hemant)
+     Class D will print numbers from 1 to 50.      (Josephine)
+     Class E will return the sum of 5 digit number. (Nimesh)
+     Class F will return the sum of 5 values in an array.  (Abhishek)
+     Class G will return the temperature in celcius for the given ferhenite value. (Nilesh)
