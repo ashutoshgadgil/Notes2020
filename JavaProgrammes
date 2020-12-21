@@ -1831,6 +1831,485 @@ public class pro35 extends absCl{
 =================================================================
 
 37
+package BasicPrograms;
+
+import java.util.Scanner;
+
+interface Calculator 
+{
+	public double getResult(double a);
+}
+
+//Nilesh
+class class_01 implements Calculator 
+{
+
+	@Override
+	public double getResult(double a) {
+		double x;
+		x=(a-32)*5/9;	
+		return x;
+	}
+}
 
 
+// Abhishek
 
+class sum_of_array implements Calculator {
+
+	@Override
+	public double getResult(double a) {
+		double sum = 0;
+		double arr[] = new double[5];
+		
+		Scanner sy = new Scanner(System.in);
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.println("ENTER ARRAY NUMBER "+(i+1)+" : ");
+			arr[i] = sy.nextDouble();				
+		}
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			sum = sum + arr[i];
+		}
+	return sum;
+   }
+	
+}
+
+// Josephine
+class P1 implements Calculator
+{
+	public double getResult(double a)
+	{
+		for(int i=1;i<=50;i++)
+		{
+			System.out.println("Numbers : "+i);
+		}
+		return 0;
+	}
+}
+
+// Nimesh
+class sum implements Calculator 
+{
+    private Scanner s;
+    
+
+    public double getResult(double z)
+    {
+        s=new Scanner(System.in);
+      
+        int num=0, rem=0, sum=0;
+        
+        System.out.println("Entre Number :"); 	
+        num=s.nextInt();
+        while (num > 0) {
+        	rem = num%10;
+        	sum = sum+rem;
+        	num = num/10;
+        } 
+       return sum;
+    }
+}
+
+
+public class pro36 {
+
+	public static void main(String[] args) {
+		
+		
+		//==============================
+		
+		class_01 nilesh=new class_01();
+		double C;
+		C=nilesh.getResult(97);
+		System.out.println(C+" C");
+
+		//==============================
+		
+		sum_of_array abhishek = new sum_of_array();
+		System.out.println(abhishek.getResult(12));
+        
+		//==============================
+		
+		 P1 josephine=new P1 ();
+		 josephine.getResult(1.2);
+
+		//==============================
+
+		    sum nimesh=new sum();
+	        double z;
+	        z=nimesh.getResult(12);
+	        System.out.println("Sum is "+z);
+
+	}
+
+}
+
+==============================================================================
+
+38
+package BasicPrograms;
+
+class XYZ
+{
+	// Method Overloading
+	public void f1()
+	{
+		System.out.println("method1");
+	}
+	public void f1(int a)
+	{
+		System.out.println("method2");
+	}
+	
+	//==================================
+	// show in XYZ is to be overridden in Der class
+	public void show()    // Overridden method
+	{
+		System.out.println("Method show from XYZ class called.....");
+	}
+}
+
+class Der extends XYZ
+{
+	public void show()   // Overriding method
+	{
+		System.out.println("Method show from Der class called.....");
+	}
+}
+
+public class pro37 {
+
+	public static void main(String[] args) {
+		XYZ ob=new XYZ();
+		ob.f1();
+		ob.f1(30);
+		
+		//=========================
+		
+		Der ob1=new Der();
+		ob1.show();
+	}
+
+}
+
+====================================================================
+
+39
+package BasicPrograms;
+
+class Color
+{
+	public void showColor()
+	{
+		System.out.println("Black");
+	}
+}
+
+class Color1 extends Color
+{
+	public void showColor()
+	{
+		System.out.println("Red Color");
+	}
+}
+
+class Color2 extends Color
+{
+	public void showColor()
+	{
+		System.out.println("Blue Color");
+	}
+}
+
+public class pro38 {
+
+	public static void main(String[] args) {
+		Color1 c=new Color1();
+		c.showColor();
+		
+		Color2 c1=new Color2();
+		c1.showColor();
+		
+		//=================================
+		
+		System.out.println("=====================================");
+		
+		Color ref;  // Base class reference
+		Color obj=new Color();
+		
+		ref=c;   // ref refers to the child class Color1 / Upcasting
+		ref.showColor();
+		
+		ref=c1;  // ref refers to the child class Color2
+		ref.showColor();
+		
+		ref=obj;  // ref refers to the base class Color
+		ref.showColor();
+		
+		
+	}
+
+}
+
+==================================================================================
+
+40
+package BasicPrograms;
+
+abstract class Colors
+{
+	public abstract void showColor();
+}
+
+class Colors1 extends Colors
+{
+	public void showColor()
+	{
+		System.out.println("Red Color");
+	}
+}
+
+class Colors2 extends Colors
+{
+	public void showColor()
+	{
+		System.out.println("Blue Color");
+	}
+}
+
+public class pro39 {
+
+	public static void main(String[] args) {
+		
+		Colors ref;  // Base class reference
+		
+		ref=new Colors1();  // ref refers to the child class(Colors1) object
+		ref.showColor();
+		
+		ref=new Colors2();  // ref refers to the child class(Colors2) object
+		ref.showColor();
+		
+	}
+
+}
+
+============================================================
+41
+package BasicPrograms;
+
+interface Mobiles
+{
+	public String name="Samsung";   
+	public void getCost(int c);
+}
+
+class Mob1 implements Mobiles
+{
+	@Override
+	public void getCost(int c) {
+		System.out.println("Brand : "+name+" Model : Galaxy s20 "+" Price : "+c);
+	}	
+}
+
+class Mob2 implements Mobiles
+{
+	@Override
+	public void getCost(int c) {
+		System.out.println("Brand : "+name+" Model : Galaxy s30 "+" Price : "+c);
+	}
+}
+public class pro40 {
+
+	public static void main(String[] args) {
+		Mobiles m;
+		
+		System.out.println("Details of Mobile-1");
+		m=new Mob1();
+		m.getCost(20000);
+		
+		System.out.println("Details of Mobile-2");
+		m=new Mob2();
+		m.getCost(30000);
+		
+	}
+
+}
+
+==============================================================================
+
+42
+package BasicPrograms;
+
+public class pro41 {
+
+	private double sum;
+	
+	pro41()
+	{
+		sum=0.0;
+	}
+	
+	public double getAverage(double num[])     // Method definition
+	{
+		for(int i=0;i<num.length;i++)
+		{
+			sum=sum+num[i];
+		}
+		
+		return sum/num.length;
+	}
+	
+	public static void main(String[] args) {
+		
+		double numbers[]= {10,20,30,40,50};
+
+		pro41 ob=new pro41();
+		
+		System.out.println("Average of Array elements : "+ob.getAverage(numbers));  // Pass an array into method
+	}
+
+}
+
+=================================================================================
+
+43
+package BasicPrograms;
+
+// POJO (Plain old java object)
+class Customer
+{
+	private int cid;
+	private String cname;
+	private String city;
+	
+	public Customer()
+	{
+		cid=0;
+		cname=null;
+		city="Mumbai";
+	}
+
+	public int getCid() {     // Accessor method
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+}
+
+public class pro42 {
+
+	public static void main(String[] args) {
+		Customer c1=new Customer();
+		Customer c2=new Customer();
+		Customer c3=new Customer();
+		
+		c1.setCid(101);
+		c1.setCname("Vijay");
+		c1.setCity("Pune");
+		
+		c2.setCid(102);
+		c2.setCname("Suresh");
+		
+		c3.setCid(103);
+		c3.setCname("Ajay");
+		
+		System.out.println("========Details of First Customer===========");
+		System.out.println("Customer Id : "+c1.getCid()+" Customer Name : "+c1.getCname()+" City : "+c1.getCity());
+		
+		System.out.println("========Details of Second Customer===========");
+		System.out.println("Customer Id : "+c2.getCid()+" Customer Name : "+c2.getCname()+" City : "+c2.getCity());
+		
+		System.out.println("========Details of Third Customer===========");
+		System.out.println("Customer Id : "+c3.getCid()+" Customer Name : "+c3.getCname()+" City : "+c3.getCity());
+	}
+
+}
+
+=================================================================================
+
+44
+
+package BasicPrograms;
+
+public class pro43 {
+
+	public static void main(String[] args) {
+		int x=5;
+		Integer i=x;     // Auto boxing  , x is primitive, i is non primitive 
+		                 // converting the integer value into object
+		
+		System.out.println(i);
+		
+		int y=i;  // Auto Unboxing
+		System.out.println(y);
+		
+		int z=i.intValue();  // Unboxing
+		System.out.println(z);
+		
+		///////////////////////////////////
+		
+		String no="40";
+		int s=30;
+		int res=Integer.parseInt(no)+s;
+		
+		System.out.println(res);
+		
+		String s1="3.14";
+		double d=Double.parseDouble(s1)+1.2;
+		System.out.println(d);
+		
+		Double d1=1.34;
+		double d2=d1.doubleValue();
+		
+		char ch='A';
+		System.out.println((int)ch);
+		
+		System.out.println(args[0]);
+		
+	}
+}
+
+================================================================
+
+45
+
+package BasicPrograms;
+
+// Program to accept 4 command line arguments as a numeric value and print their sum
+public class pro44 {
+
+	public static void main(String[] args) {
+		
+		 int result=Integer.parseInt(args[0])+Integer.parseInt(args[1])+Integer.parseInt(args[2])+Integer.parseInt(args[3]);
+
+		 System.out.println(result);
+
+	
+	}
+
+}
+
+==============================================================
