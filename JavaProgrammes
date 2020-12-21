@@ -1579,3 +1579,258 @@ public class pro29 {
 
 ==============================================================================
 
+31
+
+package BasicPrograms;
+
+interface inf1
+{
+	public void fun1();
+}
+
+interface inf2 extends inf1   // inf2 extending interface inf1
+{
+	public void fun2(int x);
+}
+
+class cl implements inf2
+{
+	public void fun2(int x)
+	{
+		System.out.println(x);
+	}
+	
+	public void fun1()
+	{
+		System.out.println("Hi");
+	}
+}
+
+
+public class pro30 {
+
+	public static void main(String[] args) {
+		cl ob=new cl();
+		ob.fun1();
+		ob.fun2(400);
+
+	}
+
+}
+
+======================================================================
+
+32
+
+package BasicPrograms;
+
+// Achieve Multiple inheritance in Java Using Interface
+interface in1
+{
+	public void f1();
+}
+
+interface in2
+{
+	public void f2();
+}
+
+class impl implements in1,in2
+{
+	@Override
+	public void f2() {
+		System.out.println("Hi");		
+	}
+
+	@Override
+	public void f1() {
+		System.out.println("Hello");
+	}	
+}
+
+public class pro31 {
+
+	public static void main(String[] args) {
+		impl ob=new impl();
+		ob.f1();
+		ob.f2();
+
+	}
+
+}
+
+==========================================================================
+
+33
+
+package BasicPrograms;
+
+interface cla1
+{
+	public void f1();
+}
+
+abstract class cla2
+{
+	public abstract void f1();
+}
+
+class cla3 extends cla2 implements cla1
+{
+	@Override
+	public void f1() {
+		System.out.println("Welcome");
+	}	
+}
+
+public class pro32 {
+
+	public static void main(String[] args) {
+		cla3 ob=new cla3();
+		
+		ob.f1();
+
+	}
+
+}
+
+=============================================================
+
+34
+package BasicPrograms;
+
+interface I1
+{
+	public void f1();
+}
+
+interface I2
+{
+	public void f2();
+}
+
+abstract class C1
+{
+	public abstract void f1();
+}
+
+
+class cla4 extends C1 implements I1,I2
+{
+	@Override
+	public void f1() {
+		System.out.println("Welcome");
+	}
+
+	@Override
+	public void f2() {
+		System.out.println("f2 implemented");
+	}	
+}
+
+public class pro33 {
+
+	public static void main(String[] args) {
+		cla4 ob=new cla4();
+		
+		ob.f1();
+		ob.f2();
+
+	}
+
+}
+
+=============================================================
+35
+package BasicPrograms;
+
+interface Int1
+{
+	public void f3();
+}
+
+interface Int2
+{
+	public void f2();
+}
+
+class C11
+{
+	public void f1() {
+		System.out.println("Class method implemented ");
+	}
+}
+
+
+class cla5 extends C11 implements Int1,Int2
+{
+	@Override
+	public void f2() {
+		System.out.println("f2 implemented");
+	}
+
+	@Override
+	public void f3() {
+		System.out.println("Java");
+	}	
+}
+
+public class pro34 {
+
+	public static void main(String[] args) {
+		cla5 ob=new cla5();
+		
+		ob.f1();
+		ob.f2();
+		ob.f3();
+	}
+
+}
+
+============================================================
+
+36
+
+package BasicPrograms;
+
+interface intref
+{
+	public void f1();
+}
+
+abstract class absCl implements intref
+{
+	public abstract void f2();
+	public void f3()
+	{
+		System.out.println("Non abstract method called....");
+	}
+}
+
+public class pro35 extends absCl{
+
+	@Override
+	public void f1() {
+		System.out.println("f1 extended from interface");
+	}
+
+	@Override
+	public void f2() {
+		System.out.println("f2 extended from class");
+		
+	}
+
+	public static void main(String[] args) {
+		pro35 ob=new pro35();
+		ob.f1();
+		ob.f2();
+		ob.f3();
+	}
+}
+
+=================================================================
+
+37
+
+
+
