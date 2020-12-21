@@ -671,7 +671,8 @@ Control statements :
            Interface provides full abstraction
            Interface will have all abstract methods  
            By default all methods in an interface are public,abstract
-           All member variable in the interface will be public , static and final;    
+           All member variable in the interface will be public , static and final; 
+           Interface can not be instantiated (can not create object of interface), refrence variable of it can be created.   
      
      interface : keyword
 
@@ -687,6 +688,8 @@ Control statements :
 
      implements : keyword
                           To implement an interface in the class
+
+     Interface extending another Interface :
 
 
 
