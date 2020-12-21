@@ -47,3 +47,4 @@ Q.19 Create an interface named as Calculator and create a method in it as getRes
      Class E will return the sum of 5 digit number. (Nimesh)
      Class F will return the sum of 5 values in an array.  (Abhishek)
      Class G will return the temperature in celcius for the given ferhenite value. (Nilesh)
+Q.20 Write a program to take first name and lastname as a command line arguments and print the full name in capital case along with the length of fullname.
