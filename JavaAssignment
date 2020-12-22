@@ -54,5 +54,13 @@ Q.22 Define name and salary of an employee both as a string variable. Define a m
 Q.23 Write a program to declare a sring object using literal and assign a string "Hello" in it. Print the Hello using charAt() method in Capital Case.
 Q.24 Write a program to print the length of a string without using length attribute.
 Q.25 Take user name and password from user.If user name is "admin" and password is "Abcd1234" then print Welcome UserName . Compare userName using equalIgnoreCase(). 
-     Compare password without using equalIgnoreCase()
+     Compare password without using equalIgnoreCase().
+Q.26 create a class Result where marks of 5 subjects are taken from user in a method as InputMarks() and print the percentage and grade based on percentage in a 
+     different method as ShowPercentage(). Print the Highest and Lowest Marks in a subject.
+Q.27 Display the following Pattern :
+       1
+       1 2
+       1 2 3
+       1 2 3 4
+       1 2 3 4 5
 
