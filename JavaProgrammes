@@ -2313,3 +2313,534 @@ public class pro44 {
 }
 
 ==============================================================
+
+46
+
+package BasicPrograms;
+
+// Making method final and it can not be overridden in child class
+// can not be wriiten specific implementation for this method in child class
+class finalDemo
+{
+	public final void func()   // final method
+	{
+		System.out.println("Final method definition");
+	}
+}
+
+class derFinal extends finalDemo
+{
+	public void func(int x)
+	{
+		System.out.println(x);
+	}
+}
+
+public class pro45 {
+
+	public static void main(String[] args) {
+		derFinal d=new derFinal();
+		d.func();
+		d.func(100);
+	}
+
+}
+
+=====================================================================
+
+47
+
+package BasicPrograms;
+
+// final class can not be inherited but its functionalities can be called
+
+final class Final1     // final class
+{
+	public int x=100;
+	private static int var;   // static variable
+	
+	Final1()     // Default constructor
+	{
+		var=500;
+	}
+	
+	public String getMessage()
+	{
+		return "Hello";
+	}
+	
+	public static void staticMethod()  // static method can only access static data 
+	{
+		System.out.println("var : "+var);
+		//System.out.println("x :"+x);
+	}
+}
+
+public class FinalClass {
+
+	public static void main(String[] args) {
+		Final1 ob=new Final1();
+		System.out.println(ob.getMessage());
+		System.out.println("x " +ob.x);
+		ob.x++;
+		System.out.println("x "+ob.x);
+		
+		Final1.staticMethod();   // static method can be called using Class name
+	}
+
+}
+
+========================================================
+
+48
+package BasicPrograms;
+
+public class pro46 {
+	public static void main(String[] args) {
+		
+		StringBuffer sb=new StringBuffer("World");
+		System.out.println(sb);     // sb="world"
+		sb.append("Java");          // sb="worldJava", append() adds a string value in the original stringbuffer object
+		System.out.println(sb);
+		
+		String s1=new String("Welcome");   // s1="Welcome"
+		System.out.println(s1);
+		System.out.println(s1.concat("Java"));  // WelcomeJava
+		System.out.println(s1);            // s1="Welcome"
+		
+		
+		String s2="India";
+		StringBuffer sb1=new StringBuffer(s2);  // Converting from String object to StringBuffer object 
+		
+		System.out.println(sb1);
+		sb1.append("Programming");
+		System.out.println(sb1);
+		
+		sb1.reverse();               // reverse a string 
+		System.out.println(sb1);
+		
+		System.out.println(sb1);
+		
+		StringBuffer sb2=new StringBuffer("JAVA PROGRAMMING");
+		System.out.println(sb2);
+		sb2.replace(0, 4, "PHP".toLowerCase());
+		System.out.println(sb2);
+		
+		System.out.println(sb2.charAt(0));
+		
+		System.out.println(sb2.substring(0, 3));
+		
+		System.out.println("HTML".startsWith("H"));
+		
+		String str=sb2.toString();   // Conversion from StringBuffer Object to String object
+		
+		System.out.println(str.startsWith("p"));
+		
+		System.out.println(sb2);
+		sb2.delete(0, 4);
+		
+		System.out.println(sb2);
+		sb2.insert(0, "JavaScript ");
+		System.out.println(sb2);
+		
+		StringBuilder sbb=new StringBuilder("Text");
+		sbb.reverse();
+		System.out.println(sbb);
+	}
+}
+
+======================================================================
+
+49
+package BasicPrograms;
+
+import java.util.Scanner;
+
+final class Employees              // Immutable class Employees
+{                                  // 1) Class is final
+                                   // 2) All member variables must be final
+	final String PAN_Card;         // 3) Setters methods not allowed  
+	
+	public Employees(String pc)
+	{
+		PAN_Card=pc;
+	}
+}
+
+class EmpDetails
+{
+	String name;
+	Scanner s;
+	Employees e;
+	
+	public EmpDetails(String pc) {
+		s=new Scanner(System.in);
+		e=new Employees(pc);
+	}
+	
+	void getName()
+	{
+		System.out.println("Enter employee name : ");
+		name=s.nextLine();
+	}
+		
+	void showDetails()
+	{
+		System.out.println("Name : "+name+" PAN Card No : "+e.PAN_Card);
+	}
+}
+
+public class pro47 {
+
+	public static void main(String[] args) {
+		EmpDetails e1=new EmpDetails("AN23F43");
+		EmpDetails e2=new EmpDetails("AG21F43");
+		e1.getName();
+		e2.getName();
+		
+		e1.showDetails();
+		e2.showDetails();
+	}
+}
+
+========================================================
+50
+package BasicPrograms;
+
+// Overriding toString() of Object class
+class Students
+{
+	private int rollno;
+	private String name;
+	
+	public Students(int rollno, String name) {
+		this.rollno = rollno;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return rollno+" =====> "+name.toUpperCase();
+	}
+}
+
+public class pro48 {
+
+	public static void main(String[] args) {
+		Students s1=new Students(101,"Sumit");
+		System.out.println(s1.toString());      // toString() returns the String representation of the object
+		
+		Students s2=new Students(102,"Sunil");
+		System.out.println(s2);
+		
+		System.out.println(s1.hashCode());
+		System.out.println(s2.hashCode());
+	}
+
+}
+
+=================================================================
+
+51
+package BasicPrograms;
+
+public class pro49 {
+
+	
+	public static void main(String[] args) {
+		int x=20,z=0;
+		
+		try
+		{
+			z=x/2;     // Raising the exception
+			System.out.println("Z : "+z);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Can not divide by zero");
+		}
+		
+		System.out.println(z);
+		System.out.println("End of program");
+
+	}
+
+}
+
+=================================================================
+
+52
+package BasicPrograms;
+
+public class pro50 {
+
+	public static void main(String[] args) {
+		////////////////////////////////////////////////////
+		
+		try 
+		{
+			int x[]=new int[2];
+			
+			x[1]=30;
+			System.out.println(x[1]);
+		} 
+		catch (Exception e) 
+		{
+			System.out.println(e);
+			e.printStackTrace();         // will return complete information about exception
+			System.out.println("Array Index out of range");
+		}
+		////////////////////////////////////////////////////
+		
+		try 
+		{
+			int x[]=new int[2];
+			x[1]=30;
+			System.out.println(x[1]);
+		} 
+		finally 
+		{
+			System.out.println("In finally block");
+		}
+		
+		///////////////////////////////////////////////////
+		
+		String str=null;
+		try 
+		{
+            str=null;
+			System.out.println(str.length());
+		}
+		catch (Exception e) 
+		{
+			str="Welcome";
+			System.out.println("String is NULL");
+		}
+		finally 
+		{
+			System.out.println(str.length());
+			System.out.println("Finally Block executed");
+		}
+			
+		
+	}
+
+}
+
+=====================================================================
+53
+
+package BasicPrograms;
+
+public class pro51 {
+	
+	public void getNum(int no)    // Method is handling the exception
+	{	
+		int z=0;
+		try 
+		{
+			z=10/no;
+		} 
+		catch (Exception e) 
+		{
+			z=10;
+			System.err.print("Result on dividing number by 1, no passed is zero : ");
+			System.out.println("Z : "+z);
+		}
+		
+		System.out.println("Z : "+z);
+	}
+	
+	
+	public static void main(String[] args) {
+		pro51 ob=new pro51();
+		
+		ob.getNum(2);
+	}
+}
+
+=========================================================================
+
+54
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+public class pro52 {
+
+	Scanner s;
+	String name;
+	
+	public pro52() 
+	{
+		s=new Scanner(System.in);
+	}
+	
+	public void getName()
+	{
+		char choice;
+		while(true)
+		{
+			
+		System.out.println("Enter name : ");
+		name=s.nextLine();
+		
+		if(name.equals(""))
+			name=null;
+		
+		try 
+		{
+			System.out.println(name.length());
+		} 
+		catch (Exception e) 
+		{
+			System.out.println("Name can not be empty");
+		}
+			System.out.println("Enter choice : ");
+			
+			try 
+			{
+				int i=System.in.read();
+				
+				choice=(char)i;
+				if(choice=='N')
+					break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			s.nextLine();
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		pro52 ob=new pro52();
+		
+		ob.getName();
+	}
+
+}
+
+================================================================
+
+55
+package BasicPrograms;
+
+import java.io.IOException;
+
+public class pro53 {
+
+	public static void main(String[] args) {
+		byte bt[]=new byte[5];
+		
+		try {
+			System.out.println("Enter text :");
+			System.in.read(bt);
+			
+			for(byte b:bt)
+			{
+				System.out.print((char)b);
+			}
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}
+
+========================================================================
+
+56
+package BasicPrograms;
+
+// Multiple catch blocks
+public class pro54 {
+
+	public void func()
+	{
+		try 
+		{
+			int x=10/0;
+			
+			String st="";
+			System.out.println(st.length());
+			
+			int num[]=new int[2];
+			
+			num[3]=10;
+		} 
+		
+		catch (ArithmeticException e) {
+			System.out.println("Arithmetic Exception found");
+		}
+		catch (NullPointerException e) {
+			System.out.println("Null Pointer Exception");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Default Exception found");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		pro54 ob=new pro54();
+		
+		ob.func();
+		
+		System.out.println("In Main method");
+
+	}
+
+}
+
+===============================================================
+
+57
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+public class pro55 {
+
+	public void func(String no)
+	{
+		try                           // Outer try
+		{
+			int z=Integer.parseInt(no);
+			
+			try                       // Inner Try 
+			{
+				double res=10/z;
+				System.out.println("Division : "+res);
+			}   
+			catch (ArithmeticException e) {
+				System.out.println("Divide by zero error");
+			}
+		} 
+		catch (NumberFormatException e) {
+			System.out.println("Alphabets can not be converted in integer");
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("Enter a String : ");
+		String no=s.nextLine();
+		
+		pro55 ob=new pro55();
+		ob.func(no);
+
+	}
+
+}
+
+===============================================================
+
+58
