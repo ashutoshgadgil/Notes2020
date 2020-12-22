@@ -51,3 +51,8 @@ Q.20 Write a program to take first name and lastname as a command line arguments
 Q.21 Create a class Person. Create name,mobile,age as instance variables . Make getters and setters and display the records of 3 cusomers using array of objects and 
      print records.
 Q.22 Define name and salary of an employee both as a string variable. Define a method which updates the salary of an employee by 1000. Print updated salary with name.
+Q.23 Write a program to declare a sring object using literal and assign a string "Hello" in it. Print the Hello using charAt() method in Capital Case.
+Q.24 Write a program to print the length of a string without using length attribute.
+Q.25 Take user name and password from user.If user name is "admin" and password is "Abcd1234" then print Welcome UserName . Compare userName using equalIgnoreCase(). 
+     Compare password without using equalIgnoreCase()
+
