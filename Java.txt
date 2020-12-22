@@ -504,10 +504,13 @@
 		
    final : keyword
                    To define a variable as a constant.
+					 final variable can not be modified
 
                    method can be final
+                                         final method can not be overridden
    
                    class can be final
+					 final class can not be inherited
 ==============================================================================================
 
   String :
@@ -691,32 +694,131 @@ Control statements :
 
      Interface extending another Interface :
 
+=========================================================================================
+
+	  Polymorphism
+			1) Overloading (Compile Time polymorphism ) /static biding /early binding
+				
+				method definition
+				method call
+
+                             When a class has same name method which appears more than once.
+
+  			2) Overriding (Run time polymorphism ) / Dynamic binding/late binding
+
+                             When a base class is having a exactly same method as in the derived class.
 
 
+           Upcasting :
+                      Reference of the Base class can refer to the child class object ,it is called as upcasting.
+
+		      Class Base :
+                      Class Derived :
+
+                                       Base ref;       
+                                                     Base b1;
+						     Derived d1;
+
+                                       ref= b1;    // Upcasting
+				       ref= d1;
 
 
+ =======================================================================================
 
 
+  POJO (Plain Old Java Object) :
+
+                                Class has constructor, Getter method , setter methods
+
+                               Class City
+			       {
+					int citycode;   // instance variable
+					constructor()
+					setter method  : Set the values to the member variables
+					getter method  : return the values from the methods
+			       }
+
+=======================================================================================
 
 
+  Command Line Arguments :
+                            Arguments which are passed at command line while running the program
+
+                            public static void main(String args[])
+			    {
+
+			    }
+
+			    args[] : Accepts command line argument as a string
+
+===============================================================================================
+
+  
+ String :  java.lang
+           final class
+           immutable (non modifiable)
 
 
+ Mutable (Modifiable) String classes
+
+ 1) StringBuffer
+
+ 2) StringBuilder is faster than StringBuffer because StringBuilder works on multiple threads at a time , StringBuffer works on single thread at a time.
 
 
+===============================================================================================
+
+ Creation of Immutable class :
+
+     1) Create a final class
+     2) Define data members as final
+     3) Parametererised constructor
+
+============================================================================================
+
+Object Class methods
+
+  toString() : method of Object Class(Topmost class in Java)
+  clone()    : Creates the exact copy of an object
+  hashcode() : returns the hashcode of the object  
+  finalize() : in garbage collection
 
 
+============================================================================================
 
 
+  Exception Handling :
 
+                       Process of handling the exception programatically so that the execution flow of the program can be maintained.
 
+                       s-1
+  		       s-2
+                       s-3   ------ Exception
+                       s-4
+		       s-5
 
+  Keywords of Exception handling :
+                                   try     : block {} ,raises the exception
+				   catch   : block {} , handles the exception (Exception handler)
+				   throw   : keyword , To manually throw the exception object.
+				   throws  : keyword , To propogate the exception, use with method header
+				   finally : block {}, optional to write and it performs cleanup operation
 
+ Type of Exception
+		1) Checked Exception
+				        Exception checked at compile time.
+					Ex:  IOException, SQLException, FileNotFoundException										
+	
+		2) Unchecked Exception
+				        Exception checked at run time.
+					Ex:  ArithmaticException, NullPointerException, ArrayIndexOutOfBoundsException
 
+ Throwable (Parent class of all exception classes)
 
-
-
-
-
+                                                 1) Exception  ---> IOException, SQLException, FileNotFoundException
+                                                                  > ArithmaticException, NullPointerException, ArrayIndexOutOfBoundsException
+  
+                                                 2) Error   ----> VitualMachineError, StackOverflow
 
 
 
