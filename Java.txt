@@ -811,6 +811,7 @@ Object Class methods
 	
 		2) Unchecked Exception
 				        Exception checked at run time.
+                                             RuntimeException
 					Ex:  ArithmaticException, NullPointerException, ArrayIndexOutOfBoundsException
 
  Throwable (Parent class of all exception classes)
@@ -821,19 +822,115 @@ Object Class methods
                                                  2) Error   ----> VitualMachineError, StackOverflow
 
 
+  throw : keyword 
+                 To throw checked or unchecked exception manually.
 
 
+                 throw new ArithmeticException();   
+                 
+                  or
+                 
+                  AritmeticException e=new ArithmeticException();
+
+                  throw e;
 
 
+  throws : keyword
+                  used for checked exception
+                  with method 
+		  can throw checked and unchecked exceptions
+                  used in exception propogation
 
 
+  Exception Handling with method overriding
+
+    1) If a overridden method in the derived class is throwing a checked exception then the base class method must throw the check exception of the same type.
+    2) If a overridden method in derived class is throwing a checked exception of base class type then the method in the base class can not throw the exception  of 
+       child type but it must throw the exception of the same base type.
+         
+
+  Custom Exception
+		 User Defined exceptions
+              
+                 can be created on extending the Exception class.
+
+  ====================================================================================================================
 
 
+  instanceOf : operator 
+                To check a particular instance
+                true/false
+
+                String str;
+
+		str instanceOF String  ======> true
+ =====================================================================================================================
+
+  Thread in Java : 
+
+             Subprogram of a program.
+	     subprogram is a thread
 
 
+             process vs Thread
+               
+             10kb           
+
+		P
+
+		P1, P2
+
+	     Multitasking 
+			  1) Multiprocessing
+			  2) Multithreading
+
+   Thread Lifecycle :
+
+                    1) New : Thread is created          (create object of Thread class)
+
+		    2) Ready : Thread is ready to run   (call the start() method on the thread)
+
+		    3) Running : Thread is running      (Override run() method in Thread class and run() is called when start() is called om thread object )
+
+		    4) waiting : Thread is waiting to run again  ( sleep() method on thread )
+
+		    5) Dead / terminated : When thread completes its execution  ( When a thread executes the run() method completely)
 
 
+  context Switching ;
+                      CPU can execute any thread at any time.
+                      t1,t2,t3 
 
+  Thread Scheduler :
+		      Program of JVM which schedules the thread
+
+  
+  How to create a Thread ?
+                         1) Extending Thread class : 
+                                                      package : java.lang.Thread
+
+						      start() :  
+
+				class mythread extends Thread
+
+
+			 2) Implementing Runnable interface
+         
+
+				class mythread implements Runnable
+
+  Methods of Thread class :
+                          start()
+                          run()
+			  getName()   : returns the name of the thread
+			  setName()   : sets the name of the thread
+			  currentThread() : return the reference of the current Thread , Static Method
+
+                          Priority  : 1 - 10 , default Priority : 5 , MIN_Priority = 1 , NoRM_Priority = 5, MAX_Priority = 10
+                       
+			  getPriority() : return the priority of the thread ,                
+			  setPriority() : sets the priority of the thread
+			
 
 
     
