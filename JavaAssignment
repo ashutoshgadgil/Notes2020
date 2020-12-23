@@ -64,3 +64,29 @@ Q.27 Display the following Pattern :
        1 2 3 4
        1 2 3 4 5
 
+Q.28 Declare a string as "Welcome to Java Programming" , Print "Java" from this String. 
+
+Q.29 Write a program to reverse the entered string without using reverse method.
+
+Q.30 Make an array of 5 integers and print elements in reverse order.
+
+Q.31 Make an array of 10 numbers and print the sum of all even elements.
+
+Q.32 Make an array of 3 integers and find the maximum of 3 nos and print it.
+
+Q.33 Make an array of 5 integers and check any enetered no exists in the array or not.If Exists then print the array element with position of the element in the array.
+
+Q.34 Create an interface Area which has a method getArea(). 
+    Create 3 Classes circle, Triangle, Rectangle which are implementing the method. Calculate the area and show it.
+Q.35 Create an Abstract Class student which has an abstract method showDetails().
+    Create an interface Marks which has a variable TotalMarks=500 and a method getMarks().
+    Create a Class Result which extends student class and implements Marks interface.
+    In Result class calculate the Percentage of a student and Print Result.
+
+Q.36 create a final class in which a method Factorial() returns the factorial of the passed number.Make another class where factorial is to be displayed in a method showFactorial()
+Q.37 Write a program to Make a class Numbers which has a method getNumbers() which takes two numbers from user. Create another class Addition which inherits
+     class Numbers and does Addition of two numbers in a method calculate() and print the addition.
+Q.38 Create your Exception class named as PasswordLengthException and take username and password from the user . If the length of the password is less than 8 characters
+     then throw the PasswordLengthException on giving a message as "Password is too short" otherwise Show the message as "Welcome UserName".
+     
+     
