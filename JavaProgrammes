@@ -2844,3 +2844,428 @@ public class pro55 {
 ===============================================================
 
 58
+
+package BasicPrograms;
+
+public class pro56 {
+
+	public void fun(int no)
+	{
+		int z;
+		try 
+		{
+			z=10/no;
+			System.out.println("Z : "+z);
+		} 
+		catch (ArithmeticException e) {
+			System.out.println("Divide by zero");
+			
+			int num[]=new int[no+2];
+			try 
+			{
+				num[2]=20;
+				System.out.println(num[1]);
+			} 
+			catch (ArrayIndexOutOfBoundsException e2) {
+				System.out.println("Array index out of range");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		pro56 ob=new pro56();
+		ob.fun(10);
+	}
+
+}
+
+=========================================================================================
+
+59
+package BasicPrograms;
+
+import java.util.Scanner;
+
+public class pro57 {
+
+	public void fun(int no)
+	{
+		try 
+		{
+			if(no%2==0)
+				throw new ArithmeticException();   // throwing the exception of type unchecked
+			else
+			{
+				for(int i=0;i<=no;i++)
+				{
+					System.out.println(i*i);
+				}
+			}
+
+		} 
+		catch (ArithmeticException e) 
+		{
+			System.err.println("Number should be odd to print Square value");
+		}
+					
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("Enter a number : ");
+		int n=s.nextInt();
+		
+		pro57 p=new pro57();
+		
+		p.fun(n);
+	}
+
+}
+
+=================================================================
+
+60
+package BasicPrograms;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class pro58 {
+
+	public void func() throws IOException
+	{
+		FileWriter f=new FileWriter("abc.txt");
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		pro58 p=new pro58();
+		
+		try {
+			p.func();
+		} catch (Exception e) {
+			System.out.println("Exception Handled");
+		}
+		
+	}
+
+}
+
+================================================================
+61
+
+package BasicPrograms;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+// Exception Propogation
+// Handle unchecked exception using throws clause
+
+public class pro59 {
+
+	public void func2() throws NullPointerException,ArithmeticException
+	{
+		String name=null;
+		
+		//try 
+		//{
+			System.out.println(name.length());    // Raising exception
+		//} 
+		//catch (NullPointerException e) 
+		//{
+		//	System.out.println("Null Pointer Exception handled by func2");
+		//}
+		
+		
+	}
+	
+	public void func1() throws NullPointerException
+	{
+		try 
+		{
+			func2();
+		} 
+		catch (Exception e) 
+		{
+			System.out.println("Null Pointer Exception handled by func1");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		pro59 p=new pro59();
+		
+		//try 
+		//{
+			p.func1();
+		//} 
+		//catch (Exception e) 
+		//{
+		//	System.out.println("Null Pointer Exception handled by main");
+		//}
+		
+		
+	}
+
+}
+
+===========================================================================
+62
+
+package BasicPrograms;
+
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+class ba1
+{
+	public void show() throws Exception 
+
+	{
+		System.out.println("Hello");
+	}
+}
+
+class de1 extends ba1
+{
+	public void show() throws FileNotFoundException  	{
+		System.out.println("Hi");
+	}
+}
+
+public class pro60 {
+
+	public static void main(String[] args) {
+		de1 ob=new de1();
+		
+		try {
+			ob.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		Scanner s=new Scanner(System.in);
+	}
+
+}
+
+=========================================================================
+63
+package BasicPrograms;
+
+// Custom exception / User defined exception
+class InvalidNumberException extends Exception   // InvalidNumberException is User defined exception class 
+{
+	public InvalidNumberException() {
+		System.out.println("Exception : Invalid Number -1");
+	}
+}
+
+public class pro61 {
+
+	public void getNumber(int num) throws InvalidNumberException
+	{
+		if(num==-1)
+			throw new InvalidNumberException();
+		else
+			System.out.println("You entered a valid number");
+	}
+	
+	public static void main(String[] args) {
+		pro61 p=new pro61();
+		
+		try 
+		{
+			p.getNumber(-1);
+		} 
+		catch (InvalidNumberException e) {
+			System.err.println("Number -1 is Invalid");	
+		}
+	}
+
+}
+
+=============================================================
+64
+
+package BasicPrograms;
+
+public class pro62 {
+
+	public static void main(String[] args) throws InvalidNumberException {
+		pro61 p=new pro61();
+		
+		try 
+		{
+			p.getNumber(50);
+		} catch (InvalidNumberException e) {
+			//System.out.println("Number is Invalid");
+		}
+		
+	}
+
+}
+
+======================================================================
+
+65
+
+package BasicPrograms;
+
+class Parent12
+{
+	
+}
+
+class child12 extends Parent12
+{
+	
+}
+
+public class pro63 {
+
+	public static void main(String[] args) {
+		
+		pro63 p=new pro63();
+		
+		String str="Hello";
+		
+		boolean b = str instanceof String;
+		
+		System.out.println(b);
+
+	    b= p instanceof Object;
+	    
+	    System.out.println(b);
+
+	    child12 c=new child12();
+	    
+	    System.out.println(c instanceof child12);
+	    
+	    
+	}
+
+}
+
+==============================================================
+
+66
+
+package BasicPrograms;
+
+class myThread1 extends Thread
+{
+	public void run()                              // Thread will run
+	{
+		System.out.println("Run method called...");
+	}
+}
+
+public class pro64 {
+
+	public static void main(String[] args) {
+		
+		myThread1 t1=new myThread1();   // Thread is created : thread object is t1
+		
+		t1.start();    // Thread is in Ready state
+		
+		myThread1 t2=new myThread1();   // Thread is created : thread object is t2
+		
+		t2.start();    // Thread is in Ready state
+		
+		
+		System.out.println("In Main Thread");
+		
+	}
+
+}
+
+=============================================================
+
+67
+package BasicPrograms;
+
+class myThread2 implements Runnable
+{
+	@Override
+	public void run() 
+	{
+		System.out.println("In Run method");
+	}	
+}
+
+public class pro65 {
+
+	public static void main(String[] args) {
+		myThread2 t1=new myThread2();
+		
+		Thread th1=new Thread(t1);    // th1 is thread object
+		
+		th1.start();
+	
+		Thread th2=new Thread(t1);    // th2 is thread object
+
+		th2.start();
+	}
+}
+
+========================================================
+68
+package BasicPrograms;
+
+class ABC
+{
+	public void fun()
+	{
+		System.out.println("Hello");
+	}
+}
+
+class myThread3 extends ABC implements Runnable
+{
+	String getName()
+	{
+		return "Welcome "+Thread.currentThread().getName();
+	}
+	
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName());
+		fun();
+	}	
+}
+
+
+public class pro66 {
+
+	public static void main(String[] args) {
+		myThread3 t1=new myThread3();
+		Thread th1=new Thread(t1);
+		th1.setPriority(8);
+		th1.setName("first_Thread");
+
+		th1.start();
+		
+		Thread th2=new Thread(t1);
+		
+		th2.setName("second_Thread");
+		th2.start();
+				
+		//System.out.println(th1.getName());
+		//System.out.println(th2.getName());
+		//System.out.println(Thread.currentThread().getName());
+		
+		System.out.println(th1.getName()+" "+th1.getPriority());
+		
+		System.out.println(t1.getName());
+	}
+}
+
+=========================================================================================
