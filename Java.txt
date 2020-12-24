@@ -892,7 +892,7 @@ Object Class methods
 
 		    3) Running : Thread is running      (Override run() method in Thread class and run() is called when start() is called om thread object )
 
-		    4) waiting : Thread is waiting to run again  ( sleep() method on thread )
+		    4) waiting / Blocked : Thread is waiting to run again  ( sleep() method on thread )
 
 		    5) Dead / terminated : When thread completes its execution  ( When a thread executes the run() method completely)
 
@@ -930,7 +930,38 @@ Object Class methods
                        
 			  getPriority() : return the priority of the thread ,                
 			  setPriority() : sets the priority of the thread
-			
+
+                          sleep(timeinsecs) : To make the state of a thread as a waiting state.
+			  join() :   wait for a thread to die
+			  setDaemon() : Used to define a thread as a Daemon Thread
+                          isDaemon() :  Check if a thread is Daemon or not
+
+  Daemon Thread :
+                    Service provider (Daemon Thread ) : It completes its execution after providing services to all the user threads.
+							gc (Garbage Collector)
+				                        Low priority Thread
+							Background thread
+
+				
+		    user thread :   User defined thread   
+  
+  Garbage Collection
+			Demo d=new Demo();
 
 
-    
+  How to make an object elegible for garbage collection?
+
+
+   1) Nullifying reference variable , Assign NULL to reference variable
+   2) Reassign the reference variable 
+   3) Define an object in a method
+
+  Two methods to request to JVM for garbage collection
+
+   1)  System.gc()   
+   2)  Runtime Class   : singleton (single object can be created for a singleton class)
+ 
+  Synchronization
+                    One thread at a time can run the shared method / shared resource of a class
+   
+			           
