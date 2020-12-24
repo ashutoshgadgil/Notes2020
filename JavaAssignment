@@ -88,5 +88,8 @@ Q.37 Write a program to Make a class Numbers which has a method getNumbers() whi
      class Numbers and does Addition of two numbers in a method calculate() and print the addition.
 Q.38 Create your Exception class named as PasswordLengthException and take username and password from the user . If the length of the password is less than 8 characters
      then throw the PasswordLengthException on giving a message as "Password is too short" otherwise Show the message as "Welcome UserName".
-     
-     
+Q.39 create 2 thread objects of a class .create a thread class on implementing Runnable interface, set name of first thread as "even" and second thread as "odd". Even thread 
+      Printing only even nos between 1 and 20 and odd thread printing only odd nos between 1 and 20.
+Q.40 Create a class mobile and create a subclass product of it which is implementing Runnable interface. Create two thread objects . One thread is printing product id and second
+     thread object is printing product name.
+
