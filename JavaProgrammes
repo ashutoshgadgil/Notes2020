@@ -3269,3 +3269,217 @@ public class pro66 {
 }
 
 =========================================================================================
+
+69
+
+package BasicPrograms;
+
+import java.util.Scanner;
+
+public class pro67 {
+
+	boolean getStatus(String st)
+	{
+		if(st.equalsIgnoreCase("India"))
+			return true;
+		else
+			return false;
+	}
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter Country");
+		String country=s.nextLine();
+		
+		pro67 p=new pro67();
+		boolean st=p.getStatus(country);
+		
+		if(st)
+		{
+			System.out.println("Indian Citizen");
+		}
+		else
+		{
+			System.out.println("NRI");
+		}
+	}
+}
+
+========================================================================
+70
+package BasicPrograms;
+
+
+class myThread4 extends Thread
+{
+	public void run()
+	{
+		for(int i=0;i<10;i++)
+		{
+			try 
+			{
+				Thread.sleep(1000);    // Used to Allow a Currently running thread to go into waiting state
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			}
+			
+			System.out.println(Thread.currentThread().getName()+" "+i);
+		}
+	}
+}
+public class pro68 {
+
+	public static void main(String[] args) {
+		
+		myThread4 t1=new myThread4();
+		myThread4 t2=new myThread4();
+		myThread4 t3=new myThread4();
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		System.out.println(Thread.currentThread().getName());
+		
+	}
+
+}
+
+===========================================================================
+
+71
+package BasicPrograms;
+
+class myThread5 extends Thread
+{
+	public void run()
+	{
+		for(int i=0;i<5;i++)
+		{
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(i);
+		}
+	}
+}
+public class pro69 {
+
+	public static void main(String[] args) {
+		myThread5 t1=new myThread5();
+		myThread5 t2=new myThread5();
+		myThread5 t3=new myThread5();
+		
+		t1.start();
+		
+		try 
+		{
+			t1.join();
+		} 
+		catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		t2.start();
+		
+		try {
+			t2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		t3.start();
+
+	}
+
+}
+
+========================================================================
+
+72
+package BasicPrograms;
+
+class myThread6 extends Thread
+{
+	public void run()
+	{
+		if(Thread.currentThread().isDaemon())
+			System.out.println(getName()+" "+"Thread is Daemon");
+		else
+			System.out.println(getName()+" "+"User Thread");
+	}
+}
+public class pro70 {
+
+	public static void main(String[] args) {
+		myThread6 t1=new myThread6();
+		myThread6 t2=new myThread6();
+		myThread6 t3=new myThread6();
+		
+		t1.start();
+		
+		t2.setDaemon(true);
+		t2.start();
+		
+		t3.setDaemon(true);
+		t3.start();
+		
+		System.out.println(Thread.currentThread().isDaemon());
+
+	}
+
+}
+
+==========================================================================
+
+73
+package BasicPrograms;
+
+import javax.management.RuntimeErrorException;
+
+class User
+{
+	public void show()
+	{
+		System.out.println("Hello");
+	}
+}
+
+public class pro71 {
+
+	public static void main(String[] args) {
+		User u1=new User();
+		User u2=new User();
+		
+		u1.show();
+		
+		u1=null;  // Nullifyng reference vaiable
+		//u1.show();
+		
+		u2=u1;     // Reassigning the refernce variable
+		
+		//System.gc();
+		//  Runtime rt=new Runtime();
+		
+		Runtime rt=Runtime.getRuntime();  // Factory method : returns the object of a specific type
+		
+		System.out.println("Total memory on Heap : "+rt.totalMemory());
+		System.out.println("Available Memory : "+rt.freeMemory());
+		
+		System.gc();
+		System.out.println("Total memory on Heap : "+rt.totalMemory());
+		System.out.println("Available Memory : "+rt.freeMemory());
+		
+	}
+
+}
+
+==========================================================================
+
+74
+
+
