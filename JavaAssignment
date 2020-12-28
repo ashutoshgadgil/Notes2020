@@ -92,4 +92,4 @@ Q.39 create 2 thread objects of a class .create a thread class on implementing R
       Printing only even nos between 1 and 20 and odd thread printing only odd nos between 1 and 20.
 Q.40 Create a class mobile and create a subclass product of it which is implementing Runnable interface. Create two thread objects . One thread is printing product id and second
      thread object is printing product name.
-
+Q.41 Create a string str="10-20-30-40-50". Tokenize the string and display the average of all numbers.
