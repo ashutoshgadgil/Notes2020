@@ -94,3 +94,9 @@ Q.40 Create a class mobile and create a subclass product of it which is implemen
      thread object is printing product name.
 Q.41 Create a string str="10-20-30-40-50". Tokenize the string and display the average of all numbers.
 Q.42 Display the current date and time and split the date and time and print it seperately.
+Q.43 Create an ArrayList of names of 5 students and copy all names to another ArrayList.
+Q.44 Create an ArrayList of 5 integers and display the average of all numbers.
+Q.45 Read firstname and Lastname from the user and concatenate Firstname and lastname including space in between, Then Split the full name and display firstname and lastname
+     seperately.
+Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
+Q.47 Make ArrayList of 5 strings and display every string along with the length.
