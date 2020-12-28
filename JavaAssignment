@@ -100,3 +100,4 @@ Q.45 Read firstname and Lastname from the user and concatenate Firstname and las
      seperately.
 Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
 Q.47 Make ArrayList of 5 strings and display every string along with the length.
+Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.
