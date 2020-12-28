@@ -964,4 +964,125 @@ Object Class methods
   Synchronization
                     One thread at a time can run the shared method / shared resource of a class
    
-			           
+
+  Synchronized method :
+			synchronized : keyword
+
+
+                        public synchronized void fun()
+			{
+
+			}            
+
+  Synchronized block  :   synchronize(this)
+			  {  
+                          
+			  }
+
+
+   =========================================================================================
+
+   Date & Time API :
+
+    Date class : legacy (old) class
+
+   1) LocalDate  : predefined class (Format : yyyy-MM-dd ) 2020-12-28
+      
+       methods: now() -- current date from system , defined as static
+                minusDays(int) 
+                plusDays(int)
+
+
+   2) LocalDateTime
+
+   3) DateTimeFormat
+
+   4) LocalTime
+
+
+ ============================================================================================
+
+
+   
+   StringTokenizer ( Class )
+				Used to tokenize or divide the complete string
+
+                                hasMoreElements()
+			        hasMoreTokens()
+				nextElement()
+				nextToken()
+				countTokens()
+
+   split() method of String Class 
+
+
+===========================================================================================
+
+    Emumaration
+
+
+                Enum : keyword
+
+                Enum is a grouping of constant values.
+
+                syntax :
+			  Enum enumname
+			  {
+				COnstants values;
+			  }
+
+==========================================================================================
+
+ 
+   Collections Framwork :
+
+			Set of classes and interfaces 
+
+
+   Collection : root interface 
+
+   Child interfaces : List, Set, Queue 
+   Map interface :
+
+
+   Use of collections : Use to perform operations on the objects
+
+
+  Interface  :  implementation classes
+ ----------------------------------------------------
+
+      List  :  ArrayList , vector, Stack, Linkedlist
+
+      Set   :  HashSet
+
+      Queue :  Dequeue, PriorityQueue
+
+          
+               Array :
+			
+               ArrayList : orderd list can be created using ArrayList Class
+
+
+               Two ways to create ArrayList Object :
+
+			                 1)      ArrayList ob = new ArrayList();                      // Non generic
+
+					 2)      ArrayList<String> ob = new ArrayList<String>();      // Generic way
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+			           
