@@ -3482,4 +3482,549 @@ public class pro71 {
 
 74
 
+package BasicPrograms;
+
+class Square
+{
+	synchronized void printSquare(int n)  // Synchronized method : will be executed by a single thread at a time 
+	{                                     // No other thread will be given a chance to execute this method until 
+		for(int i=1;i<=n;i++)             // the current thread completes the execution of this method.
+		{
+			System.out.println(i*i);
+			
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+		
+			}
+		}
+	}
+}
+
+class Thr1 extends Thread
+{
+	Square t;
+	
+	public Thr1(Square s) {
+		t=s;
+	}
+	
+	public void run()
+	{
+		t.printSquare(5);
+	}
+}
+
+
+class Thr2 extends Thread
+{
+	Square t;
+	
+	public Thr2(Square s) {
+		t=s;
+	}
+	
+	public void run()
+	{
+		t.printSquare(3);
+	}
+}
+
+public class pro73 {
+
+	public static void main(String[] args) {
+		Square ob=new Square();
+		
+		Thr1 t1=new Thr1(ob);
+		Thr2 t2=new Thr2(ob);
+
+		t1.start();
+		t2.start();
+	}
+
+}
+
+===============================================================================
+
+75
+
+package BasicPrograms;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class pro74 {
+	/*
+	public void fun()
+	{
+		int x=20;
+		{
+			int y=30;
+			System.out.println(y);
+			System.out.println(x);
+		}
+		//System.out.println(y);
+		System.out.println(x);
+	}
+	*/
+	
+	public static String getDate(LocalDate ld)
+	{
+		return "Todays date : "+ld.getDayOfMonth();
+	}
+	
+	public static void main(String[] args) {
+		LocalDate dt=LocalDate.now();
+		
+		System.out.println(dt);
+		
+		System.out.println(dt.getDayOfMonth() +" "+dt.getMonthValue()+" "+dt.getYear());
+	
+		String temp= getDate(dt);
+		System.out.println(temp);
+	
+		System.out.println("Year length : "+dt.lengthOfYear());
+		
+		LocalDate yesterday=dt.minusDays(1);
+		
+		System.out.println(yesterday);
+		
+		LocalDate tomorrow=dt.plusDays(1);
+		System.out.println(tomorrow);
+		
+		LocalDate dt1=LocalDate.of(2019, 4, 25);
+		System.out.println(dt1);
+		
+		LocalDate dt3=LocalDate.of(2013, 2, 28);
+		System.out.println(dt3.isLeapYear());
+		
+		LocalDateTime d1=LocalDateTime.now();
+		System.out.println(d1);
+		
+		DateTimeFormatter dtf=DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String mydate = d1.format(dtf);
+		System.out.println(mydate);
+		
+		dtf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		mydate = d1.format(dtf);
+		System.out.println(mydate);
+		
+		
+		dtf=DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+		mydate = d1.format(dtf);
+		System.out.println(mydate);
+		
+		dtf=DateTimeFormatter.ofPattern("E,MMM dd yyyy");
+		mydate = d1.format(dtf);
+		System.out.println(mydate);
+		
+		LocalTime lt=LocalTime.now();
+		System.out.println(lt);
+		
+		LocalTime lt1=LocalTime.of(13,30,25);
+		System.out.println(lt1);
+		
+		
+		
+		
+	}
+
+}
+============================================================================
+
+76
+
+package BasicPrograms;
+
+import java.util.StringTokenizer;
+
+public class pro75 {
+
+	public static void main(String[] args) {
+		String str="Java is a programming Language";
+		
+		StringTokenizer stk=new StringTokenizer(str);
+		
+		while(stk.hasMoreElements())
+		{
+			System.out.println(stk.nextElement());
+		}
+
+		String str1="Java-is- a- programming -Language s";
+		
+		StringTokenizer stk1=new StringTokenizer(str1,"-");
+		
+		while(stk1.hasMoreElements())
+		{
+			System.out.println(stk1.nextElement());
+		}
+		
+		String str2="Java is a programming Language";
+		
+		StringTokenizer stk2=new StringTokenizer(str2," ");
+		System.out.println("Total no of tokens : "+stk2.countTokens());
+		
+		while(stk2.hasMoreTokens())
+		{
+			System.out.println(stk2.nextToken());
+			//System.out.println(stk2.nextElement());
+		}
+		
+		System.out.println("Total no of tokens : "+stk2.countTokens());
+	}
+
+}
+
+============================================================================
+
+77
+
+package BasicPrograms;
+
+public class pro76 {
+
+	public static void main(String[] args) {
+		String message="Welcome to Strings";
+		
+		String []str = message.split(" ");
+
+		int cnt=0;
+		for(String word:str)
+		{
+			System.out.println(word);
+			cnt++;
+		}
+		
+		System.out.println("Total words : "+cnt);
+		
+		System.out.println("Total words : "+str.length);
+		
+		System.out.println("Length of first word : "+str[0].length());
+		
+		System.out.println("Total characters : "+message.length());
+	}
+
+}
+
+===============================================================================
+
+78
+
+package BasicPrograms;
+
+enum Fruits
+{
+	MANGO(101),ORANGE(102),BANANA(103),APPLE(104);
+	
+	int x;
+	Fruits(int y)
+	{
+		x=y;
+	}
+}
+
+public class pro77 {
+
+	enum products                  // Defining enum inside a class
+	{
+		MOBILES,LAPTOPS,HARDDISK,MOTHERBOARD;
+		
+		String brand;              // instance variable
+		products()                 // Constructor in enum
+		{
+			brand="Samsung";
+		}
+		
+		String getBrand()         // method in enum
+		{
+			return brand;
+		}
+	}
+	
+	public static void main(String[] args) {
+		//System.out.println(Fruits.APPLE);
+		//System.out.println(Fruits.MANGO);
+		
+		Fruits f=Fruits.BANANA;
+		System.out.println(f+" "+f.x);
+		
+	    f=Fruits.APPLE;
+		System.out.println(f+" "+f.x);
+
+		f=Fruits.MANGO;
+		System.out.println(f+" "+f.x);
+
+		f=Fruits.ORANGE;
+		System.out.println(f+" "+f.x);
+				
+		f=Fruits.APPLE;
+		switch (f) {
+		case APPLE:
+		         System.out.println("Fruit is Apple");
+			break;
+		case BANANA:
+				 System.out.println("Fruit is Banana");
+			break;
+		default:
+			     System.out.println("Invalid");
+			break;
+		}
+		
+		// Accessing enum values using values()
+	
+		for(Fruits ft: Fruits.values())
+		{
+			System.out.println(ft);
+		}
+
+		//////////////////////////////////////////////////
+		
+		products p=products.MOBILES;
+		System.out.println("Brand name : "+p.brand+" Product : "+p);
+
+		p=products.LAPTOPS;
+		System.out.println("Brand name : "+p.brand+" Product : "+p);
+
+		System.out.println(p.getBrand());
+	}
+
+}
+
+=================================================================
+
+79
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class pro78 {
+
+	public static void main(String[] args) {
+		ArrayList list=new ArrayList();
+		
+		list.add("Sachin");
+		list.add(35);           // Integer i=35;
+		list.add(1.2);
+		list.add('A');
+		
+		System.out.println(list);
+		
+		ArrayList<Double> list1=new ArrayList<Double>();
+		
+		list1.add(1.2);        // add() : adds an objects into the list. ArrayList method
+		list1.add(1.3);
+		list1.add(1.4);
+
+		System.out.println(list1);
+
+	
+		// ArrayList<double> list2=new ArrayList<double>();  // Collection is applicable for only objects
+
+		ArrayList<String> list2=new ArrayList<String>();
+		
+		list2.add("Ajay");
+		list2.add("Rahul");
+		list2.add("Vijay");
+		list2.add("Sanjay");
+		
+		System.out.println(list2);
+		
+		
+		
+		//List<Integer> ages=new ArrayList<Integer>();
+		
+		ArrayList<Integer> ages=new ArrayList<Integer>();
+		ages.add(20);
+		ages.add(30);
+		ages.add(40);
+		
+		System.out.println(ages);
+		
+		// 1st way to access
+		System.out.println(ages.get(1));   // get() used to access the element of ArrayList at a specific index
+		
+		// 2nd way to access
+		for(Integer in:ages)               // foreach loop to access ArrayList elements
+		{
+			System.out.print(in+" ");
+		}
+		
+		System.out.println("\n========================");
+		// 3rd way to acccess
+		Iterator<Integer> it=ages.iterator();
+		
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+		
+	}
+
+}
+
+====================================================================================
+
+80
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class pro79 {
+
+	int x=3000;
+	public String toString()
+	{
+		return "x : "+x;
+	}
+	public static void add(ArrayList<Integer> l,int item)
+	{
+		l.add(item);          // add() is inserting an element in the list
+	}
+
+
+	public static void add(ArrayList<Integer> l,int index,int item)
+	{
+		l.add(index,item);    // add() is inserting an element at a specified index
+	}
+
+	public static void add(ArrayList<Integer> l1,ArrayList<Integer> l2)
+	{
+		l1.addAll(l2);    // addAll() is inserting elements of one collection into other collection
+	}
+
+	
+	public static void display(ArrayList<Integer> l)
+	{
+		Iterator<Integer> it=l.iterator();
+		
+		System.out.print("\nArray List is : ");
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+	}
+	
+	public static int search(ArrayList<Integer> l,int index)
+	{
+		return l.get(index);   
+	}
+	
+	public static boolean search(int itemtoBeSearched,ArrayList<Integer> l)
+	{
+		return l.contains(itemtoBeSearched);   // checks an element in the list
+	}
+	
+	public static void update(ArrayList<Integer> l,int index,int item)
+	{
+		l.set(index,item);        // Update the value at specified index
+	}
+	
+	public static void remove(ArrayList<Integer> l,int index)
+	{
+		l.remove(index);         // remove element at a specified index
+	}
+	
+	public static int getNoOfElements(ArrayList<Integer> l)
+	{
+		return l.size();         // To return no of elements in the list
+	}
+	
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> li=new ArrayList<Integer>();
+		
+		add(li,10);
+		add(li,20);
+		add(li,30);
+		add(li,40);
+		add(li,50);
+		add(li,60);
+		
+		display(li);
+		System.out.println();
+		
+		int i=3;
+		System.out.println("Element returned at position :"+i+" is "+search(li, i));
+	
+		add(li, 1, 500);
+		display(li);
+		
+		ArrayList<Integer> li1=new ArrayList<Integer>();
+		add(li1, 400);
+		add(li1, 500);
+		add(li1, 600);
+		add(li1, 600);
+		add(li1, 600);
+		
+		add(li, li1);
+		display(li1);
+		display(li);
+		
+		update(li, 1,2000);
+		display(li);
+	
+		remove(li, 0);
+		display(li);
+		
+		System.out.println("\nTotal elements : "+getNoOfElements(li));
+		
+		if(search(600, li))
+		{
+			int index=li.indexOf(600);     // returns the index of element
+
+			int lastindex=li.lastIndexOf(600);     // returns the index of element
+
+			System.out.println("Item found in list at index "+index+" Last index is : "+lastindex);
+		}
+			
+		else
+			System.out.println("Item not found");
+		
+		
+		if(li.isEmpty())                         // Checking a list is empty or not
+			System.out.println("List is empty");
+		else
+			System.out.println("List not empty");
+		
+		display(li);
+		
+		li.sort(Comparator.naturalOrder());   // arranging elements in ascending order
+		
+		display(li);
+		
+		li.sort(Comparator.reverseOrder());   // arranging elements in reverse order
+		
+		display(li);
+		
+		
+		//li.clear();               // removes all elements from the list
+		
+		//li.toString();
+		
+		display(li);
+		System.out.println();
+		System.out.println("List "+li);
+		
+		li.add(5000);
+		li.sort(Comparator.reverseOrder());   // arranging elements in reverse order
+		
+		display(li);
+		
+		pro79 ob=new pro79();
+		System.out.println();
+		System.out.println(ob);
+	}
+
+}
+
+
+
 
