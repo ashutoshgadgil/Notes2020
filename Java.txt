@@ -1051,13 +1051,39 @@ Object Class methods
   Interface  :  implementation classes
  ----------------------------------------------------
 
+  Collection : Base interface 
+
       List  :  ArrayList , vector, Stack, Linkedlist
 
-      Set   :  HashSet
+	       Duplicate values are allowed
+	       Insertion order is maintained	
+
+      Set   :  HashSet, LinkedHashSet, TreeSet (Ascending order is maintained, null elements not allowed)
+
+	       Duplicates are not allowed
+	       Insertion order is not maintained in HashSet
 
       Queue :  Dequeue, PriorityQueue
 
-          
+ 
+=================================================================================
+
+     
+      Map :    HashMap,TreeMap
+
+               Treemap maintains Ascending order while HashMap does not.
+
+               Map is a key-value pair data structure
+	       To find value stored based on the key
+               Key can not be same
+
+     How to access Map elements ?
+      
+     Map.Entry : interface (used to iterate elements in the map)
+
+     entrySet() : converts the map into set
+            
+   
                Array :
 			
                ArrayList : orderd list can be created using ArrayList Class
@@ -1069,7 +1095,14 @@ Object Class methods
 
 					 2)      ArrayList<String> ob = new ArrayList<String>();      // Generic way
 
+ ===========================================================
 
+   Iterator      : interface (Iterate elements in forward direction)
+
+   ListIterator  : interface ( Iterate elements in reverse order)
+
+
+   toArray() : To convert an arrayList into array
 
 
                  
