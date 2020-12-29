@@ -100,6 +100,8 @@ Q.45 Read firstname and Lastname from the user and concatenate Firstname and las
      seperately.
 Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
 Q.47 Make ArrayList of 5 strings and display every string along with the length.
-Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.
+Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.Create 
 Q.49 Create an Enum named as DAYS which maintains constant as Days name. Display the message using switch...case based on the enum object value.
+Q.50 Create a linked list of 3 records about books and element type is Object of class Book. Book details are : bookid,booktitle,bookauthor,bookprice. Print all book
+     details in reverse order.
 
