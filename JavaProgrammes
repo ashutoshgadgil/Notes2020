@@ -4025,6 +4025,334 @@ public class pro79 {
 
 }
 
+=========================================================================================
 
+81
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+
+// Program to create ArrayList of Customers object
+
+class Customers
+{
+	int cid;
+	String cname;
+	String city;
+	
+	public Customers(int cid, String cname, String city) {
+		this.cid = cid;
+		this.cname = cname;
+		this.city = city;
+	}
+}
+
+public class pro80 {
+
+	public static void main(String[] args) {
+		ArrayList<Customers> al=new ArrayList<Customers>();
+		
+		Customers c1=new Customers(106,"Manish", "Goa");  
+		al.add(new Customers(101, "Vijay", "Mumbai"));    //Adding object of customer class
+		al.add(new Customers(102, "Ajay", "Mumbai"));
+		al.add(new Customers(103, "Vikas", "Delhi"));
+		al.add(new Customers(104, "Amit", "Patna"));
+		al.add(new Customers(105, "Sonu", "Pune"));
+		al.add(c1);
+		
+		for(Customers c:al)
+		{
+			System.out.println(c.cid+"-"+c.cname+"-"+c.city);
+		}
+	}
+
+}
+
+================================================================================
+
+82
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class pro81 {
+
+	public static void main(String[] args) {
+		ArrayList<String> l=new ArrayList<String>();
+		
+		l.add("Pune");
+		l.add("Delhi");
+		l.add("Patna");
+		l.add("Kanpur");
+		l.add("Raipur");
+		
+		System.out.println("List : "+l);
+		
+		ListIterator<String> li=l.listIterator(l.size());
+		
+		System.out.print("ArrayList in Reverse order :");
+		while(li.hasPrevious())
+		{
+			System.out.print(li.previous()+" ");
+		}
+		
+		System.out.println();
+		System.out.println(l);
+		
+		for(int i=0;i<l.size();i++)
+		{
+			System.out.print(l.get(i)+" ");
+		}
+	}
+
+}
+
+==============================================================================
+83
+package BasicPrograms;
+
+import java.util.ArrayList;
+
+class Product1
+{
+	String pname;
+	int qty;
+	public Product1(String pname, int qty) {
+		this.pname = pname;
+		this.qty = qty;
+	}
+	@Override
+	public String toString() {
+		return "pname=" + pname + ", qty=" + qty ;
+	}	
+}
+
+public class pro82 {
+
+	public static void main(String[] args) {
+		ArrayList<Product1> al=new ArrayList<Product1>();
+		
+		al.add(new Product1("Samsung DVD", 11));
+		al.add(new Product1("USB", 5));
+		al.add(new Product1("PAN Drive", 11));
+		
+		for(Product1 p:al)
+		{
+			System.out.println(p);
+		}
+	}
+
+}
+
+==========================================================================
+
+84
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+
+public class pro83 {
+
+	public static void main(String[] args) {
+		ArrayList<String> lang=new ArrayList<String>();
+		
+		lang.add("C++");
+		lang.add("Java");
+		lang.add(".Net");
+		
+		System.out.println(lang);
+
+		String str[]=new String[lang.size()];
+		
+		lang.toArray(str);   // Converting a List into Array
+		
+		for(String s : str)
+		{
+			System.out.println(s);
+		}
+	}
+
+}
+
+==============================================================================
+
+85
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class pro84 {
+
+	public static void convertToArrayList(Integer n[])
+	{
+		List<Integer> i=Arrays.asList(n);
+		
+		ArrayList<Integer> al=new ArrayList<Integer>(i);
+		System.out.println(al);
+		
+		al.add(4);
+		System.out.println(al);
+	}
+	
+	public static void convertToLinkedList(Integer n[])
+	{
+		List<Integer> i=Arrays.asList(n);
+		
+		LinkedList<Integer> al=new LinkedList<Integer>(i);
+		System.out.println(al);
+		
+		al.add(4);
+		System.out.println(al);
+		
+	}
+	public static void main(String[] args) {
+		String str[]= {"Hello","Hi","Welcome"};
+
+		List<String> l= Arrays.asList(str);   // asList() : To convert from Array to List
+
+		System.out.println(l);
+		
+	    Integer num[]={1,2,3};
+		
+		convertToArrayList(num);
+		
+		convertToLinkedList(num);
+	}
+
+}
+
+=================================================================================
+
+86
+package BasicPrograms;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class pro85 {
+
+	
+	public static void display(LinkedList<Integer> l)
+	{
+		Iterator<Integer> it=l.iterator();
+		System.out.println();
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		LinkedList<Integer> l=new LinkedList<Integer>();
+		
+		l.add(100);
+		l.add(200);
+		l.add(300);
+			
+		display(l);
+		l.addFirst(400);   // adds node at the beginning of list
+		
+		display(l);
+		
+		l.addLast(500);    // adds node at the end of list
+		display(l);
+		
+		l.add(2, 600);     // adds node at specific location of list
+		display(l);
+		
+		l.remove();   // removes first node of the list
+		display(l);
+		
+		l.removeLast();  // removes last node of the list
+		display(l);
+		
+		l.removeFirst();  // removes first node of the list
+		display(l);
+		
+		l.remove(2);   // removes specific node of the list at index 2
+		display(l);
+		
+		System.out.println();
+		int index=l.indexOf(600);
+		l.remove(index);
+		display(l);
+		
+		l.clear();   // remove all nodes from list
+		
+		display(l);
+		System.out.println(l.size());
+		
+		System.out.println(l.isEmpty());
+		
+		try 
+		{
+			System.out.println(l.get(0));
+		} 
+		catch (Exception e) {
+			System.out.println("Index not available");
+			l.add(100);
+		}
+
+		System.out.println(l.isEmpty());
+		l.add(200);
+		l.add(100);
+		display(l);
+		
+		l.removeLastOccurrence(100);
+		display(l);
+		l.add(200);
+		l.add(100);
+		
+		display(l);
+		l.removeFirstOccurrence(200);
+		l.removeLastOccurrence(100);
+		display(l);
+        l.add(300);
+        l.add(400);
+        l.add(500);
+        display(l);
+        
+        System.out.println();
+		Iterator<Integer> it= l.descendingIterator();
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+		
+		System.out.println();
+		System.out.println("First element : "+l.peek());   // peek() returns the first element of list
+		
+		display(l);
+		
+		System.out.println("\nFirst element : "+l.peekFirst());  // returns first element without removing it
+		display(l);
+		
+		System.out.println("\nLast element : "+l.peekLast());  // returns last element without removing it
+		display(l);
+		System.out.println();
+		System.out.println(l.poll());
+		display(l);
+		
+		System.out.println();
+		System.out.println(l.pollFirst());
+		display(l);
+		
+		l.pollLast();
+		display(l);
+		
+		
+	}
+
+}
+
+===================================================================================
 
 
