@@ -5100,6 +5100,277 @@ public class pro99 {
 }
 
 ============================================================
+102
 
+package BasicPrograms;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class pro100 {
+
+	public static void main(String[] args) throws IOException {
+		String str="This is a simple text";
+		
+		FileWriter ob1=new FileWriter("F://file5.txt"); // Character oriented class
+		
+		ob1.write(str);    // writes a complete string in characters
+	
+		ob1.write('D');  // writes a single character
+		ob1.close();
+	}
+
+}
+==================================================================
+
+103
+package BasicPrograms;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class pro101 {
+
+	public static void main(String[] args) throws IOException {
+		
+		char buffer[]=new char[100];
+		
+		FileReader fr=new FileReader("F://file5.txt");
+		
+		fr.read(buffer);   // reads characters and stores characters in buffer
+		
+		System.out.println(buffer);
+	
+		fr.close();
+		
+		fr=new FileReader("F://file5.txt");
+		
+		int i=fr.read();   // reads a single character
+		
+		while(i!=-1)
+		{
+			System.out.print((char)i);
+			i=fr.read();
+		}
+		
+		fr.close();
+	}
+
+}
+============================================================================
+
+104
+
+package BasicPrograms;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class pro102 {
+
+	public static void main(String[] args) throws IOException {
+		String str="Welcome to file handling in Java";
+		FileWriter fw=new FileWriter("F://file6.txt");
+		BufferedWriter bw=new BufferedWriter(fw);
+		
+		bw.write(str);
+		bw.close();
+		fw.close();
+
+	}
+
+}
+
+============================================================================
+
+105
+package BasicPrograms;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class pro103 {
+
+	public static void main(String[] args) throws IOException {
+		char buffer[]=new char[100];
+		
+		FileReader fr=new FileReader("F://file6.txt");
+		
+		BufferedReader br=new BufferedReader(fr);
+		
+		br.read(buffer);
+		
+		System.out.println(buffer);
+		
+		br.close();
+		
+		fr.close();
+	}
+
+}
+
+==========================================================================
+
+106
+
+package BasicPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class pro104 {
+
+	public static void main(String[] args) throws IOException {
+		FileInputStream fis=new FileInputStream("F://file1.txt");
+		
+		InputStreamReader is=new InputStreamReader(fis); // Converts the bytes to characters
+		
+		char buffer[]=new char[50];
+		
+		is.read(buffer);
+		
+		System.out.println(buffer);
+		
+		is.close();
+		
+		fis.close();
+		
+	}
+
+}
+======================================================================
+
+107
+package BasicPrograms;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+public class pro105 {
+
+	public static void main(String[] args) throws IOException {
+		String str="Hello world ";
+		
+		FileOutputStream fos=new FileOutputStream("F://file7.txt");
+		OutputStreamWriter os=new OutputStreamWriter(fos);  // converts characters into bytes
+		
+		os.write(str);
+
+		os.close();
+		
+		fos.close();
+		
+	}
+
+}
+
+==========================================================================
+
+108
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro106 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		String name=null;
+		int password=0;
+		
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 Statement smt = cn.createStatement();  // Create a statement to send the query to the database
+		
+			 System.out.println("Enter username : ");
+			 name=sc.nextLine();
+			 
+			 System.out.println("Enter Password : ");
+			 password=sc.nextInt();
+			 
+			 String query="insert into loginDetails values('"+name+"',"+password+")";
+			
+			 int i=smt.executeUpdate(query);  // Execute a query
+			 
+			 System.out.println(i+" Record added successfully....");
+			 smt.close();
+			 
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+==================================================================================
+109
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class pro107 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 Statement smt = cn.createStatement();  // Create a statement to send the query to the database
+			 
+			 String query="select * from logindetails where username='manish'";
+			
+			 ResultSet rs = smt.executeQuery(query);  // Execute a query
+			 
+			 while(rs.next())
+			 {
+				 System.out.println("User Name : "+rs.getString(1)+" Password : "+rs.getInt(2));
+			 }
+			 
+			 rs.close();
+			 smt.close();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+==========================================================================================
 
 
