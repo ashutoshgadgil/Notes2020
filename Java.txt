@@ -1137,6 +1137,8 @@ Object Class methods
                           2) Character Stream
 
         Stream Classes:
+			Byte oriented classes
+
 			 1) InputStream   : Abstract  (Base class for input stream classes)
 			 2) OutputStream  : Abstract  (Base class for Output stream classes) 
 
@@ -1168,18 +1170,62 @@ Object Class methods
 
 				   }
 
-			
+================================================================================================
+
+   Character stream
+			Character oriented classes
+
+			1) FileWriter  (Writer :base class)  : To write data in character form in the file
+			2) FileReader  (Reader :base class)  : To read data in character form from the file
+			3) BufferedWriter  :  It takes the characters and write it in a buffer and complete buffer is written into the file on the disk.
+			4) BufferedReader  :  It takes all characters in a buffer and gives the output
+			5) InputstreamReader :  Reads the bytes as charcters (converts bytes into characters)
+			6) OutputStreamWriter:  Writes the bytes as charactes (converts characters into bytes)
+
+=================================================================================================
 
 
+	JDBC (Java Database connectivity) : API (Application Programming Interface)
+
+        JDBC API : classes & and interfaces
 
 
+	Steps to connect to database :
+
+	step-1 : Load & Register the Driver
+	
+	Step-2 : Establish the connection
+
+	Step-3 : Create the statement 
+
+	Step-4 : Execute query
+
+	Step-5 : Close connection
+	
+
+        Interfaces :
+
+       1)     Connection
+       2)     Statement
+       3)     ResultSet
 
 
+        Classes :
 
+		Class
 
+        method :
+		getConnection()
+		close()
 
+		executeQuery()   =====> select 
+		executeUpdate()  =====> Non select
+		execute()
 
+		getString()   ========> 
+		getInt()      ========>
 
+     JDBC API has two type of queries : Select query (DDL), Non select query (DML)
 
 
 
