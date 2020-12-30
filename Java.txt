@@ -1104,6 +1104,113 @@ Object Class methods
 
    toArray() : To convert an arrayList into array
 
+ ====================================================================
+
+ IO Streams :
+
+		Stream : sequence of bytes
+
+		Standard Stream :
+				 1) Standard Output : System.out   (Screen)
+
+			         2) standard Input  : System.in    (Keyboard)
+
+				 3) Standard error  : System.err   (Screen)
+
+                Files Streams
+				1) Input Stream : To read data from source(file)
+
+                                2) Output stream : To write data to destination(file)
+
+                Hard disk : create a file
+                Java Program  
+
+                  Categorisation
+		           Input stream
+                                       Data  is transferred from file to the java program
+                  
+			   Output stream 
+				       Data is transferred from java program to the file
+
+        Type of Streams : 1) Byte stream
+
+                          2) Character Stream
+
+        Stream Classes:
+			 1) InputStream   : Abstract  (Base class for input stream classes)
+			 2) OutputStream  : Abstract  (Base class for Output stream classes) 
+
+		         3) FileInputStream : Reads data from file in the form of bytes (byte stream)
+			 4) FileOutputStream : writes data into the file in the form of bytes 
+			 5) ByteArrayInputStream : Reads an array of bytes
+			 6) ByteArrayOutputStream: Writes a byte array to the stream 
+		         7) ObjectInputStream : Used to read objects which are written previously by ObjectOutputStream
+			 8) ObjectOutputStream : Used to write objects
+
+
+       Serialization
+			Process of writing the object into the file
+			reduces the network load
+
+       Deserialization
+			reverse process of serialization
+
+       How to make an object as a serializable
+			                      Use a interface serializable
+	Note : On implementing the serializable interface in a class we can make the object as serializable.
+
+
+       Marker interface  : tagged interface which does not have any abstract method.
+
+                          ex :
+                                   interface xyz
+				   {
+
+				   }
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                  
 
