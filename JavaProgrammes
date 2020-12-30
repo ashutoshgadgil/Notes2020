@@ -4823,6 +4823,283 @@ public class pro93 {
 
 95
 
+package BasicPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class pro94 {
+
+	public static void main(String[] args) throws Exception {
+		
+		// 1st way 
+		FileInputStream fis=new FileInputStream("F://file1.txt");   // fis is input stream 
+		
+		fis.skip(6);      // Skips the no of bytes from the stream
+		System.out.println("Bytes available : "+fis.available()); // Returns total bytes available in the file
+		// 2nd way
+		//File f=new File("F://file1.txt");
+		//FileInputStream f1=new FileInputStream(f);
+		
+		int i=fis.read();    // reads data in the form of byte
+		while(i!=-1)
+		{
+			System.out.print((char)i);
+			
+			i=fis.read();
+		}
+		
+		System.out.println("\nBytes available : "+fis.available());
+		fis.close();
+
+		//System.out.println(fis.available()); // Invalid after closing the stream object
+		
+		fis=new FileInputStream("F://file1.txt");
+		System.out.println(fis.available());
+		
+		byte buffer[]=new byte[fis.available()];
+		
+		fis.read(buffer);     // Reading data from file in the form of bytes in an array
+		
+		for(byte b:buffer)
+		{
+			 System.out.print((char)b);	   
+		}
+		
+		fis.close();
+	}
+
+}
+
+=================================================================================
+
+96
+package BasicPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class pro94 {
+
+	public static void main(String[] args) throws Exception {
+		
+		// 1st way 
+		FileInputStream fis=new FileInputStream("F://file1.txt");   // fis is input stream 
+		
+		fis.skip(6);      // Skips the no of bytes from the stream
+		System.out.println("Bytes available : "+fis.available()); // Returns total bytes available in the file
+		// 2nd way
+		//File f=new File("F://file1.txt");
+		//FileInputStream f1=new FileInputStream(f);
+		
+		int i=fis.read();    // reads data in the form of byte
+		while(i!=-1)
+		{
+			System.out.print((char)i);
+			
+			i=fis.read();
+		}
+		
+		System.out.println("\nBytes available : "+fis.available());
+		fis.close();
+
+		//System.out.println(fis.available()); // Invalid after closing the stream object
+		
+		fis=new FileInputStream("F://file1.txt");
+		System.out.println(fis.available());
+		
+		byte buffer[]=new byte[fis.available()];
+		
+		fis.read(buffer);     // Reading data from file in the form of bytes in an array
+		
+		for(byte b:buffer)
+		{
+			 System.out.print((char)b);	   
+		}
+		
+		fis.close();
+	}
+
+}
+=================================================================================
+
+97
+
+package BasicPrograms;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class pro95 {
+
+	public static void main(String[] args) throws IOException {
+		FileOutputStream fos=new FileOutputStream("F://file4.txt",true);  // The file is opened in append mode
+		
+		fos.write('E');  // Writes a single byte to the file
+		fos.close();
+		
+		fos=new FileOutputStream("F://file2.txt");
+		
+		String str="This text is written in the file";
+		byte buffer[]=str.getBytes();
+		
+		fos.write(buffer);   // writes collection of bytes in the stream
+		
+		fos.close();
+	}
+
+}
+
+=========================================================================
+
+98
+
+package BasicPrograms;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+public class pro96 {
+
+	public static void main(String[] args) throws IOException {
+		byte num[]= {1,2,3,4,5};    // byte array
+		
+		ByteArrayInputStream bi=new ByteArrayInputStream(num);   // creation of object
+		
+		System.out.println(bi.available());
+		
+		for(int i=0;i<num.length;i++)
+		{
+			int data=bi.read();        // reads a byte 
+			System.out.print(data+" ");
+		}
+		
+		bi.close();
+
+	}
+
+}
+
+=======================================================================
+
+99
+
+package BasicPrograms;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+public class pro97 {
+
+	public static void main(String[] args) throws IOException {
+		String str="Hello Java";
+		byte buffer[]=str.getBytes();
+		
+		ByteArrayOutputStream bo=new ByteArrayOutputStream();
+		
+		bo.write(buffer);
+
+		System.out.println(bo);
+		
+		bo.close();
+	}
+
+}
+
+=====================================================================
+
+100
+
+package BasicPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class pro98 {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		int num1=50;
+		String str="Hello";
+		
+		FileOutputStream fo=new FileOutputStream("F://objectfile.txt");
+		ObjectOutputStream ob1=new ObjectOutputStream(fo);
+		
+		ob1.writeInt(num1);
+		ob1.writeObject(str);
+		
+		FileInputStream fi=new FileInputStream("F://objectfile.txt");
+		ObjectInputStream ob2=new ObjectInputStream(fi);
+		
+		System.out.println("num1 : "+ob2.readInt());
+		System.out.println("str  : "+ob2.readObject());
+		
+		ob1.close();
+	}
+
+}
+
+====================================================================
+
+101
+
+package BasicPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Players implements Serializable   // Class Player will become serializable
+{
+	String name;
+	String city;
+	int score;
+	public Players(String name, String city, int score) {
+		this.name = name;
+		this.city = city;
+		this.score = score;
+	}
+}
+
+public class pro99 {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		FileOutputStream fos=new FileOutputStream("F://players.ser");
+		ObjectOutputStream ob1=new ObjectOutputStream(fos);
+		
+		Players p1=new Players("Sachin", "Mumbai", 20000);
+		
+		ob1.writeObject(p1);   // Object p1 is written into the file players.ser  (serializaion)
+		
+		FileInputStream fis=new FileInputStream("F://players.ser");
+		ObjectInputStream ob2=new ObjectInputStream(fis);
+		
+		Players p = (Players) ob2.readObject();       // (deserialization)
+		
+		System.out.println("Name : "+p.name);
+		System.out.println("City : "+p.city);
+		System.out.println("Score : "+p.score);
+		
+		ob2.close();
+		ob1.close();
+		fis.close();
+		fos.close();
+	}
+}
+
+============================================================
 
 
 
