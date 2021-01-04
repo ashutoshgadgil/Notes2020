@@ -5372,5 +5372,531 @@ public class pro107 {
 
 }
 ==========================================================================================
+110
 
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro109 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		String name=null;
+		int password=0;
+		
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 Statement smt = cn.createStatement();  // Create a statement to send the query to the database
+		
+			 System.out.println("Enter username : ");
+			 name=sc.nextLine();
+			 
+			 System.out.println("Enter new Password : ");
+			 password=sc.nextInt();
+			 
+			 String query="update loginDetails set password="+password+" where username='"+name+"'";
+			
+
+			 int i=smt.executeUpdate(query);  // Execute a query
+			 
+			 System.out.println(i+" Record Updated successfully....");
+			 smt.close();
+			 
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+==================================================================
+
+111
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro110 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		String name=null;
+		int password=0;
+		
+	
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 Statement smt = cn.createStatement();  // Create a statement to send the query to the database
+		
+			 //System.out.println("Enter username : ");
+			 //name=sc.nextLine();
+			 
+			 //String query="delete from loginDetails where username='"+name+"'";  // remove specific record
+			
+			 String query="delete from loginDetails ";   // removes all records from table
+			 
+			 int i=smt.executeUpdate(query);  // Execute a query
+			 
+			 System.out.println(i+" Record deleted successfully....");
+			 smt.close();
+			 
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+====================================================================
+
+112
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro111 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 PreparedStatement psmt=cn.prepareStatement("insert into dummyy values(?,?)");
+
+			 Scanner s=new Scanner(System.in);
+			 int id;
+			 String city;
+			 System.out.println("Enter id : ");
+			 id=s.nextInt();
+			 
+			 s.nextLine();
+			 System.out.println("Enter city : ");
+			 city=s.nextLine();
+			 
+			 psmt.setInt(1, id);
+			 psmt.setString(2, city);
+			 
+			 int i=psmt.executeUpdate();
+			 System.out.println(i+" Record inserted.....");
+			 
+			 psmt.close();
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+
+===========================================================================
+
+113
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro112 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 PreparedStatement psmt=cn.prepareStatement("update dummyy set city=? where sno=?");
+
+			 Scanner s=new Scanner(System.in);
+			 int id;
+			 String city;
+			 System.out.println("Enter id : ");
+			 id=s.nextInt();
+			 
+			 s.nextLine();
+			 System.out.println("Enter new city : ");
+			 city=s.nextLine();
+			 
+			 psmt.setString(1, city);
+			 psmt.setInt(2, id);
+			 
+			 int i=psmt.executeUpdate();
+			 System.out.println(i+" Record inserted.....");
+			 
+			 psmt.close();
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+
+======================================================================
+
+114
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro113 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 PreparedStatement psmt=cn.prepareStatement("delete from dummyy where sno=?");
+
+			 Scanner s=new Scanner(System.in);
+			 int id;
+			 String city;
+			 System.out.println("Enter id : ");
+			 id=s.nextInt();
+			 
+			 psmt.setInt(1, id);
+			 
+			 int i=psmt.executeUpdate();
+			 System.out.println(i+" Record deleted.....");
+			 
+			 psmt.close();
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+
+=========================================================================
+
+115
+
+package BasicPrograms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro114 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 PreparedStatement psmt=cn.prepareStatement("select count(*) from dummyy");
+			
+			 ResultSet rs=psmt.executeQuery();
+			 
+			 /*
+			int i=0;
+			while(rs.next())
+			{
+				System.out.println(rs.getString(2));
+				i++;
+			}
+			 */
+			//System.out.println(i);
+			 
+			if(rs.next())
+			{
+				if(rs.getInt(1)==0)
+				{
+					System.out.println("Table empty");
+				}
+				else
+				{
+					System.out.println(rs.getInt(1));
+				}
+			}
+								
+			 psmt.close();
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+
+========================================================================
+
+116
+
+package BasicPrograms;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class pro115 {
+
+	public static void main(String[] args) {
+		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");  // Load & register driver
+			 
+			 Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root"); // Establishes a connection
+		
+			 CallableStatement csmt=cn.prepareCall("{call insertRecord(?,?)}");
+			 
+			 Scanner s=new Scanner(System.in);
+			 System.out.println("Enter city code : ");
+			 int id=s.nextInt();
+			 s.nextLine();
+			 
+			 System.out.println("Enter city : ");
+			 String city=s.nextLine();
+			 
+			 csmt.setInt(1, id);
+			 csmt.setString(2, city);
+			 //csmt.execute();
+			 
+			 int i=csmt.executeUpdate();
+			 System.out.println(i+" Record inserted");
+			 
+			 csmt.close();
+			 cn.commit();
+			 cn.close();   // close connection
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
+
+=======================================================================
+
+117
+
+package BasicPrograms;
+
+class baseclass
+{
+	public void display()
+	{
+		System.out.println("Hello");
+	}
+}
+
+interface in11
+{
+	public void fun(int x);
+}
+
+public class pro117 extends baseclass implements in11{
+
+	@Override
+	public void display()
+	{
+		System.out.println("Welcome");
+	}
+	
+	public static void main(String[] args) {
+		pro117 p=new pro117();
+		
+		p.display();
+
+	}
+
+	@Override
+	public void fun(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+
+===============================================================
+
+118
+
+package BasicPrograms;
+
+import java.util.ArrayList;
+
+public class pro118 {
+
+	@Deprecated                       // Shows the method is not used and is legacy method
+	public static void  display()
+	{
+		System.out.println("Hi");
+	}
+	
+	public static void  display(String str)
+	{
+		System.out.println(str);
+	}
+	
+	public static void main(String[] args) {
+		display();
+		display("Hi");
+		
+
+		ArrayList<String> l=new ArrayList<String>();
+		l.add("abc");
+	}
+
+}
+
+===========================================================================
+
+119
+
+package BasicPrograms;
+
+@FunctionalInterface    
+interface in12
+{
+	public void fun1();
+}
+
+public class pro119 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+
+================================================================
+
+120
+
+package BasicPrograms;
+
+import java.lang.annotation.Annotation;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@interface myannotation
+{
+	String status();
+}
+
+@myannotation(status = "Indian")
+public class pro120 {
+
+	public static void main(String[] args) {
+		pro120 p=new pro120();
+		
+		Class c=p.getClass();
+		
+		Annotation a=c.getAnnotation(myannotation.class);
+		
+		myannotation m=(myannotation) a;
+
+		System.out.println(m.status());
+		
+	}
+
+}
+
+===============================================================================
 
