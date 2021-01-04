@@ -1229,10 +1229,73 @@ Object Class methods
 
 
 
+    Create : insert Query
+    Read   : Select
+    Update : Upadte
+    Delete : delete
+
+ ================================================================================================
+
+  Type of Statement interfaces :
+
+                      1) Statement         : (Similar query is compiled multiple times)
 
 
+				Statement smt=cn.createStatement();
 
 
+		      2) PreparedStatement : Perfomance wise is better than Statement (Similar query is compiled once)
+
+				PreaparedStatement psmt=cn.prepareStatement(Query);
+				
+				Parameterised queries :     insert into tab1 values(?,?,?);
+
+                                Set a parameter :  psmt.setInt();     // set a parameter as a number
+                                                   psmt.setString();  // set a parameter as a string
+
+
+                                 setting the first parameter :  psmt.setInt(1,100);
+
+				 setting the second parameter :  psmt.setInt(2,200);
+
+				 setting the third parameter :  psmt.setInt(3,300);
+
+
+ 
+		      3) CallableStatement  : To call stored procedures and function
+
+					
+				 CallableStatement csmt=cn.prepareCall("{call insertRecord(?,?)}");
+
+
+ =========================================================================================================
+
+
+  Annotation 
+
+           Meta data (data about data) to the compiler
+           statrs with @
+ 
+           Type of Annotations: 1) Predefined        :     @override  : Tells the user to override the method exacly which is defined in super class
+                                                           @Deprecated : To make a method as Depricated
+                                                           @SuppressWarnings : To remove the warning from the program
+							   @FunctionalInterface : To define an interface as a functional interface 
+							   @WebServlet
+							   @Component
+							   @Beans
+	
+
+       Functional interface : 
+			    The interface which have exactly one abstract method , not more than that.
+
+
+                                 2) Custom Annotation :  User defined can be made using @interface                               
+
+      
+           Advantage of Annotation : 1) As a comment  2) Meta information 3) Can be applied on classes, fields......         
+
+
+          
 
 
 
