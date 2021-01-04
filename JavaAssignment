@@ -116,5 +116,8 @@ Q.51 Write a JDBC Program to do the following operations on the table given :
      g) Show all records in descending order of salary.
      h) Show all records in Alphabetical order of names of employees.
      
-
+Q.52 Write a program to record the birth dates of 5 persons along with the names and do following : 
+     a) Show all records.
+     b) Use PreparedStatement to insert the records at run time.
+     
 
