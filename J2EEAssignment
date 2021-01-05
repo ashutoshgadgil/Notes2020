@@ -1,0 +1,3 @@
+Q.1 Create a servlet on extending HttpServlet class which prints a Welcome message on the WebPage.
+Q.2 Create a Servlet which accepts two numbers as parameters in the form of query string and prints the sum,multiplication,Division,Subtraction
+Q.3 Create a Servlet which accepts firstname & lastname from query string and display the fullname in Capital case along with length.
