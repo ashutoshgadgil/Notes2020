@@ -1,0 +1,199 @@
+1
+
+package org.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class FirstServlet
+ */
+@WebServlet(urlPatterns = {"/Servlet/HelloWorld","/Servlet/Welcome"})
+public class FirstServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FirstServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");   // display the information on the browser in text / html format
+	
+		System.out.println("Welcome to my web page");
+		
+		PrintWriter pw=response.getWriter();
+		
+		pw.print("Welcome to my First web Page");
+		
+		pw.print("<html>");
+		pw.print("<body>");
+		pw.print("<h1>Welcome to My WebSite</h1>");
+		
+		pw.print("</body>");
+		pw.print("</html>");
+		
+		pw.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+====================================================================================
+
+2
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class FirstServlet
+ */
+
+
+public class FirstServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FirstServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		
+		PrintWriter pw=response.getWriter();
+		
+		pw.print(getServletInfo());
+		pw.print(getServletName());   // returns the servlet name
+		
+		
+		pw.print("<html>");
+		pw.print("<body>");
+		pw.print("<h2>Welcome</h2>");
+		pw.print("</body>");
+		pw.print("</html>");
+		pw.print("<br>");
+		pw.print("<br>");
+		pw.print("Welcome");
+		pw.print("<br>");
+		pw.print("<br>");
+		pw.print("Welcome");
+		response.getWriter().print("Hi");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MyWebProject2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FirstServlet</display-name>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>org.servlets.FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/Welcome/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/Hello/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/Hi/FirstServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+========================================================================
+
+3
+
+package org.servlets;
+
+import java.io.IOException;
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+/**
+ * Servlet implementation class MyServlet
+ */
+public class MyServlet extends GenericServlet {   // GenericServlet is protocol independent class
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see GenericServlet#GenericServlet()
+     */
+    public MyServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#service(ServletRequest request, ServletResponse response)
+	 */
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		
+		String firstname=request.getParameter("firstname");  // Accepting parameter values from client /user as a request
+	
+		String lastname=request.getParameter("lastname");
+		
+		response.getWriter().print(firstname+" "+lastname);
+		
+	}
+	
+}
+
