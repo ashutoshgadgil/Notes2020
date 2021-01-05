@@ -1,0 +1,48 @@
+
+Servlet : Servlet API (javax.servlet)
+          Servlet is a Java Program which runs on the server used to
+          create dynamic web pages.
+          Servlet is a technology
+
+Web container : Contains the Web Applications 
+
+Web Server : Tomcat, Jetty, Glassfish
+
+Web Client : Firefox, Chrome, Opera
+
+Creation of Servlet : 1) On extending HttpServlet class
+		      2) On extending GenericServlet class (implements Servlet, ServletConfig, Serializable)
+		
+
+Servlet Lifecycle : 1) Loading the servlet
+                    2) Creation of servlet instance
+                    3) Initialization on calling init()
+                    4) Invoking the service()
+                    5) Invoke the destroy method
+
+URL Pattern : 
+            Change URL in @WebServlet annotaion
+
+Servlet Mapping:
+
+                Servlet can be mapped with a URL in web.xml (Deployment descriptor)
+
+                Single servlet can be mapped with different URLs
+
+                FirstServlet : servlet
+
+    URL 1 :  /FirstServlet 
+
+    URL 2 :  /FirstServlet/Welcome
+
+    URL 3 :  /FirstServlet/Hello
+
+
+Get Parameter values from URL in the servlet :
+
+                                              getParameter() : used to get parameter value from URL, use it with request object
+
+                  
+Query String : 
+                ?firstname=Rohit&lastname=Dhavan 
+             
