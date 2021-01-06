@@ -5,3 +5,4 @@ Q.4 Create 2 servlets and make a web.xml file in which a Integer value is define
     servlet is printing the factorial of the parameter.
 Q.5 Create 2 servlets and one web.xml file in which name is set as a parameter for first servlet and city is set as a parameter for second servlet. First servlet prints
     the length of the name and second servlet prints the city name in Capital case.
+Q.6 Create a servlet which displays all records of a table.
