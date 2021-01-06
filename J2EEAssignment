@@ -8,3 +8,5 @@ Q.5 Create 2 servlets and one web.xml file in which name is set as a parameter f
 Q.6 Create a servlet which displays all records of a table.
 Q.7 Create a servlet which accepts id from the URL and delete the record for that id.
 Q.8 Create a form which accepts ID and City and saves the data in the database.
+Q.9 create 2 servlets. In first servlet create an object of employee class which sets the attribute value for employee object .In second servlet retrieve the values
+    of employee object and display all information about an employee.
