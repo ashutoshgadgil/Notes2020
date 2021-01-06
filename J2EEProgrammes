@@ -197,3 +197,586 @@ public class MyServlet extends GenericServlet {   // GenericServlet is protocol 
 	
 }
 
+================================================================================================
+
+4
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser1
+ */
+public class ser1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		ServletConfig sc=getServletConfig();
+	
+		String prname=sc.getInitParameter("productName");
+		
+		out.print("Product Name : "+prname);
+		
+		String qty=sc.getInitParameter("Quantity");
+		
+		out.print("<br>Quantity : "+qty);
+		
+		String ct=sc.getInitParameter("CustType");
+		out.print("<br>Customer type  : "+ct);
+		
+		out.print("<br>===================================================<br>");
+		
+		Enumeration<String> e=sc.getInitParameterNames();
+		
+		String st="";
+		while(e.hasMoreElements())
+		{
+			st=e.nextElement();    // nextElement() returns parameter name
+			out.println(st+" ");
+			out.print(sc.getInitParameter(st));   // getInitParameter() returns the value on the parameter name
+		}
+		
+		out.print("<br>Servlet Name : "+getServletName());
+		
+		
+		ServletContext context=getServletContext();
+		
+		out.print("<br>City : "+context.getInitParameter("City"));
+	
+		out.print("<br>==================================================<br>");
+		
+		Enumeration<String> e1=context.getInitParameterNames();
+	
+		while(e1.hasMoreElements())
+		{
+			st=e1.nextElement();    // nextElement() returns parameter name
+			out.println(st+" ");
+			out.print(context.getInitParameter(st));   // getInitParameter() returns the value on the parameter name
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+=================================================================================
+
+5
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser2
+ */
+public class ser2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+PrintWriter out=response.getWriter();
+		
+		ServletConfig sc=getServletConfig();
+	
+		String prname=sc.getInitParameter("productName");
+		
+		out.print("Product Name : "+prname);
+		
+		String qty=sc.getInitParameter("Quantity");
+		
+		out.print("<br>Quantity : "+qty);
+		
+		String ct=sc.getInitParameter("CustType");
+		out.print("<br>Customer type  : "+ct);
+		
+
+		ServletContext context=getServletContext();
+		
+		out.print("<br>City : "+context.getInitParameter("City"));
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+===============================================================================
+6
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser3
+ */
+public class ser3 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser3() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		ServletContext context=getServletContext();
+		context.setAttribute("country", "India");
+	
+		out.print("Servlet 1 <br>");
+		
+		out.print("<a href='ser4'>Click here</a>");
+		out.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=======================================================================
+
+7
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser4
+ */
+public class ser4 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser4() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		ServletContext context=getServletContext();
+		String cn=(String) context.getAttribute("country");
+		out.print("Welcome to : "+cn);
+		out.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=============================================================================
+
+8
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser5
+ */
+public class ser5 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser5() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text");
+		PrintWriter out=response.getWriter();
+		
+	
+		out.print(request.getContextPath()+"<br>");  // return project name
+		out.print(request.getProtocol()+"<br>");
+		out.print(request.getRequestURI());
+		out.print(request.getMethod());
+		
+		out.print("<br>======================================<br>");
+		Enumeration e=request.getHeaderNames();
+		
+		
+		while(e.hasMoreElements())
+		{
+			String name=(String) e.nextElement();
+			String value=request.getHeader(name);
+			
+			out.print(name+" = "+value+"<br>");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=======================================================================
+
+9
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser6
+ */
+public class ser6 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser6() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		
+		String name=request.getParameter("name");
+		
+		out.print("Name : "+name);
+		
+		out.print("<br><br>Address : ");
+		String address[]=request.getParameterValues("address");
+	
+		for(String s:address)
+		{
+			out.print(s+"<br>");
+		}
+		
+		out.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+===========================================================================
+
+10
+
+package org.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ser7
+ */
+public class Ser7 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ser7() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Connection cn;
+		Statement smt;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+			smt=cn.createStatement();
+			
+			int id=Integer.parseInt(request.getParameter("id"));
+			String city=request.getParameter("city");
+			String query="insert into dummyy values("+id+",'"+city+"')";
+			smt.executeUpdate(query);
+			response.getWriter().print("Record inserted....");
+			smt.close();
+			cn.commit();
+			cn.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=========================================================================
+
+11
+
+package org.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser8
+ */
+public class ser8 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser8() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Connection cn;
+		PreparedStatement smt;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+			smt=cn.prepareStatement("insert into dummyy values(?,?)");
+			
+			smt.setInt(1, 109);
+			smt.setString(2, "Chennai");
+		
+			smt.execute();
+			response.getWriter().print("Record inserted");
+			smt.close();
+			cn.commit();
+			cn.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+==============================================================
+
+12
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser9
+ */
+public class ser9 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser9() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		response.setContentType("text/html");
+		int id=Integer.parseInt(request.getParameter("id"));
+		String city=request.getParameter("city");
+		
+		out.print("Id : "+id);
+		out.print("<br>City : "+city);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=================================================================
+
