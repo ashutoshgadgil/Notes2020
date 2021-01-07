@@ -1078,5 +1078,447 @@ Car Speed<input type="text" name="sp"><br>
 
 14
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ser1" method="get">
+Car Brand<input type="text" name="br"><br>
+Car Speed<input type="text" name="sp"><br>
+<input type="submit" value="Submit"> 
+</form>
+</body>
+</html>
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser1
+ */
+public class ser1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		String brand=request.getParameter("br"); // Accepting data from HTML Page Home.html
+		String speed=request.getParameter("sp");
+		
+		Connection cn;
+		Statement smt;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+			
+			smt=cn.createStatement();
+			
+			Car c=new Car();     // Create object of Model class
+			
+			c.setBrand(brand);  // Setting data to Model class 
+			c.setSpeed(speed);
+			
+			String query="insert into cardetails values('"+c.getBrand()+"','"+c.getSpeed()+"')";  // Retrieving data from Model class 
+			                                                                                      // & inserting data in database
+			
+			smt.executeUpdate(query); 
+			
+			out.print("<h4>Record submitted successfully...</h4>");
+			smt.close();
+			cn.commit();
+			cn.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser2
+ */
+public class ser2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		Car c=new Car();
+		ResultSet rs=c.display();    // Calling display() method of Model class which is returning Result Set variable
+		
+		try {
+			out.print("<center>");
+			out.print("<table border=4>");
+			out.print("<caption></u><b><font size=3 color='red'>Car Details</font></b></u></caption>");
+			out.print("<tr><th>Car Brand</th><th>Car Speed</th></tr>");
+			while(rs.next())
+			{
+				out.print("<tr><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td></tr>");      // displaying data from Result Set
+				
+			}
+			out.print("</table>");
+			out.print("</center>");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+===========================================================================================
+
+15
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Servlet1" method="get">
+Enter a number<input type="text" name="num">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet1
+ */
+public class Servlet1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+	
+		int num=Integer.parseInt(request.getParameter("num"));
+		
+		if(num<10)
+			out.print("<h4>You entered a number below 10</h4>");
+		else
+		{
+			out.print("<h5>Number should be less than 10");
+			RequestDispatcher rd=request.getRequestDispatcher("Entry.html");
+			rd.include(request, response);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+=======================================================================
+
+16
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet2
+ */
+public class Servlet2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		out.print("<h3>I am in servlet 2");	
+		RequestDispatcher rd=request.getRequestDispatcher("Servlet3");
+		
+		//rd.forward(request, response);   // forwards the request from one servlet to another servlet
+		rd.include(request, response);    // Includes the content of one servlet and forwards the request to another 
+
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet3
+ */
+public class Servlet3 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet3() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		out.print("<h3>I am in servlet 3");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=============================================================================
+
+17
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="LoginServlet" method="get">
+<table border="1">
+<tr><td>Username</td><td><input type="text" name="un"></td></tr>
+<tr><td>Password</td><td><input type="password" name="pw"></td></tr>
+<tr><td><input type="submit" value="Login"></td><td><input type="reset" value="Clear"></td></tr>
+</table>
+</form>
+</body>
+</html>
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		String username=request.getParameter("un");
+		String password=request.getParameter("pw");
+		
+		if(username.equals("abcd")&&password.equals("1234"))
+		{
+			out.print("Welcome "+username);
+			RequestDispatcher rd=request.getRequestDispatcher("display.html");
+			rd.include(request, response);
+		}
+		else
+		{
+			out.print("Username / Password Invalid");
+			RequestDispatcher rd=request.getRequestDispatcher("invalid.html");
+			rd.include(request, response);
+		}
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<font color="green"><h3>Welcome to my Login Page</h3></font>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Invalid page</title>
+</head>
+<body>
+<font color="red"><h3>You made a mistake ,Try again!</h3></font>
+</body>
+</html>
+
+
+
 
 
