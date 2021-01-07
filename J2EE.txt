@@ -11,7 +11,9 @@ Web Server : Tomcat, Jetty, Glassfish
 Web Client : Firefox, Chrome, Opera
 
 Creation of Servlet : 1) On extending HttpServlet class
-		      2) On extending GenericServlet class (implements Servlet, ServletConfig, Serializable)
+		      2) On extending GenericServlet class (implements Servlet, ServletConfig, Serializable) 
+
+ GenericServlet class is superclass for HttpServlet
 		
 
 Servlet Lifecycle : 1) Loading the servlet
@@ -46,3 +48,76 @@ Get Parameter values from URL in the servlet :
 Query String : 
                 ?firstname=Rohit&lastname=Dhavan 
              
+
+<Welcome-File-Tag> of XML file :
+                                THe file written in this tag will be displayed first in the browser
+
+
+ ServletConfig : interface
+                         Its object is used to access the servlet configuration information from web.xml
+                         
+
+               methods :  getInitParameter() : To access one parameter at a time
+                          getInitParameterNames() : Multiple parameters can be accessed
+                          getServletName()
+                          getServletConfig()
+
+
+			   <Init-param> 
+				<param-name></param-name>
+				<param-value></param-value>
+			   <Init-param> 
+	
+
+ ServletContext : interface
+			used to share confinfiguration information about an Application for all servlets                 
+
+		  methods : getInitParameter() : To access one parameter at a time
+                            getInitParameterNames() : Multiple parameters can be accessed
+                    	    setAttribute()   : Sets the object
+		            getAttribute()   : retrieve object
+		            removeAttribute(): removes object
+
+                             
+ Attributes in Servlet :
+                             
+ 
+ HttpServletRequst :              
+
+			getParameter() : At a time one value can be retrieved
+			getParameterValues() : At a time multiple values can be retrieved from URL 
+
+
+ Creation of Form in Html & send data from the HTML form to database
+
+ 
+ RequestDispatcher : interface
+
+			Used to dispatch the request from one resource(servlet/jsp) to another resource.
+			Used to include the content of one resource into another resource
+
+ methods :  forward(request,responce)
+
+
+	    include(request,response)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
