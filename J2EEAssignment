@@ -10,3 +10,9 @@ Q.7 Create a servlet which accepts id from the URL and delete the record for tha
 Q.8 Create a form which accepts ID and City and saves the data in the database.
 Q.9 create 2 servlets. In first servlet create an object of employee class which sets the attribute value for employee object .In second servlet retrieve the values
     of employee object and display all information about an employee.
+Q.10 Create an Application which displays Marksheet of a Student.
+    a) Create a servlet1 which takes marks of 5 subjects from Html page as marksentry.html. Also takes name of student. Insert record in database.
+    b) Create a servlet2 which displays the result of all students on calulating percentage. Display Student name along with Percentage.
+    c) Display Records Percentage wise in Descending order.
+    d) Delete record of the student who got minimum percentage.
+    e) Update name of the student who got Maximum Percentage.
