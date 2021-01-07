@@ -780,3 +780,303 @@ public class ser9 extends HttpServlet {
 
 =================================================================
 
+xml File
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MyWebProject3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>file1.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>City</param-name>
+    <param-value>Delhi</param-value>
+  </context-param>
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>system</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>ser1</display-name>
+    <servlet-name>ser1</servlet-name>
+    <servlet-class>org.servlets.ser1</servlet-class>
+    <init-param>
+      <param-name>productName</param-name>
+      <param-value>Laptop</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Quantity</param-name>
+      <param-value>100</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser1</servlet-name>
+    <url-pattern>/ser1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ser1</servlet-name>
+    <url-pattern>/ser1/hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser2</display-name>
+    <servlet-name>ser2</servlet-name>
+    <servlet-class>org.servlets.ser2</servlet-class>
+    <init-param>
+      <param-name>CustomerNo</param-name>
+      <param-value>10</param-value>
+    </init-param>
+    <init-param>
+      <param-name>CustType</param-name>
+      <param-value>Regular</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser2</servlet-name>
+    <url-pattern>/ser2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser3</display-name>
+    <servlet-name>ser3</servlet-name>
+    <servlet-class>org.servlets.ser3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser3</servlet-name>
+    <url-pattern>/ser3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser4</display-name>
+    <servlet-name>ser4</servlet-name>
+    <servlet-class>org.servlets.ser4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser4</servlet-name>
+    <url-pattern>/ser4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser5</display-name>
+    <servlet-name>ser5</servlet-name>
+    <servlet-class>org.servlets.ser5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser5</servlet-name>
+    <url-pattern>/ser5</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser6</display-name>
+    <servlet-name>ser6</servlet-name>
+    <servlet-class>org.servlets.ser6</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser6</servlet-name>
+    <url-pattern>/ser6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ser7</display-name>
+    <servlet-name>Ser7</servlet-name>
+    <servlet-class>org.servlets.Ser7</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ser7</servlet-name>
+    <url-pattern>/Ser7</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser8</display-name>
+    <servlet-name>ser8</servlet-name>
+    <servlet-class>org.servlets.ser8</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser8</servlet-name>
+    <url-pattern>/ser8</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser9</display-name>
+    <servlet-name>ser9</servlet-name>
+    <servlet-class>org.servlets.ser9</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser9</servlet-name>
+    <url-pattern>/ser9</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SetterServlet</display-name>
+    <servlet-name>SetterServlet</servlet-name>
+    <servlet-class>org.servlets.SetterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetterServlet</servlet-name>
+    <url-pattern>/SetterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetterServlet</display-name>
+    <servlet-name>GetterServlet</servlet-name>
+    <servlet-class>org.servlets.GetterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetterServlet</servlet-name>
+    <url-pattern>/GetterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser10</display-name>
+    <servlet-name>ser10</servlet-name>
+    <servlet-class>org.servlets.ser10</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser10</servlet-name>
+    <url-pattern>/ser10</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ser11</display-name>
+    <servlet-name>ser11</servlet-name>
+    <servlet-class>org.servlets.ser11</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ser11</servlet-name>
+    <url-pattern>/ser11</url-pattern>
+  </servlet-mapping>
+</web-app>
+================================================================================
+
+13
+
+package org.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser11
+ */
+public class ser11 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser11() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		//Car c1=new Car("BMW", 150);
+		//Car c2=new Car("Indigo", 120);
+		
+		Car c1=new Car();
+		//Car c2=new Car();
+		
+		String brname=request.getParameter("br");
+		int speed=Integer.parseInt(request.getParameter("sp"));
+		
+		c1.setBrand(brname);
+		c1.setSpeed(speed);
+		
+		out.print("Name : "+c1.getBrand());   //Getter method
+		out.print("Speed : "+c1.getSpeed());
+		
+		//out.print("Name : "+c2.getBrand());
+		//out.print("Speed : "+c2.getSpeed());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+
+package org.servlets;
+
+ // Model class : It is used to manage the Application data
+public class Car {
+	String brand;
+	int speed;
+	
+	public Car()
+	{
+		
+	}
+	
+	public Car(String brand, int speed) {
+		super();
+		this.brand = brand;
+		this.speed = speed;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
+	
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ser11" method="get">
+Car Brand<input type="text" name="br"><br>
+Car Speed<input type="text" name="sp"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+==============================================================================
+
+14
+
+
+
