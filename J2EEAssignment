@@ -16,3 +16,6 @@ Q.10 Create an Application which displays Marksheet of a Student.
     c) Display Records Percentage wise in Descending order.
     d) Delete record of the student who got minimum percentage.
     e) Update name of the student who got Maximum Percentage.
+Q.11 Create a Login Page where Username & password is entered. If username is "abcd" and password is "1234" then Display a message "Welcome abcd" on the second HTML 
+     Page display.html .If Username or password is incorrect then Display the message "Invalid Username/password" in third webpage Invalid.html. Write code to validate
+     username & password in a servlet
