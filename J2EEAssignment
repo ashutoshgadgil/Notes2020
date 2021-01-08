@@ -28,3 +28,5 @@ Q.14 Make a table stores records customers cid (primary key),cname, city,contact
      Make a filter which is applied on a servlet and checks the contactno. If contactno for any customer is same then record in the database table should not be added and
      a webpage failure.html will be displayed with message "Contact no can not be same" ,If contactno is different then display a Page named as Success.html shows 
      a message "Record Added successfully".
+Q.15 Create a Listener Class which creates a table for a dynamic project and this table has 3 columns sno, city,temperature. Make a servlet which inserts the records for
+     5 cities in the table.
