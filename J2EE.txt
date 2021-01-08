@@ -96,25 +96,61 @@ Query String :
 			Used to dispatch the request from one resource(servlet/jsp) to another resource.
 			Used to include the content of one resource into another resource
 
- methods :  forward(request,responce)
-
+ methods :  forward(request,responce) 
+			forwards the request within the same application
+			works on server side
 
 	    include(request,response)
 
+ 
+ HttpServletResponse
+            method:  sendRedirect()
+            	Redirect the response to another resource
+            	Accepts URL as a parameter
+                redirect the response from your application to another application
+		works on clint side
 
 
 
+  Filter :interface 
+          Does filtering task like validation
+          Apply on Servlets
+          One servlet can have multiple filters
+	  filters are independent
+	  filters are pluggable
+          Can perform preprocessing task & postprocessing tasks
+
+  Filter API :
+                Filter : interface
+			
+                         init() :  initialize filter
+                         doFilter() : invoke other resource (servlet / filter)
+                         destroy() : when filter is taken out
+
+                  
+		FilterChain  :   It forward the request to next resource
+                
+		FilterConfig :   To access the filter configuration info from web.xml
 
 
 
+    Creation of filter :
+                        class MyFilter implements Filter   // Filter is MyFilter
+
+    web.xml (Configuration of filter)
 
 
 
+    Listeners :    
+                ServletContextListener : interface
+                methods :       contextInitialized() : At the time of deployment of the project this method is called
+
+                                contextDestroyed()
+
+    Creation of Listener class :
 
 
-
-
-
+               class MyListener implements ServletContextListener    //// Listener class : MyListener 
 
 
 
