@@ -19,3 +19,8 @@ Q.10 Create an Application which displays Marksheet of a Student.
 Q.11 Create a Login Page where Username & password is entered. If username is "abcd" and password is "1234" then Display a message "Welcome abcd" on the second HTML 
      Page display.html .If Username or password is incorrect then Display the message "Invalid Username/password" in third webpage Invalid.html. Write code to validate
      username & password in a servlet
+Q.12 Create a web page Form.html which accepts the user details like Username and password. If the length of password is less than 8 characters then send the response on
+     the web page as error.html which displays message "Password should not be less than 8 characters" ,If password is valid the send the response to valid.html using 
+     sendRedirect() method.
+Q.13 Make a filter between the form.html in above question and a servlet. The filter will check the same validation above and sends the response to the valid.html if the
+     password is valid. If password is invalid then display the form.html on giving a message "Password Invalid".
