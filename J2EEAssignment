@@ -24,3 +24,7 @@ Q.12 Create a web page Form.html which accepts the user details like Username an
      sendRedirect() method.
 Q.13 Make a filter between the form.html in above question and a servlet. The filter will check the same validation above and sends the response to the valid.html if the
      password is valid. If password is invalid then display the form.html on giving a message "Password Invalid".
+Q.14 Make a table stores records customers cid (primary key),cname, city,contact. create a webpage customers.html which is accepting the data from the text boxes.
+     Make a filter which is applied on a servlet and checks the contactno. If contactno for any customer is same then record in the database table should not be added and
+     a webpage failure.html will be displayed with message "Contact no can not be same" ,If contactno is different then display a Page named as Success.html shows 
+     a message "Record Added successfully".
