@@ -153,6 +153,90 @@ Query String :
                class MyListener implements ServletContextListener    //// Listener class : MyListener 
 
 
+   JSP (Java Server Pages)
+
+			Jsp is a Web Technology to create dynamic web pages
+
+			JSP API
+
+		        JSP Page = HTML + Java code
+
+                        JSP is a servlet
+
+                        Used to seperate the view logic & business logic
+
+
+			JSP is easy to maintain
+ 
+			In JSP we can create objects of any class
+
+
+  JSP LifeCycle  
+			Hello.jsp (extension of JSP file)
+
+              Step-1 Translation of Hello.jsp to Servlet class
+	      Step-2 Compilation of servlet class (Hello_jsp.java)	
+	      Step-3 ClassLoading Hello_jsp.class
+	      Step-4 Instantiation of Hello_jsp.class
+	      Step-5 Initialization of Hello_jsp  (_jspinit())
+	      Step-6 Requst Processing  (_jspservice())
+	      Step-7 Destroy  (_jspdestroy())
+
+  
+  JSP tags :
+	    1) JSP Declaration      <%! Declarations   %>   ,,,, <%!  int x=20;  %> , Declaration of methods ,variables
+
+	    2) JSP Scriptlet        <%  Java code  %>       ,,,, <%  Employee e=new Employee(); %>   , Java code can be written
+
+	    3) JSP Expression       <%= Expression %>       ,,,, <%= 10+5 %> , Display result of expression
+
+
+  JSP Comments : 
+
+           <%--  JSP Comment %>
+
+           <!--  Html Comment -->
+
+  
+  Directives : Messages to the JSP container
+
+           <% @    %>
+
+            1) Page Directive
+	    2) Include            : Include a file into another file   <%@ include  %>
+	    3) Taglib
+
+  Communication between Html & JSP
+
+
+  Communication between JSP & servlets
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
