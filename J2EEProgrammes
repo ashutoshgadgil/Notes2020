@@ -1518,7 +1518,360 @@ public class LoginServlet extends HttpServlet {
 </body>
 </html>
 
+==========================================================================================
+
+18
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	out.print("Welcome to my file");
+   
+	for(int i=0;i<10;i++)
+	{
+		out.print("<h2> Number : "+i+"</h2>");
+	}
+	
+	org.pro.Demo d=new org.pro.Demo();
+	
+	out.print("<b>"+d.getstr()+"</b>");
+	
+	if(2<10)
+	{
+		out.print("True");
+	}
+	else
+	{
+		out.print("False");
+	}
+	
+	int var1=500;
+	int var2=600;
+	
+	out.print(var1+var2);
+	String str=new String("String");
+%>
+
+<%
+	out.print(str.toLowerCase()+" "+str.toUpperCase());
+%>
+
+</body>
+</html>
+
+===================================================================
+
+19
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Declaration Tag -->
+<%!                       
+	public int y=500;
+	public String getstr()
+	{
+		return "Dummy string";
+	}
+%>
+
+<!-- Scriptlet Tag -->
+<%
+    int x;
+	System.out.print(getstr());
+	System.out.print(y);
+%>
+
+<!-- Expression -->
+<%=getstr()%>
+<%=y %>
+
+</body>
+</html>
+
+==================================================================
+
+20
+
+<%@page import="java.io.FileInputStream"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%@ include file="header.jsp" %>   <%--  Include directive is used to include a file --%>
+<%
+
+	FileInputStream fis=new FileInputStream("D://contents.txt");
+	
+	int i=fis.read();
+	while(i!=-1)
+	{
+		out.print((char)i);
+		i=fis.read();
+	}
+	
+	fis.close();
+%>
+<%@ include file="footer.jsp" %>
+</body>
+</html>
 
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Home Page</h1>
+<br>
+<hr>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<hr>
+<center><h6>Copyright@2021</h6></center>
+</body>
+</html>
+
+===========================================================================
 
 
+21
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <%!
+  
+  /*
+  	public void show()
+  	{
+	  // System.out.print("Hi");
+  	}
+  */
+  
+  	public void show()
+	{
+	  // System.out.print("Hi");
+	}
+  
+  %>
+  
+  <%="Hello" %>
+ 
+ <!-- HTML Comment tag will be applicable for printable statements only -->
+ <%-- JSP Comment tag  will be applicable for printable and non printable type of statements --%>
+ 
+ <%--   
+   <% 
+   	response.sendRedirect("http://www.google.com");
+   %>
+ 
+   <%="Hello" %>
+ --%>
+
+ <%="Hello"  %>
+
+<%
+	//out.print("Statement1");
+	out.print("Statement2");
+	//out.print("Statement3");
+	
+	/*
+	out.print("Statement1");
+	out.print("Statement2");
+	out.print("Statement3");
+	*/
+%>
+</body>
+</html>
+
+===================================================================================
+
+
+22
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="jspfile1.jsp" method="post">
+<input type="text" name="nm">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+out.print("Welcome : "+request.getParameter("nm"));
+%>
+</body>
+</html>
+
+====================================================================
+
+23
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="MyServlet" method="get">
+<input type="text" name="nm">
+<input type="submit" value="submit">
+</form>
+</body>
+</html>
+
+package org.pro;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MyServlet
+ */
+public class MyServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MyServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name=request.getParameter("nm");
+		response.getWriter().print("welcome "+name);
+		response.setContentType("text/html");
+		
+		if(name.equals("Admin"))
+		{
+			response.getWriter().print("Message from Servlet");
+			RequestDispatcher rd=request.getRequestDispatcher("MyJSP1.jsp");
+			rd.include(request, response);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>This is a Demo JSP file</h3>
+</body>
+</html>
+
+==========================================================================
+
+24
+
+
+<%@page import="java.util.Date"%>
+<%@page import="org.pro.Demo"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>   <!-- JSP Tag (directive) -->
+    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%=10+5 %>
+<%=20>5 %>
+<%=new Date().getMonth()+1 %>
+
+
+<%="Hello" %>
+<%=new String("Welcome") %>
+<%="java".toUpperCase() %>
+<%=Demo.getstr() %>
+
+<%=new Date() %>
+</body>
+</html>
