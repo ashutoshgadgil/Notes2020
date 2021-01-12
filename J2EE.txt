@@ -202,19 +202,23 @@ Query String :
 
            <% @    %>
 
-            1) Page Directive
-	    2) Include            : Include a file into another file   <%@ include  %>
+            1) Page Directive     : <%@ page attribute='value' %>   ,,,,, import , errorPage , isErrorPage
+	    2) Include            : Include a file into another file   <%@ include attribute %>
 	    3) Taglib
 
   Communication between Html & JSP
 
 
   Communication between JSP & servlets
+
+  JSP Implicit objects 
+  	                 out, request ,response ,config, application, session.....
   
 
+  Mapping of JSP file in web.xml
 
 
-
+  Jsp Form Handling through Servlet
 
 
 
