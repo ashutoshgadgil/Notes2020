@@ -1875,3 +1875,369 @@ public class MyServlet extends HttpServlet {
 <%=new Date() %>
 </body>
 </html>
+
+=======================================================================================
+
+25
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%-- <%@ page import="java.util.ArrayList,java.util.Iterator" %> --%>
+
+<%@ page import="java.util.*,java.io.FileOutputStream" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+//java.util.ArrayList<String> al=new java.util.ArrayList<String>();
+
+
+FileOutputStream fout=new FileOutputStream("d://arraylist.txt",true);
+ArrayList<String> al1=new ArrayList<String>();
+
+al1.add("abc");
+al1.add("def");
+al1.add("ghi");
+
+Object str[]=al1.toArray();
+
+System.out.print(str[1]);
+
+for(int i=0;i<al1.size();i++)
+{
+	String st=str[i].toString();
+
+	fout.write(st.getBytes());
+	
+}
+
+fout.close();
+
+
+%>
+</body>
+</html>
+
+==================================================================
+26
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="<%=request.getContextPath() %>/FormServlet">
+<center>
+<table border="1">
+<caption>Customer Form</caption>
+<tr><td>User name</td><td><input type="text" name="un"></td></tr>
+<tr><td>Password</td><td><input type="password" name="pw"></td></tr>
+<tr><td>Gender</td><td>Male<input type="radio" name="gender" value="Male">Female<input type="radio" name="gender" value="Female"></td></tr>
+<tr><td>Qualifications</td><td>Graduate<input type="checkbox" name="qua" value="Graduate">Post Graduate<input type="checkbox" name="qua" value="Postgraduate"></td></tr>
+<tr><td>City
+</td><td>
+<select name="cy">
+<option value="delhi">Delhi</option>
+<option value="mumbai">Mumbai</option>
+<option value="chennai">Chennai</option>
+<option value="pune">Pune</option>
+<option value="bengaluru">Bengalore</option>
+</select> </td></tr>
+<tr><td><input type="submit" value="Save"> </td><td><input type="reset" value="Clear"></td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>
+
+package org.pro;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class FormServlet
+ */
+public class FormServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FormServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		
+		String username=request.getParameter("un");
+		String password=request.getParameter("pw");
+		String gender=request.getParameter("gender");
+		//String qualifications=request.getParameter("qua");
+		String qualifications[]=request.getParameterValues("qua");
+		
+		String city=request.getParameter("cy");
+		
+		out.print("Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "+username+"<br>");
+		out.print("Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         : "+gender+"<br>");
+		
+		out.print("Qualification : ");
+		
+		if(qualifications!=null)
+		{
+			for(String q:qualifications)
+			{
+				out.print(q+" , ");
+			}
+		}
+		else
+		{
+			out.print("Not Selected");
+		}
+		
+		out.print("<br>City           : "+city+"<br>");
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=============================================================
+
+27
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page errorPage="errorpage.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%=200/2 %>
+
+<%
+
+	int x[]=new int[3];
+
+	x[4]=100;
+
+
+%>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page isErrorPage="false" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Problem occured in webpage , Please try with another option</h2>
+
+</body>
+</html>
+
+=======================================================================
+
+28
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="objFile1.jsp">
+Name<input type="text" name="nm">
+City<input type="text" name="cy">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	out.print("Hello<br>");
+
+	String name = request.getParameter("nm");
+	out.print("Welcome  : "+name);
+	
+	String cy=request.getParameter("cy");
+	
+	
+	session.setAttribute("nm", name);
+	session.setAttribute("cy", cy);
+	/*
+	if(cy.equals(""))
+	{
+		cy=null;
+	}
+	*/
+	//cy="";
+	if(cy==null)
+	{
+		response.sendRedirect("http://www.google.com");
+	}
+	else
+	{
+		response.sendRedirect("city.jsp");
+	}
+%>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	//out.print("Name : "+request.getParameter("nm"));
+	//out.print("City : "+request.getParameter("cy"));
+
+	out.print("Name : "+session.getAttribute("nm"));
+	out.print("City : "+session.getAttribute("cy"));
+%>
+</body>
+</html>
+
+===================================================================
+
+29
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%="This is a JSP Page"%>
+<br>
+
+<%
+	out.print("Servlet Name : "+config.getServletName()+"<br>");
+	out.print("Driver : "+config.getInitParameter("driver"));
+	
+	out.print("<br>"+application.getInitParameter("Message"));
+	
+	
+
+%>
+</body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WebProject5</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>Message</param-name>
+    <param-value>This is a message accessible to all JSP Pages</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <servlet-name>JSPFile</servlet-name>
+    <jsp-file>/objFile2.jsp</jsp-file>
+    <init-param>
+      <param-name>driver</param-name>
+      <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JSPFile</servlet-name>
+    <url-pattern>/MyFirstJSPForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JSPFile</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyServlet</display-name>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>org.pro.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/MyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FormServlet</display-name>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>org.pro.FormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/FormServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+=======================================================================
+
+30
+
+
