@@ -30,3 +30,13 @@ Q.14 Make a table stores records customers cid (primary key),cname, city,contact
      a message "Record Added successfully".
 Q.15 Create a Listener Class which creates a table for a dynamic project and this table has 3 columns sno, city,temperature. Make a servlet which inserts the records for
      5 cities in the table.
+Q.16 Create two JSP pages : Form.jsp and Display.jsp.
+     Form.jsp has two fields as First Name and Last Name.
+     Create a Filter CheckLength which is applied on Display.jsp, If the length of fristname & lastname is zero then Filter will send the response back to the Form.jsp
+     otherwise it sends the request to Display.jsp which Displays the Full Name.
+Q.17 Create a Jsp Page which takes the user data like name and contact no  and sends the data to another Jsp page which accepts the data and checks if the 
+     username and contact is not empty then it stores the data in the database table.
+Q.18 Create a Jsp page which sends the data to the Servlet and Servlet displays the data dynamically.
+     
+     
+     
