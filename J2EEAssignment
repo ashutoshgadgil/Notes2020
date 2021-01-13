@@ -37,6 +37,7 @@ Q.16 Create two JSP pages : Form.jsp and Display.jsp.
 Q.17 Create a Jsp Page which takes the user data like name and contact no  and sends the data to another Jsp page which accepts the data and checks if the 
      username and contact is not empty then it stores the data in the database table.
 Q.18 Create a Jsp page which sends the data to the Servlet and Servlet displays the data dynamically.
+Q.19 Create a form which takes firstname & lastname and display the fullname in other jsp page using EL.
      
      
      
