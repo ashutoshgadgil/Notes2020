@@ -2239,5 +2239,417 @@ City<input type="text" name="cy">
 =======================================================================
 
 30
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	application.setAttribute("City","Mumbai" );
+    application.setAttribute("State", "Maharashtra");
+
+%>
+
+<a href="EL2.jsp">Click here</a>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+${applicationScope.City } ${applicationScope.State }
+</body>
+</html>
+
+===================================================================
+
+31
+
+<%@page import="org.pro.Users"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%--
+<%
+	Users u=new Users();
+
+	//u.setUsername("Amit");
+	//u.setCity("Bengalore");
+	
+	out.print("Name : "+u.getUsername());
+	out.print("City : "+u.getCity());
+%>
+ --%>
+ 
+ <!-- Action Tag ( Standard Tag)  -->
+ <jsp:useBean id="obj" class="org.pro.Users" scope="session"></jsp:useBean>
+ <br>
+ Name : <jsp:getProperty property="username" name="obj"/><br>  <!-- Call getter method of bean class on bean object obj -->
+ City : <jsp:getProperty property="city" name="obj"/>
+ <br>
+<br>
+<h5>After updating Bean values</h5>
+<jsp:setProperty property="username" name="obj" value="Sachin"/>   <!-- Call setter method of bean class on bean object obj -->
+<jsp:setProperty property="city" name="obj" value="Chennai"/>
+
+ <br>
+ Name : <jsp:getProperty property="username" name="obj"/><br>
+ City : <jsp:getProperty property="city" name="obj"/>
+
+
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="obj" class="org.pro.Users" scope="session"></jsp:useBean>
+<jsp:getProperty property="username" name="obj"/><br>
+<jsp:getProperty property="city" name="obj"/><br>
+
+
+</body>
+</html>
+
+package org.pro;
+
+import java.io.Serializable;
+
+// Bean Class
+public class Users implements Serializable
+{
+	String username;
+	String city;
+	public Users() {
+		username="Sanjay";
+		city="Mumbai";
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+}
+
+===========================================================================
+32
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome to Forward Page</h1>
+<jsp:forward page="dateJSP.jsp">
+<jsp:param value="This text is coming from ForwardJSP Page" name="message"/>
+</jsp:forward>
+</body>
+</html>
+
+
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDate"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+${param.message }
+<br>
+<%
+	LocalDate ld=LocalDate.now();
+
+	DateTimeFormatter dt=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
+	String d= ld.format(dt);
+
+	Date dd=new SimpleDateFormat("dd/MM/yyyy").parse(d);
+	
+	String str="13/01/2021";
+	SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+	Date d1=sdf.parse(str);
+	
+%>
+<%=d %>
+<br>
+<%=dd %>
+<br>
+<%=d1 %>
+
+</body>
+</html>
+
+====================================================================
+33
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="trycatch.jsp">
+Enter name <input type="text" name="nm">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+	String name=request.getParameter("nm");
+	boolean status=name.isEmpty();	
+
+	try
+	{
+		if(status)
+		{
+			name=null;
+		}
+		out.print("Length of Name : "+name.length());
+		
+	}
+	catch(Exception e)
+	{
+		out.print("Exception Found : "+e);
+	}
+
+%>
+</body>
+</html>
+
+==============================================================================
+
+34
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="MyPage.jsp"></jsp:include>
+<h1>Home page</h1>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<p>Contents goes here</p>
+<h2>End of the Home Page</h2>
+<jsp:include page="Footer.jsp"></jsp:include>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>My Latest WebSite </h3>
+</body>
+</html>
+
+====================================================================================
+35
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%=request.getParameter("nm") %>  <%-- Expression Language --%>
+
+${param.nm}   <%-- Expression Language  , param is implicit object --%>
+
+<%  session.setAttribute("user", "Sachin");  %>
+
+<%=session.getAttribute("user") %>
+${sessionScope.user}
+
+${2+3}
+</body>
+</html>
+
+============================================================
+
+36
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	for(int i=0;i<5;i++)
+	{
+%>	
+		<h1><%=i+" " %>Welcome </h1> ${param.name }
+<%
+	}
+%>
+
+</body>
+</html>
+
+====================================================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WebProject6</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>EntryServlet</display-name>
+    <servlet-name>EntryServlet</servlet-name>
+    <servlet-class>org.pro.EntryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EntryServlet</servlet-name>
+    <url-pattern>/EntryServlet</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  <error-code>404</error-code>
+  <location>/pagenotfound.jsp</location>
+  </error-page>
+</web-app>
+
+====================================================================
+
+37
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="GetFormData.jsp">
+Enter First Number <input type="text" name="n1"><br>
+Enter Second Number <input type="text" name="n2"><br>
+<input type="submit" value="Divide">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+int n1=Integer.parseInt(request.getParameter("n1"));
+int n2=Integer.parseInt(request.getParameter("n2"));
+
+
+int result=n1/n2;
+
+out.print("Division : "+result);
+
+%>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Number Format Exception Found</h1>
+</body>
+</html>
+
+
 
 
