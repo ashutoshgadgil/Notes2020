@@ -215,10 +215,35 @@ Query String :
   	                 out, request ,response ,config, application, session.....
   
 
-  Mapping of JSP file in web.xml
+  Mapping of JSP file in web.xml  , <jsp-file>
 
 
   Jsp Form Handling through Servlet
+
+
+
+  Exception Handling in 3 ways
+  
+  1) Using page directive
+  
+  2) Exception Handling using web.xml    <error-page>
+
+  3) Using try...catch block
+
+  
+
+  Expression Language
+
+  Bean class : constructors, setter and getter and variables ,class should be serialazable.
+
+  Creation of object of the bean class in JSP
+ 
+                          <jsp:usebean  id="object"  class="classname" >   // Action tag
+
+                          <jsp:getProperty>
+                          <jsp:setProperty>
+                          <jsp:forward>
+
 
 
 
