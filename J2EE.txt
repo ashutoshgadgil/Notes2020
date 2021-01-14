@@ -243,9 +243,50 @@ Query String :
                           <jsp:getProperty>
                           <jsp:setProperty>
                           <jsp:forward>
+		          <jsp:include>
+
+
+ MVC in JSP (Model,View,Controller)
+
+ Model : Bean class which interact with data
+
+ Controller : Servlet which handles the request and forwards the request to model or view  
+
+ View  : Web Page which displays the information to the user
+
+=========================================================================================
+
+ i18n (Internationalization) :
+
+  Multiple language support 
+
+
+ JSTL  (JSP Standard Tag Library)
+
+                   More Tags which makes it easy to devlop
+                   Faster devlopment
+                   Code reusability
+                   Removes the use of scriptlet tag
+
+ JSTL Tags
+
+            1) Core Tags
+            2) Function Tags
+	    3) Formatting tags
+	    4) XML Tag
+            5) SQL Tag
+
+
+            
 
 
 
+ 
+                   
+  
+	
+
+	
 
 
 
