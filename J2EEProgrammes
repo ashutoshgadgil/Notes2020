@@ -2650,6 +2650,343 @@ out.print("Division : "+result);
 </body>
 </html>
 
+======================================================================
 
+38
+
+package org.pro;
+
+import java.io.Serializable;
+import java.sql.Connection;
+
+import javax.servlet.ServletContext;
+
+public class Student implements Serializable{
+	String roll;
+	String stname;
+	public Student() {
+		
+	}
+	public String getRoll() {
+		return roll;
+	}
+	public void setRoll(String roll) {
+		this.roll = roll;
+	}
+	
+	public String getStname() {
+		return stname;
+	}
+	public void setStname(String stname) {
+		this.stname = stname;
+	}
+	
+}
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="StudentRecord1.jsp" method="get">
+Roll No <input type="text" name="roll"><br>
+Name    <input type="text" name="stname"><br>
+<input type="submit" value="Add">
+</form>
+</body>
+</html>
+
+
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.*" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="st" class="org.pro.Student"></jsp:useBean>
+
+<jsp:setProperty property="*" name="st"/>
+
+<%!
+	Connection getcon() throws Exception
+	{
+	Connection cn=null;
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	try
+	{
+		cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+	}
+	catch(Exception e)
+	{
+		
+	}
+	return cn;
+	}
+%>
+
+<%
+	Connection cn=getcon();
+	Statement smt=cn.createStatement();
+	String roll=st.getRoll();
+	String name=st.getStname();
+	
+	smt.executeUpdate("insert into studentdetails values('"+roll+"','"+name+"')");
+	cn.commit();
+	
+
+%>
+<%="Record Saved Successfully..." %>
+</body>
+</html>
+
+
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="sr" class="org.pro.Student"></jsp:useBean>
+
+<jsp:setProperty property="*" name="sr"/>
+
+<%
+	ServletContext sc=getServletContext();
+
+	Connection cn=(Connection)sc.getAttribute("con");
+	
+	Statement smt=cn.createStatement();
+	
+	String rn=sr.getRoll();
+	String nm=sr.getStname();
+	
+	smt.executeUpdate("insert into studentdetails values('"+rn+"','"+nm+"')");
+
+	cn.commit();
+	
+%>
+
+<%="Record Added successfully" %>
+</body>
+</html>
+
+
+
+package org.pro;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+public class MyListener implements ServletContextListener{
+
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		Connection cn;
+		Statement smt;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+		
+			ServletContext sc=sce.getServletContext();
+			sc.setAttribute("con", cn);
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	}
+	
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+	
+		
+	}
+}
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WebProject6</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  
+  <listener>
+  <listener-class>org.pro.MyListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>EntryServlet</display-name>
+    <servlet-name>EntryServlet</servlet-name>
+    <servlet-class>org.pro.EntryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EntryServlet</servlet-name>
+    <url-pattern>/EntryServlet</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  <error-code>404</error-code>
+  <location>/pagenotfound.jsp</location>
+  </error-page>
+
+  <error-page>
+  <exception-type>java.lang.NullPointerException</exception-type>
+  <location>/nullexception.jsp</location>
+  </error-page>
+
+</web-app>
+
+
+=================================================================================
+
+
+39
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="ob" class="org.pro.Users" scope="application"></jsp:useBean>
+
+<jsp:setProperty property="username" name="ob" value="Sachin"/>
+<jsp:setProperty property="city" name="ob" value="Goa"/>
+
+User Details<br>
+///////////////////////////////////////////<br>
+<jsp:getProperty property="username" name="ob"/><br>
+<jsp:getProperty property="city" name="ob"/><br>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<jsp:useBean id="ob" class="org.pro.Users" scope="application"></jsp:useBean>
+
+User Details<br>
+///////////////////////////////////////////<br>
+<jsp:getProperty property="username" name="ob"/><br>
+<jsp:getProperty property="city" name="ob"/><br>
+</body>
+</html>
+
+================================================================================
+
+40
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="SetUserDetails.jsp" method="get">
+Name<input type="text" name="username"><br>
+City<input type="text" name="city"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean id="u" class="org.pro.Users" scope="session"></jsp:useBean>
+
+<%--
+<jsp:setProperty property="username" name="obj"/>
+<jsp:setProperty property="city" name="obj"/>
+ --%>
+ 
+ <jsp:setProperty property="*" name="u"/>   <!-- Setting all properties of Bean Class -->
+ 
+<br>
+<h3>User Details</h3>
+Name :&nbsp;&nbsp; <jsp:getProperty property="username" name="u"/><br>
+City :&nbsp;&nbsp; <jsp:getProperty property="city" name="u"/>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<jsp:useBean id="u" class="org.pro.Users" ></jsp:useBean>
+
+<br>
+<h3>User Details</h3>
+Name :&nbsp;&nbsp; <jsp:getProperty property="username" name="u"/><br>
+City :&nbsp;&nbsp; <jsp:getProperty property="city" name="u"/>
+</body>
+</html>
+
+===========================================================================================
+
+41
 
 
