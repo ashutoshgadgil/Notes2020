@@ -2989,4 +2989,157 @@ City :&nbsp;&nbsp; <jsp:getProperty property="city" name="u"/>
 
 41
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Controller" method="post">
+User Name<input type="text" name="un"><br>
+Password<input type="password" name="pw"><br>
+<input type="submit" value="Login">
+</form>
+</body>
+</html>
+
+package org.pro;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Controller
+ */
+public class Controller extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Controller() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		
+		response.setContentType("text/html");
+		
+		String username=request.getParameter("un");
+		String password=request.getParameter("pw");
+		
+		LoginModel ob=new LoginModel();
+		ob.setUsername(username);
+		ob.setPassword(password);
+		
+		request.setAttribute("bean", ob);
+	
+		boolean st=ob.validate();
+		
+		if(st)
+		{
+			RequestDispatcher rd=request.getRequestDispatcher("success.jsp");
+			rd.forward(request, response);
+		}
+		else
+		{
+			RequestDispatcher rd=request.getRequestDispatcher("failure.jsp");
+			rd.forward(request, response);
+
+		}
+	}
+
+}
+
+
+package org.pro;
+
+public class LoginModel {
+	String username;
+	String password;
+	public LoginModel() {
+		super();
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public boolean validate()
+	{
+		if(password.equals("abcd"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Invalid Login</h3>
+
+</body>
+</html>
+
+<%@page import="org.pro.LoginModel"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>User Logged in</h3>
+
+<%
+	LoginModel ob= (LoginModel)request.getAttribute("bean");
+	out.print("Welcome <h4>"+ob.getUsername()+"</h4>");
+%>
+</body>
+</html>
+
 
