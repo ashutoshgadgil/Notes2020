@@ -42,6 +42,7 @@ Q.20 Make a Jsp Page where two textboxes as rollno and name. This page includes 
      and city on the page.
 Q.21 Create a registration form which takes details of a customer and create a servlet which accepts the data and print it in another JSP page as Display.jsp.   
 Q.22 Create a form.jsp which accepts two numbers from user and sends numbers to other jsp page in which compare two numbers using JSTL tag and display the largest number.
-
+Q.23 Create a form.jsp which accepts username & password and submits the data to other jsp page which checks if the password is valid then sends the response to 
+     success.jsp page which displays a message as "Valid Login" otherwise sends the response to failure.jsp which displays message "Invalid login" .Use JSTL tag to compare.
      
      
