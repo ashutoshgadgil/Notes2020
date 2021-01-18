@@ -204,7 +204,7 @@ Query String :
 
             1) Page Directive     : <%@ page attribute='value' %>   ,,,,, import , errorPage , isErrorPage
 	    2) Include            : Include a file into another file   <%@ include attribute %>
-	    3) Taglib
+	    3) Taglib             : Include JSTL library in the page   <%@ taglib attribute %>
 
   Communication between Html & JSP
 
@@ -276,10 +276,32 @@ Query String :
 	    4) XML Tag
             5) SQL Tag
 
+   Q.1 Create a JSP Page and forward the request from the page to outside application. (Nilesh)
 
-            
+   Q.2 Create a servlet which is run using URL and display the parameter value which is passed as a name (vishal)
+
+   Q.3 Write a configuration of a parameter in xml file and display the parameter value in the servlet (Hemant)
+
+   Q.4 Create a JSP Page which sets the attribute value and sends the value in other page which gets value and display it. (Nimesh)
+
+   Q.5 Create a bean class which calculates the cube of the passed no from the web page and display the square on the JSP Page. (Abhishek)     
 
 
+=======================================================================================================================
+
+
+ Session Management
+       
+  Session : Specific time interval between client and server
+  Session Tracking : Mechanism To identify user / client request
+
+
+  Session Tracking techniques : 
+                              1) Hidden Form field    (type is hidden)
+			      2) URL Rewriting
+                              3) Cookies
+		              4) Session
+ 
 
  
                    
