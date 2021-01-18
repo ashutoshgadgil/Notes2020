@@ -45,5 +45,5 @@ Q.22 Create a form.jsp which accepts two numbers from user and sends numbers to 
 Q.23 Create a form.jsp which accepts username & password and submits the data to other jsp page which checks if the password is valid then sends the response to 
      success.jsp page which displays a message as "Valid Login" otherwise sends the response to failure.jsp which displays message "Invalid login" .Use JSTL tag to compare.
 Q.24 Make a JSP page including 2 form fields in which one is hidden and display the Information on other JSP page including hidden information.
-Q.25 Make a servlet which is called as a first Home page on running the project and this servlet is creating a form where Name, City(selection box) and Radio button
-     and display the complete information in a JSP Page.
+Q.25 Make a servlet which is called first as a Home page on running the project and this servlet is creating a form where Name, City(selection box) and Radio button
+     and display the complete information in a JSP Page in tabular form.
