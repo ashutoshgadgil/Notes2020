@@ -297,11 +297,26 @@ Query String :
 
 
   Session Tracking techniques : 
-                              1) Hidden Form field    (type is hidden)
-			      2) URL Rewriting
-                              3) Cookies
-		              4) Session
+                              1) Hidden Form field    (type is hidden)  // Form submission is must
+			      2) URL Rewriting                          // Use of hyperlink is must
+                              3) Cookies             File maintained on client side / browser by the server  
+
+					Class : Cookie 
+					Constructor : Cookie()
+						      Cookie(String name,String value);
+                                        
+					Method :      setMaxAge(int) : sets maximum age of cookie in seconds
+
+						      getName() : returns the name of cookie
+						      getValue() : returns value of Cookie
  
+					
+		              4) Session
+                                         HttpSession : interface
+                                                   
+
+                                    HttpServletRequest            getSession() : return current session or creates a session
+                                                                             : returns session object
 
  
                    
