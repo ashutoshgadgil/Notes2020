@@ -47,3 +47,5 @@ Q.23 Create a form.jsp which accepts username & password and submits the data to
 Q.24 Make a JSP page including 2 form fields in which one is hidden and display the Information on other JSP page including hidden information.
 Q.25 Make a servlet which is called first as a Home page on running the project and this servlet is creating a form where Name, City(selection box) and Radio button
      and display the complete information in a JSP Page in tabular form.
+Q.26 Create a Jsp page which takes name from user and calls servlet 1 , servlet1 calls servlet2 and servlet2 calls servlet3 .Servlet 3 displays the message as 
+     Welcome Username.
