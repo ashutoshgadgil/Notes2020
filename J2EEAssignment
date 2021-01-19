@@ -49,3 +49,18 @@ Q.25 Make a servlet which is called first as a Home page on running the project 
      and display the complete information in a JSP Page in tabular form.
 Q.26 Create a Jsp page which takes name from user and calls servlet 1 , servlet1 calls servlet2 and servlet2 calls servlet3 .Servlet 3 displays the message as 
      Welcome Username.
+Q.27 Create a JSP Page and forward the request from the page to outside application. (Nilesh)
+
+Q.28 Create a servlet which is run using URL and display the parameter value which is passed as a name (vishal)
+
+Q.29 Write a configuration of a parameter in xml file and display the parameter value in the servlet (Hemant)
+
+Q.30 Create a JSP Page which sets the attribute value and sends the value in other page which gets value and display it. (Nimesh)
+
+Q.31 Create a bean class which calculates the cube of the passed no from the web page and display the square on the JSP Page. (Abhishek) 
+
+Q.32 Create two servlets ,servlet1 & servlet2 .servlet1 will be called first when you run project.
+       Servlet1 takes username, password from user. When you click on submit button then Servlet2 will display message "Welcome username". 
+   
+Q.33 Create two servlets and Run the first Servlet file and set the employee object as an attribute in the first servlet and display the values of employee object
+       in the second servlet. 
