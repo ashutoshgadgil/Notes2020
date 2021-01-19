@@ -3629,6 +3629,139 @@ public class DisplayServlet extends HttpServlet {
 	}
 
 }
+=======================================================================================
+
+46
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ 
+<%@ taglib tagdir="/WEB-INF/tags" prefix="d"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>This is JSP Page contents</h2>
+<d:mytag></d:mytag>
+<br>
+<d:newtag></d:newtag>
+</body>
+</html>
+
+<%@ tag language="java" pageEncoding="ISO-8859-1"%>
+<b>This is a new Tag :</b>
+
+
+=================================================================================================
+
+47
+
+package in.co.Servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser
+ */
+@WebServlet("/ser")
+public class ser extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String cc=request.getParameter("cy");
+		String lc=request.getParameter("sno");
+		
+		//ResourceBundle rb=ResourceBundle.getBundle("in.co.rb.app");
+		
+		ResourceBundle rb1=ResourceBundle.getBundle("in.co.rb1.app",new Locale(lc, cc));
+		
+		response.getWriter().print(rb1.getString("message"));
+		/*
+		try {
+			Class.forName(driver);
+			cn=DriverManager.getConnection(url,username,password);
+			smt=cn.createStatement();
+			
+			smt.executeUpdate("insert into dummyy values("+sno+",'"+city+"')");
+			System.out.println("Record Added");
+			smt.close();
+			cn.commit();
+			cn.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ser" method="get">
+
+Language Code <input type="text" name="sno">
+Country Code <input type="text" name="cy">
+<input type="submit" value="Save">
+</form>
+
+</body>
+</html>
+
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:xe
+username=system
+password=root
+
+
 
 
 
