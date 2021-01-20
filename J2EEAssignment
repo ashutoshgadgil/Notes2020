@@ -74,5 +74,8 @@ Q.35 Create a Web page which has some dummy contents written in the page. Create
 Q.36 Generate a log file where the messages are stored after login to the web page .Message : Date & Time [Logged In]
 
 Q.37 Create a maven project in which add data from the user into the database.
+
+Q.38 Create a maven project which is a simple project in which take user input in a method of a class for which a Logger is created and a log file is maintained on the
+     disk when all user details have been taken by user.
      
 
