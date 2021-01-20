@@ -70,5 +70,7 @@ Q.34 Create a JSP Web page which have the fields name, email,city  and a submit 
      
 Q.35 Create a Web page which has some dummy contents written in the page. Create a Selection Box which has three languages Hindi, English, Bengali. If you select any one
      language then the contents of the page should be displayed in the respective language.
+
+Q.36 Generate a log file where the messages are stored after login to the web page .Message : Date & Time [Logged In]
      
 
