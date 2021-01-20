@@ -284,7 +284,14 @@ Query String :
 
    Q.4 Create a JSP Page which sets the attribute value and sends the value in other page which gets value and display it. (Nimesh)
 
-   Q.5 Create a bean class which calculates the cube of the passed no from the web page and display the square on the JSP Page. (Abhishek)     
+   Q.5 Create a bean class which calculates the cube of the passed no from the web page and display the square on the JSP Page. (Abhishek) 
+
+   Q.6 Create two servlets ,servlet1 & servlet2 .servlet1 will be called first when you run project.
+       Servlet1 takes username, password from user. When you click on submit button then Servlet2 will display message "Welcome username". 
+   
+   Q.7 Create two servlets and Run the first Servlet file and set the employee object as an attribute in the first servlet and display the values of employee object
+       in the second servlet.    
+  
 
 
 =======================================================================================================================
@@ -319,21 +326,80 @@ Query String :
                                                                              : returns session object
 
  
-                   
-  
+  ===========================================================================================================================
+
+   JSP Tags :
+
+  1) JSP Predefined tags :   Scriptlet elements ,  Action Tags(Standard tags) , Directives 
+            
+  2) JSP Custom Tag :  User defined tags
+
+
+=============================================================================================================================
+
+   Resource Bundle  : class
+ 
+                Use : TO support Multiple languages in an Application
+                      To remove hardcoding from the application
+                      will work on properties configuration file
+       
+	      1) Create Properties file (.properties) combination of key=value pair
+	      2) access property file using ResourceBundle class
+                                    method :  getBundle(Path of property file)
 	
 
-	
+============================================================================================================================
+
+Java Tools
 
 
+1)   Maven : It is a repository tool to manage dependencies (jar files)
+
+   Creating a Maven Project ?
+
+   jar file : (.jar) ---- > Java Archive   (library : collection of classes)
+
+   JSTL library : jstl 1.2 .jar
+
+   Type of Maven Project :
+                          1) Standalone project
+                          2) Web Application
+
+   Advantage : Maven will automatically manage all the building tasks of the jars(dependancies) in your project.
+
+   pom.xml : Project object model ----> Configuration details about a project
+
+   Add dependencies in pom.xml file
+
+=========================================================================================================================
+
+2)   Log4j : logging tool to manage the log information about the project
+
+     log4j.properties file 
 
 
+    Priority Method 
+
+                        Debug   : successful messages
+			Info    : some information reaalted 
+			Warn    : warning messages
+			Error   : Exception ,messages
+			Fatal   : Error 
 
 
+log4j.rootLogger=INFO,myout
+
+log4j.appender.myout=org.apache.log4j.ConsoleAppender
+log4j.appender.myout.Target=System.out
+log4j.appender.myout.layout=org.apache.log4j.SimpleLayout
+log4j.appender.myout.layout.ConversionPattern=%m
 
 
+=========================================================================================================================
 
 
+  Business Object                :   DAO class (Data Access Object) / service class
+  Transfer Object / Value Object :   DTO class (Data Transfer Object) / Entity class / POJO class
 
 
 
