@@ -64,3 +64,11 @@ Q.32 Create two servlets ,servlet1 & servlet2 .servlet1 will be called first whe
    
 Q.33 Create two servlets and Run the first Servlet file and set the employee object as an attribute in the first servlet and display the values of employee object
        in the second servlet. 
+ 
+Q.34 Create a JSP Web page which have the fields name, email,city  and a submit button. Send data from this JSP page to the servlet .In this servlet you have to create
+     a Logger .Log messages will be shown if the name ,and email is empty.If not empty then print all the details on the first JSP page.
+     
+Q.35 Create a Web page which has some dummy contents written in the page. Create a Selection Box which has three languages Hindi, English, Bengali. If you select any one
+     language then the contents of the page should be displayed in the respective language.
+     
+
