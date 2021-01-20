@@ -3761,6 +3761,260 @@ url=jdbc:oracle:thin:@localhost:1521:xe
 username=system
 password=root
 
+==============================================================================
+
+48
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="StudentCTL" method="get">
+Enter Rollno<input type="text" name="rn"><br>
+Enter Name<input type="text" name="nm"><br>
+<input type="submit" value="Save">  
+</form>
+</body>
+</html>
+
+package in.co.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import in.co.Entity.StudentDAO;
+import in.co.Entity.StudentDTO;
+
+/**
+ * Servlet implementation class StudentCTL
+ */
+public class StudentCTL extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public StudentCTL() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int roll=Integer.parseInt(request.getParameter("rn"));
+		String name=request.getParameter("nm");
+		
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		
+		StudentDAO sd=new StudentDAO();
+		int i=sd.addRecord(new StudentDTO(), roll, name);
+		
+		if(i!=0)
+		{
+			out.print("<h4>Record Submitted</h4>");
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+package in.co.Entity;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class StudentDAO {
+
+	public int addRecord(StudentDTO st,int roll,String name)
+	{
+		st.setRollno(roll);
+		st.setName(name);
+		
+		Connection cn;
+		Statement smt;
+		int i=0;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+			smt=cn.createStatement();
+			
+			i=smt.executeUpdate("insert into stu11 values("+st.getRollno()+",'"+st.getName()+"')");
+			cn.setAutoCommit(false);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return i;
+	}
+}
+
+
+package in.co.Entity;
+
+public class StudentDTO {
+	int rollno;
+	String name;
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+
+====================================================================
+
+49
+
+
+log4j.rootLogger=INFO,myout,myfile
+
+log4j.appender.myout=org.apache.log4j.ConsoleAppender
+log4j.appender.myout.Target=System.out
+log4j.appender.myout.layout=org.apache.log4j.PatternLayout
+log4j.appender.myout.layout.ConversionPattern=%m %C %l %d{dd-MMM-yy} 
+
+log4j.appender.myfile=org.apache.log4j.FileAppender
+log4j.appender.myfile.File=F:/mylogfile.log
+log4j.appender.myfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.myfile.layout.ConversionPattern=%m %C %l %d{dd-MMM-yy} %n
+
+package in.co.pro;
+
+import org.apache.log4j.Appender;
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Layout;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.SimpleLayout;
+
+public class Demo {
+
+	Logger log=Logger.getLogger(Demo.class);  // Creation of Logger
+	
+	public void method(String str)
+	{
+		/*
+		Layout layout=new PatternLayout("%L [ %d{dd-MMM-yy hh:mm:ss}  ] - %m - %C [ %M ] %n ");   // %m ====> To display message
+		                                                 // %n ====> new line
+		                                                 // %C ====> To display class name
+		                                                 // %M ====> To display Method name
+		                                                 // %l ====> line number of message along with path
+		                                        // %L ====> Line number of message only
+		                                        // %d ====> date & time
+		                                        // %m ====> User messages
+		
+		//Appender app=new ConsoleAppender(layout);
+		
+		Appender app=new ConsoleAppender(layout);
+		
+		log.addAppender(app);
+		*/
+		if(str.length()==0)
+		{
+			log.debug("message");
+			//System.out.println();
+			log.warn("String length is zero");
+		}
+		else
+		{
+			System.out.println("Length : "+str.length());
+		}
+		
+	}
+	
+}
+
+
+package in.co.pro;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ser1
+ */
+public class ser1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ser1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		System.out.println("Hi");
+		Demo d=new Demo();
+		d.method("");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+<html>
+<body>
+<form action="ser1" method="get">
+<input type="submit">
+</form>
+</body>
+</html>
+
 
 
 
