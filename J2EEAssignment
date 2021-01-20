@@ -72,5 +72,7 @@ Q.35 Create a Web page which has some dummy contents written in the page. Create
      language then the contents of the page should be displayed in the respective language.
 
 Q.36 Generate a log file where the messages are stored after login to the web page .Message : Date & Time [Logged In]
+
+Q.37 Create a maven project in which add data from the user into the database.
      
 
