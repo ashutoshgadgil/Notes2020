@@ -87,6 +87,9 @@ Q.40 Create a table customer_Details which stores the EmailID & password of the 
      Create a Dynamic Project using Maven. There is a Customer class(Entity Class) which has emailID and Password as fields.
      Create a DAO class which sets the Email ID and Password in the table through the object of Customer class.
      Create a Servlet which displays the Email Ids of all cusomers.
+    
+Q.41 Make a Jsp Page which accepts Username and age of a person and submits the data to other JSP page(display.jsp) .In display.jsp Make a check using Core tag that
+     If the age of Person is more than 18 then Page should display message "You are elegible to vote" otherwise it should Display "You are not elegible to vote"
      
 
 
