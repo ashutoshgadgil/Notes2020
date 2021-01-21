@@ -394,6 +394,16 @@ log4j.appender.myout.Target=System.out
 log4j.appender.myout.layout=org.apache.log4j.SimpleLayout
 log4j.appender.myout.layout.ConversionPattern=%m
 
+=========================================================================================================================
+
+
+Servlet Creation using Annotation
+
+
+
+
+
+
 
 =========================================================================================================================
 
@@ -401,10 +411,46 @@ log4j.appender.myout.layout.ConversionPattern=%m
   Business Object                :   DAO class (Data Access Object) / service class
   Transfer Object / Value Object :   DTO class (Data Transfer Object) / Entity class / POJO class
 
+====================================================================================
 
 
+Singleton Class   : only single instance can be created
 
 
+                  constructor is private
+                  static method which returns object of this class
+
+Inner Class :  Nested class (class inside another class)
+
+                class x   // outer class
+                {
+                       class y  // inner class
+                       {
+                       }
+                }
+
+Anonymous class : Unnamed class
+                  defined as inner class (Anonymous Iner class)
+                  Used to implement methods of interface and abstract class 
+
+
+ Clone() : method of Object
+
+         : To create exact copy of an object
+
+
+        class : A      o1, o2
+
+
+        clonable  : interface (marker)
+
+ finalize() : method of Object
+              called by garbage collector
+              can be overridden in the class
+              To perform cleanup activities
+
+
+===========================================================================
 
 
 
