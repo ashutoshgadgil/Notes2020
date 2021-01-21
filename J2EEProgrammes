@@ -4015,6 +4015,265 @@ public class ser1 extends HttpServlet {
 </body>
 </html>
 
+==================================================================================
+
+50
+
+package org.Pro1;
+
+class demoSingleton           // Singleton class
+{
+	private static demoSingleton d=new demoSingleton();
+	int x;
+	private demoSingleton()
+	{
+		
+	}
+	
+	public static demoSingleton getInstance()
+	{
+		return d;
+	}
+	
+	public void getMessage()
+	{
+		System.out.println("Some message");
+	}
+}
+
+class XYZ
+{
+	public void meth()
+	{
+		demoSingleton ob=demoSingleton.getInstance();
+		ob.getMessage();
+		
+	}
+}
+
+public class SingletonClass {
+	
+	public static void method(demoSingleton d)
+	{
+		d.getMessage();
+	}
+	
+	public static void main(String[] args) {
+	
+		demoSingleton ob=demoSingleton.getInstance();
+		ob.getMessage();
+		
+		method(ob);
+		
+		demoSingleton ob1=demoSingleton.getInstance();
+		ob1.getMessage();		
+
+		XYZ o1=new XYZ();
+		o1.meth();
+	}
+}
+
+=====================================================================
+
+51
+
+package org.Pro1;
+
+class Outer        // Outer class
+{
+	int x;
+	class Inner     // Inner class
+	{
+		int y;
+		
+		public void method()
+		{
+			y=40;
+			System.out.println("y : "+y);
+		}
+	}
+}
+
+public class InnerClassExample {
+
+	public static void main(String[] args) {
+		Outer o1=new Outer();    // object of outer class : o1
+		
+		Outer.Inner o2=o1.new Inner();  // Creation of object of inner class : o2
+		o2.method();
+
+	}
+
+}
+
+========================================================================================
+
+52
+
+package org.Pro1;
+
+class abstractClass
+{
+	public void display()
+	{
+		System.out.println("Hello");
+	}
+}
+
+interface myinterface
+{
+	public int calculate(int x,int y);
+}
+
+/*
+class X extends abstractClass
+{
+
+	@Override
+	public void display() {
+		System.out.println("hi");
+	}
+	
+}
+*/
+
+class AnonymousDemo
+{
+	abstractClass ob=new abstractClass() {
+
+		@Override
+		public void display() {
+			super.display();
+			System.out.println("Welcome");
+		}
+	};
+
+	abstractClass ob1=new abstractClass() {
+		public void display() {
+			System.out.println("Bye");
+		};
+	};
+	
+	
+	myinterface i1=new myinterface() {
+		
+		@Override
+		public int calculate(int x, int y) {
+			
+			return x*y;
+		}
+	};
+	
+	myinterface i2=new myinterface() {
+		
+		@Override
+		public int calculate(int x, int y) {
+			// TODO Auto-generated method stub
+			return x+y;
+		}
+	};
+	public void show()
+	{
+		ob.display();
+	}
+	
+	public void hello()
+	{
+		ob1.display();
+		
+		System.out.println("Multiplication : "+i1.calculate(10, 20));
+		
+		System.out.println("Addition : "+i2.calculate(10, 20));
+	}
+	
+}
+
+public class AnonymousClassExample {
+
+	public static void main(String[] args) {
+		//X o=new X();
+		//o.display();
+	
+		AnonymousDemo ob=new AnonymousDemo();
+		ob.show();
+		
+		ob.hello();
+	}
+}
+
+
+===============================================================================
+
+53
+
+package org.Pro1;
+
+public class FinalizeExample {
+
+	@Override
+		protected void finalize() throws Throwable {
+		System.out.println("Finalize called");
+	}
+	
+	public static void main(String[] args) {
+		FinalizeExample ob=new FinalizeExample();
+		
+		ob=null;
+
+		System.gc();   // calling finalize()
+		System.out.println("End");
+	}
+
+}
+
+
+===============================================================================
+
+54
+
+package org.Pro1;
+
+public class ObjctCloning implements Cloneable{
+
+	String name;
+
+	ObjctCloning(String name)
+	{
+		this.name=name;
+	}
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	
+	public static void main(String[] args) {
+		ObjctCloning o1=new ObjctCloning("Rohit");
+		
+		System.out.println(o1.name);
+	ObjctCloning o2=null;
+		try {
+			o2 = (ObjctCloning) o1.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(o2.name);
+		
+		System.out.println("\n=================================\n");
+		o1.name="Manish";
+
+		System.out.println(o1.name);
+		
+		
+		//o2.name="Sumit";
+		
+		System.out.println(o2.name);
+		
+	}
+
+}
 
 
 
