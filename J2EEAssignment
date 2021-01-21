@@ -82,6 +82,11 @@ Q.39 Create an interface Account in a dynamic web project which has a method as 
      a Saving Account then returning Rate of interest will be 7.5 .If User selects Current account then  Rate of interest will be 5.5. Rate of interest is defined by
      the SavingAccount and CurrentAccount.Display information in other JSP Page.Get input from user in first JSP and Tranfer data to Servlet then Servlet transfers data to
      Second JSP page.
+
+Q.40 Create a table customer_Details which stores the EmailID & password of the customer .EmailID is primary key.
+     Create a Dynamic Project using Maven. There is a Customer class(Entity Class) which has emailID and Password as fields.
+     Create a DAO class which sets the Email ID and Password in the table through the object of Customer class.
+     Create a Servlet which displays the Email Ids of all cusomers.
      
 
 
