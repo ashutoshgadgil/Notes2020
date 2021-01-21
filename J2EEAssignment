@@ -77,5 +77,29 @@ Q.37 Create a maven project in which add data from the user into the database.
 
 Q.38 Create a maven project which is a simple project in which take user input in a method of a class for which a Logger is created and a log file is maintained on the
      disk when all user details have been taken by user.
+Q.39 Create an interface Account in a dynamic web project which has a method as Rate_of_interest(). There are two classes which are SavingAccout and CurrentAccount which are
+     implementing the interface. Create a JSP Page which takes customer information as CustomerName,AccountType(selection Box) and Ammount. If a user selects 
+     a Saving Account then returning Rate of interest will be 7.5 .If User selects Current account then  Rate of interest will be 5.5. Rate of interest is defined by
+     the SavingAccount and CurrentAccount.Display information in other JSP Page.Get input from user in first JSP and Tranfer data to Servlet then Servlet transfers data to
+     Second JSP page.
      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
