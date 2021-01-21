@@ -98,6 +98,9 @@ Q.42 Create a JSP Page which accepts a Full Name from the user and do the follow
       4) Display the length of firstname
       5) Display the Fullname 5 times on the page
      
+Q.43 Make a Servlet which creates a Form where Username and Password is to be taken and submitted to second servlet .
+      Create a filter which checks the username is "XYZ" and Password is "1234" .If it is valid then a session is created on the second servlet for the username.
+      In second servlet create a submit button which sends the information to third servlet which displays the Username. 
 
 
 
