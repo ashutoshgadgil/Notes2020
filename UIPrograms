@@ -1,0 +1,169 @@
+1
+
+Page1.html
+
+
+<!-- Page 1 -->
+
+<html>
+<head>
+    <title>My First Web Page</title>
+</head>
+
+<body style="background-color: floralwhite">
+    
+    <h1 align="center">My Web Page</h1>
+    
+    <!--
+    <h2>My Web Page</h2>
+    <h3>My Web Page</h3>
+    <h4>My Web Page</h4>
+    <h5>My Web Page</h5>
+    <h6>My Web Page</h6>
+    <h6>My Web Page</h6>
+    
+    
+    <hr>    
+    <p>
+    This is my website
+    
+    This is my website 
+    </p>
+    
+     <hr>
+    <p align="right">
+       
+    This is                                                           my website
+     
+  
+       This &nbsp;&nbsp;&nbsp; is &nbsp;&nbsp;my &nbsp;&nbsp;website
+       This is my website
+     
+     </p>
+
+    <pre>
+    
+    void fun()
+    {
+        String name=(String) request.getAttribute("name");
+    
+    }
+    
+	</pre>
+
+    <p title="Message Hello">Hello World</p>
+
+    <h3 title="world">World</h3>
+    -->    
+
+    
+    <hr>
+    
+    <p>This is a <b><u>dummy text</u></b>. <i>Html</i> text will be <strike>here</strike> there</p>
+    
+    <p>This is a <tt>DUMMY</tt> text</p>
+    
+    <P> (X<sup>-3</sup>) + Y<sub>2</sub></P>
+    
+     <p>This is a <ins>DUMMY</ins> text</p>
+    
+    <p>This is a <del>DUMMY</del> text</p>
+    
+    <p>Read our detailed <big><big>instructions</big></big> for setting up a <small>development</small>  environment and get <mark>hacking</mark> right away.</p>
+    
+    <p>environment and get <strong>hacking right away</strong></p>
+    
+    <p>environment <b>and</b> get hacking right away</p>
+    
+    <p>environment <strong>and</strong> get hacking right away</p>
+    
+    <p>environment <em>and</em> get hacking right away</p>
+  
+     <abbr title="hello">Hel..</abbr>
+    
+    <div align="center"  style="background-color: crimson">
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+    </div>
+    
+     <div style="background-color: blueviolet">
+        Hello
+        <span style="background-color: purple"> Hello </span>
+         Hello
+        
+    </div>
+    
+    <font size=15 color="red">Welcome</font>
+     
+    <p>Read our <q>detailed instructions for setting </q>up a development environment and get hacking right away.</p>
+    
+     Read our <blockquote>"detailed instructions for setting"</blockquote> up a development environment and get hacking right away.
+    
+     <p>Read our detailed <dfn>instructions</dfn> for setting up a development environment and get hacking right away.</p>
+    
+     <p>Read our detailed instructions for setting up a development environment and get hacking right away.</p>
+    
+    
+    <code>
+        void main()
+        {
+            printf("hello");
+        }
+    
+    </code>
+    
+    <!--
+    <kbd>This is inside kbd element</kbd> 
+    -->
+    <address>388A, Road No 22, Jubilee Hills -  Hyderabad</address>
+    
+    </body>
+</html>
+
+====================================================================================
+
+2
+
+Page2.html
+
+<html>
+<body>
+    <!--
+    <img src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    -->
+    
+    <!--
+    <img src="image1.jpg" alt="flowers" title="flower" width="100" height="200">
+    -->
+<!--    <img src="images/image2.gif" alt="flowers" title="flower" style="width: 200px;height: 200px" border=5>
+-->
+
+   Please Click on this link : <a href="page1.html">Click</a>
+
+  <br>  
+  <a href="page3.html" title="Click me"><img src="images/image2.gif" alt="flowers"  style="width: 200px;height: 200px" border=5>
+  </a>
+     <br>  
+  <a href="page3.html" title="Click me" target="_self"><img src="images/image2.gif" alt="flowers"  style="width: 200px;height: 200px" border=5>
+  </a>
+     <br>  
+  <a href="page3.html" title="Click me" target="_parent"><img src="images/image2.gif" alt="flowers"  style="width: 200px;height: 200px" border=5>
+  </a>
+     <br>  
+  <a href="page3.html" title="Click me" target="_top"><img src="images/image2.gif" alt="flowers"  style="width: 200px;height: 200px" border=5>
+  </a>
+    
+</body>
+</html>
+
+=================================================================
+
+Page3.html
+
+<html>
+<body style="background-color: rgb(0, 0, 0)">
+    Flower Description
+    </body>
+</html>
+
