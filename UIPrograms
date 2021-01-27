@@ -167,3 +167,368 @@ Page3.html
     </body>
 </html>
 
+
+
+
+===========================================================================
+
+3
+<html>
+<head>
+   <title>Hello</title>
+    </head>
+<body>
+<table border="2" >
+    <caption>Student Information</caption>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>Saurabh</td>
+        <td>25</td>
+        <td>Pune</td>
+    </tr>
+     <tr>
+        <td>Gaurav</td>
+        <td>25</td>
+        <td>Delhi</td>
+    </tr>
+     <tr>
+        <td>Sunny</td>
+        <td>28</td>
+        <td>Pune</td>
+    </tr>
+</table>        
+</body>
+</html>
+
+================================================================================
+
+4
+
+<html>
+<head>
+   <title>Hello</title>
+    </head>
+<body>
+<table border="2" >
+    <caption>Student Information</caption>
+    <tr>
+        <th style="padding: 20px">Name</th>
+        <th colspan="2" >Contact</th>   
+    </tr>
+    
+    <tr>
+        <td style="padding: 20px;color: red" >Amit</td>
+        <td style="padding: 20px">8878686757</td>
+        <td style="padding: 20px">6565766767</td>
+    </tr>
+</table>        
+</body>
+</html>
+
+===================================================================
+
+5
+
+<html>
+<head>
+   <title>Hello</title>
+    </head>
+<body>
+<table border="2" >
+    <caption>Student Information</caption>
+    <tr>
+        <th style="padding: 20px">Name</th>
+        <td style="padding: 20px">Amit</td>   
+    </tr>
+    
+    <tr>
+        <th rowspan="3" style="padding: 20px">Contact</th>
+        <td style="padding: 20px">8687686868</td>
+    </tr>
+    <tr>
+         <td style="padding: 20px">8687686868</td>
+    </tr>
+     <tr>
+         <td style="padding: 20px;color: red">8687686868</td>
+    </tr>
+</table>        
+</body>
+</html>
+
+========================================================================
+
+6
+<html>
+<head>
+   <title>Hello</title>
+    </head>
+<body>
+<table style="border-style: dotted">
+   <thead style="background-color: aquamarine">
+        <tr>
+            <th>Product Name</th>
+            <th>Cost</th>
+       </tr>
+    </thead>
+    
+    <tbody style="color: red;background-color: chartreuse;border: 3px solid ">
+        <tr>
+            <td>Hard Disk</td>
+            <td>4000</td>
+        </tr>
+    
+        <tr>
+            <td>Keyboard</td>
+            <td>400</td>
+        </tr>
+    </tbody>
+    
+    <tfoot style="background-color: darkorange">
+        <tr>
+            <th>Total cost</th>
+            <td>4400</td>
+        </tr>
+    </tfoot>
+</table>        
+</body>
+</html>
+
+====================================================================
+
+7
+
+<html>
+<head>
+    
+</head>
+<body>
+    <!-- Unordered List -->
+    <ul >List of Items (Unordered)
+        <li>Pen</li>
+        <li>Box</li>
+        <li>Ball</li>
+        <li>Table</li>
+    </ul>
+    
+      <!-- Ordered List -->
+    <ol reversed>List of Items (Ordered)
+        <li>Pen</li>
+        <li>Box</li>
+        <li>Ball</li>
+        <li>Table</li>
+        <li>Ball</li>
+        <li>Table</li>
+    </ol>
+</body>
+</html>
+
+===========================================================
+
+8
+
+<html>
+<head>
+    
+</head>
+<body>
+    <dl>
+        <dt>Computer</dt>
+        <dd>It is an electronic device</dd>
+        
+        <dt>Mobile</dt>
+        <dd>It is a communication device</dd>
+    </dl>
+</body>
+</html>
+
+=====================================================================
+
+9
+
+<html>
+<head>
+    
+</head>
+<body>
+   <ul>
+        <li>Item1</li> 
+        <li>Item2
+            <ol>
+                <li>SubItem1</li>
+                <li>SubItem2</li>
+                <li>SubItem3</li>
+            </ol>
+        </li> 
+        <li>Item3</li> 
+    
+   </ul>
+</body>
+</html>
+
+==============================================================================
+
+10
+
+<html>
+<head>
+    
+</head>
+<body>
+   <ul>
+        <li>Item1</li> 
+        <li>Item2
+            <ol>
+                <li>SubItem1
+                    <ol>
+                        <li>subItem1.1</li>
+                        <li>subItem1.2</li>
+                    </ol>
+                </li>
+                <li>SubItem2</li>
+                <li>SubItem3</li>
+            </ol>
+        </li> 
+        <li>Item3</li> 
+    
+   </ul>
+</body>
+</html>
+
+==============================================================================
+
+11
+
+<html>
+<head>
+    
+</head>
+<body>
+   <ul style="list-style-type: none;color: red">
+        <li style="color: blue">Item1</li> 
+        <li>Item2</li> 
+        <li>Item3</li> 
+    
+   </ul>
+</body>
+</html>
+===============================================================================
+
+
+12
+<html>
+<head>
+    
+</head>
+<body>
+  <a href="page1.html">Page1</a>
+</body>
+</html>
+================================================================================
+
+13
+
+<html>
+<body>
+
+   <audio controls src="Yeh%20Dooriyan%20-%20Love%20Aaj%20Kal.mp3"></audio> 
+    
+    <br>
+    
+    <video controls src="Dekhte%20Dekhte%20(Batti%20Gul%20Meter%20Chalu)%20-%20Atif%20Aslam_HD_720p-(HDvideo9).mp4" width="300px" height="300px"></video>
+    
+    <a href="https://youtu.be/hoNb6HuNmU0">Click</a>
+    
+    <a href="Yeh%20Dooriyan%20-%20Love%20Aaj%20Kal.mp3">audio</a>
+</body>
+</html>
+
+===================================================================================
+
+14
+
+<html>
+<head>
+    <!-- Internal style -->
+    <style>
+        h1
+        {
+            color: red;
+        }
+    </style>
+    
+    <!-- External style sheet-->
+    <link rel="stylesheet" type="text/css" href="mystyles.css">
+</head>
+<body>
+
+        <h1>Heading1</h1>
+
+        <h1>Heading2</h1>
+
+        <h1>Heading3</h1>
+
+        <h1>Heading4</h1>
+    
+    
+        <!-- inline style -->
+        <h2 style="color: blue">Heading5</h2>
+    
+    <p>
+    
+    This is a <font color="cyan">Paragraph1</font>
+    
+    </p>
+     <p>
+    
+    This is a Paragraph1
+    
+    </p>
+    
+    
+
+</body>
+</html>
+
+============================================================================
+
+15
+
+<html>
+<head>
+</head>
+<body>
+<form action="Servlet1">
+    <label style="background-color: bisque">Enter name <input type="text" required></label><br>
+<label style="background-color: bisque">Enter Password <input type="password" disabled></label><br>  
+    <label style="background-color: bisque">Select Skills</label><input type="checkbox" name="sk" value="C" checked>C<input type="checkbox" name="sk" value="java">Java<br>
+    <label style="background-color: bisque">Gender</label><input type="radio" name="gen" value="M" checked>Male
+    <input type="radio" name="gen" value="F">Female<br>
+    <label style="background-color: bisque">Email<input type="email" placeholder="write your email here...."></label>
+    <select name="cy">
+    <option selected>Select City....</option>
+    <option value="pune">Pune</option>
+    <option>Delhi</option>
+    <option>Jaipur</option>
+    </select><br>
+    <textarea rows="10" cols="80" style="resize: none" name="message"></textarea><br>
+    <input type="submit" value="Submit"><input type="reset" value="Clear"> 
+    
+</form>
+</body>
+</html>
+
+======================================================================
+
+p
+{
+    background-color: brown;
+    font-size: 20;
+    color: yellow;
+    text-align: center;
+}
+
+
