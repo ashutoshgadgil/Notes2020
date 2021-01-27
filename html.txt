@@ -1,0 +1,106 @@
+Table :
+     <table> : root tag 
+     
+child tags :
+     <tr>   : table row 
+     <th>   : table heading
+     <td>   : table data
+
+Table Attribute : border, 
+
+rowspan (To divide a cell in multiple Rows) 
+
+colspan(To divide a cell in multiple columns)
+
+Table caption tag : Table title <caption>
+
+<thead>    <tr><th>   : define header of table
+
+<tbody>    <tr><td>   : define body
+
+<tfoot>    <th><td>   : footer of table
+
+========================================================
+
+List
+
+Type of lists: unordered  (bulleted list)
+				<ul>   : unordered list  (Type : attribue ..circle,disc,square) 
+				<li>   : list item
+				
+               ordered    (numbered list)
+
+				<ol>   : ordered list
+				<li>   : list item
+
+               Description (Definition list)
+
+				<dl>   : description list
+				<dt>   : definition term
+				<dd>   : description definition
+
+  Nested/ Inner List:
+                      List inside another list (single level,multilevel)
+
+
+================================================================
+
+
+Creating Bookmark anchors
+
+			TO jump to a sepecific section of the webpage , bookmarking can be done.
+
+
+================================================================
+
+
+  Including Audio in HTML Page :
+                                <audio>   : 
+                                            controls (Attribute)
+                                            src    ==== source file
+
+===============================================================
+
+HTML Styles
+
+           css(cascading style sheets)
+
+Adding styles to Html Elements :
+               
+           1) Inline style            : <div style="color:red">
+           2) Internal                : Use of <style> tag    (write style tag in head section of the page)
+           3) External style sheet    : Use of <link> tag
+
+
+=============================================================================
+
+
+Form  : is a tag , used to take input from the user
+        is submitted and data will be transferred to other page.
+
+        <input>  : checkbox ,text, password, radio button, submit, reset
+        <label>  : To display text
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
