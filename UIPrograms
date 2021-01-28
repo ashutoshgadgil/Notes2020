@@ -531,4 +531,253 @@ p
     text-align: center;
 }
 
+==========================================================================
 
+16
+
+<!Doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style1.css" type="text/css">
+   
+</head>
+<body>
+    <header>
+        <h1>Web Page Header</h1>
+        <hr>
+    </header>
+<form  autocomplete="on">
+    <label style="background-color: bisque" size="20">Enter name &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ></label><br>
+   
+    <label style="background-color: bisque">Enter Password <input type="password" maxlength="8" autofocus size="10"></label><br> <label style="background-color: bisque">Enter Age <input type="number" min="18" max="25"></label><br>     <label style="background-color: bisque">Enter Date of Birth <input type="date" min="1999-01-01" max="2099-01-01"></label>
+    <label style="background-color: bisque" size="20">Enter City &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" 
+    autocomplete="off"></label><br>
+    <label for="fname">First name:</label>
+    
+    <br> 
+    <input type="submit" value="Submit"><input type="reset" value="Clear"> 
+    
+</form>
+    
+    <footer>
+    <p>Page Footer </p>
+    </footer>
+</body>
+</html>
+
+===============================================================================
+
+17
+
+<html>
+<head>
+    <style>
+        legend
+        {
+            color: red;
+           
+            font-size: 20px;
+        }
+        fieldset
+        {
+             text-align: center;
+            width: 100%;
+        }
+        
+        #i1
+        {
+            background-color: aqua;
+        }
+        
+        
+    </style>
+</head>
+<body>
+<marquee  behavior="slide" style="background-color: coral; " direction="left">Welcome to this page</marquee>
+    <marquee  behavior="scroll" style="background-color: coral; " direction="left" scrolldelay="10" scrollamount="1">Welcome to this page</marquee>
+<hr>
+
+<!--
+<iframe src="page1.html" width="1000px" height="100px" ></iframe>
+-->
+<br>
+
+
+<form action="">
+<fieldset>
+    <legend>Fullname</legend>
+    Firstname <input type="text"> 
+    Lastname<input type="text">
+</fieldset>
+<fieldset>
+    <legend>Full Address</legend>
+    Flatno <input type="text"> 
+    Street <input type="text"> 
+    City <input type="text"> 
+    State <input type="text">
+</fieldset>
+   
+<fieldset>
+    <legend>Select Vehicles</legend>
+<select multiple name="vh">
+    <option selected>Select Vehicles</option>
+<optgroup label="Two Wheelars">
+    <option value="bike">Bikes</option>
+    <option value="scooter">Scooters</option>
+    <option>Cycles</option>
+</optgroup>    
+<optgroup label="Four Wheelars">
+    <option>Cars</option>
+    <option>Truck</option>
+</optgroup>    
+</select> 
+</fieldset>
+    
+<input type="file">
+    
+<input type="submit" id="i1" class="">
+</form>
+    <footer>
+    
+    </footer>
+</body>
+</html>
+
+==========================================================
+
+18
+
+<html>
+<head>
+<style>
+    body
+    {
+       background-color: cadetblue; 
+    }
+    .c1
+    {
+        background-color: orange;
+        color: crimson;
+    }
+    .c2
+    {
+        color: cornflowerblue;
+        
+    }
+    
+    <!-- Id definition -->
+    #id1
+    {
+        color: blue;
+    }
+    #id2
+    {
+        background-color:  yellow;
+    }
+</style>
+</head>
+<body>
+    <h3>Example of Class</h3>
+    <div class="c1">Welcome to div1</div>
+    <div class="c2">Welcome to div2</div>
+    <div class="c1 c2">Welcome to div2</div>
+    <div class="c1">Welcome to div1</div>
+    
+    <h3>Example of Id</h3>
+    <div id="id1">Welcome to div2</div>
+    <div id="id2">Welcome to div2</div>
+    <div id="id1">Welcome to div2</div>
+</body>
+</html>
+
+===============================================================
+
+19
+
+       header
+       {
+           background-color: aquamarine;
+           color: black;
+       }
+       footer p
+       {
+           background-color: pink;
+         	color: black;
+       }
+       
+       <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style1.css" type="text/css">
+</head>
+<body>
+<header>
+<h1 style="text-align: center;">My First Web Site</h1>
+<hr>
+</header>
+</body>
+</html>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style1.css" type="text/css">
+</head>
+<body>
+<footer>
+<p style="text-align: center;">
+Created@Jan 2021
+</p>
+</footer>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color: black;color: white;">
+<jsp:include page="header.jsp"></jsp:include>
+
+<pre>
+nfsdnfkndssd
+dfsdfsd
+sdfsdfsdf
+
+dfsdf
+</pre>
+
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+<img alt="" src="image1.jpg">
+
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
