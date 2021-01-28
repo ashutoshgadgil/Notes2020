@@ -5,3 +5,6 @@
   show the description about the image.
 5.Create a list of 3 website names and create every list item as a hyperlink.  
 6.Create a HomePage where a unorderd list is created in which the list items are the hyperlinks . On clicking a hyperlink the respective page should open.
+7 Create a LoginPage in which background color of textbox should be skyblue. Placeholder should be applied and password length must be atleast 8 characters.
+8 Make a page where create a selection box of cities and a textarea where the information about city is to be entered. Once click on submit button the data is to be 
+  stored in the database table as City along with description.
