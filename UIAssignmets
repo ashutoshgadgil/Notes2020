@@ -4,3 +4,4 @@
 4.Create an image in the web page which has the width as 300 and height as 400 and display the title as "MyImage". Create same image as a hyperlink , clicking on the image will 
   show the description about the image.
 5.Create a list of 3 website names and create every list item as a hyperlink.  
+6.Create a HomePage where a unorderd list is created in which the list items are the hyperlinks . On clicking a hyperlink the respective page should open.
