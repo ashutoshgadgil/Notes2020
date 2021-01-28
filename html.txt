@@ -82,12 +82,52 @@ Form  : is a tag , used to take input from the user
         <label>  : To display text
         
         
+=============================================================================
+
+  Input Attributes
+
+                  1) Value    : Default value can be given in the text box
+                  2) required : Input is required in the field
+                  3) Disabled : disables the field 
+                  4) readonly : Makes the field as readonly , can not be modified
+                  5) maxlength: Allow the maximum number of characters in the field
+                  6) min      : allow the value upto min
+                  7) max      : allow value upto max  
+                  8) Placeholder : shows hint in the field
+                  9) autofocus : It focuses the specified field
+                  10) autocomplete : It gives the previously entered input as a list in field
 
 
+==============================================================================
 
 
+  <header>  : to define header of the page
+  <footer>  : to define footer of the page
+  <marquee> :  width(pixel,%), behaviour(scroll,alternate,slide) ,direction (right,left,up,down)
+  <iframe>  :  webpage within a webpage  (src,height,width)
+  <fieldset>: to combile logically related fields
+  <legend>  : Used to give caption to the fieldset
+  <optgroup> : used inside select tag to group items with category
 
 
+==============================================================================
+
+
+ HTML Class : one element can use multiple classes
+	      definition of class syntax :
+                                             .classname
+					     {	
+					     
+					     }
+	      
+
+ HTML id    : unique for the element, Multiple ids can not be applied on a element
+		definition of id syntax :
+					
+					     #idname
+					     {	
+					     
+					     }
 
 
 
