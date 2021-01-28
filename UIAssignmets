@@ -12,3 +12,4 @@
 10 Make a Page which includes contents of a text file in the middle of the page. Create two such pages and link them together using hyperlinks. Add some header and footer
    in both pages where header background color should be pink and some text is displayed as heading. Footer will display the todays date in (dd-mm-yyyy) in red color in
    center of the page.
+11 Make a form which accepts name and date of birth of a person and stores it in the database.
