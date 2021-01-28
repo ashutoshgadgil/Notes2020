@@ -8,3 +8,4 @@
 7 Create a LoginPage in which background color of textbox should be skyblue. Placeholder should be applied and password length must be atleast 8 characters.
 8 Make a page where create a selection box of cities and a textarea where the information about city is to be entered. Once click on submit button the data is to be 
   stored in the database table as City along with description.
+9 Make an ordered list in reversed manner.
