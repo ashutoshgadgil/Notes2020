@@ -130,6 +130,129 @@ Form  : is a tag , used to take input from the user
 					     }
 
 
+=============================================================================
+
+Css Selectors:
+              It is a Pattern is used to match a element in web page.
+
+              1) element selector :   h1,p,div,body 
+
+				      Used to select a specific element on web page
+
+				     syntax:
+ 						selectorname
+						{
+
+						}		
+	     2) Universal selector : 
+                                   				
+				      used to apply effects on every element on web page
+                                      denoted by *  
+
+
+						 syntax:
+ 						
+						*
+						{
+
+						}	
+
+             3) ID selector :
+                                      Uniquely identifies the element
+                                     
+						 syntax:
+			
+ 						#idname
+						{
+
+						}
+
+              4) Class selector :
+				
+				     class selector can be applied on mutiple elements and muliple classes can be applied on single element
+
+
+						 syntax:
+
+ 						.classname
+						{
+	
+
+						}		
+	    5) Descendent selectors :  
+                                      Only Descendent elements will be affected.
+
+ 						syntax:
+
+ 						Parent descendent
+						{
+	
+
+						}
+
+						Parent.classname descendent
+						{
+	
+
+						}
+	    6) Group selector :
+===================================================================================================================
+
+
+
+	Color Attribute:
+
+		1) by name of color  : red,green
+                2) Hex value         : #000000 (black)  to #ffffff (white)    =>  #ffffff  (red,green,blue)
+                3) RGB value         : rgb(255,255,255)   =>rgb(0,0,0) black , rgb(255,255,255) white
+            
+
+
+=====================================================================================================================
+  
+    CSS Background :
+                    background-color : set the color of background
+                    background-image : set the image as background for any element
+		    background-repeat : controls the repeatition of background image
+		    background-position: sets the position of background image
+                    background-attachment : Attach the image on the page 
+
+ =============================================================================================
+
+
+ background Shorthand property : 
+                             
+                           background: color image repeat attachment position 
+
+			   background: url("https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg") no-repeat fixed 50% 80%
+
+=============================================================================================
+
+  CSS Font :
+                 
+		font-family : Serif , sans Serif
+
+                font-style : normal, Oblique, italic
+              
+                font-size : 
+
+		font-weight : defines the boldness of the font
+
+		font-variant : small-caps
+
+=============================================================================================
+
+Css Text :  Foramtting of text
+
+                text-align :
+                text-decoration :
+		text-transform : 
+		text-indent 
+              
+                letter-spacing
+                word-spacing
+
+        
 
 
 
@@ -139,6 +262,30 @@ Form  : is a tag , used to take input from the user
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
