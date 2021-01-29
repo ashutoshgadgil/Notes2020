@@ -13,3 +13,6 @@
    in both pages where header background color should be pink and some text is displayed as heading. Footer will display the todays date in (dd-mm-yyyy) in red color in
    center of the page.
 11 Make a form which accepts name and date of birth of a person and stores it in the database.Use date type to take date of birth.
+12 Create 3 input text boxes and a submit button. Apply the background color for all text boxes as pink using class selector and change the font color of the submit button
+    using the id selector.
+13 Create a group selector to set the padding (25px) of a division and a paragraph text.
