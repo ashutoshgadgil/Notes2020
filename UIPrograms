@@ -781,3 +781,276 @@ dfsdf
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
+
+===============================================================================
+
+20
+
+<html>
+<head>
+<style>
+   /* ELEMENT SELECTOR
+     
+    h1
+    {
+        color: darkblue;
+    }
+    p
+    {
+        background-color: bisque;
+    }
+    div
+    {
+        background-color: yellow;
+    }
+    */
+    
+    /* UNIVERSAL SELECTOR */
+    /* 
+    *
+    {
+        color: aqua;
+    }
+    */
+    
+    /* ID Selector */
+    #id1
+    {
+        font-size: 20px;
+    }
+    #id2
+    {
+        color: blue;
+    }
+    
+    /* Class selector */
+    
+    .c1
+    {
+        font-size: 20px;
+        font-style: italic;
+    }
+    .c2
+    {
+        color: brown;
+    }
+    
+    p.c3
+    {
+        background-color: aquamarine;
+    }
+    
+    p
+    {
+        background-color: red;
+    }
+    
+    /* Descendent selector */
+    
+    h3 em
+    {
+        color: crimson;
+    }
+    
+    ul li
+    {
+        background-color: gold;
+    }
+    
+    ul.cl li
+    {
+        background-color: dodgerblue;
+    }
+    
+    h4
+    {
+        
+        font-weight: lighter;
+    }
+    h5
+    {
+        
+    }
+    
+    /* Group selector */
+    h4,h5
+    {
+        background-color: burlywood;
+    }
+    
+</style>
+</head>
+<body>
+    <h1 style="color: red">Heading1</h1>
+     <h2 class="c3">Heading2</h2>
+    <div id="id1">Division1</div>
+    <p class="c1 c2">Paragraph1</p>
+    
+    <p class="c3">Paragraph2</p>
+    Hello
+    
+    <h3>CSS is the part of <em>Web Development</em></h3>
+    
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+    
+     <ul class="cl">
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+    
+    <h4>Heading4</h4>
+    <h5>Heading5</h5>
+</body>
+</html>
+
+======================================================================
+
+21
+
+<html>
+<head>
+<style>
+   .c1
+    {
+       background-color: #ff00ff;  
+    }
+    
+    .c2
+    {
+       background-color: brown;  
+    }
+    
+    .c3
+    {
+       background-color: rgb(255,200,240);  
+    }
+</style>
+</head>
+<body>
+ <div class="c1">Hello</div>
+  <div class="c3">Hello</div>    
+    
+</body>
+</html>
+
+=============================================================
+
+22
+
+<html>
+<head>
+<style>
+  body
+    {
+        
+       /* 
+        background-image: url("https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 80%;
+        background-attachment: fixed;
+        */
+        
+        /* background: color image repeat attachment position */
+        
+        /* background shorthand property */
+        background: url("https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg") no-repeat fixed 50% 80%
+    }
+    
+    h1
+    {
+        
+            background-image: url(images/image2.gif);
+             background-repeat: no-repeat;
+            padding: 10px;
+            border: 2px solid black;
+            background-position: right;
+    }
+    
+    p.cl1
+    {
+        font-family: serif
+        
+    }
+    
+    
+    p.cl2
+    {
+        font-family: sans-serif;
+    }
+    
+    .cl3
+    {
+        font-family: Arial ,serif;
+    }
+</style>
+</head>
+<body>
+
+  <div class="c3">Hello</div>    
+  
+    <h1 style="font-size: 50px" >Hello</h1>
+    <h1>Hello</h1>
+    
+    <p class="cl1">WELCOME</p>
+    
+    <p class="cl2">WELCOME</p>
+    
+    <p class="cl3" style="font-size: 150%">WELCOME</p>
+    
+    <p style="font-style: italic">Text from web page</p>
+    
+    <p style="font-weight: 900">HTML</p>
+    
+    <h1 style="font-weight: bolder">HTML</h1>
+    
+    <h1 style="font-weight: lighter">HTML</h1>
+    
+    <p style="font-variant: small-caps ;font-size: 40px;font-family: cursive">this is a simple text</p>
+</body>
+</html>
+
+==========================================================================
+
+23
+
+<html>
+<head>
+<style>
+
+    
+</style>
+</head>
+    
+<body>
+    
+    <h1  style="text-align: center">Introduction</h1>
+    <p style="text-align:left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </p>
+  
+    <h2 style="text-decoration: underline">Text decoration</h2>
+    <h2 style="text-decoration: line-through">Text decoration</h2>
+    <h2 style="text-decoration: overline">Text decoration</h2>
+    
+    <h2 style="text-transform: uppercase">Text transform</h2>
+    <h2 style="text-transform: capitalize">Text transform</h2>
+    <h2 style="text-transform: lowercase">Text transform</h2>
+    
+    <p style="text-indent: 200px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </p>
+    
+    <p style="letter-spacing: 1px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </p>
+    
+    <p style="word-spacing: 20px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </p>
+</body>
+</html>
+
+===============================================================================
+
+24
+
+
