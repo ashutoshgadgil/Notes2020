@@ -16,3 +16,7 @@
 12 Create 3 input text boxes and a submit button. Apply the background color for all text boxes as pink using class selector and change the font color of the submit button
     using the id selector.
 13 Create a group selector to set the padding (25px) of a division and a paragraph text.
+14 Create a division and set the left & top margin to 20px and 30px and also set the background color to green and padding to 50px.
+15 Make a table with collapse border and color of border is Blue and alignment of text should be bottom right. Background color of the heading should be pink . Font size
+   of text written inside table body is 20px.
+ 
