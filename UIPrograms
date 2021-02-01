@@ -1228,3 +1228,134 @@ dfsdf
 </body>
 </html>
 
+==================================================================================================
+
+27
+
+<html>
+<head>
+<style>
+  img
+    {
+        float:right; 
+        /*border: 2px solid red;*/
+        border-color: darkmagenta;
+        border-style: double;
+        border-width: 20px;
+       
+    }
+    p{
+        margin-right: 20px; 
+    }
+  
+</style>
+</head>
+<body>
+<p>What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<img src="images/image1.jpg">  
+
+    <p>What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</body>
+</html>
+
+==================================================================================================================
+
+28
+
+<html>
+<head>
+
+</head>
+    <body>
+
+    <p id="id1">Hello</p>    
+    
+    <p id="id1">Hello</p>    
+    
+    <script>
+      /*
+       var a=20;
+       var b="Hello";
+       var c=1.2;
+        
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        
+         console.log(a+" "+b+" "+c);
+        
+        var x=2;
+        var y=3;
+        var sum=x+y;
+        console.log(sum);
+        
+        var name="Amit",
+            marks=80;
+         console.log(name+" "+marks);
+        */
+        
+        //alert("Welcome to Javascript");
+        
+        //document.getElementById("id1").innerHTML="Hi";
+
+         var name="Amit";
+         var city='Pune is a "nice" city';
+        
+         var PI=3.14;
+         document.write(name+"<br> "+city+"<br>");
+         document.write(PI);
+        
+        // alert(-5/0);    // display infinity
+        
+        //alert("abc"/5);  // display NaN
+        
+        var num;
+        
+        document.write("Number : "+num+"<br>");   // display undefined
+        
+        num=null;             
+        document.write("Number : "+num+"<br>");    // display null
+        
+        var str="";
+        document.write("String : "+str);           // displays nothing
+        
+        var status=true;
+        document.write("Boolean : "+status);           // displays true
+        
+    
+        
+        
+    </script>      
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
