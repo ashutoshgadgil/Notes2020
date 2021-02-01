@@ -26,5 +26,9 @@
 19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
    webpage should be displayed and all web pages should be linked to each other.
 20 Create a form with 2 fields and set the Autofocus property to the first field.
+21 Create a Hyperlink and apply the linkcolor accordingly : 
+   Activelink : yellow
+   visitedLink: Green
+22 Meke 
 
  
