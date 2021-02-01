@@ -19,4 +19,12 @@
 14 Create a division and set the left & top margin to 20px and 30px and also set the background color to green and padding to 50px.
 15 Make a table with collapse border and color of border is Blue and alignment of text should be bottom right. Background color of the heading should be pink . Font size
    of text written inside table body is 20px.
+16 Take three integer variables in Javascript.Assign values to first two variables. Print the Sum in the Heading tag and console window.
+17 Assign firstname & lastname and print the full name in the alert box.
+18 Display the image with the border 5px , Brown color and image should be displayed in the right of the page along with the Paragraph .Set the image width and heigth
+   to 150px and 150px.
+19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
+   webpage should be displayed and all web pages should be linked to each other.
+20 Create a form with 2 fields and set the Autofocus property to the first field.
+
  
