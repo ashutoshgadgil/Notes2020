@@ -302,7 +302,104 @@ zebra stripped table :    selector
 			  }
 
 
+CSS float :
+            positioning property 
+            position image to the left or right of the page along with the text.
 
+Border :
+
+            Border style : solid, dashed, dotted, 3d border(inset,outset)
+
+
+=================================================================================================
+
+ Javascript :
+
+              Add javascript to web page:
+             
+              3 ways :
+
+1) Using <script>
+                       
+    <script>
+      
+           document.write("Welcome");
+      
+    </script>
+
+
+
+2) On creating seperate javascript file and adding it in web page using <script src>
+                      
+ <body>
+
+    <script src="myscript1.js">
+      
+    </script>
+      
+ </body>
+
+
+
+
+3) Put the javascript directly to the HTML tag. (onclick)
+     <script>
+       function fun()
+        {
+           document.write("You clicked me");
+        }
+    </script>
+        
+    <button onclick="fun()">Click</button>
+
+
+Javascript file (myscript1.js) : .js 
+
+		document.write("hi");
+		alert("hello");
+
+
+Comments : single line  //
+           multiline   /* */
+
+
+DOM (Document Object Model)
+
+
+
+Ways to generate output in Javascript :
+
+1) on the console :                console.log("hi");      --> display on the console window
+
+2) On the browser                  document.write("Hi");   --> display on the web page
+
+3) On the alert box                alert("Hi");            --> display on the alert dialog box
+
+4) Inside the HTML element         document.getElementById("id1").innerHTML="Hi";
+
+==============================================================================================
+
+
+Data type :
+
+        1)  Primary/ Primitive
+
+          string       '', ""
+          number            15,1.2
+          boolean       true, false
+
+
+        2)  Reference/ composite
+
+          Object
+          Array
+          function
+
+        3) Special
+
+          null
+          undefined
+           
 
 
 
