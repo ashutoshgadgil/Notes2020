@@ -1053,4 +1053,178 @@ dfsdf
 
 24
 
+<html>
+<head>
+<style>
+    h1
+    {
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+    a:link, a:visited
+    {
+        color: cyan;
+        text-decoration: none;
+        background-color: burlywood;
+        
+        margin-top: 50px;
+        margin-bottom: 100px;
+        margin-left: 100px;
+        text-align: center;
+        border: 2px solid black;
+        font: 14px Arial;
+    }
+    
+   
+    a:hover,a:active
+    {
+        color: darkblue;
+    }
+     
+    p
+    {
+        margin: 25px 50px ;       
+    }
+</style>
+</head>
+<body>
+    <!--
+   <a href="page10.html">Hello</a>
+    -->
+    <h1>Welcome</h1>
+    <p>vjhkvnsdkfnsdkfnsd,nf,sdfsdnf,</p>
+    
+    <h3>Heading</h3>
+    
+</body>
+</html>
+
+===============================================================================
+
+25
+
+<html>
+<head>
+<style>
+    body
+    {
+        font-size: 25px;
+    }
+    ul
+    {
+       background-color: firebrick; 
+    }
+    
+    ul li
+    {
+      list-style: none;
+      display: inline-block;
+    }
+    
+    ul li a
+    {
+        display: block;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        text-decoration: none;
+        color: cyan;
+    }
+    
+    ul li a:hover
+    {
+        color: yellow;
+        background-color: chartreuse;
+    }
+</style>
+</head>
+<body>
+  <ul>
+    <li><a href="page1.html">Home</a></li>  
+    <li><a href="page12.html">About Us</a></li>  
+    <li><a href="page14.html">Contact</a></li>  
+  </ul>  
+</body>
+</html>
+
+==================================================================
+
+26
+
+<html>
+<head>
+<style>
+    
+    table
+    {
+       border-collapse: collapse;     
+       border-spacing: 10px;
+        width: 100%;
+        
+    }
+    
+    caption
+    {
+        caption-side: top; 
+        font-size: 28px;
+        color: red;
+        font-style: italic;
+    }
+    
+    th,td
+    {
+         height: 90px; 
+    }
+    
+    table,th,td
+    {
+        border: 1px solid black;
+        
+    }
+    
+    th,td
+    {
+        padding: 18px;
+        vertical-align: top;
+        text-align: right;
+    }
+    
+    th
+    {
+        background-color: cadetblue;
+        font-size: 22px;
+    }
+    td
+    {
+       /* background-color: yellow;*/
+    }
+    
+    /* To create zebra stripped table */
+    tbody tr:nth-child(odd)   /* Predefined selector in CSS */
+    {
+				background-color: blueviolet;
+    }
+
+
+
+</style>
+</head>
+<body>
+  <table>
+      <caption>Student Information</caption>
+      <thead>
+      <tr><th>Sno</th><th>Name</th><th>City</th></tr> 
+      </thead>
+          
+      <tbody>
+      <tr><td>1</td><td>Sachin</td><td>Delhi</td></tr>
+      <tr><td>2</td><td>Saurabh</td><td>Mumbai</td></tr>
+       <tr><td>1</td><td>Sachin</td><td>Delhi</td></tr>
+      <tr><td>2</td><td>Saurabh</td><td>Mumbai</td></tr>
+
+      </tbody>
+    </table>
+</body>
+</html>
 
