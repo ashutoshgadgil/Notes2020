@@ -252,18 +252,54 @@ Css Text :  Foramtting of text
                 letter-spacing
                 word-spacing
 
-        
+ =======================================================================================
+
+ CSS Links :
+
+              Hyperlink has 4 states : 
+					visited : USER VISITED WEB PAGE 
+					active 	: WHEN USER CLICKS ON THE LINK
+					hover   : WHEN USER PUTS A MOUSE PPOINTER OVER THE LINK
+					link    : DEFINES UNVISITED LINKS
 
 
 
 
+ CSS Margin : 
+		Spacing of an element from top ,left, bottom, right
 
+                     Apply it on element as 
+                              h1
+			      {
+				margin : 50px;  // Applied to all 4 sides (left,top,right,bottom)
+				margin : 25px 50px // Applied to vertical and horizontal
+                                
+				margin : 25px 50px 75px // top , horizontal, bottom
+				margin : 25px 50px 75px 100px // top, right, bottom, left 
+			      }
+ 
+     			      h1
+			      {
+				 margin : 25px 50px 75px 100px // top, right, bottom, left (Margin shorthand property)
+				
+				 margin-left:100px;
+			         margin-top:25px;
+				 margin-right:50px;
+				 margin-bottom:75px;
+			      }
 
+CSS List :
+     			Creation of Menu bar
+CSS tables :
 
+zebra stripped table :    selector 
+                                      nth-child(odd)     // apply this selector on the table row for tbody 
+                                                      // applicable for odd or even rows
 
-
-
-
+                          tbody tr: nth-child(odd)
+			  {
+				background-color:blue;
+			  }
 
 
 
