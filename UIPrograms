@@ -1331,6 +1331,502 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+==================================================================================================
+
+29
+
+<html>
+    <head>
+    
+    </head>
+    
+    <body>  
+        <script>
+            var a=10,b=5;
+            
+            // Arithmatic operators
+            /*
+            alert("Addition : "+(a+b));
+            alert("Subtraction : "+(a-b));
+            alert("Multiplication : "+a*b);
+            alert("Division : "+a/b);
+            alert("Remainder : "+(a%b));   
+            */
+            // Assignment operators   -=, *=,/=, %=
+            a+=5;     // a=a+5
+            console.log("a : "+a);
+            
+            //String operators  +(concatenation) , += (concatenation assignment)
+            var s1="Hello";
+            var s2="World";
+            
+            document.write(s1+" "+s2);
+            
+            s1+="Ashutosh";
+            document.write("<br>Message  : "+s1+"<br>");
+            
+            //Increment operator(++p : preincrement),(p++ : postincrement)
+            var i=50;
+            
+            document.write("i : "+i++);
+            document.write("<br> i : "+i);    // i=51
+            
+            document.write(++i);              // i=52
+            
+            //Logical operators ( && (AND), || (OR), !(NOT))
+            
+            document.write("<br>Result : "+((10>5)&&(5<2)));
+            document.write("<br>Result : "+((10>5)||(5<2)));
+            document.write("<br>Result : "+!((10>5)&&(5<2)));  // !true = false , !false = true
+            
+            // Comparision Operators (==,<,<=,>=,>!=)
+            
+            var i1=10;
+            var i2=20
+            var i3="10";
+            
+            document.write("<br>");
+            
+            document.write("i1==i2 : "+(i1==i2));    //false
+            
+            document.write("<br>");
+            
+            document.write("i1==i3 : "+(i1==i3));   // == only checks the value not data type
+            
+            document.write("<br>");
+            document.write("i1===i3 : "+(i1===i3));  // === only checks the value and data type
+           
+            document.write("<br>");
+            document.write("i1!=i3 : "+(i1!=i3));
+            
+            document.write("<br>");
+            document.write("i1!==i3 : "+(i1!==i3));  // !== Not identical operator
+            
+            document.write("i1>i2 : "+(i1>i2));  
+
+            document.write("<br>");
+           
+            // Concept of let , var and const
+            
+            let name="Sachin";
+            document.write("Name : "+name);
+            
+            document.write("<br>");
+            name="Ajay";
+            document.write("Name : "+name);
+            
+            document.write("<br>");
+            
+            const PI=3.14;
+            document.write("PI : "+PI);
+            
+            // PI=2.2;  // Can not be reassigned
+            
+            // ES5 (ECMA script)
+            
+            var age=20;
+            var age=30;
+            
+            document.write("Age : "+age);
+            
+            // ES6 (ECMA script)
+
+            let ag=20;
+            let ag1=30;
+            
+            document.write("Age : "+ag);
+            document.write("<br>");
+            
+            // Block { }
+            {
+                var v=20;
+                document.write("v : "+v);
+            }
+            document.write("<br>");
+            document.write("v : "+v);
+            
+            
+            document.write("<br>");
+            //let v1=50;
+            {
+                let v1=40;
+                document.write("v1 : "+v1);
+            }
+            document.write("<br>");
+            //document.write("v1 : "+v1);
+            
+            var _val=300;
+            document.write(_val);
+            
+        </script>
+    </body>
+</html>
+
+==================================================================================
+
+30
+
+<html>
+    <head>
+    
+    </head>
+    
+    <body>  
+        <script>
+            var a=60,b=5;
+           
+            /*
+            if(a<50)
+                {
+                    alert(a+" is less than 50");
+                }
+             else
+                 {
+                      alert(a+" is not less than 50");
+                 }
+            
+            
+            if(a<50)
+                {
+                    alert(a+" is less than 50");
+                }
+             else if(a>50)
+                 {
+                      alert(a+" is greater than 50");
+                 }
+            else{
+                    alert(a+" is equal to 50");
+            }
+            
+            var status;
+            var age=62;
+            
+            //status=(age>65)?'Senior Citizen':'Age below 65';
+            
+            (age>65)?alert('Senior Citizen'):alert('Age below 65');
+            
+            //document.write("Status : "+status);
+            
+            */
+            /*
+            var st=4<2;
+           // console.log(st);
+            
+            if(st)
+                {
+                    alert("true");
+                    //console.log("true");
+                    
+                }
+            else{
+                    alert("false");
+                    //console.log("false");
+                   
+            }
+            */
+      
+            
+            
+    var   a=40;
+    var   b=55;
+            
+    var sta=a>b;
+   
+    console.log(sta);
+    if(sta)
+        {
+            alert("a is greater than 55");
+        }
+        else
+        {
+            alert("a is less than 55");
+        }
+            
+        
+        var num=10;
+        switch(num)
+               {
+               case 10:
+                       console.log("10");
+                        break;
+               case 20:
+                       console.log("20");
+                        break;
+               
+               default:
+                    console.log("Invalid");
+               }
+        
+            var d=new Date();
+            console.log(d.getDay());      
+            
+             switch(d.getDay())
+               {
+               case 1:
+               case 2:
+               case 3:
+               case 4:
+               case 5:
+                       console.log("Weekday");
+                        break;
+               case 0:
+               case 6:
+                        console.log("Weekend");
+                   default:
+                       console.log("message");
+               
+               }
+                  
+        </script>
+    </body>
+</html>
+
+================================================================================
+
+31
+
+<html>
+    <head>
+    </head>
+    
+    <body>  
+        
+        <button onclick="getSum(2,3)">Get Sum</button>
+        <script>
+           
+            // Function not returning any value / function declartion
+            function getMessage()
+            {
+                document.write("Message from function with no parameters");    
+            }
+            
+            function getNumber(num)
+            {
+                document.write("Message from function with parameter "+num);
+            }
+            
+            function getNum(num1,num2)
+            {
+                document.write("Message from function with parameter "+(num1+num2));
+            }
+            
+            
+            // Function returning value
+            function getSum(num1,num2)
+            {
+                document.write("Sum : "+(num1+num2));
+                //return (num1+num2);
+            }
+            
+            
+            // Function Expression
+            
+            var myfunction=function()
+            {
+                document.write("Function expression with no parameters");
+            }
+            
+            var display=function(n1,n2)
+            {
+                document.write("Function expression with parameters : <b>"+n1+" and "+n2+"</b>");
+            }
+           
+            //  f();  // Not possible , Throws error
+            
+            var f=function()
+            {
+                document.write("Hello");
+            }
+            
+            
+             getMessage();
+             document.write("<br>");
+             getNumber(30,20);
+             document.write("<br>");
+             getNum(30,20);
+             document.write("<br>");
+             var res= getSum(4,5);
+             document.write("Sum : "+res);
+             document.write("<br>");
+             document.write("Sum : "+getSum(5,6));
+             document.write("<br>");
+             document.write("Sum : "+getNum(3,5)); 
+             document.write("<br>");
+             myfunction();
+             document.write("<br>");
+             display(30,40);
+            
+        </script>
+    </body>
+</html>
+
+=======================================================================================
+
+32
+<html>
+    <head>
+    </head>
+    
+    <body>  
+       <script> 
+           
+             function getNoOfCities(cy)     // Passing array to function
+             {
+                 document.write("Total Cities : "+cy.length);
+             }
+           
+             
+           
+            var colors=["red","blue","green"];   // Declaration
+           
+             document.write(colors[0]);    // Accessing Array elements
+             document.write(colors[1]);
+             document.write(colors[2]);
+
+             var city=new Array("Pune","Mumbai","Chennai");
+             document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+             document.write("</ol>");
+           
+            getNoOfCities(city);
+           
+            document.write("<br>");
+            city.push("Delhi");    // Push() , adding element at the end of array
+           
+            getNoOfCities(city);
+          
+             document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+             document.write("<li>"+city[3]+"</li>");
+             document.write("</ol>");
+           
+           city.unshift("Hyderabad");  // Adding element in begining
+           
+           document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+
+           document.write("Last element : "+city[4]); 
+           
+           city.pop();                            // Remove last element
+            
+           document.write("Last element : "+city[4]); 
+           
+           city.shift();                         // Remove first element
+           
+           document.write("First element : "+city[0]); 
+
+            document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+             
+             document.write("</ol>");
+           
+             city.splice(1,1);   // Removes element at first index
+           
+              document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+            
+             document.write("</ol>");
+            
+               city.splice(1,0,"Kanpur");   // Adding element at first index
+           
+            
+              document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+             document.write("</ol>");
+            
+              city.splice(1,0,"Jaipur","Indore");        // Adding 2 elements at first index
+           
+            
+              document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+              document.write("<li>"+city[3]+"</li>");
+            document.write("<li>"+city[4]+"</li>");
+             document.write("</ol>");
+           
+            
+              city.splice(1,2);                    // Removes 2 elements at first index
+           
+            
+              document.write("<ol>");
+             document.write("<li>"+city[0]+"</li>");    // Accessing Array elements
+             document.write("<li>"+city[1]+"</li>");
+             document.write("<li>"+city[2]+"</li>");
+        
+             document.write("</ol>");
+            
+           
+        </script>
+    </body>
+</html>
+
+============================================================================================
+
+33
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        
+        <h1 id="id1"></h1>
+       <script> 
+             var city=new Array("Pune","Mumbai","Chennai","Delhi");
+             
+             document.write(city.join());  // Joining elements with ,
+             document.write("<br>");
+             document.write(city.join("->"));  // Joining elements with ->
+              document.write("<br>");
+             var str=city.join("*");         // Joining elements with * and assigns complete string in str
+             document.write(str);
+             document.write("<br>");
+             document.write(city.toString());  // Returns comma seperated string with array elements
+             var subarray=city.slice(0,2);  // returns subarray from index 0 to 1
+             document.write("<br>");
+             document.write(subarray);
+           
+             var subarray=city.slice(1);  // returns subarray from index 1 onwards
+             document.write("<br>");
+             document.write(subarray);
+           
+             var subarray=city.slice(-2);  // returns subarray from the end upto 2 elements
+             document.write("<br>");
+             document.write(subarray);
+           
+             document.write(subarray[0]); // displaying first element of subarray
+             document.write("<br>");  
+           
+             var n1=[1,2,3,4,5];
+             var n2=[10,20,30,40,50];
+             var n3=["a","b","c"];  
+           
+            var mergeArray=n1.concat(n2);  // Concatenates two or more arrays
+            document.write(mergeArray);
+            
+             document.write("<br>"); 
+             var m1=n3.concat(n1,n2);
+             document.write(m1);
+           
+             document.write("<br>"); 
+             document.write(city.reverse());   // reverses the array elements
+         
+             var name="Sachin";
+           
+            document.getElementById('id1').innerHTML=name;
+        </script>
+    </body>
+</html>
+
 
 
 
