@@ -29,6 +29,9 @@
 21 Create a Hyperlink and apply the linkcolor accordingly : 
    Activelink : yellow
    visitedLink: Green
-22 Meke 
+22 Create a Javascript file which is included in HTML Page.In this file Assign Name , age and City of a person and display these values as a heading in Red color.
+23 Create a Javascript function which accepts a number and returns the cube of the number and print the cube.
+24 
+
 
  
