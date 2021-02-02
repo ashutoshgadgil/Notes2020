@@ -399,23 +399,110 @@ Data type :
 
           null
           undefined
+
+===============================================================================================
+
+
+ Operators :
+            
+ Keywords: 
+           let    : Declare a variable
+		    reassign a variable
+
+           const  : declare a constant
+		    value can not be reassigned
+
+
+  Difference between let and var
+             
+           let  : can not be redeclared
+		  concept of ES6
+		  has blocked scope
            
+           var  : can be redeclared
+		  concept of ES5
+		  has no blocked scope
+
+Naming conventions in variable declaration :
+
+1) start variablename with $, _ ,letter
+2) Alphanumeric letters possible
+3) Should not contain a space
+4) Should not start with numeric
+5) should not be same as javascript keyword
 
 
+===================================================================================================
+
+conditional statements:
+
+                1) if
+                2) if..else
+                3) if..else if...else
+                4) switch...case
 
 
+    Ternary operator : (?:)
+
+===================================================================================================
+
+Javascript function :
+
+	Two way to define a function :
+
+	1) define a function in simple way / function declaration
+		Keyword : function
+		
+		syntax :
+
+			function functionname(parameters)    // Function definition
+			{
+
+			}
+
+			functionname(parameters);    // function calling
+			
+
+	2) Function Expression
+             
+
+			var fe = function(parameters)    // Function Expression
+			{
+
+			}
+
+			fe();
 
 
+   Difference between function declaration & function expression :
+   1) Calling of function can be written above declaration or below the declaration 
+      Calling statement must be written below the function expression.
 
+   2) Function expression can be passed as a parameter or can be assigned in the variable while function declaration can not. 
 
+=============================================================================================================================
 
+Arrays :
 
+	1) var arrayname=[element1,element2,....];
 
+        2) var arrayname=new Array(element1,element2,....);
 
+  length : Attribute => used to get the length of array
 
+                  arrayname.length 
 
+ method
+	  push  : pushes element at the end of array
+          unshift : pushes element at the begining 
 
-
+          pop  : removes last element
+          shift: removes first element
+          splice : Adds or deletes element from any index 
+          join  : Returns a string on joining array elements
+          toString : Joining elements of the array in comma seperated manner
+          slice :  To create an array from other array
+          concat : To merge two arrays
 
 
 	
