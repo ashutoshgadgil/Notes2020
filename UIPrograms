@@ -1827,6 +1827,292 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+========================================================================
+
+34
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        
+        <script>
+                        
+            var student={
+                "rollno":101,
+                "name":"Rohit",
+                "contact no":98989943,
+               
+               /* display : function()
+                {
+                    //alert(this.rollno+" "+this.name);
+                    document.write(student.rollno+" "+student.name+" "+student["contact no"]); 
+                }*/
+            };
+            
+            //document.write(student.rollno+" "+student.name+" "+student["contact no"]);   // Access properties of object using .
+            document.write("<br>");
+            //document.write(student["rollno"]+" "+student["name"]); // Access properties of object using []
+            //student.display();
+            document.write("<br>");
+            student.city="Pune";        // Setting a new property city
+            ///document.write(student.city);  
+            document.write("<br>");
+            student.city="Delhi";     // Updation in property value
+            //document.write(student.city);  
+            
+            for(var i in student)
+                {
+                    document.write(student[i]+"<br>");
+                }
+            //2.  Constructor way of creating object
+            
+            function Car()
+            {
+                
+            }
+            
+            var c1=new Car();   // Object creation
+            var c2=new Car();
+            
+            c1.name="BMW";
+            c1.speed=200;
+            document.write(c1.name+" "+c1.speed);
+             
+            document.write("<br>");
+            c2.name="Suzuki";
+            c2.speed=150;
+            document.write(c2.name+" "+c2.speed);
+            
+            delete c1.name;   // Deletes the object property
+            document.write(c1.name);
+            
+
+        </script>
+    </body>
+</html>
+
+========================================================================
+
+35
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        <script> 
+           var s1="Hello \nworld";
+           var s2='Javascript \t programming java programming Javascript \t programming';
+            
+        document.write("<pre>"+s1+"</pre>");
+            
+        document.write("<pre>"+s2+"</pre>");
+            
+        document.write("Lenght of string : "+s1.length);
+            
+            var path="c:\\Users\\Public";
+
+            document.write("<br>");
+            
+            document.write(path);
+            document.write("<br>"); 
+            document.write(s2.indexOf("Javascript"));   // returning the index of string which occrs first in the string
+            document.write("<br>"); 
+            document.write(s2.lastIndexOf("Java"));   // returning the last index of string which occrs first in 
+            document.write("<br>"); 
+            document.write(s2.toUpperCase());   
+
+            document.write("<br>"); 
+            document.write(s2.toLowerCase());   
+           
+            document.write("<br>"); 
+            document.write(s2); 
+           
+            document.write("<br>");   
+            
+            var st=s2.replace("Javascript ","Java");
+            
+            document.write(st); 
+            document.write("<br>");
+            document.write(s2.charAt(5));
+            
+            document.write("<br>");
+            document.write(s2[5]); 
+
+            var str1="Red,Green,Blue";
+            
+            var spl=str1.split(",");
+            
+            
+            document.write("<br>");
+            document.write(spl[0]+" "+spl[1]);
+             document.write("<br>");
+            for(var i of spl)
+                {
+                    document.write(i);
+                }
+            
+
+        </script>
+    </body>
+</html>
+
+======================================================================
+
+36
+
+<html>
+    <head>
+        <style>
+        div
+        {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }        
+        </style>
+            </head>
+    <body onload="alert('Page loaded successfully')">
+        
+        <form action="#" onsubmit="alert('Do you want to submit ?')">
+        <button onclick="alert('You clicked a button')">Click</button>
+        
+        <a href="dem1.html" onclick="alert('You clicked a link')">Click me</a>
+        
+        <a href="dem1.html" oncontextmenu="alert('You clicked a link')">Click me</a>
+        
+        <div onmouseover="alert('Hover event')" onmouseout="alert('Mouseout event')"></div>
+        
+        <input type="text" onkeydown="alert('onkeydown event')">
+        
+        <input type="text" onkeyup="alert('onkeyup event')">
+        
+        <input type="text" onkeypress="alert('onkeypress event')">
+        
+        <input type="text" onfocus="fun(this)" >
+        
+        <input type="text" onblur="fun(this)" >
+        
+        <select onchange="alert('Change event occurs')">
+        <option>abc</option>
+            <option>123</option>
+            <option>abv</option>
+        </select>
+        <script> 
+             function fun(v)
+            {
+                v.style.backgroundColor="pink";
+                v.style.fontSize="20px";
+            }
+        </script>
+            <input type="submit" value="Submit">
+            </form>
+    </body>
+</html>
+
+================================================================
+
+37
+
+<html>
+    <head>
+    </head>
+    <body>
+    
+        <h1 id="id1"></h1>
+        <script>
+            var st=confirm("Are you confirm ?");
+            
+                     
+            if(st)
+                {
+                    var message="Welcome to my website";
+                    document.getElementById("id1").innerHTML=message;
+                }
+            else
+                {
+                    var message="Please try again !";
+                    document.getElementById("id1").innerHTML=message;
+                    
+                }
+        </script>
+    </body>
+</html>
+
+====================================================================
+
+38
+
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 id="id1"></h1>
+        <script>
+            var val=prompt("Enter your name");
+           
+             if(val==null)
+                {
+                    document.write("You pressed cancel ");   
+                }
+            if(val.length>0 && val!=null)
+                {
+                 document.write("Name : "+val);        
+                }
+            else{
+                document.write("Please enter your name ");        
+            }
+            
+           alert("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+        </script>
+    </body>
+</html>
+
+=============================================================================
+
+39
+
+<html>
+    <head>
+        <style>
+            h2
+            {
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="id1">Heading</h1>
+        
+        <div id="id2">Division</div>
+        
+        <p id="para" style="color: brown;font-size: 20px">Paragraph</p>
+        
+        <script>
+          var headingElement= document.getElementById("id1");  // Select h1 from document(Html)
+            
+          headingElement.style.color="red";         // Applying styles on element
+          headingElement.style.backgroundColor="yellow";
+        
+          headingElement=document.getElementById("id2");
+          headingElement.style.width="300px";
+          headingElement.style.height="100px";
+          headingElement.style.backgroundColor="blue";
+          headingElement.style.fontSize="25px";
+         
+            // Getting the property values
+          headingElement=document.getElementById("para");
+          var styles=window.getComputedStyle(headingElement);   
+        
+          document.write(styles.getPropertyValue("color"));
+          document.write("<br>")
+          document.write(styles.getPropertyValue("font-size"));
+          document.write(styles.getPropertyValue("background-color"));
+            
+        </script>
+    </body>
+</html>
 
 
 
