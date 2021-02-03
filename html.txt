@@ -504,6 +504,99 @@ Arrays :
           slice :  To create an array from other array
           concat : To merge two arrays
 
+============================================================================================================================
+
+
+ Loops in Javascript :
+
+                       while
+                       do while
+                       for
+                       for..in  : To iterate the properties of an object , To print index of element
+                       for..of  : To print elements of array 
+
+
+============================================================================================================================
+
+ Javascript Object :
+
+                    {key:value} ,             key: string, value : any type
+
+
+                Syntax:
+
+                              var objectname={
+						"prop1":10,
+						"prop2":"abc"
+                                             }   
+
+   Accessing object properties :
+                                 1) Using . operator
+                                 2) Using [] 
+  Defining function for the object
+
+  Setting the new property of an object :
+                                       objectname.propName=value;
+  Update the property 
+                                       objectname.propName=newValue;
+
+=========================================================================================================================
+
+String :
+
+  methods
+
+============================================================================
+
+Events of Javascript :
+
+                      Action taken on a element
+
+                         1) Mouse events  : onclick , oncontextmenu , onmouseover ,onmouseout
+                         2) Keyboard events : onkeydown, onkeyup, onkeypress
+                         3) Form event   :onfocus, onblur ,onchange, onsubmit
+                         4) Window event : onload 
+
+============================================================================
+
+Javascript Dialogbox :
+
+1) Alert Box : Ok button
+2) Confirm   : ok button(true returns), cancel(false returns)
+3) Prompt    : Input textbox, ok button, cancel button   (To get input from user)
+
+=============================================================================
+
+Javascript Styling :
+
+               style property : To set or get the styling on an element
+
+                var element = document.getElementById('id');
+
+
+   Applying styles on element using style property :    element.style.propertyname = value;
+
+                
+              getPropertyValue() : method used to get the styling applied on the element
+              getComputedStyle() :
+==================================================================================
+
+Javascript selector :
+		1) By Id           :  getElementById(Idname)
+                2) By Classname    :  getElementsByClassName(classname)
+                3) By tagname      :  getElementsByTagName(tagname)
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 
