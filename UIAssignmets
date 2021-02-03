@@ -34,6 +34,7 @@
 24 Make a function expression which returns the area of circle where PI should be defined as constant.
 25 Make an integer array of 5 numbers in a function and print the average of array.
 26 Create an array of 5 names and print the last two names on creating subarray. Add a name in the 2nd index of the array and print array in reverse order.
-
+27 Make an Object as person which has firstname and lastname and print the Full name in capital.
+28 Create an array of 5 cities and print the city names in reverse order.
 
  
