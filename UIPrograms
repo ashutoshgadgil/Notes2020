@@ -2193,7 +2193,111 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+=================================================================================================
 
+41
+
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 class="myclass">Heading1</h1>
+        <h1 id="i1">Heading2</h1>
+        <p class="myclass">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+         <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+         <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+
+                 <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+        <script>
+          
+            //  var i=document.getElementById("i1");
+              //alert(i);
+            var elements=document.getElementsByClassName("myclass");   
+            
+            document.write("Length of Array : "+elements.length);
+            
+           
+            
+            elements[0].style.color="Blue";
+            
+            elements[1].style.color="brown";
+            
+            var elements1=document.getElementsByClassName("myclass1");
+            
+            
+            for(var i in elements1)
+                {
+                    elements1[i].style.backgroundColor="cyan";
+                }
+            
+            
+          
+        </script>
+    </body>
+</html>
+
+=========================================================================================
+
+42
+
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 class="myclass">Heading1</h1>
+        <h1 id="i1">Heading2</h1>
+        <p class="myclass">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+         <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+         <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+        <h3>Welcome</h3>
+
+                 <p class="myclass1">Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1
+        Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1Paragraph1</p>
+
+        <script>
+          
+             var e=document.getElementsByTagName("h3");
+            
+            document.write("<br>Length : "+e.length);
+            
+             for(var i in e)
+                {
+                    e[i].style.backgroundColor="red";
+                }
+        </script>
+    </body>
+</html>
 
 
 
