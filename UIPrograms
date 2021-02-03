@@ -2114,7 +2114,84 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+================================================================================================
 
+40
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        
+        <script> 
+            var num=[1,2,3,4,5];
+            
+            document.write("Average : "+(num[0]+num[1]+num[2]+num[3]+num[4])/num.length);
+          
+            var i=1;
+            
+            while(i<=5)
+                {
+                    document.write("<h3>While</h3>");
+                    i++;
+                }
+            
+            var j=10;
+            document.write("<hr>");
+            do{
+                document.write("<h3>Do While</h3>");
+                j++;
+            }while(j<=5);
+            document.write("<hr>");
+            
+            for(var i=0;i<5;i++)
+                {
+                    document.write("<h1>For Loop</h1>");
+                }
+            document.write("<hr>");
+            // for....in Loop  (To get index values )
+            
+            var names=["Sumit","Amit","Rohit","Sachin"];
+            for(var i in names)
+                {
+                    document.write("<h4>"+(Number(i)+1)+" "+names[i]+"</h4>");
+                }
+            
+            document.write("<hr>");
+           
+            // for....of Loop (To get values)
+            
+            for(var i of names)
+                {
+                    document.write("<h4>"+i+"</h4>");
+                }
+            
+            let str="Hello World";
+            
+            for(var i of str)
+                {
+                    document.write(i+"<br>");
+                }
+            var s=0;
+            for(var i=0;i<num.length;i++)
+                {
+                    s=s+num[i];
+                }
+            document.write("<br>Average is : "+s/num.length);
+            
+            var n=new Array("abc","def");
+            
+            
+            for(var i of n)
+                {
+                    document.write(i+"<br>");
+                }
+            
+            
+        </script>
+    </body>
+</html>
 
 
 
