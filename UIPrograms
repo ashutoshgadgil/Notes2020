@@ -2553,7 +2553,84 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+==================================================================================================
 
+50
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        Name : <span id="i1"></span><br>
+        Age : <span id="i2"></span><br>
+        Contact : <span id="i3"></span><br>
+        Language : <span id="i4"></span><br>
+        <script>
+           var person={
+               "name":"Amit",
+                "age":25,
+                "contactno":{
+                    "mobile":9974234232,
+                    "landline":08232323
+                },
+                "Language":["Hindi","English","Marathi"]    
+           }
+            
+            // document.getElementById("i1").innerHTML=person.name;
+            document.getElementById("i1").innerHTML=person["name"];
+            document.getElementById("i2").innerHTML=person.age;
+            document.getElementById("i3").innerHTML=person.contactno.landline;
+            document.getElementById("i4").innerHTML=person.Language[1];
+        </script>
+    </body>
+</html>
+======================================================================================================
+
+51
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        Name : <span id="i1"></span><br>
+        Age : <span id="i2"></span><br>
+         <script>
+           var JsonData='{"name":"Amit","age":25}';
+            
+           var JSobj=JSON.parse(JsonData);   // Conversion of JSON data to Javascript object
+            
+            document.getElementById("i1").innerHTML=JSobj.name;
+            document.getElementById("i2").innerHTML=JSobj.age;
+                   
+        </script>
+    </body>
+</html>
+
+====================================================================================================
+
+52
+
+<html>
+    <head>
+    </head>
+    
+    <body> 
+        JSON: <span id="i1"></span><br>
+      
+         <script>
+           var JsObj={"name":"Amit","age":25};
+            
+           var JSonObj=JSON.stringify(JsObj);   // Conversion of Javascript object to JSON 
+            
+            document.getElementById("i1").innerHTML=JSonObj;
+                         
+        </script>
+    </body>
+</html>
+
+=============================================================================
 
 
 
