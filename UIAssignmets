@@ -43,5 +43,8 @@
 32 Create a Registration form where name,age,city(select box),email and a submit button. Form should not be submitted if age is less than 18.
 33 Create a form to accept password and username .3 text boxes for Username, Password and Retype Password. If Both passwords are matched then only form should be 
    submitted and display the username in the servlet.
+34 Create a JSON data which contains book information for three books. Access all the details of every book like bookid,booktitle,bookprice.
+   
+   
 
  
