@@ -39,5 +39,9 @@
 29 Take two numbers as input in the dialogbox and calculate sum and print it.
 30 Create a confirm box on giving some message.If User clicks Ok button , then background color of the body should be green, If user clicks on cancel button then 
     background color should be red.
+31 Make a form in Javascript where 2 text boxes accept numbers. Create 4 buttons ADD,SUB,MUL,DIV. When clicked on a button display the Answer in Heading tag.
+32 Create a Registration form where name,age,city(select box),email and a submit button. Form should not be submitted if age is less than 18.
+33 Create a form to accept password and username .3 text boxes for Username, Password and Retype Password. If Both passwords are matched then only form should be 
+   submitted and display the username in the servlet.
 
  
