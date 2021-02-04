@@ -2299,6 +2299,260 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </body>
 </html>
 
+=================================================================================================
+
+43
+
+<html>
+    <head>
+        <style>
+          #i1
+            {
+                color: brown;
+            }
+            
+           #i2
+            {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+      
+          Name : <h1 id="i1"></h1>
+        Age  :  <h1 id="i2"></h1>
+        <form name="myform">
+            Name : <input type="text" name="nm" onfocus="f1(this)" onblur="f2(this)"><br>
+            Age  : <input type="text" name="ag" onfocus="f1(this)" onblur="f2(this)"><br>
+            <input type="button" onclick="fun()" value="Submit">
+        </form>
+      
+        
+        <script>
+          function fun()
+            {
+               var name= document.myform.nm.value;  // Assigning textbox value in a variable name
+               var age= document.myform.ag.value;   // Assigning textbox value in a variable age
+               
+               document.getElementById("i1").innerHTML=name;
+               document.getElementById("i2").innerHTML=age;
+               //document.getElementById("i1").style.color="RED";
+               //document.getElementById("i2").style.color="Blue";
+            }
+            
+            function f1(x)
+            {
+                x.style.backgroundColor="cyan";
+                x.style.color="Brown";
+            }
+            
+            function f2(x)
+            {
+                x.style.backgroundColor="white";
+                x.style.color="Brown";
+            }
+        </script>
+    </body>
+</html>
+
+=================================================================================
+
+44
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+            <input type="button" onclick="fun()" value="Open Form">
+            <div id="i1"></div> 
+        <script>
+          function fun()
+            {
+                var entryForm="<form action=page43.html> Enter Name <input type=text name='nm'> <br> <input type=submit value='Go'></form>";
+                document.getElementById("i1").innerHTML=entryForm;
+            }
+            </script>
+    </body>
+</html>
+
+========================================================================================
+
+45
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+            <input type="button" onclick="fun()" value="Open Form">
+            <div id="i1"></div> 
+            <h3 id="i2"></h3>
+        <script>
+            
+        var temp=true;    
+          function fun()
+            {
+               
+                var entryForm="<form action=page43.html> Enter Name <input type=text name='nm'> <br> <input type=submit value='Go'></form>";
+                
+                if(temp)
+                    {
+                        
+                         document.getElementById("i1").innerHTML=entryForm;
+                         temp=false;    
+                       
+                    }
+                else
+                    {
+                         document.getElementById("i1").innerHTML="";
+                         temp=true; 
+                         
+                    }
+               
+                 document.getElementById("i2").innerHTML=temp;
+            }
+            </script>
+    </body>
+</html>
+
+===========================================================================
+
+46
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <form name="myform">
+         Enter Password : <input type="password" name="pw" onkeyup="fun()">
+        </form>
+        
+        <b>Strength : <span id="i1">No Strength</span></b>
+        <script>
+            function fun()
+            {
+                var msg;
+                if(document.myform.pw.value.length > 4)
+                    {
+                        msg="Good";
+                    }
+                else{
+                    msg="Poor";
+                }
+                document.getElementById("i1").innerText=msg;
+            }
+         </script>
+    </body>
+</html>
+
+===========================================================================
+
+47
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <form name="myform" action="page43.html" onsubmit="return validateInfo()">
+            Username       : <input type="text" name="un" required><br>
+            Enter Password : <input type="password" name="pw" required><br>
+            <input type="submit" value="Login"><input type="button" onclick="signup()" value="Sign up">
+        </form>
+        
+         <script>
+            function validateInfo()
+            {
+                var user=document.myform.un.value;
+                var pass=document.myform.pw.value;
+                
+                if(user=="Ashutosh" && pass=="1234")
+                    {
+                        alert("Logged in successfully");
+                        return true;
+                    }
+                else
+                    {
+                        alert("Please signup");
+                        return false;
+                    }
+            }
+             
+            function signup()
+             {
+                window.location="page40.html";    // used to get information about current page and redirect control to other page
+             }
+             
+         </script>
+    </body>
+</html>
+
+=======================================================================
+
+48
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+        
+        <p id="i1"></p>
+         <script>
+        // document.getElementById("i1").innerHTML=Math.round(4.2);  // Gives rounded number
+        //document.getElementById("i1").innerHTML=Math.pow(5,2);     // Finds the power of 5
+        //document.getElementById("i1").innerHTML=Math.sqrt(81);     // returns square root value
+        //document.getElementById("i1").innerHTML=Math.abs(-10);     // returns absolute (positive) value
+        //document.getElementById("i1").innerHTML=Math.floor(3.7);   // returns the rounded number (down)
+        //document.getElementById("i1").innerHTML=Math.ceil(3.1);     // returns the rounded number (up)  
+        //document.getElementById("i1").innerHTML=Math.min(55,4,9,1,2);  // returns minimum of the list
+        //document.getElementById("i1").innerHTML=Math.max(55,4,9,1,2);  // returns maximum of the list
+             
+        //document.getElementById("i1").innerHTML=Math.PI;    // PI value is returned
+             
+        //document.getElementById("i1").innerHTML=Math.sin(60*Math.PI/180)  // finds the sin of angle
+        
+        var x=Math.pow(Math.max(2,3,4),3);
+        document.getElementById("i1").innerHTML=x;  
+           
+        </script>
+    </body>
+</html>
+
+==========================================================================
+
+49
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+        
+        <p id="i1"></p>
+       
+         <script>
+            var d=new Date();
+             //var d=new Date("4 January 2019");
+             //document.getElementById("i1").innerHTML=d.toDateString();
+        
+             //document.getElementById("i1").innerHTML=d.toLocaleDateString();
+             
+             //document.getElementById("i1").innerHTML=d.toTimeString();
+             
+             //document.getElementById("i1").innerHTML=d.toLocaleTimeString();
+             
+             var dt=d.getDate();
+             var mn=d.getMonth()+1;    (0-11)
+             var yr=d.getFullYear();
+             document.getElementById("i1").innerHTML=dt+"-"+mn+"-"+yr;
+                          
+        </script>
+    </body>
+</html>
+
 
 
 
