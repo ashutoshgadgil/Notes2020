@@ -586,9 +586,154 @@ Javascript selector :
                 2) By Classname    :  getElementsByClassName(classname)
                 3) By tagname      :  getElementsByTagName(tagname)
 
+==================================================================================
+
+Retrieving value from text box in Javascript :
+
+						document.formname.textboxName.value
+
+Properties :
+ 
+1) innerHTML : 
+
+2) innerText 
+
+============================================================================
+
+  onSubmit : Event
+
+  Math : Object
+
+============================================================================
+
+ JSON & XML
+
+ JSON (Javascript Object Notation)
+                                   Data interchange format (text format)
+                                   data can be exchanged between client & server
+				   Uses javascript object to store information 
+				   Language inependent
+ 			
+ Conversion : 			     from JSON to Javascript
+                                     Javascript object to JSON
+
+ Advantage : Information can be shared easily on the network
+
+
+ Javascript Object :
+
+                        var student={  
+					name :"Amit"
+				    }
+
+ JSON Object :
+			
+				    {  
+					"name":"Amit"
+				    }
+				 
+
+
+   Difference between XML & JSON Syntax:
+
+
+ XML way of storing data
+
+
+   <employees>
+	<employee>
+		<name>Amit</name>
+        </employee>
+      
+        
+	<employee>
+		<name>AJay</name>
+        </employee>
+   </employees>
+
+
+JSON Way of storing data
+
+    { "Key":"value" }
+
+
+   {  "employees" : [
+	
+	{ "name" :"Amit" },
+	{ "name" :"Ajay" }
+
+    ] }
 
 
 
+   
+   {  "employees" : 
+	{ "name" :"Amit","age":25 }
+
+   }
+
+
+
+  JSON Object
+ 
+   {
+	"employees":["Amit","Ajay","Sumit"]     // JSON Array is a value
+   }
+
+  String as a value :    " "
+              
+            "name" : "Amit" 
+
+  Number as a value :     
+
+             "age" : 25
+
+  Boolean as a value :
+
+              "isEligible":true
+
+
+ Diffrenece between JSON & Javascript Object:
+
+ 1) Key must be written in " " in JSON while in Javascript it is optional.
+ 2) JSON can not contain functions while Javascript can contain.
+ 3) JSON can be used by any programming language while Javascript Object can only be used in Javascript.
+
+
+  parse() : called on JSON  
+            To convert JSON data to Javascript object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
 
 
 
