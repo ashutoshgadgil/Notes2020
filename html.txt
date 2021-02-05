@@ -705,6 +705,99 @@ JSON Way of storing data
 
 
 
+===============================================================
+
+
+JQuery : Javascript Library (JQuery())
+         manipulate elements of web page
+         Animation 
+         setting or getting dimesion of DOM element
+
+         To save devlopment time to design a page
+         easy to use
+         Browser compatibility
+         opensource & lightweight
+         write less , do more
+
+
+ JQuery Download :
+
+   1) Download jquery.min.js file and include in the script tag in head tag of the page
+   2) Use CDN to include Jquery file into the page. ( <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> )
+
+
+   $ represents the Alias of JQuery (function name)
+   
+   $ =  JQuery = window.JQuery
+
+   ready(function(){})   : event 
+
+   function(){}   : Callback function / Function expression  / Handler : Write the code to apply effects on DOM elements
+
+   $(selector_element)  : $("h1") 
+
+   css()
+
+
+
+================================================================================================
+
+ JQuery Selectors :
+
+  Selectors
+
+  *                 Universal selector
+  this              current element
+  h2.classname      select all h2 where the class is applied
+  h2#idname         select all h2 where the id is applied
+  p:first           select first paragraph
+  ul li:first       select first element of list
+  ul li:first-child       select first element of each list
+  [href]            select all hyperlinks
+  a[target=_blank]  select hyperlink which has target as _blank
+  :button 
+  tr:even           select all even rows of table
+  tr:odd            select all odd rows of table
+
+==============================================================================================
+
+Use Multiple ids & classes in a selector
+
+Applying multiple events on a single element
+
+Mouse event :
+
+           1) click 
+           2) dblclick
+           3) Mouseenter
+           4) Mouseleave  
+	   5) Hover
+           6) focus  (for the fields / text box )
+           7) blur   
+
+Combining multiple events and applying on a single element by on() method  :
+
+
+ change() : When a text inside a textbox or selection box is changed , this event is called
+
+ submit() : Form Event,
+
+ Keypress() : 
+
+==============================================================================
+
+Hiding and showing the elements :
+
+Attributes : slow, fast, Time in milliseconds
+
+hide()  : 
+
+show()
+
+
+
+ 
+ 
 
 
 
