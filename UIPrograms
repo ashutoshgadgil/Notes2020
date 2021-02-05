@@ -2632,7 +2632,344 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 =============================================================================
 
+53
 
+<html>
+    <head>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+    
+    <body> 
+        <h1>JQuery</h1>  
+        <h1 id="i1">JQuery</h1>  
+        <p>Hello</p>
+        <p class="c1">Hello</p>
+        <p style="background-color: chocolate;color: white">Welcome</p>
+        
+        <script>
+            window.jQuery(document).ready(function(){ 
+                $("p").css("color","red");
+                //$("h1").css({"color":"red","background-color":"green"});  // Multiple properties in CSS method of JQuery 
+                //alert("Welcome to JQuery"); 
+               // $("h1").hide();  // hiding elements h1
+                $("#i1").hide();
+                $(".c1").css("color","blue");
+            });
+        </script>
+    </body>
+</html>
+
+==============================================================================
+
+54
+
+<html>
+    <head>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+    
+    <body> 
+        <h1>JQuery</h1>  
+        <h1 id="i1">JQuery</h1>  
+        <p>Hello</p>
+        <p class="c1">Hello</p>
+        <p style="background-color: chocolate;color: white">Welcome</p>
+        
+        <script src="myquery.js">
+           
+        </script>
+    </body>
+</html>
+
+===================================================================
+
+55
+
+<html>
+    <head>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+               // $("button").click(function(){
+                   // $("*").css("backgroundColor","green");
+                      $("h2.c1").css("backgroundColor","green");   
+                      $("h1#id1").css("backgroundColor","blue"); 
+                      $("p:first").css("backgroundColor","cyan"); 
+                      //$("ul li:first").css("backgroundColor","cyan"); 
+                    $("ul li:first-child").css("backgroundColor","cyan");
+                    $("[href]").css("color","orange");
+                    $("a[target='_blank']").css("color","blue");
+                    $(":button").hide();    // To hide element 
+                    $("tr:odd").css("backgroundColor","cyan");
+                   // $("input[type='text']").css("backgroundColor","cyan");
+                     $("form :text").css("backgroundColor","pink");
+                    
+                //});
+            }); 
+        </script>
+    </head>
+    
+    <body> 
+        
+     
+        <input type="text">
+        <h1 id="id1">JQuery</h1>  
+        <h1 id="id1">JQuery</h1>
+        <h1>JQuery</h1>
+        <h2 class="c1">Heading1</h2>
+        <h2 class="c1">Heading1</h2>
+        <h2>Heading1</h2>
+        <p>Hello</p>
+        <p class="c1">Hello</p>
+        <p style="background-color: chocolate;color: white">Welcome</p>
+        <ul>
+        <li>l1</li>
+            <li>l2</li>
+            <li>l3</li>
+        </ul>
+        
+        <ul>
+        <li>l1</li>
+            <li>l2</li>
+            <li>l3</li>
+        </ul>
+        
+        <a href="">link1</a>
+        <a href="">link2</a>
+        <a href="" target="_blank">link2</a>
+        
+       
+        <input type="button" value="Press here">
+        
+        <table border="1">
+        <tr><th>sno</th></tr>
+        <tr><td>1</td></tr>
+            <tr><td>2</td></tr>
+            <tr><td>3</td></tr>
+        </table>
+        <button>Click</button>
+    
+           <form>
+             <input type="text">
+             <input type="password">
+             <input type="submit" value="Hello"> 
+            </form>
+       
+    </body>
+</html>
+
+===========================================================================
+
+56
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                
+                $(".c1,.c2").click(function(){   // Applying multiple classes in a selector
+                  $(this).css("color","blue"); 
+               });
+                
+               $("#i1,#i2").click(function(){
+                  $(this).css("color","red"); 
+               });
+               
+              $("div").click(function(){
+                  $(this).css("backgroundColor","yellow"); 
+               });
+               
+               $("div").hover(function(){
+                  $(this).css("backgroundColor","brown"); 
+                   alert("hover");
+               });    
+            
+               $("h1,h2").click(function(){     // Applying multiple elements in a selector
+                  $(this).css("backgroundColor","green"); 
+               });
+            
+                $("#i3").dblclick(function(){
+                   $(this).hide(); 
+                });
+                $("#i4").mouseenter(function(){
+                   $(this).css("backgroundColor","red"); 
+                });
+                $("#i4").mouseleave(function(){
+                   $(this).css("backgroundColor","blue"); 
+                });
+                 $("#i4").dblclick(function(){
+                   $(this).css("backgroundColor","yellow"); 
+                });
+                 $("#i4").click(function(){
+                   $(this).css("backgroundColor","black"); 
+                });
+                
+                
+                
+            }); 
+        </script>
+    </head>
+    
+    <body> 
+        <p class="c1">Para1</p>
+        <p class="c2">Para1</p>
+        <p id="i1">Para3</p>
+        <p id="i2">Para4</p>
+        <div></div>
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <p id="i3">Double click me</p>
+        <div id="i4"></div>
+    </body>
+</html>
+
+=========================================================================
+
+57
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                
+                $("input.c1").focus(function(){
+                    $(this).css("backgroundColor","yellow");
+                });
+                 $("input.c1").blur(function(){
+                    $(this).css("backgroundColor","white");
+                });
+               
+                /*
+                $("p").on("dblclick",function(){   // Applying click & hide event on a single paragraph
+                   $(this).hide(); 
+                });
+                */
+               
+                $("div").on({ mouseenter:function(){
+                    $(this).css("backgroundColor","red");    
+                },
+                            mouseleave:function(){
+                                 $(this).css("backgroundColor","yellow");
+                            } });
+                $("input").change(function(){   // Textfield & select box event
+                   alert("Text has been changed"); 
+                });
+               
+                  $("form").submit(function(){
+                      message();
+                
+                  });
+                
+                $("input#in1").keypress(function(){   // When 
+                     $(this).css({"color":"brown","font-size":"20px"});
+                });
+                
+                $("input#in2").keydown(function(){   // When 
+                     $(this).css({"backgroundColor":"cyan","font-size":"20px"});
+                });
+                
+                 $("input#in2").keyup(function(){   // When 
+                     $(this).css({"backgroundColor":"red","font-size":"20px"});
+                });
+                
+                $("form :submit").css("backgroundColor","pink");
+             
+            }); 
+        </script>
+    </head>
+    
+    <body> 
+        <hr>
+        
+        <p>This is a paragraph</p>
+        <div></div>
+        
+        <form action="">
+        Name<input type="text" class="c1"><br>
+        Age<input type="text" class="c1"> 
+        City<input type="text" id="in1">
+        Email<input type="text" id="in2">
+        <input type="reset" value="Clear">
+            <input type="submit" value="Submit">
+        </form>
+        
+        
+        <button>Click me</button>
+        <script>
+            function message()
+            {
+                 alert("Form is submitted"); 
+            }
+        
+        </script>
+    </body>
+</html>
+
+===========================================================================
+
+59
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                $(".hideme").click(function(){
+                    $("div").hide(700,function(){
+                        alert("Hide done");
+                    });
+                });        
+                
+             $(".showme").click(function(){
+                    $("div").show('slow');
+                });
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="hideme">Hide</button>
+            <button class="showme">Show</button>
+        <hr>
+            <div></div>
+        </body>
+</html>
 
 
 
