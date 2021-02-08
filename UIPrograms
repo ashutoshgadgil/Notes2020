@@ -2970,8 +2970,263 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             <div></div>
         </body>
 </html>
+====================================================================================
 
+60
 
+<html>
+	<head>
+    	</head>
+	<body>
+       
+    <script> 
+      
+      var p={
+          "emp":[
+              {"name":"Atul","skills":["C++","Java"]},
+              {"name":"Amit","skills":["HTML","CSS"]},
+              {"name":"Manish","skills":["C++","Java","Javascript"]}
+          ]
+      }
+       
+      document.write("<table border=1>");
+      document.write("<tr><th>Name</th><th>Skills</th></tr>");    
+        for(var i=0;i<p.emp.length;i++)
+          {
+              document.write("<tr><td>"+p.emp[i].name+"</td><td>"+p.emp[i].skills+"</td></tr>");
+          }
+       document.write("</table>");
+        
+       </script>
+     
+        
+    </body>
+</html>
+
+==================================================================================
+
+61
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                 $(".togglebtn").click(function(){
+                     $("div.c1").toggle(2000); 
+                     $("div.c2").toggle(5000);
+                 });                 
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="togglebtn">Toggle Button</button>
+        <hr>
+            <div class="c1"></div>
+            <br>
+            <div class="c2"></div>
+        </body>
+</html>
+===============================================================
+
+62
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                 $(".fadeinbtn").click(function(){
+                     $("div").fadeIn(2000); 
+                 }); 
+                $(".fadeoutbtn").click(function(){
+                     $("div").fadeOut(4000); 
+                 }); 
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="fadeinbtn">FadeIn Button</button>
+              <button class="fadeoutbtn">FadeOut Button</button>
+        <hr>
+            <div></div>
+            
+            
+        </body>
+</html>
+
+========================================================================
+
+63
+
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: yellow;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                $(".fadetobtn").click(function(){
+                     $("div.none").fadeTo("fast",0.1);
+                     $("div.partial").fadeTo("slow",0.5);
+                     $("div.full").fadeTo(3000,1);
+                 }); 
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="fadetobtn">FadeTo Button</button>
+              
+        <hr>
+            <div class="none"></div><br>
+            <div class="partial"></div><br>
+            <div class="full"></div>
+        </body>
+</html>
+
+=================================================================================
+
+64
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: yellow;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                $(".slideupbtn").click(function(){
+                     $("div").slideUp(3000);
+                  });
+                $(".slidedownbtn").click(function(){
+                     $("div").slideDown(1000);
+                  });
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="SLIDEUPBTN">Slideup Button</button>
+            <button class="slidedownbtn">Slidedown Button</button>
+              
+        <hr>
+            <div></div><br>
+            
+        </body>
+</html>
+
+===========================================================================
+
+65
+<html>
+    <head>
+        <style>
+        div
+            {
+                width: 150px;
+                height: 150px;
+                background-color: yellow;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                $(".slidetogglebtn").click(function(){
+                     $("div").slideToggle();
+                  });
+               
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="slidetogglebtn">SlideToggle Button</button>
+                          
+        <hr>
+            <div></div><br>
+            
+        </body>
+</html>
+
+=======================================================================
+
+66
+<html>
+    <head>
+        <style>
+        div.c1
+            {
+                width: 150px;
+                height: 150px;
+                background-color: yellow;
+                position: relative;
+            }
+           
+        </style>
+      <!-- <script src="jquery-3.5.1.min.js"></script> -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function(){ 
+                $("button.b1").click(function(){
+                     $("div.c1").animate({
+                         left:150
+                     },3000);
+                  });
+               
+            }); 
+        </script>
+    </head>
+    
+        <body> 
+            <button class="b1">Start Animation</button>
+                          
+        <hr>
+            <div class="c1"></div>
+            
+        </body>
+</html>
+
+==================================================================
 
 
 
