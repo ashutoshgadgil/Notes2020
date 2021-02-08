@@ -48,7 +48,13 @@
 36 Create 3 buttons named as Red, Green, Blue. When clicked on any button the page background should be changed according to the button.
 37 Create two buttons Change the font color of the first element of 2 unordered list according to button.
 38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
-   
+39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
+   and border width should be changed to 15px and color will be Red.
+40 Make a paragraph and a button . When clicked on the button then paragraph color should be changed to red and then font size of the paragraph should be changed.
+41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
+   when clicked again.
+42 create div tag with predefined parameters : width :300px, height:300px. When move the mouse over the division then height and width should be increased.
+43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
    
 
  
