@@ -46,7 +46,7 @@
 34 Create a JSON data which contains book information for three books. Access all the details of every book like bookid,booktitle,bookprice.
 35 Create a Javascript object which has a property as StudentName,StudentSkills (Array) . Convert this object to JSON.
 36 Create 3 buttons named as Red, Green, Blue. When clicked on any button the page background should be changed according to the button.
-37 Create two buttons Change the font color of the first element of 2 unordered list according to button.
+37 Create two buttons red and green .Change the font color of the first element of 2 unordered list according to button.
 38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
 39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
    and border width should be changed to 15px and color will be Red.
