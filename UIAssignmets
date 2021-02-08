@@ -53,7 +53,8 @@
 40 Make a paragraph and a button . When clicked on the button then paragraph color should be changed to red and then font size of the paragraph should be changed.
 41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
    when clicked again.
-42 create div tag with predefined parameters : width :300px, height:300px. When move the mouse over the division then height and width should be increased.
+42 create div tag with predefined parameters : width :300px, height:300px ,backgroundcolor = red. When move the mouse over the division then height and width should be 
+   increased and color should be changed and when you leave the division area the original width , height and color should be displayed.
 43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
    
 
