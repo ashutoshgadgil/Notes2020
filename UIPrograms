@@ -3228,6 +3228,346 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ==================================================================
 
+67
+
+// Declaration of variable (let , const)
+
+let a:number=10;    // numeric variable
+let h:number=0xf00d; // hexadecimal   f= 15*16^3+0*16^2+0*16^1+1*13
+
+const b:number=2.1;   // declaration of const
+
+console.log('Welcome to TypeScript'+a);
+console.log(h);
+///b++;
+
+let city:string="abc";
+console.log('Welcome to TypeScript'+city);
+
+let bl:boolean=true;
+console.log('Welcome to TypeScript'+bl);
+
+let n1:number=10;
+let n2:number=20;
+let n3:number;
+n3=n1+n2;
+console.log(n3);
+
+// Tuple  : used to define an array which can hold specific type of values (Array)
+
+let tp:[string,number];
+
+tp=["6",5];
+console.log(tp[0]+" "+tp[1]);
+
+// any : datatype , allows you to assign any data type value in a variable
+
+let va:any=4;
+va="abc";
+va=true;
+console.log(va);
+
+
+let d=20;
+let str="hello";
+
+d=50;
+str="welcome";
+console.log(d);
+
+// redeclaration not possible
+//let d1=2;
+//let d1=3;
+
+//Function definition 
+// named function
+
+  function add(x:number,y:number):number
+  {
+      return x+y;
+  }
+ 
+   
+  function show(x:number,y:number):void
+  {
+      console.log("Sum : "+(x+y));
+  }
+
+
+  console.log("Sum : "+add(2,3));
+
+  show(10,20);
+
+  // Anonymous function / unnamed function
+  let sum=function(n1:number,n2:number):number
+  {
+      return n1+n2;
+  }
+
+  let s=sum(40,50);
+  console.log("Addition : "+s);
+
+  let fullname=function(fn:string,ln:string):string
+  {
+      return fn.toUpperCase()+" "+ln.toUpperCase();
+  }
+
+  console.log("Full name : "+fullname("Ashutosh","Gadgil"));
+  
+  // Arrow function without parameter
+ 
+  var fn= ()=>console.log("Arrow function called...");
+
+  fn();
+
+ // Arrow function with single parameter
+ 
+ var fn1= (v)=>console.log("Arrow function called..."+v);
+
+ fn1(40);
+
+ // Arrow function with two parameter
+ var fn2= (v1,v2)=>console.log("Arrow function called..."+(v1+v2));
+
+ fn2(40,60);
+
+ // Arrow function with two parameters returning a value
+ var f3=(x,y)=>x+y;
+ console.log("Sum : "+f3(2,3));
+
+ // Optional parameter 
+
+ function demo(n1:number,str?:string)   // str is optional parameter
+ {
+     console.log(n1+" "+str);
+ }
+
+ demo(5,"hfh");
+
+ // Default Parameter
+
+ function demo1(n1:number,str="Hello")   // str is default parameter, should be declared as a last parameter
+ {
+     console.log(str+" "+n1);
+ }
+
+ demo1(500);
+
+ // Array of Strings
+
+  var names:any[];
+ 
+  names=["abc","def","ghi",7];
+
+  console.log(names[0]+" "+names[1]+" "+names[2]+" "+names[3]);
+
+
+// Array declaration as an object
+
+var nums=new Array(4);
+
+console.log("Length of array : "+nums.length);
+
+for(var i=0;i<nums.length;i++)
+{
+    nums[i]=i;
+    console.log(nums[i]);
+}
+
+console.log(i);
+
+// Array of predefined strings
+
+var cities:string[]=new Array("Pune","Delhi","Chennai");
+for(var i=0;i<cities.length;i++)
+{
+    console.log(cities[i]);
+}
+
+cities.push("Mumbai");
+
+for(var i=0;i<cities.length;i++)
+{
+    console.log(cities[i]);
+}
+
+
+// While Loop
+
+var i=0;
+while(i<cities.length)
+{
+    console.log(cities[i]);
+    i++;
+}
+
+// for ... in
+for(var j in cities)
+{
+    console.log((Number(j)+1)+" "+cities[j]);
+}
+
+// for..of
+for(var j of cities)
+{
+    console.log(j);
+}
+
+let numstr:string="10";
+let num1:number=20;
+let result:number; 
+
+result=parseInt(numstr)+num1;     // parseInt() convert string to integer
+console.log("Result : "+result);
+
+////////////////////////////////////////////////////////////////////////////
+
+// Class
+
+class Person
+{
+    name:string;     // Property  (public by default)
+
+    /*
+    constructor()    // Default constructor
+    {
+        this.name="dummy name";
+    }
+*/
+    constructor(nm:string)
+    {
+        this.name=nm;
+    }
+  
+    getName():string  // Getter method
+    {
+        return this.name;
+    }
+
+    setName(name:string)
+    {
+        this.name=name;
+    }
+}
+/*
+let person1=new Person();
+let person2=new Person();
+let person3=new Person();
+*/
+
+let person1=new Person("Sachin");
+let person2=new Person("Sunil");
+let person3=new Person("Ajay");
+
+//person1.setName("Sachin");     // calling setter method
+//person2.setName("Rahul");
+
+console.log("Name Person1 : "+person1.getName());   // calling getter method
+console.log("Name Person2 : "+person2.getName());
+console.log("Name P1 : "+person1.name);
+console.log("Name P2 : "+person2.name);
+console.log("Name P3 : "+person3.name);
+
+// Interface
+
+interface dummyInterface
+{
+    nn:number;     
+    display():void;
+    getNumber():number;   
+}
+
+class dummyClass implements dummyInterface   // Implementing interface in class
+{
+    nn=10;
+    display()
+    {
+        console.log("dummy message");
+    }
+    getNumber()
+    {
+        return 100.5;
+    }
+}
+
+let p1=new dummyClass();
+p1.display();
+console.log(p1.getNumber());
+
+//////////////////////////////////////////////////
+
+// Inheritance 
+class Mobile     //  Base class /Parent class
+{
+    brandname:string;
+    constructor()
+    {
+        this.brandname="Samsung";
+    }
+}
+
+class emp extends Mobile    //  emp : Derived class/ child class
+{
+    showDetails()
+    {
+        console.log("Mobile Brand : "+this.brandname);
+    }
+}
+
+let e1=new emp();
+e1.showDetails();
+
+///////////////////////////////////////////////////////////////
+
+class superclass
+{
+    //private name:string;
+    constructor(private name:string)
+    {
+        this.name=name;
+    }
+
+    getName()
+    {
+        console.log(this.name);
+    }
+}
+
+class Subclass extends superclass
+{
+    constructor(nm:string)
+    {
+        super(nm);      // super keyword used to call superclass constructor
+    }   
+}
+
+let ob1=new Subclass("Sachin");
+ob1.getName();
+
+//////////////////////////////////////////////////////////////////////////
+
+// Abstract class
+
+abstract class x
+{
+    abstract getarea():void;
+    showmessage()
+    {
+        console.log("Non abstract method");
+    }
+}
+
+class impl extends x{
+   getarea()
+   {
+       console.log("Area of circle");
+   } 
+}
+
+let o1=new impl();
+o1.getarea();
+o1.showmessage();
+
 
 
 
