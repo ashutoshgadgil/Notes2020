@@ -792,36 +792,167 @@ Attributes : slow, fast, Time in milliseconds
 
 hide()  : 
 
-show()
+show()  :
+
+toggle() : Includes hide & show features
 
 
+// These functions work with the opacity of elements
+fadeIn() :
+
+fadeOut() :
+
+fadeToggle() :Includes fadeIn & fadeOut features
+
+fadeTo() :   Aplly speed, opacity (0 to 1)  
+             syntax :   
+			fadeTo(speed,opacity);
+
+            If opacity = 0 , element will be hidden
+
+            If opacity = 1 , element will be display
 
  
+// Used to hide or show the elements by increasing or decreasing height of element
+slideUp() :       slide up the element 
+
+slideDown() :     slide down the element
  
 
+slideToggle() :includes slideup and slidedown features
 
 
+Animation Effection
+
+animate()  : To animate properties of css
+
+             animate({properties},duration,callback);
+
+    position : CSS property 
+               
+
+    position:relative;     // Any element can be moved on the page    
 
 
+  Applying animation on multiple properties 
+
+  Queud Animation : Animation on the element is applied one after another.
+
+  Animation with relative values :
+
+  stop() 
+
+=========================================================================================================
+
+Angular Framework ( Javascript framework)  which is based on typescript
+
+Typescript : Superset of Javascript
+             Any javascript code will be valid in typescript		
+             Offers more features than javascript
+             Typescript does not run in browser 
+             Typescript code is converted into javascript by CLI(command line interface)
+             Strongly typed language
+
+Features
+             Classes, interfaces, Modules, import and export, function 
+             Reduced compile time error
 
 
+Installation required:
+
+   1) NodeJS                            (npm : node package manager, tsc : typescript compiler)
+   2) Visual Studio Code 
+
+Transpiler : compiler to covert typescript code into javascript
 
 
+  tsc filename.ts
 
+//////////////////////////////////////
 
-
-
+Data type : number,string, boolean, tuple,any
  
 
+Function :
+	Two types are :
+        1) Named function
+
+	2) Arrow function        
+ 
+                        (param1,param2.....)=>{statement}   // accepts parameters
+   
+                        ()=>{statement}  // Arrow function without parameter
+         
+          lambda Expression:    ()=>statement;
 
 
+ Parameters: 
+
+             	1) Optional Parameter : Parameter which is not required to pass at the time of function calling , Using ? with parametername
+
+                2) Default Parameter : Inside a function ,default value can be defined for the parameter (Default parameter)
 
 
+  Array :
 
 
+  =============================================================================================================
 
 
+  Angular Framework 
+                    Javascript framework
+                    To build Front end applications
+                    Open source, Typescript based
+                    maintained by Google, 2009
+                    
+  Main advantage    : SPA (Single Page Application) can be created 
+                      Better performance,
+                      Better User experiance
+                      Desktop and Mobile Apps
+                      Fast Page loading
+                      less network bandwidth
+                      Supports MVC Pattern
+                      Fast development
+                      Easy maintainence
+                      Multple browser support,multiple device support
+                      RWD (Responsive web design)
 
+  Angular versions :
+                    Angular JS 
+                    Angualr 2
+		    Angualr 4
+                    Angualr 5
+                    Angualr 6 ,7, 8, 9, 10 (Angular)
+  
+  NPM (Node Package manager) : Which can be used to install angular
+
+
+  Features         : 
+                     Component(Reusable code) Based
+
+
+  Creation of Angular App :
+                          To create an Angular App, Angular CLI must be installed in the system
+  			  Angular CLI is a Tool used to create , manage and build Angular App , For this NodeJS is required
+
+  Commnads :
+             1) To install Angular CLI :     
+                                      > npm install -g @angular/cli
+                               
+             2) To create a new Angular App :
+                                      > ng new MyFirtsApp
+
+             3) Run the Angular project :
+                                      >  ng serve
+
+  Note :  Angular App runs on the default port 4200
+        
+             To run Angular App in Browser :
+                                             Type :        localhost:4200
+
+             > ng --version : To check the Angular CLI version
+             > npm -v       : To check npm version
+             > node -v      : To check node version
 
 
 
