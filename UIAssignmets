@@ -56,6 +56,7 @@
 42 create div tag with predefined parameters : width :300px, height:300px ,backgroundcolor = red. When move the mouse over the division then height and width should be 
    increased and color should be changed and when you leave the division area the original width , height and color should be displayed.
 43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
+44 Create an Anonymous function in Typescript where function take firstname & lastname as parameters and returns the full name. Display fullname.
    
 
  
