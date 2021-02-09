@@ -57,6 +57,15 @@
    increased and color should be changed and when you leave the division area the original width , height and color should be displayed.
 43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
 44 Create an Anonymous function in Typescript where function take firstname & lastname as parameters and returns the full name. Display fullname.
+45 Create an arrow function in typescript which accepts a number as a parameter and returns the square of a number.
+46 Make an anonymous function which accepts a number and calculates the factorial of the number and print it.
+47 Make a function which accepts two arguments as first name and last name, If lastname is not passed then default lastname should be displayed with firstname.
+48 Make a function with optional parameter. This function accepts only one parameter.
+49 Create a class Box. Create 3 properties as length,breadth and height of the box. Create a function which calculates the the volume of the box . A function display()
+   will display the volume along with the property values.
+50 Create an Array of 5 integers and display the average using for..in loop.
+51 Create a tuple which has a string , number and boolean as a first ,second and third value. Display the array elements.
+
    
 
  
