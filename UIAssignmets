@@ -70,7 +70,10 @@
 53 Create two components A and B which are the child of Root. Component A shows the text box with a button. Component B displays an unordered list of item.
 54 Create a Component which has 3 variables as rollno, name and Pass/Fail status(boolean). Assign  default values to these variables and print the values in the view
     as a table format.
-
+55 Accept two nos in a component from the text box. Make single button "Calculate". When button is pressed then Addition,Subtraction,Multiplication and division
+   should be displayed in the view.
+56 Create a textbox and a button in the component. Enter any string . If the string length is more than 5 characters Then a message should be displayed on the view
+    as "String is valid"
    
 
  
