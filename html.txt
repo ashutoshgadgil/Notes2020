@@ -911,7 +911,7 @@ Function :
                       Desktop and Mobile Apps
                       Fast Page loading
                       less network bandwidth
-                      Supports MVC Pattern
+                      Supports MVC Pattern 
                       Fast development
                       Easy maintainence
                       Multple browser support,multiple device support
@@ -928,7 +928,7 @@ Function :
 
 
   Features         : 
-                     Component(Reusable code) Based
+                     Component(Reusable code) Based Architecture
 
 
   Creation of Angular App :
@@ -955,21 +955,154 @@ Function :
              > node -v      : To check node version
 
 
+  1) Components   : 
+
+  2) Templates
+
+  3) Data Binding 
+
+
+How Angular App starts ?
+
+    1) index.html ( First page to be rendered on the browser) : Single page
+    2) main.ts    (First (ts) file to be executed)   Entry point of the Angular project
+    3) main.ts will load app.module.ts (Like a configuration file)
+    4) app.component.ts  (Root component is loaded )
+    5) app.component.html (This will render the content of web page)
 
 
 				
+  MVC in Angular :
+
+                   Model          -- data in the typescript file (MongoDB database) , (value in variables)
+                   View           -- html file            (app.component.html)   
+                   Controller     -- Typescript file      (app.component.ts)
+
+  Component :
+		Basic building block of angular 
+                includes template(view),data
+
+
+  Angular Building block :
+  
+   1) Component    :  includes template(view),data
+   2) Directive    :  DOM elements can be modified by using directive
+   3) Pipe         :  works on input and produces output
+   4) Service      :  any logic like business logics
+   5) Routers      :  Used to navigate from one view to another view
+   6) Modules      :  Block of related class
+
+
+   Root component : app.component.ts  (Holds entire application)  (html,css,ts)
+
+   		Header component: header.component.ts  (html,css,ts)
+ 
+ 	        Footer component: footer.component.ts   (html,css,ts)
+
+   Feature of component :
+                        Reusability
+                        Maintainability
+                        Testability
 
 
 
+  How to create component ?
+                      
+                    > ng g c Componentname
 
 
+                     ng : angular
+                      g : generate
+                      c : component
+
+  Creating component inside a component & making a child component.
+  1) Copy selector name from the component ts file and make it as a tag name in the root component.
 
 
+  Decorators :  Attaches metadata information to class
+
+                    @component(Selector, templateUrl, StyleUrl)
+
+  Modules : 
+	      configuration related to the project is defined in Module 
+
+               app.module.ts
+
+                    @NgModule 
 
 
+             @NgModule({
+  			declarations: [                                         // declare the components of the project (directives/ components /pipes)
+    						AppComponent,
+    						HeaderComponent,         
+    						FooterComponent
+  				      ],
+  			imports: [                                               // predefined modules are imported (Module1,module2)
+    						BrowserModule,
+    						AppRoutingModule
+  				 ], 
+  			providers: [],                                      // Provide the services  (service1,Service2)
+
+  			bootstrap: [AppComponent]                           // AppComponent is the starting component
+		      })
 	
 
+  Templates (view) -----> HTML files
+			Two properties : templateUrl  : Used to include external HTML file
+                                         template     : inline template (specify HTML / template without including external HTML file)
+
+  Styles    (CSS)  -----> CSS files
+                        Two properties  : styleUrls   : Used to include external CSS file
+                                          styles      : inline styles (specify CSS code without including external CSS file)
+ 
+
+
+  Databinding :
+		To communicate between the typescript file ( Business Logic )and HTML/template file(View).
+
+  Type of data binding:  1) String Interpolation   : {{ value }}
+
+                         2) Property Binding       : [property]="value"
+
+			 3) Event Binding          : (event)="handler"
+
+			 4) Two way data binding   : [(ngModel)]="property"   : When model changes , view also gets changed and vice versa
+  
+ 						ngModel is defined in FormsModule 
+						FormsModule must be imported in appModule.ts
+
+  Directive
+
+             Types:
+                    1) Structural Directive
+                    2) Custom Directive
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
