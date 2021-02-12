@@ -1074,18 +1074,80 @@ How Angular App starts ?
   Directive
 
              Types:
-                    1) Structural Directive
-                    2) Custom Directive
+                    1) Structural Directive : *ngIf, *ngFor
+                    2) Custom Directive   :   > ng g d directivename
+
+
+                                                ElemrntRef (class) : reference to the element 
+
+
+
+		    @HostListener  : Apply on the method which is executed on a event 
+                    @HostBinding   : To bind property to the listener
+
+ 
+ Pipe
+
+      Operator used to define pipe   |
+
+      To transform output without changing original Input/data
+
+      Input to the pipe , Get the output
+
+
+     uppercase
+     date
+
+
+ Service
+          Class with a pupose
+          @injectable()  : metadata information for the service class
+	  Services are injectable in the component
+	
+                       Create a service > ng g s servicename
+
+
+  Difference between service & custom directive
+
+  1) On creation of service app.module.ts is not updated while in case of directive module.ts updated
+  2) Directives can be applied as an attribute of an element like h1,p... while service can have the functionality that can be called in any component on creating
+     the service object
+  3) For DOM element modification ,directives are used while In service business logic can be written.
 
 
 
 
+  Routing 
+               A feature of Angular to implement Single Page Application
+
+               Route between views
 
 
 
+               
+	       www.mywebsite.com/index
+
+               www.mywebsite.com/about
+
+               Route : /index     (index.html)
+                       /about     (about.html)
+  
+               Route is a simplified URL
 
 
 
+            <a> tag
+               <router-outlet>  : Directive
+
+               routerLink      : Navigate with router link,  specify route name,,    routerLink='about'
+               routerLinkActive :                                                    roterLinkActive='active'
+
+
+  Component Interaction :
+
+                       1) Property Binding : When a Parent sends the information to the child      , @Input decorator
+
+                       2) Event Binding    : When a Child sends information to the Parent          , @Output decorator
 
 
 
