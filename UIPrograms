@@ -3568,8 +3568,461 @@ let o1=new impl();
 o1.getarea();
 o1.showmessage();
 
+========================================================================================
+
+68 Angular
+
+app.component.html
+
+<h1>Root Component</h1>
+<!--
+<ul>
+    <li *ngFor="let item of fruits">{{item}}</li>
+</ul>
+<br>
+<p>List of numbers</p>
+<ul *ngFor="let no of num">
+    <li *ngIf="no%2!=0" class="odd">{{no}}</li>
+    <li *ngIf="no%2==0" class="even">{{no}}</li>
+</ul>
+
+<div *ngIf="st">This is a simple text</div>
+
+<hr>
+<app-header></app-header> --> <!-- Child component of Root
+-->
+<!--
+<hr>
+
+<input [(ngModel)]="str">
+<button (click)="check()">Check string</button>
+<h3 *ngIf="!validStr?false:true">String is valid</h3>
+<app-footer></app-footer> -->    <!-- Child component of Root-->
+
+<!--<hr>
+<app-demo></app-demo>
+<div appMydirective> division</div>
+<hr>
+
+<p>{{name | uppercase}}</p> -->
+
+<!-- Uppercase pipe -->
+<!--<p>{{dt}}</p>          
+<p>{{dt | date}}</p>       -->
+    <!-- Date Pipe -->
+<!--    <p>{{dt | date:'dd-MM-yyyy'}}</p>
+<p>{{65.23 | currency: 'INR':'code'}}</p>
+-->
+
+<!--<a routerLink="home" routerLinkActive="active">Home</a> |
+<a routerLink="about" routerLinkActive="active">About</a> |
+<a routerLink="contact" routerLinkActive="active">Contact Us</a> |
+<a routerLink="help" routerLinkActive="active">Help</a> |
+<a routerLink="demo" routerLinkActive="active">Demo</a> 
+
+<router-outlet></router-outlet>  -->
+<!-- Predefined Directive helps to render routes on the page-->
+
+<!--
+<app-parent></app-parent>
+-->
+
+<app-parent1></app-parent1>
+
+---------------------------------------------------------------------------------
+
+app.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+ 
+    fruits=["Mango","Banana","Apple"];
+
+    num=[1,2,3,4,5];
+
+    st=true;
+
+    validStr:boolean=false;
+    str:string;
+    check()
+    {
+        if(this.str.length>5)
+          this.validStr=true;
+        else
+          this.validStr=false;
+    }
+
+    name:string="sachin";
+
+     dt=new Date();
+}
+
+-------------------------------------------------------------------------------------
+
+app.module.ts
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';   // Must import FormsModule to apply Two way binding
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { DemoComponent } from './demo/demo.component';
+import { MydirectiveDirective } from './mydirective.directive';
+import { MyserviceService } from './myservice.service';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { HelpComponent } from './help/help.component';
+import { HomeComponent } from './home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { Parent1Component } from './parent1/parent1.component';
+import { Child1Component } from './child1/child1.component';
 
 
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    DemoComponent,
+    MydirectiveDirective,
+    AboutComponent,
+    ContactComponent,
+    HelpComponent,
+    HomeComponent,
+    NotfoundComponent,
+    ParentComponent,
+    ChildComponent,
+    Parent1Component,
+    Child1Component
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [MyserviceService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+--------------------------------------------------------------------------
+
+mydirective.directive.ts
+
+import { Directive, ElementRef, HostListener, HostBinding } from '@angular/core';
+
+@Directive({
+  selector: '[appMydirective]'
+})
+export class MydirectiveDirective {
+
+  constructor(private eleref:ElementRef) { 
+    this.eleref.nativeElement.style.backgroundColor="yellow";   
+    this.eleref.nativeElement.style.color="red";
+  }
+
+ 
+  @HostBinding('style.border') border;
+
+  @HostListener('mouseover') onMouseOver()
+  {
+    this.eleref.nativeElement.style.backgroundColor="blue";
+    this.border="4px solid black";
+  }
+
+  @HostListener('mouseleave') onMouseleave()
+  {
+    this.eleref.nativeElement.style.backgroundColor="yellow";
+    this.border="4px solid red";
+  }
+
+}
+
+-----------------------------------------------------------------------------------
+
+myservice.service.ts
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyserviceService {
+
+  constructor() { }
+
+  getDate()
+  {
+    return new Date();
+  }
+
+  getMessage()
+  {
+    return "Welcome";
+  }
+}
+
+--------------------------------------------------------------------------------
+
+app-routing.module.ts
+
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { HelpComponent } from './help/help.component';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { DemoComponent } from './demo/demo.component';
+
+const routes: Routes = [
+  {path:'',pathMatch:'full',redirectTo:'/home'},
+  {path:'about',component:AboutComponent},
+  {path:'help',component:HelpComponent},
+  {path:'contact',component:ContactComponent},
+  {path:'home',component:HomeComponent},
+  {path:'demo',component:DemoComponent},
+  {path:'**',component:NotfoundComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],  // Register all routes in project
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+-----------------------------------------------------------------------------------
+
+Sending data from parent to child :
+
+
+1) Parent.component.html
+
+<p>parent works!</p>
+
+<app-child [message]="sendstr"></app-child>  <!-- Binding Message proprty of child to the value of parent -->
+
+2) Parent.component.ts
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  sendstr:string="Message from Parent";    // Setting the value to be passed to the child (sendstr)
+}
+
+
+3) child.component.html
+
+<h4>{{message}}</h4>  <!-- To display the property value on the web page-->
+
+4) child.component.ts
+
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  @Input() message:string;   // @Input() , value from parent will be assigned to message
+}
+
+------------------------------------------------------------------------------------------------
+
+ Sending data from Child to Parent 
+
+1) parent1.component.html
+
+<app-child1 (event)="getMessage($event)"></app-child1>
+
+<h3>{{msg}}</h3>
+
+2) parent1.component.ts
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent1',
+  templateUrl: './parent1.component.html',
+  styleUrls: ['./parent1.component.css']
+})
+export class Parent1Component implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  msg:string;
+
+  getMessage(message:string)
+  {
+    this.msg=message;
+  }
+}
+
+
+3) child1.component.html
+
+<button (click)="sendmessage('Message from child')">Send Message</button>
+
+4) child1.component.ts
+
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child1',
+  templateUrl: './child1.component.html',
+  styleUrls: ['./child1.component.css']
+})
+export class Child1Component implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  @Output() event=new  EventEmitter<string>();
+
+  sendmessage(message:string)
+  {
+      this.event.emit(message);
+  }
+}
+
+-----------------------------------------------------------------------------
+
+demo.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { MyserviceService } from '../myservice.service';
+
+@Component({
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
+})
+export class DemoComponent implements OnInit {
+
+  today:Date;
+  message:string;
+  constructor(private ds:MyserviceService) { }
+
+  ngOnInit(): void {
+    this.today= this.ds.getDate();
+    this.message=this.ds.getMessage();
+  }
+   
+}
+
+--------------------------------------------------------------------
+
+demo.component.html
+
+<h4 appMydirective>Heading1</h4>
+
+<h4 appMydirective>Heading2</h4>
+
+<p appMydirective>Paragraph</p>
+
+<input>
+<br>
+<h4>{{today | date}}</h4>
+<h4>{{message}}</h4>
+
+------------------------------------------------------------------
+
+header.component.ts
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+  // These valuese are displayed in HTML using string interpolation
+  city:string="Pune";   
+  population:number=11231232;
+   
+  // buttondisplay property value is bound to the disabled property of button
+  buttondisplay:boolean=true;
+
+  imagesource="https://i2.wp.com/digital-photography-school.com/wp-content/uploads/2013/03/butterfly_gardens_20090219_085.jpg?resize=600%2C400&ssl=1";
+  
+
+  getMessage()     // Handler 
+  {
+    alert("Hey you clicked me");
+    document.body.style.backgroundColor="pink";
+    console.log("hello");
+  }  
+
+  firstname="Sachin";
+
+
+}
+
+--------------------------------------------------------------------------
+
+header.component.html
+
+<h1>This is header of the page</h1>
+
+<h3>String Interpolation</h3>
+<p>City       : {{city}}  <br>
+   Population :{{population}}
+</p>
+
+<h3>Property Binding</h3>
+
+<img [src]="imagesource">
+<button [disabled]="buttondisplay">Click me</button>
+<button (click)="getMessage()">Show Message</button>
+
+<br>
+<h3>Two way binding</h3>
+<input [(ngModel)]="firstname"><br>
+<p>{{firstname}}</p>
+
+------------------------------------------------------------------------------
 
 
 
