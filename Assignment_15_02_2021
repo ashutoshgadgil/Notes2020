@@ -1,0 +1,50 @@
+
+
+Q.1 Write a program in C to create a linked list of 3 nodes which stores integer values. Add one more node in the begining of linked list & Display the list.
+
+Q.2 Create a stack of 5 names in Java.
+
+Q.3 Create an interface I1, Abstract class A1. Make a class Demo which inherit I1 & A1. I1 has a method getArea() and A1 has an absract method as getFactorial().
+   Demo class calculates the Area of circle & also factorial of the number which user enters.
+
+Q.4 Create a Thread class on implementing Runnable interface . Also the same Thread class extends another class and displays info of that class also.
+
+Q.5 Define a function in the PLSQL which accepts the age of a student and returns the year of birth.Create a servlet to display the Year of birth based on the entered 
+   age of a student.Make a JSP page to take age as input and sends it to the servlet
+ 
+Q.6 Create a procedure in the PLSQL which deletes a record from the database table.
+
+Q.7 Make two servlets and write the configuration details of database driver in the web.xml file. Both servlets get the same information from web.xml file .One of the
+   servlet is adding information of the employee in database and second servlet is displaying all information from the database. Information can be about any Product.
+
+
+Q.8 Create a table in the database which stores the records of 5 books like bookId, BookTitle, Author,Price.Make a servlet which access all the details of the books
+   from database and display on the web page created dynamically.
+
+
+Q.9 Create a Class Customer where custId,Cname,Ccity should be declared as memebers . Define getter & setter method in this class which sets the values for customer.
+   Create a servlet and a JSP Page. In Jsp page make a form which takes custId, Cname and Ccity from user and these details should be submitted into the Customer 
+   class and through this class all data should be saved into the database. 
+
+Q.10 Create 4 text boxes and a submit button in Angular View. Take firstname,lastname,email and age as an input. When clicked on the submit button All entered details 
+   should be displayed in the same page. Use Two way binding.
+
+Q.11 Create two components Parent and child.In child component, create an array of 4 employee records as name,email,age,city . Make a button in the child view .Once 
+   clicked on the button, All records from the  the child should be displayed in the Parent view. Use child to Parent data transfer concept.
+
+Q.12 Create a service which stores name,email and age of 5 students in the array of objects. Make 2 components Parent & child. Create a button in the child component
+   when button is clicked , all records from the service should be displayed in the Parent component.
+
+Q.13 Write a JQuery script which changes the default dimensions(width,height) of an image and background color to blue. Image should be in the center of the web Page.
+
+Q.14 Create an HTML page and make an image on it. Aplly the fadeIn, fadeOut,fadeToggle, hide, show, Toggle effect on the same image. For every effect a seperate button
+   should be defined.
+
+Q.15 Make a Javascript function which changes the background color of the body. Make anoher function which takes a string as Input and apply all string related functions
+   on the string passed.
+
+Q.16 Create an XML code and JSON code to store the following information about a city.
+   Store 5 cities records
+
+   Cities 
+         city--> name,population,area   
