@@ -1,0 +1,5 @@
+1. Create a class Student and make a mapping file to map this class. In Student class, Take studentRollno,name,age from user. Sno will be id by default. 
+   Create a table maually.
+2. Create a class Student and make a mapping file to map this class. In Student class, Take studentRollno,name,age from user. Sno will be id by default. 
+   Table should be created by hibernate and the records in the table should be updated.
+3. Make a class Account which has fields like accno,name & acctype. Acoount class will be Entity class. Take data from user and the table will be created automatically.
