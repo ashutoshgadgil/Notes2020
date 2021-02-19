@@ -1,0 +1,18 @@
+Collection in Java
+Exception Handling
+Threading
+Interface
+Inheritance
+Polymorphism
+Constructor & Its types
+
+Servlet & its Lifecycle
+Creating JSP file & Use of JSP tags
+Servlet Context & Servlet Config
+Resource Bundle
+Log4J
+
+Angular Complete (component,service,Diective,Pipes,Component Interaction)
+
+Unix File related commands
+     
