@@ -7,3 +7,4 @@
    accepts username,Password and stores the deails in the logintable. In the same project Create another servlet which updates the password in the table. Create a 
    seperate JSP to update the password.Once the record is saved in table then second JSP page will display the message as "Record submitted".
 5. Make a simple project in Maven using Hibernate to take the details about a Employee like EmpID,Name,Salary. Delete and Update the specific record. 
+6. Create a Maven project in hibernate to perform CRUD Operations. Create a web Application
