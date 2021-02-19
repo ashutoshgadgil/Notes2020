@@ -1,0 +1,147 @@
+Hibernate
+
+         Easier communication between Java Application & database
+
+ORM Tool 
+          Tool to map the object into the database table
+          Uses JDBC API
+
+
+JPA (Java Persistance API)  : javax.persistence
+
+Advantages: 1) open source , lightweight
+            2) Database independent (HQL)
+            3) Automatic table creation
+            4) High performance 
+
+Hibernate Architecture:
+
+1) Java Application Layer
+2) Hibernate framwork
+3) Backend API
+4) Database 
+
+
+Two ways to create hibernate application :
+
+1) Use of XML 
+2) Use of Annotation class
+
+How to Create hibernate Simple Java Project Using XML(mapping) file
+
+1) Download all hibernate jars and put these jars in lib folder created by you.Also put jdbc-oracle.jar
+
+2) Create hibernate.cfg.xml file (Configuration file) in src folder & write contents in it
+
+   <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <property name="hbm2ddl.auto">create</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <mapping resource="Employee.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration> 
+
+3) Create a Entity class (Employee.java)
+
+4) Create Employee.hbm.xml (mapping file) in the src folder.Write contents in it.
+
+
+
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Feb, 2021 4:01:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="org.myprogramms.Employee" table="EMPL5">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+    </class>
+</hibernate-mapping>
+
+
+5) Create a Test file containing main() & run this java file.
+
+
+=====================================================================================================
+
+Creation of Web Application using hibernate :
+
+CRUD (Create ,Read, Update, Delete) Operation in Hibernate
+
+Inserting record in the table :
+
+				save()  : used to insert record in the table, return type primary key(can be int, string)
+				persist() : return type is void
+				saveorupdate() : return type is void
+
+
+Retrieving record from the table using hibernate:
+
+				
+                                get()   : used to access a specific record from the table , Object type will be returned
+
+
+Deleting a record from the table :
+
+ 				delete() :  Delete a specific record
+
+Update a record in the table :
+
+				update() :  Updates a specific record
+
+
+=======================================================================================================
+
+Creating Hibernate Project in Maven (Simple Project)
+
+Creating Hibernate Project in Maven (Web Project)
+
+
+=======================================================================================================
+
+ 
+   HQL (Hibernate Query Language) 
+    
+   Database independent Language
+
+   Operations on the object
+
+   Classname :  object (Persistant Object) =====> Database (tables)
+
+
+
+  Insert
+  Update
+  Delete
+  select  : 
+
+             from Classname;   // select All records from the class  (HQL select)
+
+             select * from tablename // select All records from the table  (SQL select)
+
+
+              createQuery() : pass HQL queries in it.
+                              Query is return type.
+
+
+    DML operations :  executeUpdate()
+    DDL Operations :  getResultList()
+
+
+
+
+
+
