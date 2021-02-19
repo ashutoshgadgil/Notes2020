@@ -12,6 +12,8 @@ Servlet Context & Servlet Config
 Resource Bundle
 Log4J
 
+All Queries of Oracle
+
 Angular Complete (component,service,Diective,Pipes,Component Interaction)
 
 Unix File related commands
