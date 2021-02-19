@@ -1,0 +1,100 @@
+1.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <property name="hbm2ddl.auto">create</property>  <!-- Creating table automatically -->
+    
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <mapping resource="Employee.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
+
+------------------------------------------------------------------------------------
+
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Feb, 2021 4:01:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="org.myprogramms.Employee" table="EMPL5">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+    </class>
+</hibernate-mapping>
+
+------------------------------------------------------------------------------
+
+package org.myprogramms;
+
+public class Employee {
+	private int id;
+	private String name;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Employee(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public Employee() {
+		super();
+	}
+	
+	
+}
+
+----------------------------------------------------------------------
+
+package org.myprogramms;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		SessionFactory sf=new Configuration().configure().buildSessionFactory();  
+		
+		Session s=sf.openSession();
+		
+		s.beginTransaction();
+		
+		Employee e=new Employee();
+
+		e.setName("Amit");
+		
+		s.save(e);
+		
+		s.getTransaction().commit();
+		
+		s.close();
+		
+		sf.close();
+		
+	}
+
+}
