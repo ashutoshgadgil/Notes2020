@@ -141,6 +141,142 @@ Creating Hibernate Project in Maven (Web Project)
     DDL Operations :  getResultList()
 
 
+=======================================================================================================
+
+CRUD operations using HQL :
+
+   Select : Get All records of a table    ( from Classname)
+
+          : Get specific record , use where clause   ( from Classname where condition )
+
+          : Get a specific column values ( select columnname from Classname )
+
+   Update : Update a record
+
+   Delete : Delete a specific record
+            Delete comple rows from table   
+  
+   Insert : To copy the records from one table other table
+
+=======================================================================================================
+
+Hibernate Inheritance
+
+
+        Base Class:         Class1            (id,name,age)
+        Derived Classes :   Class2 (score) , Class3  (Hobby)
+
+
+     1) Table Per class  : Only one table is created for different beans
+
+
+
+     2) Table per subclass : Table per subclass will be created
+
+=====================================================================================================
+
+Spring : Framework of Framework
+
+         It supports Hibernate, JPA, JDBC ....
+
+         Remove Dependancies from the class
+
+         IOc(Inversion of control)
+         Dependancy Injection
+       
+         Lightweight 
+
+         Spring version 5
+
+
+
+      Interface1    - fun() 
+
+                     class1 implements Interface1   fun()   Hello
+                     class2 implements Interface1   fun()   HI
+
+
+         r=new Class1();
+         r.fun();           // Hello
+
+         r=new Class2();
+	 r.fun();           // Hi
+
+      
+
+========================================================
+
+        Java Application code               
+
+Part-1 : Tight coupling
+             
+        MyConstructor()
+	{
+		r=new Class1();	  // Make changes here
+	}
+
+   
+-------------------------------------------------------   
+
+
+Part-2 : Loose Coupling
+
+        MyConstructor(reference)
+	{
+
+	}
+
+
+----------------------------------------------------------------------
+
+ Bean configuration file :
+
+                         1) Using XML configuration (Create xml file which stores information about beans(Java objects)
+			 2) Using Annotation Configuration ( Annotated class)
+                         3) Using Simple Java Class
+
+
+
+
+    applicationContext.xml : Store the information about all the beans / objects
+
+
+    1) Use of XML Configuration (applicationContext.xml) 
+
+        Step-1 : In TestMain Java program, Load the Spring bean configuration file (applicationContext.xml)
+
+                 ClassPathXMLApplicationContext  : Class which implements container(ApplicationContext)
+                 XMLBeanFactory                  : Class which implements container(BeanFactory)   (Legacy class)
+  
+                 
+                 ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
