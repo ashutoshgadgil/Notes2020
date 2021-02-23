@@ -10,4 +10,10 @@
 6. Create a Maven project in hibernate to perform CRUD Operations. Create a web Application.
 7. Create 3 Bean classes named as SBI, IDBI, ICICI. In All classes the dependency is injected in the constructor.Dependency class is InterestRate which has one method
    getRate() which returns the rate of interest according to the bank. Display BankName, Bank Rate.
+8. Create two bean classes as Student & Product. Make spring configuration file where configure the setter injection for the method which is saving the entered records 
+   for the student as rollno,name,percentage in the database and do the same for products.
+9. Write a spring configuration file which injects the username, email and password to the Bean class User.
+10. Write the configuration for 2 bean objects in the Spring Configuration file & Retrieve all the bean objects in the testApp using XmlBeanFactory.
+11. Make a Bean class which has a method which accepts firstname & lastname as parameters and returns the Fullname. Inject this bean class object into a Class Person
+    Print the Details of a person as Fullname & age.
 
