@@ -1,0 +1,94 @@
+1.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <bean id="carobj" class="org.pro.Scorpio"></bean>
+    
+    <bean id="carobj1" class="org.pro.BMW"></bean>
+    
+</beans>
+
+--------------------------------------------------------------------------------
+
+package org.pro;
+
+public class BMW implements Cars{
+	public String getSpecs()
+	{
+		return "BMW Specifications";
+	}
+}
+
+
+-------------------------------------------------------------------------------
+
+package org.pro;
+
+public interface Cars {
+	public String getSpecs();
+}
+
+-----------------------------------------------------------------------------
+
+package org.pro;
+
+public class Scorpio implements Cars{
+	public String getSpecs()
+	{
+		return "Scorpio Specifications";
+	}
+}
+
+----------------------------------------------------------------------------
+
+package org.pro;
+
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		//BMW b=new BMW();
+		
+		//Scorpio s=new Scorpio();
+		
+		//Cars c=new Scorpio();    // Hardcoding
+		
+		// Step-1 : Load spring configuration file 
+		//ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+			
+		// Step-2 : Retrieve the bean from the container ,Use getBean() method
+		//Cars c= context.getBean("carobj1",Cars.class); // new BMW();
+		
+		// Step-3 : Access methods of bean
+		//System.out.println("Specifications : "+c.getSpecs());
+		
+		// Step-4 : Close the context object
+		// context.close();
+		
+		// Use of BeanFactory(interface)  class (XmlBeanFactory)
+				
+		XmlBeanFactory context=new XmlBeanFactory(new ClassPathResource("applicationContext.xml"));
+				
+		Cars c= context.getBean("carobj",Cars.class);
+		
+		System.out.println(c.getSpecs());
+		
+		//System.out.println(c.getSpecs());
+		
+		
+	}
+
+}
