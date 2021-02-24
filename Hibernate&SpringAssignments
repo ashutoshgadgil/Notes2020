@@ -16,4 +16,9 @@
 10. Write the configuration for 2 bean objects in the Spring Configuration file & Retrieve all the bean objects in the testApp using XmlBeanFactory.
 11. Make a Bean class which has a method which accepts firstname & lastname as parameters and returns the Fullname. Inject this bean class object into a Class Person
     Print the Details of a person as Fullname & age.
+12. Create a spring Project in Maven. Make two bean classes (Annotated) ,In First Bean define a method which is displaying some message .Apply the Injection on this method.
+     In second bean Apply the Constructor injection and a method in the bean is displaying fibbonacci series in it.
+13. Create an interface as Person. Make two classes Student and Manager which are implementing the Person interface.In person interface there are two methods as
+    getDetails() and showDetails(). Create a Bean class where Dependency injection should be applied on the field. Make a TestMain class where retrieve the details of 
+    Student and manager.
 
