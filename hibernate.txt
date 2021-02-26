@@ -446,13 +446,41 @@ Part-2 : Loose Coupling
     d) Retrieve beans from the container
 
 
+---------------------------------------------------------------------------------------------------------------
+
  
+ Spring Bean Inheritance  : Parent bean definition can be inherited in the child Bean definition
+
+  Parent Bean
+
+  Child Bean
 
 
+------------------------------------------------------------------------------------------------------
 
+
+ Spring MVC 
+   
+               Front Controller (DispatcherServlet) predefined servet of spring
+               Controller (User defined controller)
+             
+               Model : Store data 
+               view  : JSP Pages
+
+
+ USe of Spring MVC : 
+		uSED TO CREATE WEB aPPLICATION
+
+
+ Steps to Create Spring MVC Program : 
   
+ 1) Two xml files( web.xml )
+                 ( Servlet Mapping file (xml))
 
+ 2) Create a Controller class on applying @Controller 
 
+ 3) Create View (JSP Pages) inside WEB-INF. 
+ 
 
 
 
