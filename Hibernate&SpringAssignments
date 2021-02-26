@@ -21,4 +21,8 @@
 13. Create an interface as Person. Make two classes Student and Manager which are implementing the Person interface.In person interface there are two methods as
     getDetails() and showDetails(). Create a Bean class where Dependency injection should be applied on the field. Make a TestMain class where retrieve the details of 
     Student and manager.
+14. Make a Spring MVC Project in Maven, Create a registration page where customer Id, firstname, lastname and age is to be taken in the registration form and save data 
+    in the database .After submitting data , display the message "Registration Successful".
+15  Make a program to apply constructor injection using XML and Annotation.
+16  Make a program to apply Setter injection using XML and Annotation.
 
