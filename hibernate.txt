@@ -480,9 +480,46 @@ Part-2 : Loose Coupling
  2) Create a Controller class on applying @Controller 
 
  3) Create View (JSP Pages) inside WEB-INF. 
+
  
+  @controller     :  Used to define any class as a controller
+  @RequestMapping :  Apply on class / controller or the method , Maps the method of controller
+  @RequestParam   :  Used to access the parameters from the URL
+
+  Model           : Interface   (Only data information it holds not the view)
+  ModelAndView    : Class       (binds the data to the object and have the information about the view(Jsp page))
+
+  addAttribute()  : use with Model
+  addObject()     : Use with ModelAndView object
+
+============================================================================================
+
+Spring Forms:
+
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
+
+-------------------------------------------------------------------------------------------
+
+Spring Form Validations :
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator-cdi</artifactId>
+    <version>6.2.0.Final</version>
+</dependency>
 
 
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator-annotation-processor</artifactId>
+    <version>6.2.0.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>6.2.0.Final</version>
+</dependency>
 
 
 
