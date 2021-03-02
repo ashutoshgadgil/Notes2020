@@ -92,3 +92,159 @@ public class TestMain {
 	}
 
 }
+==============================================================================================================
+
+
+package org.pro2;
+
+public class Employee {
+	public Employee() {
+		super();
+	}
+	public Employee(int id, String name, float salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	private int id;
+	private String name;
+	private float salary;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	
+	
+}
+
+-----------------------------------------------------------------------------------
+
+package org.pro2;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class EmployeeDao {                 // DAO Class (data Access Object)
+	private JdbcTemplate jdbctemplate;
+
+	public void setJdbctemplate(JdbcTemplate jdbctemplate) {   // Setter Injection
+		this.jdbctemplate = jdbctemplate;
+	}
+	
+	public int saveEmployee(Employee e)   // Inserting record in table
+	{
+		String q="insert into employees values("+e.getId()+",'"+e.getName()+"',"+e.getSalary()+")";
+		//String q="insert into employees(id,name,salary) values(?,?,?)";
+    
+		return jdbctemplate.update(q);
+	}
+	
+	public int deleteEmployee(Employee e){   // Deleting record from table
+	    String query="delete from employees where id=?";  
+	    System.out.println("deleting....");
+	    return jdbctemplate.update(query,e.getId()); 
+	}  
+	
+	public int updateEmployee(Employee e){    // Updating record from table
+	    String query="update employees set name=? where id=?";  
+	    return jdbctemplate.update(query,e.getName(),e.getId());  
+	}  
+}
+
+
+------------------------------------------------------------------------------------
+
+
+
+package org.pro2;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestJdbc {
+
+	public static void main(String[] args) {
+		 ApplicationContext ctx=new ClassPathXmlApplicationContext("JdbcapplicationContext.xml");  
+	    
+		 EmployeeDao dao=(EmployeeDao)ctx.getBean("edao");  
+		 
+		  // Inserting record
+		   /* int status=dao.saveEmployee(new Employee(101,"Ajay",25000));  
+		    System.out.println(status);  
+		  */
+		 
+		 
+		 // Updating Record
+		    Employee e=new Employee(); 
+		    e.setId(101);
+		    e.setName("Rahul");
+		    int status=dao.updateEmployee(e); 
+		    System.out.println(status); 
+		 
+		 
+		 
+		    // Deleting Records
+		 /*
+		    Employee e=new Employee(); 
+		    e.setId(101); 
+		    int status=dao.deleteEmployee(e); 
+		    System.out.println(status+" Records deleted");
+		   */ 
+	}
+
+}
+
+
+---------------------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+  <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />  
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
+<property name="username" value="system" />  
+<property name="password" value="root" />  
+</bean>  
+  
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+<property name="dataSource" ref="ds"></property>  
+</bean>  
+  
+<bean id="edao" class="org.pro2.EmployeeDao">  
+<property name="jdbctemplate" ref="jdbcTemplate"></property>  
+</bean>  
+</beans>
+
+
+
+
+
+
+
+
+
+
+
