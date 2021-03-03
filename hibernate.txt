@@ -446,6 +446,9 @@ Part-2 : Loose Coupling
     d) Retrieve beans from the container
 
 
+    a) Constructor Injection
+    b) Setter Injection
+
 ---------------------------------------------------------------------------------------------------------------
 
  
@@ -521,8 +524,99 @@ Spring Form Validations :
     <version>6.2.0.Final</version>
 </dependency>
 
+------------------------------------------------------------------------------------------
 
 
+ Exception Handling inSpring MVC
+
+ --------------------------------------------------------------------------------------
+
+  @ModelAttribute
+  @valid
+  @Controller
+  @ControllerAdvice
+  @ExceptionHandler
+  @RequestMapping
+  @Component
+  @RequestParam
+
+---------------------------------------------------------------------------------------
+
+                    spring-core,
+		    spring-context,
+		    spring-beans
+		    spring-jdbc
+		    spring-orm
+                    jdbc-oracle
+
+-----------------------------------------------------------------------------
+
+Spring Integration with JDBC (CRUD operations)
+
+                    class : JDBCTemplate
+
+-----------------------------------------------------------------------------
+
+Spring Integration with hibernate
+
+
+		    class : HibernateTemplate
+
+                    Requirements :  hibernate jars / dependencies (Maven) hibernate version 3
+                                    Spring jars    / dependencies (Maven) spring version 3
+
+
+  Step-1   Create Simple maven project and add reuired dependencies in pom.xml file
+  Step-2   Create spring configuration file applicationContext.xml
+  Step-3   Create a POJO class (prod.java) ,create getter,setter and constructor & create Hbm mapping file for the POJO class
+  Step-4   Create a DAO Class including HibernateTemplate object and definitions of methods doing CRUD operations
+  Step-5   Create TestMain class calling DAO methods
+  Step-6   Run TestMain 
+
+------------------------------------------------------------------------------
+
+
+AOP  : Aspect Oriented programming with spring    
+
+   
+      Inheritance can be achieved using
+
+      1)  IS-A Relationship   : Employee (Parent)  , Address (Child)
+
+
+				class Employee extends Address{ }
+
+
+      2)  HAS-A Relationship  : Employee , Address
+
+
+                                class Employee { Address ob; }
+
+
+   Aspect : Service (create aspect)
+
+   Dependencies to utilize AOP in Spring
+
+   <dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.6</version>
+   </dependency>
+   
+   <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.3.4</version>
+    </dependency>
+
+--------------------------------------------------------------------------------
+
+   @Aspect : is used to define a class as an aspect where we define the advice
+   Advice : is the service provided by the Aspect class to other classes
+   @EnableAspectJAutoProxy : Enable the Aspect to provide service to other classes
+   Pointcut : The method name for which the advice will be called (Before / After)
+   Joinpoint : The place at which the advice is joined or called.
 
 
 
