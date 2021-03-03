@@ -163,6 +163,13 @@ public class EmployeeDao {                 // DAO Class (data Access Object)
 	    String query="update employees set name=? where id=?";  
 	    return jdbctemplate.update(query,e.getName(),e.getId());  
 	}  
+	
+	public List<Employee> getEmployees()
+	{
+		String query="select * from employees";
+		List<Employee> l= jdbctemplate.query(query, new EmployeeMapper());
+		return l;
+	}
 }
 
 
@@ -204,6 +211,12 @@ public class TestJdbc {
 		    int status=dao.deleteEmployee(e); 
 		    System.out.println(status+" Records deleted");
 		   */ 
+		   
+		      List<Employee> l=dao.getEmployees();
+		    
+		    for (Employee employee : l) {
+				System.out.println(employee.getId()+" "+employee.getName()+" "+employee.getSalary());
+			}
 	}
 
 }
@@ -237,7 +250,30 @@ public class TestJdbc {
 <property name="jdbctemplate" ref="jdbcTemplate"></property>  
 </bean>  
 </beans>
+---------------------------------------------------------------------------------------------
 
+package org.SpringJdbcTemplate;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class EmployeeMapper implements RowMapper<Employee>{
+
+	@Override
+	public Employee mapRow(ResultSet rs, int rownum) throws SQLException {
+		Employee e=new Employee();
+		e.setId(rs.getInt("id"));
+		e.setName(rs.getString("name"));
+		e.setSalary(rs.getFloat("salary"));
+		return e;
+	}
+
+}
+
+------------------------------------------------------------------------------------------
 
 
 
