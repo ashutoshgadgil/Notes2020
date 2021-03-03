@@ -33,5 +33,8 @@
      1234567891011        ( should come from advice1 )
      Welcome from method  ( Message from Bean Class method )
      ************         ( should come from advice2 )
+20. Write a configuration class to inject a dependency of one bean class into another bean class using setter injection. BeanA and BeanB are the bean classes.
+    BeanA has a method which accepts a number and returns the cube value of the number. Inject the BeanA into BeanB and BeanB has a method which accepts a number and
+    returns the square value of the number. Print the Square and cube.
      
 
