@@ -36,5 +36,24 @@
 20. Write a configuration class to inject a dependency of one bean class into another bean class using setter injection. BeanA and BeanB are the bean classes.
     BeanA has a method which accepts a number and returns the cube value of the number. Inject the BeanA into BeanB and BeanB has a method which accepts a number and
     returns the square value of the number. Print the Square and cube.
-     
+21. Create a simple hibernate project without Maven to define a POJO class Users (without using annotation). Take userid,username,city from user and print all details on the
+    Console.
+22. Create a simple hibernate project with Maven to define a POJO class Users (without using annotation). Take userid,username,city from user and print all details on the
+    Console.
+23. Create a simple hibernate project without Maven to define a POJO class Users (using annotation). Take userid,username,city from user and print all details on the
+    Console.
+24. Create a simple hibernate project with Maven to define a POJO class Users (using annotation). Take userid,username,city from user and print all details on the
+    Console.
+25. Create a dynamic hibernate project without Maven to define a POJO class Users (without annotation). Take userid,username,city from user and print all details on the
+    Console.
+26. Create a dynamic hibernate project with Maven to define a POJO class Users (without annotation). Take userid,username,city from user and print all details on the
+    Console.
+27. Create a dynamic hibernate project with Maven to define a POJO class Users (with annotation). Take userid,username,city from user and print all details on the
+    Console.
+ 
+
+
+
+
+
 
