@@ -52,6 +52,9 @@
     Web Page.
 28. Make a Spring MVC project to enter the age of a student in the web page. After clicking on submit button Year of birth should be displayed on the web page.If the age
     entered is not a number then it should display the error message on the field.
+29. Make a spring MVC project to take firstname, lastname and create a dropdown list of Countries. If selected country by the user is India then display a page showing 
+    fullname of user with a message "Welcome to India". If selected country by the user is USA then display a page showing fullname of user with a message "Welcome to 
+    USA".Firstname & Lastname field should not be empty. 
  
 
 
