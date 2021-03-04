@@ -50,6 +50,8 @@
     Web Page.
 27. Create a dynamic hibernate project with Maven to define a POJO class Users (with annotation). Take userid,username,city from user and print all details on the
     Web Page.
+28. Make a Spring MVC project to enter the age of a student in the web page. After clicking on submit button Year of birth should be displayed on the web page.If the age
+    entered is not a number then it should display the error message on the field.
  
 
 
