@@ -55,6 +55,8 @@
 29. Make a spring MVC project to take firstname, lastname and create a dropdown list of Countries. If selected country by the user is India then display a page showing 
     fullname of user with a message "Welcome to India". If selected country by the user is USA then display a page showing fullname of user with a message "Welcome to 
     USA".Firstname & Lastname field should not be empty. 
+30. Create a JDBC project in spring to insert employee record like eid,ename,salary,city in the database table. Save 5 employee records and Display all records from the 
+    table.
  
 
 
