@@ -47,9 +47,9 @@
 25. Create a dynamic hibernate project without Maven to define a POJO class Users (without annotation). Take userid,username,city from user and print all details on the
     Console.
 26. Create a dynamic hibernate project with Maven to define a POJO class Users (without annotation). Take userid,username,city from user and print all details on the
-    Console.
+    Web Page.
 27. Create a dynamic hibernate project with Maven to define a POJO class Users (with annotation). Take userid,username,city from user and print all details on the
-    Console.
+    Web Page.
  
 
 
