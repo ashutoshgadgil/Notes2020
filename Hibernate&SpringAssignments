@@ -57,6 +57,7 @@
     USA".Firstname & Lastname field should not be empty. 
 30. Create a JDBC project in spring to insert employee record like eid,ename,salary,city in the database table. Save 5 employee records and Display all records from the 
     table.
+31
  
 
 
