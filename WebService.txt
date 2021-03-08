@@ -1,0 +1,97 @@
+
+
+Web Service
+
+Type of Web services
+
+Difference between SOAP (Older) & REST (Latest)
+
+
+ResTAPI
+RESTful Web Service 
+
+       implementation : JAX-RS ( Java API- Restfule Service)
+       jars : Jersey (Dependency)
+
+
+Resource
+          Any file, Document
+
+
+URI (Unified Resource Identifier)
+
+
+  Get Operations :  Select or Retrieve information   
+
+                        /Employees 
+                        /Employees/eid
+ 		        /Country/States
+                        /Country/States/Cities
+        		/Country/States/Cities/Mumbai
+                        /Bikes?brand="Honda"    
+
+
+  Post operations : Create information on the server
+
+			/setEmployees 
+                        
+                      
+  PUT operation  : To update infomation on the server
+
+			/putEmployee/name/id
+
+
+  Delete operation :  To delete any resource on the server
+
+			/deleteEmployee/id
+
+
+
+  Type of URI : 
+                1) Action based URI      : /Bikes?brand="Honda" 
+                2) Resource Based URI    : /Bikes/Honda 
+                3) File Based URI        : /Bikes/Honda.html 
+                4) Filter Based URI      : /Bikes/speed=150 
+
+
+
+Http Methods :
+
+               1) GET    -- Read operations  (Reapeatable)
+               2) POST   -- Create operation (Not Reapeatable)
+               3) PUT    -- Update operation (Reapeatable)
+               4) DELETE -- Delete Opration  (Reapeatable)
+
+
+HTTP Status Code :
+		    Status code 
+                    200               --- OK (success)
+		    404               --- Not found
+                    500               --- internal server error
+
+
+Categorisation of status code
+
+
+	1) 1xx (Informational)  - 102
+        2) 2xx (Successful)     - 201 
+        3) 3xx (Redirection)    - 301 
+        4) 4xx (Client Error)   - 403  
+        5) 5xx (Server Error)   - 503
+
+
+
+Jersey implementation :
+
+                        <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-bundle -->
+			<dependency>
+    				<groupId>com.sun.jersey</groupId>
+    				<artifactId>jersey-bundle</artifactId>
+    				<version>1.19.4</version>
+			</dependency>
+
+
+
+Creation of Resource
+
+
