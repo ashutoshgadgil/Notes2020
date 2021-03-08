@@ -1,0 +1,260 @@
+package corepro;
+
+interface intf
+{
+	public static final int MAX=100;
+	public abstract void fun();
+	public static void fun2() {
+		System.out.println("Hello from interface");
+	}
+}
+
+// Functional Interface
+@FunctionalInterface
+interface intf1
+{
+	public static final int MAX=100;
+	void fun();
+	//void fun1();
+}
+
+class impl1 implements intf1
+{
+
+	public void fun(int x)
+	{
+		System.out.println(x);
+	}
+	
+	@Override
+	public void fun() {
+		System.out.println("Implementation 1");
+		
+	}
+	
+}
+
+class impl2 implements intf1
+{
+
+	@Override
+	public void fun() {
+		System.out.println("Implementation 2");
+	}
+	
+}
+
+class c1
+{
+	int member;
+	
+	// Constructor Overloading
+	public c1()
+	{
+		member=500;
+		System.out.println("C1 constructor"+member);
+	}
+	
+	public c1(int m)
+	{
+		member=m;
+	}
+	
+	public c1(c1 ob)
+	{
+		member=ob.member;
+	}
+	
+	public void fun()
+	{
+		System.out.println("c1 message");
+	}
+	
+	public void setMember(int member)
+	{
+		this.member=member;
+	}
+	
+	public void showMember()
+	{
+		System.out.println(member);
+	}
+}
+
+class d1 extends c1 implements intf
+{
+	public d1()
+	{
+		super(5000);   // calls superclass constructor
+
+		System.out.println("c2 constructor "+member);
+	}
+	
+	public void fun()
+	{
+		super.fun();
+		System.out.println("d1 message");
+		super.fun();
+	}
+	
+}
+
+ abstract class abs
+{
+	protected int z=20;
+	private int w=20;
+	
+	public abstract void fun1();
+	public void fun2()
+	{
+		System.out.println("Non abstract");
+	}
+}
+
+ class cl1
+ {
+	int df=60;
+ 	protected int pr1=20;
+ 	private int pr2=20;
+ }
+
+ 
+class Demo extends abs
+{
+	//member / instance(object) variable
+		private final int c=5;
+		public static int d=100;
+		
+		protected int pr=30;
+		
+		//member method
+		public void show()
+		{
+			//c++;
+			System.out.println(c);
+			System.out.println("Hi"+c);
+			System.out.println(d);
+			System.out.println(z);
+			//System.out.println(w);
+		}
+
+		public void display()
+		{
+			System.out.println("Display A");
+		}
+		
+		public static void show1()
+		{
+			System.out.println("Hi");
+			//System.out.println(c);
+		}
+
+		@Override
+		public void fun1() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		
+}
+
+public class pro1 extends Demo{
+	
+	int def=50;  // scope default
+	
+	protected int pr3=100;
+	
+	public void method1()
+	{
+		cl1 o1=new cl1();
+		
+		System.out.println(o1.pr1);
+	}
+	
+	//public int display1()
+	
+	@Override
+	public void display()
+	{
+		System.out.println(z);
+		System.out.println("Display B");
+		System.out.println(pr);
+	}
+	
+	public static void main(String[] args) {
+		Demo p1=new Demo();
+		
+		//p1.c=10;
+		p1.show();
+		
+		//System.out.println(d);
+		System.out.println(Demo.d);
+		
+		//show1();
+		
+		Demo.show1();
+		
+		pro1 f=new pro1();
+		f.display();
+		
+		cl1 ob=new cl1();
+		System.out.println(ob.pr1);
+		//System.out.println(ob.pr2);
+		System.out.println(ob.df);
+		
+		d1 ob1=new d1();
+		ob1.fun();
+		d1 ob2=new d1();
+		
+		ob1.member=1000;
+		System.out.println(ob1.member);
+		
+		c1 o1=new c1();
+		System.out.println("o1.member : "+o1.member);
+		o1.member=3000;
+		System.out.println("o1 member : "+o1.member);
+		
+		c1 o2=new c1(o1);
+		System.out.println("o2 member : "+o2.member);
+		
+		c1 o3=new c1(o1);
+		o3=o1;
+		System.out.println("o3 member : "+o3.member);
+		
+		c1 o4=new c1();
+		o4.setMember(8000);
+		System.out.println(o4.member);
+		
+		intf1 ob3=new impl1();
+		
+		ob3.fun();
+		//ob3.fun(10);
+		
+		ob3=new impl2();
+		ob3.fun();
+		
+		intf.fun2();
+	}
+}
+
+
+-----------------------------------------------------------------------------------------
+
+package package2;
+import corepro.*;
+
+public class pro2 extends pro1{
+
+	public static void main(String[] args) {
+	
+		//pro1 o1=new pro1();
+		//o1.method1();
+		
+		pro1 o2=new pro1();
+		
+		//System.out.println(o2.pr3);
+		
+		//System.out.println(o2.def);
+	}
+
+}
