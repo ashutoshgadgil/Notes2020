@@ -258,3 +258,204 @@ public class pro2 extends pro1{
 	}
 
 }
+
+-----------------------------------------------------------------------------------
+1.
+
+package corepro;
+
+@FunctionalInterface
+interface inf1
+{
+	public void show();
+	//public void show1();
+}
+
+@FunctionalInterface
+interface inf2
+{
+	public int display();
+}
+
+
+@FunctionalInterface
+interface inf3
+{
+	public int fun(int a,int b);
+}
+
+/*
+class FunImpl implements inf1
+{
+@Override
+	public void show() {
+		System.out.println("Function implemented");
+	}
+}
+*/
+
+public class pro2 {
+
+	public static void main(String[] args) {
+		//inf1 ob=new FunImpl();
+		//ob.show();
+		
+		inf1 ob=()->System.out.println("Welcome to Lambda expression");
+		ob.show();
+		
+		inf2 ob1=()->100;
+		
+		System.out.println(ob1.display());
+		
+		inf3 ob2=(a,b)-> a*b;
+		
+		System.out.println("Product : "+ob2.fun(2, 3));
+	}
+
+}
+
+---------------------------------------------------------------------------------
+
+2.
+
+package corepro;
+
+class Circle
+{
+ 	public void display()
+	{
+		System.out.println("In Base class");
+	}
+}
+
+class Demo1 extends Circle
+{
+	public void display()
+	{
+		System.out.println("In Demo1 class");
+	}
+}
+
+class DemoAnonymous
+{
+	public void demo()
+	{
+		Circle circle=new Circle() {    // It is anonymous inner class which is extending Circle class
+			public void display1()
+			{
+				System.out.println("In circle class");
+			}
+		};
+		
+		circle.display();
+		
+	}
+}
+
+public class Pro3 {
+
+	public static void main(String[] args) {
+		DemoAnonymous ob=new DemoAnonymous();
+		ob.demo();
+
+	}
+
+}
+
+------------------------------------------------------------------------------
+
+3.
+
+package corepro;
+
+interface Bank
+{
+	public String getBank();
+}
+
+
+public class Pro4 {
+
+	public void getDetails()
+	{
+		Bank sbi=new Bank() {	           // Bank sbi=new SBI();      
+			@Override
+			public String getBank() {
+				return "SBI";
+			}
+		};
+		
+		Bank idbi=new Bank() {
+			
+			@Override
+			public String getBank() {
+				return "IDBI";
+			}
+		};
+		System.out.println("Bank Name : "+sbi.getBank());
+		System.out.println("Bank Name : "+idbi.getBank());
+		
+		Bank lambda=()->"ICICI";
+		
+		System.out.println("Bank Name : "+lambda.getBank());
+	}
+	
+	public static void main(String[] args) {
+		Pro4 p=new Pro4();
+		p.getDetails();
+		
+		Bank pnb=()->"PNB";
+		System.out.println("Bank Name : "+pnb.getBank());
+
+	}
+
+}
+
+-------------------------------------------------------------------------
+
+4.
+
+package corepro;
+
+class SingleTon
+{
+	private static SingleTon s;
+	
+	private SingleTon()
+	{
+		
+	}
+	
+	public static SingleTon getInstance()
+	{
+		s=new SingleTon();
+		return s;
+	}
+	
+	public void showMessage()
+	{
+		System.out.println("Doing calculation");
+	}
+}
+
+public class Pro5 {
+
+	public void display(SingleTon s)
+	{
+		s.showMessage();
+	}
+	
+	public static void main(String[] args) {
+		
+		SingleTon ob=SingleTon.getInstance();
+		
+		ob.showMessage();
+		
+		Pro5 p=new Pro5();
+		
+		p.display(ob);
+		
+		SingleTon ob1=SingleTon.getInstance();
+	}
+
+}
