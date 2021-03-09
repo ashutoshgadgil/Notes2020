@@ -1,0 +1,101 @@
+1.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container, 
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html#d4e194 -->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>org.pro</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+package org.pro;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+/** Example resource class hosted at the URI path "/myresource"
+ */
+@Path("/myresource")
+public class MyResource {
+    
+    /** Method processing HTTP GET requests, producing "text/plain" MIME media
+     * type.
+     * @return String that will be send back as a response of type "text/plain".
+     */
+    @GET 
+    @Produces("text/plain")
+    public String getIt() {
+        return "Hi there! How are you?";
+    }
+    
+    @GET 
+    @Path("/hello")
+    @Produces("text/plain")
+    public String getIt1() {
+        return "How are you?";
+    }
+}
+
+--------------------------------------------------------------------------------
+
+package org.pro.showroom;
+
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/showroom")
+public class Brands {
+
+	@GET
+	@Path("/getBrands")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getBrands()
+	{
+		return "List of brands";
+	}
+
+	@POST
+	@Path("/setBrands")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String setBrands()
+	{
+		return "Adding new brands";
+	}
+	
+	@PUT
+	@Path("/putBrands")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String putBrands()
+	{
+		return "Updating brands";
+	}
+	
+	@DELETE
+	@Path("/deleteBrands")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteBrands()
+	{
+		return "Deleting new brands";
+	}
+}
