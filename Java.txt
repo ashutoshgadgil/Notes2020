@@ -1296,18 +1296,59 @@ Object Class methods
 
 
           
+-----------------------------------------------------------------------
+
+ Lambda Expression 
+
+                  Jdk  1.8 version
+
+		  Anonymous function (Unnamed function)
+
+                  To reduce the code size and make the concise , more readable
+
+ Create a Lambda expression               
+
+ 1) Unnamed function
+ 2) does not have a return type
+ 3) Access modifiers are not applicable for the lambda expression
+
+  
+ public void show()
+ {
+ 	System.out.println("Hello World); 
+ }
+
+ () -> { System.out.println("Hello world"); }    (Lambda expression)
+  
+ () -> System.out.println("Hello world");
+
+ public void add(int a,int b)
+ {
+ 	System.out.println(a+b); 
+ } 		
+
+ (int a,int b)-> System.out.println(a+b);
+
+ (a,b)->  System.out.println(a+b);
+
+ 
+ public int getLength(String name)
+ {
+	return name.length();
+ }
+
+ (String name)-> return name.length();
+
+ name-> name.length();
 
 
+ To invoke lambda expression Use functional interface
 
-
-
-
-
-
-
-
-
-
+  @FunctionalInterface
+  interface intf
+  {
+	void fun();
+  }
 
 
 
