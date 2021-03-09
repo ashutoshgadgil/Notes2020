@@ -120,4 +120,12 @@ Q.52 Write a program to record the birth dates of 5 persons along with the names
      a) Show all records.
      b) Use PreparedStatement to insert the records at run time.
      
+Q.53 Write a program to define a functional interface which has a method printAlphabet()
+    Create a lambda expression which is invoked on the method.This method accepts the ASCII value 
+    of the character 65 to 70 (parameter) . Print all alphabets from 65 to 70.
+    65 -- A, 66 -- B,.........
+
+ Q.54 Create a Singleton class which has a method as fibbonaci() which prints fibbonacci series
+    0 1 1 2 3 5  of 8 terms
+     
 
