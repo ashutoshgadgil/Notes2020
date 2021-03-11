@@ -34,3 +34,20 @@ Q.8 Create a custom Exception class named as EmailException. Throw an exception 
 Q.9 Make an interface Area. Make two classes Radius and Circle.In Area , Take a method show(), In Class Radius ,define a method getRadius() which takes radius and returns the area of circle as a value. Class Circle inherits Radius and implements the Area. Display the area of circle returned by getRadius().
 
 Q.10 Create a TreeSet object in which add 3 color names. Display all color names in Descending order and Remove any one color from the set.
+
+Q.11 Write a program to create an interface Sports in which methods are getGameName(), getNoOfPlayers(),showPlayerDetails() . One interface
+member variable is country1="India", country2="SA". Make classes Cricket, football which implements this interface. In showPlayerDetails() , display details of player like CountryName,GameName PlayerName,TotalPlayers.
+ 
+Q.12 Make a Class Student ,In this Class create one Inner Class as Percentage.In Percentage class a method which returns the percentage of a student.Marks of 5 subjects should be taken in the method of student.Make a method showDetails in the Student Class which shows the Percentage of the student.
+
+
+Q.13 Create a class EmpDetails . Member variables of this class are EmpID, EmpName, EmpAge,EmpSalary. Create a method getDetails() which takes the details for an employee. Throw an exception if the EmpName is null ,If age is less then 18 using multi catch block.
+
+Q.14 Create a class which takes a string as a parameter in Parameterised constructor and perform the following operations using stringBuffer class: 
+       a) Print the reverse of the string
+       b) concatenate a string Hello to the string taken in the constructor
+       c) Compare the taken string with any string.
+       d) Find substring "llo" from "Hello"
+
+Q.15  Create a Class Addition where a parameterised constructor takes a double and an integer value. Create a child class of Addition which has a constructor which passes two numbers to the constructor of the Addition class . Define a method showSum() in the child class which displays the addition of two numbers.
+
