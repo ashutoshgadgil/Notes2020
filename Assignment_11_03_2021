@@ -27,7 +27,8 @@ Q.5 Create a Dynamic Web Project using JSTL in which make two JSP Pages .Form1.j
 
 Q.6 Write a Program to create an ArrayList of 3 numbers and find the minimum of the these numbers and display it.
 
-Q.7 Create a class Result which implements Runnable interface.This class has a method getMarks() which takes 5 marks as arguments and returns the percentage value.The method getMarks() should be called inside run() method.Create two Thread objects of the Result class .Set the names of these objects as "student1" and "student2". Display percentage of two students in run() method.
+Q.7 Create a class Result which has a synchronised getPercentage() method. There are two classes for a student1 and student2 which are calling the getPercentage()
+    method in the run() method. Create 2 Thread objects in the Main class and a start the threads . Print Percentage Student wise.
 
 Q.8 Create a custom Exception class named as EmailException. Throw an exception of EmailException if email length is zero.
 
