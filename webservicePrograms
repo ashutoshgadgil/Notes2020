@@ -99,3 +99,214 @@ public class Brands {
 		return "Deleting new brands";
 	}
 }
+--------------------------------------------------------------------------------------------------------
+
+
+package org.pro;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.MatrixParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("Demo")
+public class Demo {
+/*
+	@GET
+	@Path("{name}/{age}")
+	@Produces("text/html")
+	public String display(@PathParam("name") String name,@PathParam("age") int age)
+	{
+		
+		return "<h1>"+name+" "+age+"<h1>";
+	}
+	*/
+	
+	/*
+	@GET
+	@Produces("text/html")
+	@Path("/customer")
+	public String display1(@QueryParam("name") String name,@QueryParam("city") String city)
+	{
+		return name+" "+city;
+	}
+	*/
+	
+	
+	@GET
+	@Produces("text/html")
+	@Path("/customer1")
+	public String display2(@MatrixParam("city") String city,@MatrixParam("country") String country)
+	{
+		return country+" "+city;
+	}
+	
+}
+
+---------------------------------------------------------------------------------------------------------
+
+package org.pro;
+
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("products")
+public class Demo1 {
+
+	@GET
+	@Path("showform")
+	@Produces(MediaType.TEXT_HTML)
+	public String welcome()
+	{
+		return "<form action=\"http://localhost:8081/MyApp1/webapi/products/AddProduct\" method=\"post\">\r\n" + 
+				"Product Name<input type=\"text\" name=\"pr\"><br>\r\n" + 
+				"Quantity<input type=\"text\" name=\"qty\"><br>\r\n" + 
+				"<input type=\"submit\" value=\"Submit\">\r\n" + 
+				"</form>";
+	}
+	
+	@POST
+	@Produces("text/html")
+	@Path("/AddProduct")
+	public String addProduct(@FormParam("pr") String pname,@FormParam("qty") int qty)
+	{
+		return pname+" "+qty;
+	}
+
+
+}
+
+--------------------------------------------------------------------------------------
+
+package org.pro;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/jsondisplay")
+public class Demo2 {
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String display()
+	{
+		return "{name:Amit,age:25}";
+	}
+}
+
+---------------------------------------------------------------------
+
+
+package org.pro;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/customers")
+public class Demo3 {
+
+	@GET
+	//@Path("/{cid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	//public Customer displayCust(@PathParam("cid") int cid)
+	public Customer displayCust()
+	{
+		Customer c=new Customer();
+		//c.setCid(cid);
+		c.setCid(101);
+		c.setCname("Sachin");
+		c.setCountry("India");
+		return c;
+	}
+}
+
+--------------------------------------------------------------------------------------------
+
+
+package org.pro;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+@Path("myresource")
+public class MyResource {
+/*
+	@GET  
+	  @Produces(MediaType.TEXT_PLAIN)  
+	  public String sayPlainTextHello() {  
+	    return "Hello Jersey Plain";  
+	  }
+	*/
+	/*
+	  @GET  
+	  @Produces(MediaType.TEXT_XML)  
+	  public String sayXMLHello() {  
+	    return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";  
+	  } 
+	  */
+	
+	//@Path("/method")
+	  @GET  
+	  @Produces(MediaType.TEXT_HTML)  
+	  public String sayHtmlHello() {  
+	    return "<html> " + "<title>" + "Hello Jersey" + "</title>"  
+	        + "<body><h1>" + "Hello Jersey HTML" + "</h1></body>" + "</html> ";  
+	  } 
+	/*
+	 @GET  
+	    @Path("/{param}")  
+	    public String getMsg(@PathParam("param") String msg) {  
+	        String output = "Jersey say : " + msg;  
+	      
+	        return output;
+	 }  
+	 */
+}
+
+--------------------------------------------------------------------------------
+
+package org.pro;
+
+public class Customer {
+	
+	private int cid;
+	private String cname;
+	private String country;
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	
+}
+
