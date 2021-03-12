@@ -93,5 +93,56 @@ Jersey implementation :
 
 
 Creation of Resource
+                 
+
+Anotations used in Webservice (Restful Webservice Annotation)
+
+
+@Path : Can be applied on class or method
+
+                   URL  :  Base URL + Relative URL  =>  http://localhost:8081/MyApp3/webresources/myresource
+
+                   Base URL :  http://localhost:8081/MyApp3/webresources
+                   Relative URL : /myresource/message
+
+@GET  : Method Level annotation
+        To retreive resource from server
+
+
+@Produces :  Used with GET request
+             Text/ HTML/ XML /JSON
+             Used to send the output in a specific format to the page 
+
+
+REST : Representation  : XML
+                         JSON
+
+@POST : To set the resource on the server
+
+
+ @PathParam : To get URL Parameters
+
+ @QueryParam : To get parameter values in the form of Query string 
+
+ @MatrixParam : To get parameter values using seperator ;
+
+ @FormParam : To get the parameters from the form (jsp) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
