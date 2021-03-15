@@ -310,3 +310,353 @@ public class Customer {
 	
 }
 
+----------------------------------------------------------------------------------------------------------
+
+package org.pro.prog;
+
+public class Student {
+	public Student() {
+		super();
+	}
+	public Student(int roll, String name, String city) {
+		super();
+		this.roll = roll;
+		this.name = name;
+		this.city = city;
+	}
+	private int roll;
+	private String name;
+	private String city;
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
+}
+
+
+package org.pro.prog;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("res1")
+public class Res1 {
+
+	List<Student> list=new ArrayList<Student>();
+	
+	public Res1() {
+		list.add(new Student(101,"Amit", "Pune"));
+		list.add(new Student(102, "Suresh", "Mumbai"));
+		list.add(new Student(103, "Sachin", "Bengaluru"));
+	}
+	
+	// Returning a single record in JSON Format
+	@GET
+	@Path("getStudent")
+	//@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Student getData()
+	{
+		Student s=new Student();
+		s.setRoll(101);
+		s.setName("ajay");
+		s.setCity("Mumbai");
+		return s;
+	}
+	
+	// Returning all records from list
+	@GET
+	@Path("getStudents")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Student> getStudents()
+	{
+		return list;
+	}
+	
+	
+	// Returning matched record from the list
+	@GET
+	@Path("{roll}")
+	@Produces(MediaType.TEXT_HTML)
+	public String getStud(@PathParam("roll") int roll)
+	{
+		System.out.println(roll);
+		Iterator<Student> l=list.iterator();
+		
+		for (Student student : list) {
+			if(student.getRoll()==roll)
+			{
+				System.out.println(student.getRoll()+" "+student.getName()+" "+student.getCity());
+				return "<table border=1><tr><td>"+student.getRoll()+"</td><td>"+student.getName()+"</td><td>"+student.getCity()+"</td></tr></table>";
+			}
+		}
+		return "<h1>Record Not Found</h1>";
+	}
+}
+
+--------------------------------------------------------------------------------------------------------
+
+
+package org.pro.Data;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("showdata")
+public class Resource1 {
+
+	Connection cn;
+	Statement smt;
+	ResultSet rs;
+	StringBuffer str=new StringBuffer("");
+	
+	@GET
+	@Path("showform")
+	@Produces(MediaType.TEXT_HTML)
+	public String getForm()
+	{
+		return "<form action=http://localhost:8081/MyApp1/webapi/showdata/getdata><input type=submit value='Show Book Records'></form>";
+	}
+	
+	@GET
+	@Path("getdata")
+	@Produces(MediaType.TEXT_HTML)
+	public String getdata()
+	{
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+
+			smt=cn.createStatement();
+			
+			rs=smt.executeQuery("select * from books");
+			
+		
+			while(rs.next())
+			{
+				str=str.append("<h4>"+rs.getString(1)+" "+rs.getString(2)+"</h4>");
+				
+			}
+		
+			cn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str.toString();
+	}
+	
+	@Path("insert/{title}/{author}")
+	@POST
+	@Consumes(MediaType.TEXT_HTML)
+	public String insertData(@PathParam("title") String title,@PathParam("author") String author)
+	{
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+
+			smt=cn.createStatement();
+			
+			smt.executeUpdate("insert into books values('"+title+"','"+author+"')");
+			
+			cn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "<h2>Record Added successfully</h2>";
+	}
+	
+	@Path("update/{title}/{author}")
+	@PUT
+	@Consumes(MediaType.TEXT_PLAIN)
+	public void updateData(@PathParam("title") String title,@PathParam("author") String author)
+	{
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+
+			smt=cn.createStatement();
+			
+			smt.executeUpdate("update books set author='"+author+"' where title='"+title+"'");
+			
+			System.out.println("Record Updated");
+			cn.commit();
+			cn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Path("delete/{title}")
+	@DELETE
+	@Consumes(MediaType.TEXT_PLAIN)
+	public void deleteData(@PathParam("title") String title)
+	{
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+			cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+
+			smt=cn.createStatement();
+			
+			smt.executeUpdate("delete from books where title='"+title+"'");
+			
+			System.out.println("Record Deleted");
+			cn.commit();
+			cn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+------------------------------------------------------------------------------------------------------------------------
+
+package org.pro.demo;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Player {
+	
+	public Player() {
+		super();
+	}
+	public Player(int pid, String pname) {
+		super();
+		this.pid = pid;
+		this.pname = pname;
+	}
+	private int pid;
+	private String pname;
+	
+	
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	
+	
+}
+
+package org.pro.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("players")
+public class PersonDemo {
+
+	Player p;
+	Player p1;
+	List<Player> l;
+	
+	public PersonDemo()
+	{
+		p=new Player(101,"Sachin");
+		p1=new Player(102,"Ajay");
+		l=new ArrayList<Player>();
+		l.add(p);	
+		l.add(p1);
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Player> getPlayers()
+	{	
+		return l;
+	}
+	
+	@GET
+	@Path("getplayer/{id}")
+	@Produces(MediaType.APPLICATION_XML)
+	public Player getPerson(@PathParam("id") int id)
+	{	
+		int t=0;
+		for (Player player : l) {
+			if(player.getPid()==id)
+			{
+				t=1;
+				return player;
+			}
+		}
+		
+		if(t==0)
+			return new Player(0,"NA");
+		
+		return new Player();
+	}
+}
+
+---------------------------------------------------------------------------------------------------
+
+
+
+
