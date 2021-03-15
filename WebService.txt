@@ -129,6 +129,14 @@ REST : Representation  : XML
  @FormParam : To get the parameters from the form (jsp) 
 
 
+  Step-1 Create Maven Webapp project
+  Step-2 Add Jersey bundle 1.94 & Jersey Json 1.8 
+  Step-3 Remove Init-param from web.xml
+  Step-4 Cretae resource file & POJO class
+  Step-5 Run Project
+
+
+ @XMLRootElement :  Applied on the POJO class to display the POJO class data in XML format.
 
 
 
