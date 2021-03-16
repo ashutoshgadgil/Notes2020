@@ -5,3 +5,6 @@
 4. Create a form which takes user name and age in the textbox. If age is less than 10 and greater than 20 then display a message as "Not eligible to participate" else
     print a message "Welcome username ,you are Eligible".
 5. Create a web serrvice which takes name and salary of an employee and print name and salary on the console, Use MatrixParam annotation.
+6. Make a table Login which has username and Password. Make a Login Page which accepts username & Password. If Username & password matches with the table data then
+   Print Login Successful otherwise print Invalid login.
+7. Write a program to perform CRUD operations in Database using Hibernate. 
