@@ -8,3 +8,7 @@
 6. Make a table Login which has username and Password. Make a Login Page which accepts username & Password. If Username & password matches with the table data then
    Print Login Successful otherwise print Invalid login.
 7. Write a program to perform CRUD operations in Database using Hibernate. 
+8. Take name, gender and city of a person in the URL as a Query String. If gender is Male then a message should be displayed as " Welcome Mr. name , you are from INDIA".
+   If gender is Female then a message should be displayed as "Welcome Ms. name, you are from USA". Country name should be displayed based on the city. For example if the
+   city is Mumbai the Country is INDIA.
+   
